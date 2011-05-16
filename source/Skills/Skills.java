@@ -17,12 +17,17 @@ public class Skills{
 	// Where we will store the classes, we don't need duplicates
 	HashSet<Class> classList = new HashSet<Class>(); 
 
+
+	public Skills() throws Exception{
+		getChildren();
+	}
+
 	/**
 	* This dynamically loads all the classes located in subdirectories (subpackages) from the current
 	*/
 	private void getChildren() throws Exception{
 		//create a file object to represent the current directory
-		File file = new File(".");
+		File file = new File("./Skills");
 
 		//start the traversion
 		traverseDirectory(file);
@@ -43,6 +48,10 @@ public class Skills{
 		}
 
 		String files[] = file.list();
+
+		if(files == null){
+			return;
+		}
 
 		for(int i=0; i < files.length; i++){
 			File f = new File(file.getPath() + File.separator + files[i]);
@@ -67,11 +76,14 @@ public class Skills{
 			// declare the class loader for this directory
 			ClassLoader classLoader = new URLClassLoader(urls);
 
-			Class cls = classLoader.loadClass(file.getName());
+			Class cls = classLoader.loadClass(file.getPath().substring(2,file.getPath().length()-6).replace("/","."));
 
 			if(!classList.contains(cls)){
+				System.out.println("Adding a new class...");
 				classList.add(cls);
+				System.out.println("Added: "+cls.getName());
 			}
 		}
 	}
 }
+	
