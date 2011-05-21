@@ -3,12 +3,18 @@
 
 	<property name="src" value="./source"/>
 	<property name="build" value="build" />
-
+	<property name="doc" value="docs" />
 	<target name="init">
 		<mkdir dir="${build}"/>
+		<mkdir dir="${doc}" />
 	</target>
-
-	<target name="compile" depends="init">
+	<target name="javadoc" depends="init">
+		<javadoc sourcepath="${src}" 
+		destdir="${doc}"
+		version="true"
+		use="true"/>
+	</target>
+	<target name="compile" depends="javadoc">
 		<!-- Compile the code -->
 
 		<javac srcdir="${src}" destdir="${build}"/>
