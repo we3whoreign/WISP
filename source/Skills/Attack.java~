@@ -1,0 +1,5 @@
+package Skills;
+
+public class Attack implements SkillsTemplate{
+
+}

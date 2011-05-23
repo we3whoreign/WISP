@@ -17,6 +17,8 @@
 	<target name="compile" depends="javadoc">
 		<!-- Compile the code -->
 
-		<javac srcdir="${src}" destdir="${build}"/>
+		<javac srcdir="${src}" destdir="${build}">
+			<compilerarg value="-Xlint:unchecked" />
+		</javac>
 	</target>
 </project>

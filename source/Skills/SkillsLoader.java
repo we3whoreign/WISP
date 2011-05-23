@@ -8,6 +8,7 @@ import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.Map;
 import java.util.HashMap;
+import java.lang.reflect.Constructor;
 
 /**
 * Dynamically loads all of the class files. Current implementation searches a subdirectory called ./Skills (from where the running program is). 
@@ -38,9 +39,18 @@ public class SkillsLoader{
 	private void getChildren() throws Exception{
 		//create a file object to represent the current directory
 		File file = new File("./Skills");
-
-		//start the traversion
-		traverseDirectory(file);
+		
+		String files[] = file.list();
+		
+		/**
+		* Don't travers the base directory, but travers all subdirectories
+		*/
+		for(int i=0; i < files.length; i++){
+			File f = new File(file.getPath() + File.separator + files[i]);
+			if(f.isDirectory()){
+				traverseDirectory(f);
+			}
+		}
 										
 		
 	}
@@ -86,10 +96,18 @@ public class SkillsLoader{
 			// declare the class loader for this directory
 			ClassLoader classLoader = new URLClassLoader(urls);
 
-			Class cls = classLoader.loadClass(file.getPath().substring(2,file.getPath().length()-6).replace("/","."));
+			String classFile = file.getPath().substring(2,file.getPath().length()-6).replace("/",".");
+			classFile = classFile.trim();
+			
+			//Check for a few classes that might be loaded that aren't needed
+			/**
+			if(isException(classFile)){
+				return;
+			}
+			*/
+			Class cls = classLoader.loadClass(classFile);//file.getPath().substring(2,file.getPath().length()-6).replace("/","."));
 
 			if(!classList.contains(cls)){
-				System.out.println("Adding a new class...");
 				classList.add(cls);
 				System.out.println("Added: "+cls.getName());
 			}
@@ -99,16 +117,44 @@ public class SkillsLoader{
 	/**
  	* Declare an instance of each class and return a hashmap using the class name as the lookup
  	*/
-	public Map<String,Object> getClassObjects(){
+	public Map<String,SkillsTemplate> getClassObjects() throws Exception{
 		
-		Map<String,Object> ret = new HashMap<String,Object>();
+		Map<String,SkillsTemplate> ret = new HashMap<String,SkillsTemplate>();
 	
 		for(Class c : classList){
-			ret.put(c.getName(),c);
+			Constructor ct = c.getConstructor();
+			Object tmpobj = ct.newInstance();
+			try{
+				SkillsTemplate tmp = (SkillsTemplate) tmpobj;
+				ret.put(c.getName(),tmp);
+			}
+			catch(Exception e){
+				System.out.println("Get Class Objects Exception:");
+				System.out.println(e.getMessage());
+				throw e;
+			}
+
 		}
 
 		return ret;
 
 	}
+
+	/**
+ 	* Checks whether the class should be loaded or not based on a list of exceptions for class that don't need to be loaded
+ 	* @return true if the class is an exception
+ 	*/
+	private boolean isException(String filename){
+		String[] exceptionList = {"Skills.Skills","Skills.SkillsLoader","Skills.SkillsTemplate"};
+		for(int i = 0; i < exceptionList.length; i++){
+			if(exceptionList[i].equals(filename)){
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+		
 }
 	
