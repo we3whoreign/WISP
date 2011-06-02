@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <project name="DFO Planner" default="makejar" basedir=".">
+=======
+<project name="DFO Planner" default="compile" basedir=".">
+>>>>>>> 459f517d100c8b53434791ad5cd4be0282b48bb9
 =======
 <project name="DFO Planner" default="compile" basedir=".">
 >>>>>>> 459f517d100c8b53434791ad5cd4be0282b48bb9
@@ -8,6 +12,7 @@
 	<property name="src" value="./source"/>
 	<property name="build" value="build" />
 	<property name="doc" value="docs" />
+<<<<<<< HEAD
 <<<<<<< HEAD
 	<property name="libs" value="build/lib" />
 	<property name="version" value="0.1a" />
@@ -30,17 +35,23 @@
 	</target>
 	<target name="javadoc" depends="library">
 =======
+=======
+>>>>>>> 459f517d100c8b53434791ad5cd4be0282b48bb9
 	<target name="init">
 		<mkdir dir="${build}"/>
 		<mkdir dir="${doc}" />
 	</target>
 	<target name="javadoc" depends="init">
+<<<<<<< HEAD
+>>>>>>> 459f517d100c8b53434791ad5cd4be0282b48bb9
+=======
 >>>>>>> 459f517d100c8b53434791ad5cd4be0282b48bb9
 		<javadoc sourcepath="${src}" 
 		destdir="${doc}"
 		version="true"
 		use="true"/>
 	</target>
+<<<<<<< HEAD
 <<<<<<< HEAD
 	
 	<target name="makesourcejar" depends="javadoc">
@@ -82,6 +93,8 @@
 		</jar>
 	</target>
 =======
+=======
+>>>>>>> 459f517d100c8b53434791ad5cd4be0282b48bb9
 	<target name="compile" depends="javadoc">
 		<!-- Compile the code -->
 
@@ -89,5 +102,8 @@
 			<compilerarg value="-Xlint:unchecked" />
 		</javac>
 	</target>
+<<<<<<< HEAD
+>>>>>>> 459f517d100c8b53434791ad5cd4be0282b48bb9
+=======
 >>>>>>> 459f517d100c8b53434791ad5cd4be0282b48bb9
 </project>
