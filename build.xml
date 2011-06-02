@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<<<<<<< HEAD
+<project name="DFO Planner" default="makejar" basedir=".">
+=======
+<project name="DFO Planner" default="compile" basedir=".">
+>>>>>>> 459f517d100c8b53434791ad5cd4be0282b48bb9
+
+	<property name="src" value="./source"/>
+	<property name="build" value="build" />
+	<property name="doc" value="docs" />
+<<<<<<< HEAD
+	<property name="libs" value="build/lib" />
+	<property name="version" value="0.1a" />
+	<property name="jarname" value="SkillBuilder" />
+	<property name="version.num" value="0.01"/>
+
+	<target name="clean">
+		<delete dir="${build}" />
+		<delete dir="${doc}" />
+	</target>
+	<target name="init" depends="clean">
+		<mkdir dir="${build}"/>
+		<mkdir dir="${doc}" />
+	</target>
+	<target name="library" depends="init">
+		<delete dir="${libs}" />
+		<copy todir="${libs}">
+			<fileset dir="./libs" />
+		</copy>
+	</target>
+	<target name="javadoc" depends="library">
+=======
+	<target name="init">
+		<mkdir dir="${build}"/>
+		<mkdir dir="${doc}" />
+	</target>
+	<target name="javadoc" depends="init">
+>>>>>>> 459f517d100c8b53434791ad5cd4be0282b48bb9
+		<javadoc sourcepath="${src}" 
+		destdir="${doc}"
+		version="true"
+		use="true"/>
+	</target>
+<<<<<<< HEAD
+	
+	<target name="makesourcejar" depends="javadoc">
+		<!-- put all the source code into a jar -->
+		<delete file="${jarname}_${version}_source.jar" />
+		
+		<jar jarfile="${jarname}_${version}_source.jar" basedir="${build}">
+			<fileset dir="${src}" includes="**" />
+			<fileset dir="." includes="docs/**" />
+		</jar>
+	</target>
+	
+	<target name="compile" depends="makesourcejar">
+		<!-- Compile the code -->
+
+		<javac srcdir="${src}" destdir="${build}" debug="true" debuglevel="lines,vars,source" optimize="on">
+			<compilerarg value="-Xlint:unchecked" />
+		</javac>
+	</target>
+	
+	<target name="makejar" depends="compile">	
+		<!-- Make a runnable jar -->
+		<delete file="${jarname}_${version}.jar" />
+		
+		<buildnumber file="build.num"/>
+		
+		
+		<jar jarfile="${jarname}_${version.num}.jar"
+			basedir="${build}">		
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Main-Class" value="main" />
+				<attribute name="Implementation-Version" 
+						value="${version.num}-b${build.number}"/> 
+				<attribute name="Build-Date" value="${TODAY}" />
+			</manifest>
+			
+			<fileset dir="${build}" includes="${build}/**" />
+		</jar>
+	</target>
+=======
+	<target name="compile" depends="javadoc">
+		<!-- Compile the code -->
+
+		<javac srcdir="${src}" destdir="${build}">
+			<compilerarg value="-Xlint:unchecked" />
+		</javac>
+	</target>
+>>>>>>> 459f517d100c8b53434791ad5cd4be0282b48bb9
+</project>
