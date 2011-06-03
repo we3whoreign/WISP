@@ -9,7 +9,6 @@ import java.net.URLClassLoader;
 import java.util.Map;
 import java.util.HashMap;
 import java.lang.reflect.Constructor;
-import SkillsPlanner.Utils.*;
 
 /**
 * Dynamically loads all of the class files. Current implementation searches a subdirectory called ./Skills (from where the running program is). 
@@ -26,8 +25,6 @@ public class SkillsLoader{
 	// Where we will store the classes, we don't need duplicates
 	HashSet<Class> classList = new HashSet<Class>(); 
 
-	private final String path = FileUtils.makePath("./Skills");
-
 
 	/**
 	* The constructor makes a call to getChildren in order to load the class list
@@ -41,7 +38,7 @@ public class SkillsLoader{
 	*/
 	private void getChildren() throws Exception{
 		//create a file object to represent the current directory
-		File file = new File(path);
+		File file = new File("./Skills");
 		
 		String files[] = file.list();
 		

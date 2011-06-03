@@ -8,9 +8,15 @@ import SkillsPlanner.*;
 /**
 * The class selection panel where the user chooses what class they would like to make a build for
 */
-public class SelectionPane extends JSplitPane{
+public class SelectionPane extends JSplitPane implements ActionListener{
+	DFOCharacter character;
 
-	public SelectionPane(int split, JPanel item1, JPanel item2){
+	public SelectionPane(int split, JPanel item1, JPanel item2, DFOCharacter c){
 		super(split,item1,item2);	
+		this.character = c;
+	}
+	
+	public void actionPerformed(ActionEvent e){
+		System.out.println("Performing action: "+e.getActionCommand());
 	}
 }

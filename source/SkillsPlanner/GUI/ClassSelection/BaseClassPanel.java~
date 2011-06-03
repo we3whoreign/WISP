@@ -1,0 +1,27 @@
+package SkillsPlanner.GUI.ClassSelection;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class BaseClassPanel extends JPanel{
+
+	protected JButton fighter, mage, priest, slayer;
+	
+	public BaseClassPanel(){
+		fighter = new JButton("Fighter");
+		mage = new JButton("Mage");
+		priest = new JButton("Priest");
+		slayer = new JButton("Slayer");
+
+		this.setLayout(new SpringLayout());
+		
+		this.add(slayer);
+		this.add(fighter);
+		this.add(priest);
+		this.add(mage);
+		
+	}
+	
+	
+
+}

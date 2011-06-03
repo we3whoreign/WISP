@@ -2,30 +2,18 @@ package SkillsPlanner.GUI;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
-import javax.swing.border.Border;
 import SkillsPlanner.GUI.*;
 import SkillsPlanner.Skills.*;
 import SkillsPlanner.*;
 import SkillsPlanner.GUI.ClassSelection.*;
-import SkillsPlanner.GUI.Actions.*;
 
-/**
- * DFO Skill Builder frame that holds all the yummy GUIness
- */
-public class MainFrame extends JFrame implements ActionListener{
+public class MainFrame extends JFrame{
 	
 	private final int dividerSize = 0;
 	public static final int DIVIDER_LOCATION = 100;
-	public static DFOCharacter character;
-	private JPanel FirstPanel;
-	private JPanel SecondPanel;
-	private JPanel PageSelection = new JPanel();
-	private JButton NextButton = new JButton("Next Button");
-	private JPanel card;
-	
-	//We start on page 1
-	private int page = 1;
+	private int page;
+	DFOCharacter character;
+	public static SelectionPane splitPane;
 
 	public MainFrame(){
 		super("DFO Skill Builder");
@@ -34,96 +22,38 @@ public class MainFrame extends JFrame implements ActionListener{
 		//Set the character object
 		this.character = new DFOCharacter();
 		
-		setup();
+		this.setLocation(300,200);
+		this.setSize(400,300);
 		
 		//set to the first page
-		//firstPage();
+		firstPage();
 		
 		//Display the window.
 		this.pack();
 		this.setVisible(true);
 	}
 	
-	/**
-	 * Handles the GUI setup
-	 */
-	private void setup(){
-		FirstPanel = new JPanel();
-		SecondPanel = new JPanel();
-		
-		//Set up the card panel
-		card = new JPanel();
-		card.setLayout(new BorderLayout());
-		
-		//Add them to the card
-		card.add(FirstPanel, BorderLayout.CENTER);
-		
-		NextButton.setActionCommand(Commands.NEXT);
-		NextButton.addActionListener(this);
-		
-		//Right allign the page selection panel
-		PageSelection.setLayout(new FlowLayout(FlowLayout.TRAILING));
-		
-		PageSelection.add(NextButton);
-		
-		//Page Selection is a wrapper for the selection buttons
-		getContentPane().add(PageSelection,BorderLayout.NORTH);
-		getContentPane().add(card,BorderLayout.CENTER);
-		getContentPane().add(new VersionPanel(),BorderLayout.SOUTH);
-		
-		//Page Setup
-		firstPage();
-		secondPage();
-	}
-	
-	/**
-	 * Set up the first page panel
-	 */
 	private void firstPage(){
+		page = 1;
+		
+		JPanel baseClass = new BaseClassPanel();
 		JPanel classSelect = new ClassSelectPanel();
-		JPanel baseClass = new BaseClassPanel(classSelect);
-
-		FirstPanel.setLayout(new BorderLayout());
-		FirstPanel.add(baseClass,BorderLayout.WEST);
-		FirstPanel.add(classSelect,BorderLayout.CENTER);
+		
+		splitPane = new SelectionPane(JSplitPane.HORIZONTAL_SPLIT,
+			baseClass,classSelect,character);
+		
+		splitPane.setOneTouchExpandable(true);
+		splitPane.setDividerLocation(DIVIDER_LOCATION);
+		
+		//splitPane.setDividerSize(dividerSize);
+		
+		getContentPane().add(splitPane,BorderLayout.CENTER);
+			
 	}
 	
-	/**
-	 * Set up the second page panel
-	 */
 	private void secondPage(){
+		page = 2;
 		
-	}
-	
-	/**
-	 * Action listener for the next and previous buttons
-	 */
-	public void actionPerformed(ActionEvent e){
-		card.removeAll();
-		
-		if(Commands.NEXT.equals(e.getActionCommand())){
-			if(page == 1){
-				card.add(SecondPanel, BorderLayout.CENTER);
-				page = 2;
-			}
-			else{
-				card.add(FirstPanel, BorderLayout.CENTER);
-				page = 1;
-			}
-		}
-		else if(Commands.PREVIOUS.equals(e.getActionCommand())){
-			if(page == 1){
-				card.add(SecondPanel, BorderLayout.CENTER);
-				page = 2;
-			}
-			else{
-				card.add(FirstPanel, BorderLayout.CENTER);
-				page = 1;
-			}
-		}
-		this.invalidate();
-		this.validate();
-		this.repaint();
 	}
 
 }

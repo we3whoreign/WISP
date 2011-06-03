@@ -1,3 +1,7 @@
-Classes
-Skills
-Skills.Fighter
+SkillsPlanner
+SkillsPlanner.Classes
+SkillsPlanner.GUI
+SkillsPlanner.GUI.ClassSelection
+SkillsPlanner.GUI.Layout
+SkillsPlanner.Skills
+SkillsPlanner.Skills.Fighter
