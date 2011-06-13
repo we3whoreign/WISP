@@ -1,46 +1,44 @@
 package SkillsPlanner.Skills;
 
 import java.util.ArrayList;
-import SkillsPlanner.Skills.SkillsTemplate;
 
 /**
-* A shell that represents an attack
-*/
-public abstract class Attack extends SkillsTemplate{
-	
+ * A shell that represents an attack
+ */
+public abstract class Attack extends SkillsTemplate {
+
 	/**
-	* Non percent based damage minimum
-	*/
+	 * Non percent based damage minimum
+	 */
 	protected double minBaseDamage;
-	
+
 	/**
-	* Non percent based damage maximum
-	*/
+	 * Non percent based damage maximum
+	 */
 	protected double maxBaseDamage;
-	
+
 	/**
-	* Percent based damage minimum
-	*/
+	 * Percent based damage minimum
+	 */
 	protected double minPercentDamage;
-	
+
 	/**
-	* Percent based damage maxiumum
-	*/
+	 * Percent based damage maxiumum
+	 */
 	protected double maxPercentDamage;
-	
+
 	/**
-	* List of all the status effects the skill can cause
-	*/
+	 * List of all the status effects the skill can cause
+	 */
 	protected ArrayList<StatusEffect> statusEffects;
-	
+
 	/**
-	* Range of the skill
-	*/
+	 * Range of the skill
+	 */
 	protected double range;
-	
-	public Attack(){
+
+	public Attack() {
 		statusEffects = new ArrayList<StatusEffect>();
 	}
-	
-	
+
 }

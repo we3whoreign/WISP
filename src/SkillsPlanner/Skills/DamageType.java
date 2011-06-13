@@ -1,24 +1,24 @@
 package SkillsPlanner.Skills;
 
-public class DamageType{
+public class DamageType {
 	/**
-	* Magic Damage
-	*/
+	 * Magic Damage
+	 */
 	public static final String magic = "Magic";
-	
+
 	/**
-	* Physical Damage
-	*/
+	 * Physical Damage
+	 */
 	public static final String physical = "Physical";
-	
+
 	/**
-	* No Damage
-	*/
+	 * No Damage
+	 */
 	public static final String none = "None";
-	
+
 	/**
-	* Both magic and physical
-	*/
+	 * Both magic and physical
+	 */
 	public static final String both = "Both";
 
 }
