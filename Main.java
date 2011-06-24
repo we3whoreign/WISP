@@ -2,7 +2,7 @@ import java.awt.EventQueue;
 
 import javax.swing.UIManager;
 
-import SkillsPlanner.Launcher;
+import skillsplanner.Launcher;
 
 class Main {
 	public Main() {

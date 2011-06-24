@@ -1,26 +1,39 @@
 <?xml version="1.0"?>
-<project name="DFO Planner" default="compile" basedir=".">
+<project name="DFO Planner" default="jar" basedir=".">
 
-	<property name="src" value="./src"/>
+	<property name="src" value="."/>
 	<property name="build" value="build" />
 	<property name="doc" value="docs" />
 	<property name="libs" value="build/libs" />
+	<property name="jar" value="jar/" />
+	<!-- reimplement later for a better versioning system -->
+	<property name="jarfile" value="SkillPlanner.jar" />
+	<property name="includeantruntime" value="false" /> <!-- ANT 1.8 fix -->
+	
+	<!-- initial directory setup-->
 	<target name="init">
+		<delete dir="${build}" />
 		<mkdir dir="${build}"/>
 		<mkdir dir="${doc}" />
 	</target>
+	
+	<!-- copy the ./libs folder to the new libs directory -->
 	<target name="library" depends="init">
 		<delete dir="${libs}" />
 		<copy todir="${libs}">
 			<fileset dir="./libs" />
 		</copy>
 	</target>
+	
+	<!-- Create all of the javadocs and put them in the ${doc} folder -->
 	<target name="javadoc" depends="library">
 		<javadoc sourcepath="${src}" 
 		destdir="${doc}"
 		version="true"
 		use="true"/>
 	</target>
+	
+	<!-- This deletes all the code then rewrites it backwards in spanish -->
 	<target name="compile" depends="javadoc">
 		<!-- Compile the code -->
 
@@ -28,4 +41,16 @@
 			<compilerarg value="-Xlint:unchecked" />
 		</javac>
 	</target>
+	
+	<target name="jar" depends="compile">
+		<buildnumber file="build.num" />
+		
+	    <jar destfile="${jar}${jarfile}" basedir="build">
+	        <manifest>
+	            <attribute name="Main-Class" value="Main"/>
+	        	<attribute name="Implementation-Version" value="${version}.${build.number}"/>
+	        </manifest>
+	    </jar>
+	</target>
+		
 </project>
