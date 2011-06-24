@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <project name="DFO Planner" default="compile" basedir=".">
 
-	<property name="src" value="./source"/>
+	<property name="src" value="./src"/>
 	<property name="build" value="build" />
 	<property name="doc" value="docs" />
 	<property name="libs" value="build/libs" />
