@@ -1,4 +1,4 @@
-package SkillsPlanner.GUI.Actions;
+package skillsplanner.gui.actions;
 
 /**
  * A place holder to keep commands fluent

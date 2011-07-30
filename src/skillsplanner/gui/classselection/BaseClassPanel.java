@@ -1,4 +1,4 @@
-package SkillsPlanner.GUI.ClassSelection;
+package skillsplanner.gui.classselection;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -7,8 +7,8 @@ import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import SkillsPlanner.GUI.Actions.Commands;
-import SkillsPlanner.GUI.Listeners.PanelOneListener;
+import skillsplanner.gui.actions.Commands;
+import skillsplanner.gui.listeners.PanelOneListener;
 
 public class BaseClassPanel extends JPanel {
 

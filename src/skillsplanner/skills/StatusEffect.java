@@ -1,4 +1,4 @@
-package SkillsPlanner.Skills;
+package skillsplanner.skills;
 
 /**
  * Rules that all status effects need

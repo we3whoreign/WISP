@@ -29,7 +29,7 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package SkillsPlanner.GUI.Layout;
+package skillsplanner.gui.layout;
 
 import java.awt.Component;
 import java.awt.Container;

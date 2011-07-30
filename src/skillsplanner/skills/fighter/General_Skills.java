@@ -1,6 +1,6 @@
-package SkillsPlanner.Skills.Fighter;
+package skillsplanner.skills.fighter;
 
-import SkillsPlanner.Skills.SkillsTemplate;
+import skillsplanner.skills.SkillsTemplate;
 
 public class General_Skills extends SkillsTemplate {
 

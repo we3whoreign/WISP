@@ -1,4 +1,4 @@
-package SkillsPlanner.GUI.ClassSelection;
+package skillsplanner.gui.classselection;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -16,11 +16,11 @@ import javax.swing.JPanel;
 import javax.swing.JSplitPane;
 import javax.swing.SwingConstants;
 
-import SkillsPlanner.Launcher;
-import SkillsPlanner.Classes.*;
-import SkillsPlanner.GUI.MainFrame;
-import SkillsPlanner.GUI.Actions.Commands;
-import SkillsPlanner.Utils.FileUtils;
+import skillsplanner.Launcher;
+import skillsplanner.classes.*;
+import skillsplanner.gui.MainFrame;
+import skillsplanner.gui.actions.Commands;
+import skillsplanner.utils.FileUtils;
 
 public class ClassSelectPanel extends JPanel {
 

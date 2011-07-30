@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ClassDiagram>
-    <Class name="SkillsPlanner.Skills.Passive" x="317" y="402">
+    <Class name="skillsplanner.Skills.Passive" x="317" y="402">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -8,9 +8,9 @@
             private-accepted="false" protected-accepted="false"
             default-accepted="false" static-accepted="false"
             accessors-accepted="false" constructors-accepted="false"/>
-        <Extension destinationClassName="SkillsPlanner.Skills.SkillsTemplate"/>
+        <Extension destinationClassName="skillsplanner.Skills.SkillsTemplate"/>
     </Class>
-    <Class name="SkillsPlanner.Skills.Buff" x="419" y="405">
+    <Class name="skillsplanner.Skills.Buff" x="419" y="405">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -18,9 +18,9 @@
             private-accepted="false" protected-accepted="false"
             default-accepted="false" static-accepted="false"
             accessors-accepted="false" constructors-accepted="false"/>
-        <Extension destinationClassName="SkillsPlanner.Skills.SkillsTemplate"/>
+        <Extension destinationClassName="skillsplanner.Skills.SkillsTemplate"/>
     </Class>
-    <Class name="SkillsPlanner.DFOCharacter" x="445" y="9">
+    <Class name="skillsplanner.DFOCharacter" x="445" y="9">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -29,10 +29,10 @@
             default-accepted="false" static-accepted="false"
             accessors-accepted="false" constructors-accepted="false"/>
         <Association
-            destinationClassName="SkillsPlanner.Classes.DFOClass"
+            destinationClassName="skillsplanner.Classes.DFOClass"
             endpointName="charclass" kind="Simple"/>
     </Class>
-    <Class name="SkillsPlanner.Skills.StatusEffect" x="401" y="474">
+    <Class name="skillsplanner.Skills.StatusEffect" x="401" y="474">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -41,7 +41,7 @@
             default-accepted="false" static-accepted="false"
             accessors-accepted="false" constructors-accepted="false"/>
     </Class>
-    <Class name="SkillsPlanner.Classes.DFOClass" x="278" y="57">
+    <Class name="skillsplanner.Classes.DFOClass" x="278" y="57">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -50,7 +50,7 @@
             default-accepted="false" static-accepted="false"
             accessors-accepted="false" constructors-accepted="false"/>
     </Class>
-    <Class name="SkillsPlanner.Skills.DamageType" x="753" y="233">
+    <Class name="skillsplanner.Skills.DamageType" x="753" y="233">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -59,7 +59,7 @@
             default-accepted="false" static-accepted="false"
             accessors-accepted="false" constructors-accepted="false"/>
     </Class>
-    <Class name="SkillsPlanner.Skills.Fighter.General_Skills" x="595" y="320">
+    <Class name="skillsplanner.Skills.Fighter.General_Skills" x="595" y="320">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -67,10 +67,10 @@
             private-accepted="false" protected-accepted="false"
             default-accepted="false" static-accepted="false"
             accessors-accepted="false" constructors-accepted="false"/>
-        <Extension destinationClassName="SkillsPlanner.Skills.SkillsTemplate"/>
-        <Communication destinationClassName="SkillsPlanner.Skills.SkillsTemplate"/>
+        <Extension destinationClassName="skillsplanner.Skills.SkillsTemplate"/>
+        <Communication destinationClassName="skillsplanner.Skills.SkillsTemplate"/>
     </Class>
-    <Class name="SkillsPlanner.Skills.Attack" x="38" y="404">
+    <Class name="skillsplanner.Skills.Attack" x="38" y="404">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -78,12 +78,12 @@
             private-accepted="false" protected-accepted="false"
             default-accepted="false" static-accepted="false"
             accessors-accepted="false" constructors-accepted="false"/>
-        <Extension destinationClassName="SkillsPlanner.Skills.SkillsTemplate"/>
+        <Extension destinationClassName="skillsplanner.Skills.SkillsTemplate"/>
         <Association
-            destinationClassName="SkillsPlanner.Skills.StatusEffect"
+            destinationClassName="skillsplanner.Skills.StatusEffect"
             endpointName="statusEffects" kind="Simple"/>
     </Class>
-    <Class name="SkillsPlanner.Skills.SkillsTemplate" x="227" y="167">
+    <Class name="skillsplanner.Skills.SkillsTemplate" x="227" y="167">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -92,7 +92,7 @@
             default-accepted="false" static-accepted="false"
             accessors-accepted="false" constructors-accepted="false"/>
     </Class>
-    <Class name="SkillsPlanner.Skills.SkillsLoader" x="2" y="14">
+    <Class name="skillsplanner.Skills.SkillsLoader" x="2" y="14">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>

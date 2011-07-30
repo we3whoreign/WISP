@@ -1,4 +1,4 @@
-package SkillsPlanner.GUI.SkillSelection;
+package skillsplanner.gui.skillselection;
 
 import java.util.Observable;
 import java.util.Observer;

@@ -1,4 +1,4 @@
-package SkillsPlanner.Utils;
+package skillsplanner.utils;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -16,7 +16,7 @@ import java.net.URL;
 
 import javax.swing.ImageIcon;
 
-import SkillsPlanner.Launcher;
+import skillsplanner.Launcher;
 
 /**
  * A set of utilities specific to handling files
@@ -31,7 +31,7 @@ public class FileUtils {
 	 */
 	public static URL makePath(String path) {
 
-		//Make the path go up a directory since we are using SkillsPlanner.Launcher for reference
+		//Make the path go up a directory since we are using skillsplanner.Launcher for reference
 		path = "../"+path;
 		
 		//Make the path OS independent

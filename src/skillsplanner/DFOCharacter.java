@@ -1,8 +1,8 @@
-package SkillsPlanner;
+package skillsplanner;
 
 import java.util.Observable;
 
-import SkillsPlanner.Classes.DFOClass;
+import skillsplanner.classes.DFOClass;
 
 /**
  * Represents the character object that encapsulates what the player would be.

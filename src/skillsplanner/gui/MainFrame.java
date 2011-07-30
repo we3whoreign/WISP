@@ -1,4 +1,4 @@
-package SkillsPlanner.GUI;
+package skillsplanner.gui;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -9,11 +9,11 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import SkillsPlanner.DFOCharacter;
-import SkillsPlanner.GUI.Actions.Commands;
-import SkillsPlanner.GUI.ClassSelection.BaseClassPanel;
-import SkillsPlanner.GUI.ClassSelection.ClassSelectPanel;
-import SkillsPlanner.GUI.SkillSelection.*;
+import skillsplanner.DFOCharacter;
+import skillsplanner.gui.actions.Commands;
+import skillsplanner.gui.classselection.BaseClassPanel;
+import skillsplanner.gui.classselection.ClassSelectPanel;
+import skillsplanner.gui.skillselection.*;
 
 /**
  * DFO Skill Builder frame that holds all the yummy GUIness

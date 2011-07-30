@@ -1,4 +1,4 @@
-package SkillsPlanner.GUI;
+package skillsplanner.gui;
 
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;

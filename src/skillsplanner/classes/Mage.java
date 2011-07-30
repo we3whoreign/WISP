@@ -1,8 +1,8 @@
-package SkillsPlanner.Classes;
+package skillsplanner.classes;
 
 import java.util.HashMap;
 
-import SkillsPlanner.Skills.SkillsTemplate;
+import skillsplanner.skills.SkillsTemplate;
 
 public class Mage extends DFOClass {
 

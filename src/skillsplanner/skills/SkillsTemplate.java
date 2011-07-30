@@ -1,4 +1,4 @@
-package SkillsPlanner.Skills;
+package skillsplanner.skills;
 
 /**
  * Framework for making skills

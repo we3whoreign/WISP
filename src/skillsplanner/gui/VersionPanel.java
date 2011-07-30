@@ -1,11 +1,11 @@
-package SkillsPlanner.GUI;
+package skillsplanner.gui;
 
 import java.awt.FlowLayout;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import SkillsPlanner.Launcher;
+import skillsplanner.Launcher;
 
 /**
  * Simple panel with a JLabel that displays the version

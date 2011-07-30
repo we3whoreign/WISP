@@ -1,11 +1,11 @@
-package SkillsPlanner.GUI.Listeners;
+package skillsplanner.gui.listeners;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JPanel;
 
-import SkillsPlanner.GUI.ClassSelection.ClassSelectPanel;
+import skillsplanner.gui.classselection.ClassSelectPanel;
 
 public class PanelOneListener implements ActionListener {
 

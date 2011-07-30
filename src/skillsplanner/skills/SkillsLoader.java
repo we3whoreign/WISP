@@ -1,4 +1,4 @@
-package SkillsPlanner.Skills;
+package skillsplanner.skills;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -8,7 +8,7 @@ import java.net.URLClassLoader;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
-import SkillsPlanner.Utils.FileUtils;
+import skillsplanner.utils.FileUtils;
 
 /**
  * Dynamically loads all of the class files. Current implementation searches a

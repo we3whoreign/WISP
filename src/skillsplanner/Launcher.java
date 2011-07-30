@@ -1,9 +1,9 @@
-package SkillsPlanner;
+package skillsplanner;
 
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-import SkillsPlanner.GUI.MainFrame;
+import skillsplanner.gui.MainFrame;
 
 /**
  * a launcher wrapper for the GUI
