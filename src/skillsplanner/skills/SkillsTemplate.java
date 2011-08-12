@@ -1,9 +1,12 @@
 package skillsplanner.skills;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Framework for making skills
  */
-public abstract class SkillsTemplate {
+public class SkillsTemplate {
 
 	// Certified String Name
 	private String name;
@@ -19,7 +22,20 @@ public abstract class SkillsTemplate {
 
 	// Animation frame time
 	private double animationframe;
+	
+	// SP cost
+	private int spcost;
+	
+	private boolean passive;
+	
+	// List of level dependent values
+	private ArrayList<ArrayList<String>> dynamic;
 
+	public SkillsTemplate(){
+		dynamic = new ArrayList<ArrayList<String>>();
+		
+		passive = false;
+	}
 	/**
 	 * Get the name to be displayed for the skill
 	 */
@@ -84,4 +100,43 @@ public abstract class SkillsTemplate {
 	public double getAnimationFrameTime() {
 		return this.animationframe;
 	}
+	
+	public ArrayList<String> getDynamic(){
+		return dynamic.get(level);
+	}
+	
+	public void addDynamic(ArrayList<String> d){
+		dynamic.add(d);
+		// increase max level each time a new level is added
+		maxlevel++;
+	}
+	
+	/**
+	 * This does a print of all information for each level
+	 */
+	public void dumpLevelInfo() {
+		int tmplevel = level;
+		
+		for(int i = 0; i < maxlevel; i++){
+			level = i;
+			for(String s : getDynamic()){
+				System.out.println(s);
+			}
+			System.out.println("--------------------------------------");
+		}
+		
+	}
+	public int getSpcost() {
+		return spcost;
+	}
+	public void setSpcost(int spcost) {
+		this.spcost = spcost;
+	}
+	public boolean isPassive() {
+		return passive;
+	}
+	public void setPassive(boolean passive) {
+		this.passive = passive;
+	}
+	
 }

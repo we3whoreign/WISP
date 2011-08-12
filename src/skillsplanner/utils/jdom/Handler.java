@@ -86,6 +86,21 @@ public class Handler {
 		
 		return "";
 	}
+
+	public static int getInteger(Element skillattr, String string) {
+		try{
+			String s;
+			
+			s = skillattr.getChildText(string);
+			
+			return Integer.parseInt(s);
+		}
+		catch(Exception ex){
+			ex.printStackTrace();
+		}
+		
+		return 0;
+	}
 	
 	
 	

@@ -12,7 +12,11 @@ import java.awt.image.BufferedImage;
 import java.awt.image.ColorModel;
 import java.awt.image.PixelGrabber;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.ImageIcon;
 
@@ -36,6 +40,7 @@ public class FileUtils {
 		
 		//Make the path OS independent
 		path = path.replace("/", File.separator);
+		path = path.replace("\\", File.separator);
 		
 		System.out.println(path);
 		System.out.println(Launcher.class.getResource(path));
@@ -141,6 +146,65 @@ public class FileUtils {
 		// Get the image's color model
 		ColorModel cm = pg.getColorModel();
 		return cm.hasAlpha();
+	}
+	
+	/**
+	 * Gets a list of all the .xml files in the libs/classes directory.
+	 * @return list of xml files for 
+	 * @throws Exception 
+	 * @throws URISyntaxException 
+	 */
+	public static List<File> getDFOClassFiles() throws URISyntaxException, Exception{
+		URL path = makePath("libs/classes");
+		
+		return traverseDirectoryForXML(new File(path.toURI()));
+	}
+	
+	/**
+	 * Gets a list of all .xml files in the libs/skills directory.
+	 * @return
+	 * @throws URISyntaxException
+	 * @throws Exception
+	 */
+	public static List<File> getSkillFiles() throws URISyntaxException, Exception{
+		URL path = makePath("libs/skills");
+		
+		return traverseDirectoryForXML(new File(path.toURI()));
+	}
+	
+	/**
+	 * traverse a directory looking for XML files to load
+	 */
+	public static List<File> traverseDirectoryForXML(File file) throws Exception {
+		if (file == null) {
+			throw new FileNotFoundException();
+		} else if (!file.isDirectory()) {
+			// we can't traverse this
+			
+			if(file.getName().endsWith(".xml") || file.getName().endsWith(".XML")){
+				List<File> l = new ArrayList<File>();
+				l.add(file);
+				return l;
+			}
+			else{
+				return null;
+			}
+		}
+
+		String files[] = file.list();
+
+		List<File> xmlist = new ArrayList<File>();
+		
+		if (files == null) {
+			return null;
+		}
+
+		for (int i = 0; i < files.length; i++) {
+			File f = new File(file.getPath() + File.separator + files[i]);
+			xmlist.addAll(traverseDirectoryForXML(f));
+		}
+		
+		return xmlist;
 	}
 
 }

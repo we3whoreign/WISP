@@ -1,0 +1,12 @@
+<skillsplanner>
+	<skill> 
+		<name>Quick Rebound</name>
+		<casttime>0</casttime>
+		<spcost>10</spcost>
+		<dynamic>
+			<level value="1">
+				<!-- See the example for information on what to put here -->
+			</level>
+		</dynamic>
+	</skill>
+</skillplanner>

@@ -1,0 +1,11 @@
+<skillsplanner>
+	<skill> 
+		<name>Cancel - Item Throw</name>
+		<casttime>0.5</casttime>
+		<dynamic>
+			<level value="1">
+				<!-- See the example for information on what to put here -->
+			</level>
+		</dynamic>
+	</skill>
+</skillplanner>

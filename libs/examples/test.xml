@@ -1,0 +1,8 @@
+<skillsplanner>
+	<skill> 
+		<name>Example</name>
+		<casttime>0</casttime>
+		<dynamic>
+		</dynamic>
+	</skill>
+</skillplanner>

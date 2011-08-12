@@ -11,7 +11,12 @@
 
 		<!-- Frame rate of skill, if known -->
 		<frametime> 0 </frametime>
-
+		
+		<!-- SP Cost of the skill -->
+		<spcost> 0 </spcost>
+		
+		<!-- Optional passive tag. If set to true cast time and frametime will be ignored. -->
+		<passive> false </passive>
 		<!-- All of the level dependent values go in the dynamic tag -->
 		<dynamic>
 			<!-- separate the values within the level tag -->

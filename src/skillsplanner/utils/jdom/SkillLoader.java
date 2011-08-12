@@ -44,6 +44,8 @@ public class SkillLoader {
 		
 		st.setName(Handler.getString(skillattr, "name"));
 		
+		st.setSpcost(Handler.getInteger(skillattr,"spcost"));
+		
 		Element dynamic = skillattr.getChild("dynamic");
 		
 		//For each level
@@ -62,6 +64,10 @@ public class SkillLoader {
 			st.addDynamic(dynamiclist);
 		}
 		
+		if(skillList == null){
+			skillList = new HashMap<String,SkillsTemplate>();
+		}
+		
 		skillList.put(st.getName(), st);
 	}
 
@@ -78,6 +84,17 @@ public class SkillLoader {
 			e.printStackTrace();
 			return null;
 		}
+	}
+	
+	public static String[] getSkillList(){
+		Object[] oarray = skillList.keySet().toArray();
+		String[] sarray = new String[oarray.length];
+		
+		for(int i=0; i < oarray.length; i++){
+			sarray[i] = (String) oarray[i];
+		}
+		
+		return sarray;
 	}
 	
 }

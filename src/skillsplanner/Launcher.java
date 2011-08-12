@@ -3,18 +3,12 @@ package skillsplanner;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-import skillsplanner.gui.MainFrame;
 
 /**
  * a launcher wrapper for the GUI
  */
 
-public class Launcher {
-	/**
-	 * JFrame for the program
-	 */
-	public static MainFrame frame;
-
+public class Launcher{
 	public Launcher() {
 		createAndShowGUI();
 	}
@@ -55,7 +49,7 @@ public class Launcher {
 			e.printStackTrace();
 		}
 
-		frame = new MainFrame();
+		//frame = new MainFrame();
 
 	}
 
