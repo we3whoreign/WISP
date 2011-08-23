@@ -4,35 +4,67 @@
 		<casttime>0.5</casttime>
 		<dynamic>
 			<level value="1">
-				<!-- See the example for information on what to put here -->
+                <cooldown name="cooldown" value="40s" />
+				<mp name="mp" value="15" />
+                <int name="intelligence" value="15" />
+                <duration name="duration" value="20s" />
 			</level>
 			<level value="2">
-				<!-- See the example for information on what to put here -->
+                <cooldown name="cooldown" value="40s" />
+				<mp name="mp" value="22" />
+                <int name="intelligence" value="30" />
+                <duration name="duration" value="20s" />
 			</level>
 			<level value="3">
-				<!-- See the example for information on what to put here -->
+                <cooldown name="cooldown" value="40s" />
+				<mp name="mp" value="29" />
+                <int name="intelligence" value="45" />
+                <duration name="duration" value="20s" />
 			</level>
 			<level value="4">
-				<!-- See the example for information on what to put here -->
+                <cooldown name="cooldown" value="40s" />
+				<mp name="mp" value="36" />
+                <int name="intelligence" value="60" />
+                <duration name="duration" value="20s" />
 			</level>
 			<level value="5">
-				<!-- See the example for information on what to put here -->
+                <cooldown name="cooldown" value="40s" />
+				<mp name="mp" value="43" />
+                <int name="intelligence" value="75" />
+                <duration name="duration" value="20s" />
 			</level>
 			<level value="6">
-				<!-- See the example for information on what to put here -->
+                <cooldown name="cooldown" value="40s" />
+				<mp name="mp" value="50" />
+                <int name="intelligence" value="90" />
+                <duration name="duration" value="20s" />
 			</level>
 			<level value="7">
-				<!-- See the example for information on what to put here -->
+                <cooldown name="cooldown" value="40s" />
+				<mp name="mp" value="57" />
+                <int name="intelligence" value="105" />
+                <duration name="duration" value="20s" />
 			</level>
 			<level value="8">
-				<!-- See the example for information on what to put here -->
+                <cooldown name="cooldown" value="40s" />
+				<mp name="mp" value="64" />
+                <int name="intelligence" value="120" />
+                <duration name="duration" value="20s" />
 			</level>
 			<level value="9">
-				<!-- See the example for information on what to put here -->
+                <cooldown name="cooldown" value="40s" />
+				<mp name="mp" value="71" />
+                <int name="intelligence" value="135" />
+                <duration name="duration" value="20s" />
 			</level>
 			<level value="10">
-				<!-- See the example for information on what to put here -->
+                <cooldown name="cooldown" value="40s" />
+				<mp name="mp" value="78" />
+                <int name="intelligence" value="150" />
+                <duration name="duration" value="20s" />
 			</level>
 		</dynamic>
 	</skill>
-</skillplanner>
+</skillsplanner>
+
+

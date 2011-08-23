@@ -187,7 +187,7 @@ public class FileUtils {
 				return l;
 			}
 			else{
-				return null;
+				return new ArrayList<File>();
 			}
 		}
 
@@ -196,7 +196,7 @@ public class FileUtils {
 		List<File> xmlist = new ArrayList<File>();
 		
 		if (files == null) {
-			return null;
+			return xmlist;
 		}
 
 		for (int i = 0; i < files.length; i++) {

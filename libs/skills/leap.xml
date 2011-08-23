@@ -1,4 +1,4 @@
-<skillplanner>
+<skillsplanner>
 	<skill>
 		<name> Leap </name>
 		<casttime> 0.4 </casttime>
@@ -76,4 +76,4 @@
 
 		</dynamic>
 	</skill>
-</skillplanner>
+</skillsplanner>

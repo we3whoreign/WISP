@@ -32,6 +32,10 @@ public class SkillLoader {
 	 * @param doc
 	 */
 	private void mapSkill(Document doc) {
+		if(doc == null){
+			return;
+		}
+		
 		Element root = doc.getRootElement();
 		
 		Element skillattr = root.getChild("skill");
