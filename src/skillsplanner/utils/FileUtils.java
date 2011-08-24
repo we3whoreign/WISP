@@ -20,7 +20,7 @@ import java.util.List;
 
 import javax.swing.ImageIcon;
 
-import skillsplanner.Launcher;
+import src.skillsplanner.Launcher;
 
 /**
  * A set of utilities specific to handling files

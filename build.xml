@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<project name="DFO Planner" default="jar" basedir=".">
+
+	<property name="src.dir" value="./src"/>
+	<property name="build.dir" value="build" />
+	<property name="doc.dir" value="docs" />
+	<property name="libs.dest.dir" value="build/libs" />
+	<property name="libs.src.dir" value="./libs" />
+	<property name="debug.level" value="lines,vars,source" />
+	<property name="jars.dir"  value="./jars" />
+	<property name="buildnum.file" value="./build.num" />
+
+	<property name="project.name" value="DFOPlanner" />
+	<property name="main.class" value="Main" />
+	<property name="version.num" value="0.01a" />
+
+	<!-- include all jar files in the libs directory -->
+  
+	<path id="external.jars">
+	    <fileset dir="${libs.src.dir}" includes="**/*.jar"/>
+	</path>
+
+	<path id="project.classpath">
+        <pathelement location="${src.dir}"/>
+        <path refid="external.jars" />
+	</path>
+    
+	<target name="clean">
+		<delete dir="${build.dir}"/>
+		<delete dir="${doc.dir}" />
+	</target>
+
+	<target name="init" depends="clean">
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${doc.dir}" />
+	</target>
+
+	<target name="library" depends="init">
+		<delete dir="${libs.dest.dir}" />
+		<copy todir="${libs.dest.dir}">
+			<fileset dir="${libs.src.dir}" />
+		</copy>
+	</target>
+
+	<target name="javadoc" depends="library">
+		<javadoc sourcepath="${src.dir}" 
+		destdir="${doc.dir}"
+		classpathref="project.classpath"
+		version="true"
+		use="true"/>
+	</target>
+	<!-- Compile the code -->
+	<target name="compile" depends="javadoc">
+		<javac srcdir="${src.dir}" 
+			destdir="${build.dir}" 
+			debug="true" 
+			classpathref="project.classpath"
+			debuglevel= "${debug.level}"
+			includeantruntime="false">
+			<compilerarg value="-Xlint:unchecked" />
+		</javac>
+	</target>
+
+	<target name="jar" depends="compile">
+		<buildnumber file="${buildnum.file}" />
+
+		<!-- delete old manifest file and create new one -->
+		<delete file="MANIFEST.MF" />
+
+	    <manifest file="MANIFEST.MF">
+	        <attribute name="Built-By" value="${user.name}"/>
+	        <attribute name="Main-Class" value="${main.class}"/>
+	        <attribute name="Implementation-Version" 
+	                     value="${version.num}-b${build.number}"/> 
+	    </manifest>
+
+		<property name="jar.name" value="${project.name}.${version.num}-b${build.number}.jar" />
+
+		<delete file="${jars.dir}/${jar.name}" />
+
+		<!-- create runnable jar file -->
+		<jar 
+			destfile="${jars.dir}/${jar.name}"
+			basedir="${build.dir}"
+			manifest="MANIFEST.MF"
+			>
+			<!-- include all class files -->
+			<fileset dir="${build.dir}" includes="**/*.class" />
+
+			<!-- include the jar files that the project depends on -->
+			<zipgroupfileset dir="${libs.src.dir}" includes="**/*.jar" />
+		</jar>
+	</target>
+</project>
