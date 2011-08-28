@@ -12,6 +12,7 @@ import skillsplanner.utils.FileUtils;
 
 /**
  * Handles the skill list including loading all the xml files
+ * Never create an instance of this, use the Handler.getSkillLoader()
  * @author ryzngard
  *
  */
@@ -27,6 +28,16 @@ public class SkillLoader {
 		}
 	}
 	
+	public void loadSkillFile(String filename) throws URISyntaxException, Exception{
+		for(File f : FileUtils.getSkillFiles()){
+			if(f.getName().equals(filename)){
+				Document doc = Handler.openXMLFile(f);
+				mapSkill(doc);
+				break;
+			}
+		}
+	}
+	
 	/**
 	 * Sets all attributes for a skill except max level, since that would be based on class selection
 	 * @param doc
@@ -39,6 +50,16 @@ public class SkillLoader {
 		Element root = doc.getRootElement();
 		
 		Element skillattr = root.getChild("skill");
+		
+		addSkill(getSkillFromElement(skillattr));
+	}
+	
+	/**
+	 * Create a SkillsTemplate object from a jdom Element
+	 * @param skillattr
+	 * @return
+	 */
+	public static SkillsTemplate getSkillFromElement(Element skillattr){
 		
 		SkillsTemplate st = new SkillsTemplate();
 		
@@ -68,11 +89,29 @@ public class SkillLoader {
 			st.addDynamic(dynamiclist);
 		}
 		
+		return st;
+	}
+	
+	/**
+	 * add a skill to the list
+	 * @param st
+	 */
+	public static void addSkill(SkillsTemplate st){
+		
 		if(skillList == null){
 			skillList = new HashMap<String,SkillsTemplate>();
 		}
 		
-		skillList.put(st.getName(), st);
+		try{
+			skillList.put(st.getName(), st);
+		}
+		catch(Exception e){
+			// this needs to be reduced to only the duplicate exception
+			
+			// overwrite old with new
+			skillList.remove(st.getName());
+			skillList.put(st.getName(), st);
+		}
 	}
 
 	/**
@@ -90,6 +129,10 @@ public class SkillLoader {
 		}
 	}
 	
+	/**
+	 * Gets a list of all the skill names in a string array
+	 * @return
+	 */
 	public static String[] getSkillList(){
 		Object[] oarray = skillList.keySet().toArray();
 		String[] sarray = new String[oarray.length];

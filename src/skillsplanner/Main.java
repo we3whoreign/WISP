@@ -1,8 +1,8 @@
+package skillsplanner;
+
 import java.awt.EventQueue;
 
 import javax.swing.UIManager;
-
-import src.skillsplanner.Launcher;
 
 class Main {
 	public Main() {
@@ -13,8 +13,8 @@ class Main {
 		/**
 		 * set the look and feel
 		 */
-		UIManager.setLookAndFeel(
-	            UIManager.getCrossPlatformLookAndFeelClassName());
+		UIManager.setLookAndFeel(UIManager
+				.getCrossPlatformLookAndFeelClassName());
 		/**
 		 * For the love of god thread safety!!!!!
 		 */

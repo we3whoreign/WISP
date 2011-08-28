@@ -1,1 +1,105 @@
-For the compile, just use the build.xml ant file. Look online for how to use ant, it's pretty simple
+For the compile, just use the build.xml ant file. Look online for how to use ant, it's pretty simple.
+
+
+------------------------------------------------------------------------------------------------------
+PROJECT SPECIFICATIONS
+Last edited 2011-08-24
+
+
+
+Index:
+
+1. Overview
+2. Skills
+3. Classes
+4. Compiling & Running
+5. Eclipse Help
+6. Contact information etc.
+
+
+-------------------------------------------
+CHAPTER 1
+OVERVIEW
+-------------------------------------------
+The idea for this project is simple: to provide a cross platform and easy to run skill builder for Dungeon Fighter Online. We used java because it's easy to work with and cross platform. I won't go into any more reasoning than that; if you want it in another language code it yourself. 
+
+The idea to stick with is that we wanted the user to be able to build a character and share it easily. This is done through the use of XML. With an xml file you can share it with whomever and they jsut load it into the planner to see what you have. Another idea that may be done is a quick forum dump of skills so that it's easy to just copy and paste skills with their level into the forums. 
+
+To run the builder just run the .jar file. Most of the time you can run the jar file with java -jar <filename>. There's more information about that online. The gui should be self explanatory, and the menu as well. 
+
+
+DEVELOPERS:
+The layout of the project is this:
+
+1. All source files go into the src/ folder, preferrably within the appropriate package. Use of the default package is discouraged.
+2. Any extra file/resource go into the libs directory
+3. The build and docs directory are constantly deleted and reconstructed when building. Don't worry about these, the ant build file takes care of them.
+4. Please javadoc your code or I will send a thousand angry beavers into your house to gnaw at your legs while gnomes piss on your keyboard with rainbows and ale.
+5. All skills and definitions of character classes go into the libs folder as well. libs/skills for skills and libs/classes for classes. There are a set of example xml files to help get you started in libs/examples
+6. The main class is the Launcher. This will handle initiating the GUI. Any testing should be put into the skillsplanner.testing package and be able to run by itself.
+7. The jars folder holds runnable jars with version number and build number. This may be changed later.
+
+-----------------------------------------
+CHAPTER 2
+SKILLS
+-----------------------------------------
+All skill specifications will be kept up to date the best as possible. Values are taken from the US wiki for dfo (wiki.dfo.something or other) 
+
+All skills are in xml file format. The examples folder has an example skill but here are some details:
+
+All skills must have the surrounding tags
+
+<skillsplanner><skill></skill></skillsplanner>
+
+All information goes inside the skill tag. 
+Supported tags:
+
+name - text to be used for the name of the skill*
+casttime - a decimal value representing the cast time in seconds*
+frametime - shows the time it takes after the "blue bar" is complete until execution
+passive - sets whether the skill is a passive skill
+spcost - the sp cost of the skill*
+dynamic - this holds all of the level information on ta skill. Within the dynamic tags there can be
+    level - level tag saying what level the information applies to for the skill. eg <level value="1"> represents 1 level in the skill
+        Within the level tag you can put any number of tags you want. They just must folow this structure:
+            <something name="something" value="value" /> 
+            where something is the name of the attribute and value is the value of it. For example leap would be:
+            <jump name="jump" value="Jump +20%" />
+            <duration name="duration" value="20s" />
+
+
+
+--------------------------------------------------
+CHAPTER 3
+CLASSES
+--------------------------------------------------
+Classes hold information for what skills each subclass has. There is no example yet and this is not implemented yet.
+
+
+--------------------------------------------------
+CHAPTER 4
+COMPILING AND RUNNING
+--------------------------------------------------
+If you wish to compile this code it is publicly available available at github. 
+The following is required to compile:
+    1. JDK version 1.6 or higher 
+    2. Ant 
+    
+To compile just run ant on the build.xml file in the root folder. It will create a build directory with all the class files, a docs directory with javadoc information, and a jars directory with a runnable jar.
+
+
+--------------------------------------------------
+CHAPTER 5
+ECLIPSE HELP
+--------------------------------------------------
+To import the project into eclipse do the following:
+    1. File > Import... > Project From File System
+    2. Locate the root directory and select that to be imported. It should contain the .project and .classpath
+    3. Click finish. 
+    4. The project is imported as a javadoc project. To run it you'll have to do some magic that I'm not going to get into yet, but you can use the build.xml to build and run the jar from the jars folder
+
+--------------------------------------------------
+CHAPTER 6
+CONTACT INFORMATION
+--------------------------------------------------
+Any questions can be directed to we3whoreign@gmail.com . This email is checked pseudo-regularly.

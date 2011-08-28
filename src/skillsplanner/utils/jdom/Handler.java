@@ -13,6 +13,9 @@ import org.jdom.input.SAXBuilder;
  */
 public class Handler {
 	
+	private static DFOClassLoader dfoclassloader;
+	private static SkillLoader skillloader;
+	
 	/**
 	 * Opens an xml document and creates a JDOM Document object using
 	 * SAXBuilder
@@ -100,6 +103,22 @@ public class Handler {
 		}
 		
 		return 0;
+	}
+	
+	public static SkillLoader getSkillLoader(){
+		if(skillloader == null){
+			skillloader = new SkillLoader();
+		}
+		
+		return skillloader;
+	}
+	
+	public static DFOClassLoader getClassLoader(){
+		if(dfoclassloader == null){
+			dfoclassloader = new DFOClassLoader();
+		}
+		
+		return dfoclassloader;
 	}
 	
 	

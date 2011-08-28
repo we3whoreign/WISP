@@ -1,8 +1,9 @@
-package testing;
+package skillsplanner.testing;
 
 import java.net.URISyntaxException;
 
 import skillsplanner.skills.SkillsTemplate;
+import skillsplanner.utils.jdom.DFOClassLoader;
 import skillsplanner.utils.jdom.SkillLoader;
 
 public class CLITest {
@@ -14,6 +15,13 @@ public class CLITest {
 	 */
 	public static void main(String[] args) throws URISyntaxException, Exception {
 		SkillLoader loader = new SkillLoader();
+		
+		// using the lass loader we can achieve optimum male to female ratio
+		// too many lasses and you have a horrible experience, too little
+		// and the penises take over. Let the lass loader be known as one
+		// of the greatest tools mankind has ever known.
+		DFOClassLoader classloader = new DFOClassLoader();
+		
 		loader.loadSkills();
 		
 		String[] skilllist = loader.getSkillList();

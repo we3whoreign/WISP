@@ -4,12 +4,20 @@ import java.io.File;
 import java.net.URISyntaxException;
 import java.util.List;
 
+import org.jdom.Attribute;
+import org.jdom.Document;
+import org.jdom.Element;
+
 import skillsplanner.classes.DFOClass;
 import skillsplanner.skills.SkillsTemplate;
 import skillsplanner.utils.FileUtils;
 
-import org.jdom.*;
-
+/**
+ * Loads the class xml files.
+ * Never create an instance of this, only use Handler.getClassLoader()
+ * @author ryzngard
+ *
+ */
 public class DFOClassLoader {
 	
 	private List<File> classfiles;
@@ -72,11 +80,18 @@ public class DFOClassLoader {
 			// iterate through every skill tag getting the name
 			Element e = (Element) v;
 			SkillsTemplate st = getSkillFromAttribute(e.getAttribute("name"));
+			dfoclass.addSkill(st);
 		}
 		// carry on...
+		try{
+			Element skillchange = root.getChild("skill");
+			SkillLoader sl = new SkillLoader();
+			sl.addSkill(sl.getSkillFromElement(skillchange));
+		}
+		catch(Exception e){}
+		
 		
 		// 'cuz nothing really matters
-		
 		return dfoclass;
 	}
 

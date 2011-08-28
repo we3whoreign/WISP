@@ -20,12 +20,19 @@ import java.util.List;
 
 import javax.swing.ImageIcon;
 
-import src.skillsplanner.Launcher;
+import skillsplanner.Launcher;
 
 /**
  * A set of utilities specific to handling files
  */
 public class FileUtils {
+	
+	/**
+	 * By keeping a static list of all the files we can avoid having
+	 * to search the directory each time, reducing read/write
+	 */
+	private static List<File> skillArray;
+	private static List<File> classArray;
 
 	/**
 	 * By default all paths have been made using linux conventions, at least all
@@ -155,9 +162,15 @@ public class FileUtils {
 	 * @throws URISyntaxException 
 	 */
 	public static List<File> getDFOClassFiles() throws URISyntaxException, Exception{
+		if(classArray != null){
+			return classArray;
+		}
+		
 		URL path = makePath("libs/classes");
 		
-		return traverseDirectoryForXML(new File(path.toURI()));
+		classArray = traverseDirectoryForXML(new File(path.toURI()));
+		
+		return classArray;
 	}
 	
 	/**
@@ -167,9 +180,14 @@ public class FileUtils {
 	 * @throws Exception
 	 */
 	public static List<File> getSkillFiles() throws URISyntaxException, Exception{
+		if(skillArray != null){
+			return skillArray;
+		}
 		URL path = makePath("libs/skills");
 		
-		return traverseDirectoryForXML(new File(path.toURI()));
+		skillArray = traverseDirectoryForXML(new File(path.toURI()));
+		
+		return skillArray;
 	}
 	
 	/**

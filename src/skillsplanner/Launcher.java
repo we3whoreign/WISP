@@ -1,14 +1,14 @@
-package src.skillsplanner;
+package skillsplanner;
 
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-
 
 /**
  * a launcher wrapper for the GUI
  */
 
-public class Launcher{
+public class Launcher {
+	
 	public Launcher() {
 		createAndShowGUI();
 	}
@@ -33,8 +33,8 @@ public class Launcher{
 
 	private void createAndShowGUI() {
 		try {
-			UIManager.setLookAndFeel(
-			        UIManager.getCrossPlatformLookAndFeelClassName());
+			UIManager.setLookAndFeel(UIManager
+					.getCrossPlatformLookAndFeelClassName());
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -49,7 +49,7 @@ public class Launcher{
 			e.printStackTrace();
 		}
 
-		//frame = new MainFrame();
+		// frame = new MainFrame();
 
 	}
 
