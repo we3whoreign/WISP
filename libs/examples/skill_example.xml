@@ -14,6 +14,12 @@
 		
 		<!-- SP Cost of the skill -->
 		<spcost> 0 </spcost>
+
+		<!-- Starting level of the skill by default -->
+		<entrylvl> 0 </entrylvl>
+
+		<!-- Extra value added to SP cost to get first level of skill  -->
+		<entryfee> 0 </entryfee>
 		
 		<!-- Optional passive tag. If set to true cast time and frametime will be ignored. -->
 		<passive> false </passive>
