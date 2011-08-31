@@ -71,7 +71,14 @@ public class SkillLoader {
 		
 		st.setSpcost(Handler.getInteger(skillattr,"spcost"));
 		
+		st.setEntrycost(Handler.getInteger(skillattr,"entrycost"));
+		
 		Element dynamic = skillattr.getChild("dynamic");
+		
+		//add a level 0 if entry cost is positive (CODYFLAG)
+		if(st.getEntrycost() >= 0) {
+			st.addDynamic(new ArrayList<String>());
+		}
 		
 		//For each level
 		for(Object o : dynamic.getChildren()){
@@ -101,7 +108,7 @@ public class SkillLoader {
 		if(skillList == null){
 			skillList = new HashMap<String,SkillsTemplate>();
 		}
-		
+			
 		try{
 			skillList.put(st.getName(), st);
 		}

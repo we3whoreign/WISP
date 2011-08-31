@@ -33,6 +33,7 @@ public class CLITest {
 			
 			System.out.println("Name: "+st.getName());
 			System.out.println("Cast Time: "+st.getCastTime());
+			System.out.println("Entry Cost: "+st.getEntrycost());
 			st.dumpLevelInfo();
 		}
 

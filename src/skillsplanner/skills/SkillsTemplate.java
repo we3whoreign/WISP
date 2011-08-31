@@ -28,6 +28,9 @@ public class SkillsTemplate {
 	
 	private boolean passive;
 	
+	//Entry Fee (CODYFLAG)
+	private int entrycost;
+	
 	// List of level dependent values
 	private ArrayList<ArrayList<String>> dynamic;
 
@@ -137,6 +140,12 @@ public class SkillsTemplate {
 	}
 	public void setPassive(boolean passive) {
 		this.passive = passive;
+	}
+	public int getEntrycost() {
+		return entrycost;
+	}
+	public void setEntrycost(int entrycost) {
+		this.entrycost = entrycost;
 	}
 	
 }
