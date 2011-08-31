@@ -2,9 +2,11 @@
 	<skill> 
 		<name>Cancel - Item Throw</name>
 		<casttime>0.5</casttime>
+        <spcost>50</casttime>
+        <description>Cancels normal attacks, then immediately uses a Throw item. </description> 
 		<dynamic>
 			<level value="1">
-				<!-- See the example for information on what to put here -->
+				<!-- noting needed her except to show you can only get one level -->
 			</level>
 		</dynamic>
 	</skill>

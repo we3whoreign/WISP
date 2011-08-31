@@ -1,0 +1,15 @@
+<skillsplanner>
+    <skill> 
+        <name>Backstep</name>
+        <spcost>20</spcost>
+        <entrycost>-20</entrycost>
+        <description>Hops slightly backward to evade enemy attacks. </description>
+
+        <dynamic>
+            <level value="1">
+
+            </level>
+        </dynamic>
+
+    </skill>
+</skillsplanner>

@@ -3,7 +3,8 @@
 		<name>Magic Critical Hit</name>
 		<casttime>0</casttime>
 		<spcost>20</spcost>
-        	<passive> true </passive>
+        <passive> true </passive>
+        <description>Increase your Magical Critical Hit Rate. </description>
 		<dynamic>
 			<level value="1">
 				<crit name="Magic Crit Chance" value="+1%" />

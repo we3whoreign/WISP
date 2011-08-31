@@ -3,6 +3,7 @@
 		<name>Indomitable Spirit</name>
 		<casttime>0.2s</casttime>
 		<spcost>25</spcost>
+        <description>Casts a skill with the chance to cancel the enemy's attack; cannot be dispelled for a set duration. </description>
 		<dynamic>
 			<level value="1">
 				<mp name="mp" value="8" />

@@ -2,6 +2,8 @@
 	<skill>
 		<name> Leap </name>
 		<casttime> 0.4 </casttime>
+
+        <description>Increases your Jumping Strength for a set duration. </description>
 		
 		<dynamic>
 			<level value="1">

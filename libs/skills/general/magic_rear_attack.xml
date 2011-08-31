@@ -3,6 +3,7 @@
 		<name>Magic Rear Attack</name>
 		<casttime>0</casttime>
 		<spcost>20</spcost>
+        <description>Increases your Magical Critical Hit Rate when casting from behind. </description>
 		<dynamic>
 			<level value="1">
 				<crit name="Magical Critical Chance" value="+1.5%" />
