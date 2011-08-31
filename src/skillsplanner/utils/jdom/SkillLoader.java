@@ -22,6 +22,7 @@ public class SkillLoader {
 	
 	public void loadSkills() throws URISyntaxException, Exception{
 		for(File f : FileUtils.getSkillFiles()){
+			System.out.println("Reading file:"+f.getName());
 			Document doc = Handler.openXMLFile(f);
 			
 			mapSkill(doc);
