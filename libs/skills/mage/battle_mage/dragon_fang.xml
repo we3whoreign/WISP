@@ -1,0 +1,256 @@
+<skillsplanner>
+
+	<skill>
+		<name> Dragon Fang </name>
+		<casttime> 0 </casttime>
+		<spcost> 15 </spcost>
+		<entrycost> 0 </entrycost>
+		<description> Forcefully stabs an enemy with your weapon to immobilize it for a long duration.
+		 Once this skill hits, you can cancel the Dragon Fang and use Weapon Uppercut, Palm Blast, or Full Swing.  </description>
+
+		<dynamic>
+			<level value="1">
+				<level_req name="Level Requirement" value="5" />
+                <mp name="mp" value="14" />
+                <downtime name="Downtime" value="2s" />
+                <attack_strength name="Attack Strength" value="150%" />
+                <attack_speed name="Attack Speed" value="+shit%"/>
+			</level>
+			
+			<level value="2">
+				<level_req name="Level Requirement" value="7" />
+                <mp name="mp" value="15" />
+                <downtime name="Downtime" value="2s" />
+                <attack_strength name="Attack Strength" value="171%" />
+                <attack_speed name="Attack Speed" value="+shit%"/>
+			</level>
+			
+			<level value="3">
+				<level_req name="Level Requirement" value="9" />
+                <mp name="mp" value="17" />
+                <downtime name="Downtime" value="2s" />
+                <attack_strength name="Attack Strength" value="191%" />
+                <attack_speed name="Attack Speed" value="+shit%"/>
+			</level>
+			
+			<level value="4">
+				<level_req name="Level Requirement" value="11" />
+                <mp name="mp" value="19" />
+                <downtime name="Downtime" value="2s" />
+                <attack_strength name="Attack Strength" value="212%" />
+                <attack_speed name="Attack Speed" value="+shit%"/>
+			</level>
+			
+			<level value="5">
+				<level_req name="Level Requirement" value="13" />
+                <mp name="mp" value="21" />
+                <downtime name="Downtime" value="2s" />
+                <attack_strength name="Attack Strength" value="233%" />
+                <attack_speed name="Attack Speed" value="+4.1%"/>
+			</level>
+			
+			<level value="6">
+				<level_req name="Level Requirement" value="15" />
+                <mp name="mp" value="22" />
+                <downtime name="Downtime" value="2s" />
+                <attack_strength name="Attack Strength" value="253%" />
+                <attack_speed name="Attack Speed" value="+shit%"/>
+			</level>
+			
+			<level value="7">
+				<level_req name="Level Requirement" value="17" />
+                <mp name="mp" value="24" />
+                <downtime name="Downtime" value="2s" />
+                <attack_strength name="Attack Strength" value="274%" />
+                <attack_speed name="Attack Speed" value="+shit%"/>
+			</level>
+			
+			<level value="8">
+				<level_req name="Level Requirement" value="19" />
+                <mp name="mp" value="26" />
+                <downtime name="Downtime" value="2s" />
+                <attack_strength name="Attack Strength" value="295%" />
+                <attack_speed name="Attack Speed" value="+shit%"/>
+			</level>
+			
+			<level value="9">
+				<level_req name="Level Requirement" value="21" />
+                <mp name="mp" value="28" />
+                <downtime name="Downtime" value="2s" />
+                <attack_strength name="Attack Strength" value="316%" />
+                <attack_speed name="Attack Speed" value="+shit%"/>
+			</level>
+			
+			<level value="10">
+				<level_req name="Level Requirement" value="23" />
+                <mp name="mp" value="29" />
+                <downtime name="Downtime" value="2s" />
+                <attack_strength name="Attack Strength" value="336%" />
+                <attack_speed name="Attack Speed" value="+shit%"/>
+			</level>
+			
+			<level value="11">
+				<level_req name="Level Requirement" value="25" />
+                <mp name="mp" value="31" />
+                <downtime name="Downtime" value="2s" />
+                <attack_strength name="Attack Strength" value="357%" />
+                <attack_speed name="Attack Speed" value="+shit%"/>
+			</level>
+			
+			<level value="12">
+				<level_req name="Level Requirement" value="27" />
+                <mp name="mp" value="33" />
+                <downtime name="Downtime" value="2s" />
+                <attack_strength name="Attack Strength" value="378%" />
+                <attack_speed name="Attack Speed" value="+shit%"/>
+			</level>
+			
+			<level value="13">
+				<level_req name="Level Requirement" value="29" />
+                <mp name="mp" value="35" />
+                <downtime name="Downtime" value="2s" />
+                <attack_strength name="Attack Strength" value="398%" />
+                <attack_speed name="Attack Speed" value="+shit%"/>
+			</level>
+			
+			<level value="14">
+				<level_req name="Level Requirement" value="31" />
+                <mp name="mp" value="36" />
+                <downtime name="Downtime" value="2s" />
+                <attack_strength name="Attack Strength" value="419%" />
+                <attack_speed name="Attack Speed" value="+shit%"/>
+			</level>
+			
+			<level value="15">
+				<level_req name="Level Requirement" value="33" />
+                <mp name="mp" value="38" />
+                <downtime name="Downtime" value="2s" />
+                <attack_strength name="Attack Strength" value="440%" />
+                <attack_speed name="Attack Speed" value="+shit%"/>
+			</level>
+			
+			<level value="16">
+				<level_req name="Level Requirement" value="35" />
+                <mp name="mp" value="40" />
+                <downtime name="Downtime" value="2s" />
+                <attack_strength name="Attack Strength" value="460%" />
+                <attack_speed name="Attack Speed" value="+shit%"/>
+			</level>
+			
+			<level value="17">
+				<level_req name="Level Requirement" value="37" />
+                <mp name="mp" value="42" />
+                <downtime name="Downtime" value="2s" />
+                <attack_strength name="Attack Strength" value="481%" />
+                <attack_speed name="Attack Speed" value="+shit%"/>
+			</level>
+			
+			<level value="18">
+				<level_req name="Level Requirement" value="39" />
+                <mp name="mp" value="43" />
+                <downtime name="Downtime" value="2s" />
+                <attack_strength name="Attack Strength" value="502%" />
+                <attack_speed name="Attack Speed" value="+shit%"/>
+			</level>
+			
+			<level value="19">
+				<level_req name="Level Requirement" value="41" />
+                <mp name="mp" value="45" />
+                <downtime name="Downtime" value="2s" />
+                <attack_strength name="Attack Strength" value="522%" />
+                <attack_speed name="Attack Speed" value="+shit%"/>
+			</level>
+			
+			<level value="20">
+				<level_req name="Level Requirement" value="43" />
+                <mp name="mp" value="47" />
+                <downtime name="Downtime" value="2s" />
+                <attack_strength name="Attack Strength" value="543%" />
+                <attack_speed name="Attack Speed" value="+shit%"/>
+			</level>
+			
+			<level value="21">
+				<level_req name="Level Requirement" value="45" />
+                <mp name="mp" value="49" />
+                <downtime name="Downtime" value="2s" />
+                <attack_strength name="Attack Strength" value="564%" />
+                <attack_speed name="Attack Speed" value="+shit%"/>
+			</level>
+			
+			<level value="22">
+				<level_req name="Level Requirement" value="47" />
+                <mp name="mp" value="50" />
+                <downtime name="Downtime" value="2s" />
+                <attack_strength name="Attack Strength" value="584%" />
+                <attack_speed name="Attack Speed" value="+shit%"/>
+			</level>
+			
+			<level value="23">
+				<level_req name="Level Requirement" value="49" />
+                <mp name="mp" value="52" />
+                <downtime name="Downtime" value="2s" />
+                <attack_strength name="Attack Strength" value="605%" />
+                <attack_speed name="Attack Speed" value="+shit%"/>
+			</level>
+			
+			<level value="24">
+				<level_req name="Level Requirement" value="51" />
+                <mp name="mp" value="54" />
+                <downtime name="Downtime" value="2s" />
+                <attack_strength name="Attack Strength" value="626%" />
+                <attack_speed name="Attack Speed" value="+shit%"/>
+			</level>
+			
+			<level value="25">
+				<level_req name="Level Requirement" value="53" />
+                <mp name="mp" value="56" />
+                <downtime name="Downtime" value="2s" />
+                <attack_strength name="Attack Strength" value="647%" />
+                <attack_speed name="Attack Speed" value="+shit%"/>
+			</level>
+			
+			<level value="26">
+				<level_req name="Level Requirement" value="55" />
+                <mp name="mp" value="57" />
+                <downtime name="Downtime" value="2s" />
+                <attack_strength name="Attack Strength" value="667%" />
+                <attack_speed name="Attack Speed" value="+shit%"/>
+			</level>
+			
+			<level value="27">
+				<level_req name="Level Requirement" value="57" />
+                <mp name="mp" value="59" />
+                <downtime name="Downtime" value="2s" />
+                <attack_strength name="Attack Strength" value="688%" />
+                <attack_speed name="Attack Speed" value="+shit%"/>
+			</level>
+			
+			<level value="28">
+				<level_req name="Level Requirement" value="59" />
+                <mp name="mp" value="61" />
+                <downtime name="Downtime" value="2s" />
+                <attack_strength name="Attack Strength" value="709%" />
+                <attack_speed name="Attack Speed" value="+shit%"/>
+			</level>
+			
+			<level value="29">
+				<level_req name="Level Requirement" value="61" />
+                <mp name="mp" value="63" />
+                <downtime name="Downtime" value="2s" />
+                <attack_strength name="Attack Strength" value="729%" />
+                <attack_speed name="Attack Speed" value="+shit%"/>
+			</level>
+			
+			<level value="30">
+				<level_req name="Level Requirement" value="63" />
+                <mp name="mp" value="64" />
+                <downtime name="Downtime" value="2s" />
+                <attack_strength name="Attack Strength" value="750%" />
+                <attack_speed name="Attack Speed" value="+fucking last one%"/>
+			</level>
+
+
+		</dynamic>
+	</skill>
+</skillsplanner>
+<?xml version="1.0" encoding="UTF-8"?>

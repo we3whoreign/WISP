@@ -1,0 +1,19 @@
+<skillsplanner>
+
+	<skill>
+		<name> Cancel Weapon Uppercut </name>
+		<casttime> 0 </casttime>
+		<passive> true </passive>
+		<spcost> 20 </spcost>
+		<entrycost> -20 </entrycost>
+		<description> Cancels normal attacks to cast the Weapon Uppercut.  </description>
+
+		<dynamic>
+			<level value="1">
+				<level_req name="Level Requirement" value="1" />
+			</level>			
+
+		</dynamic>
+	</skill>
+</skillsplanner>
+<?xml version="1.0" encoding="UTF-8"?>
