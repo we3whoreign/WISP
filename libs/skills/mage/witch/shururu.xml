@@ -1,0 +1,152 @@
+<skillsplanner>
+    <name>Cheeky Doll Shururu</name>
+    <spcost>20</spcost>
+    <description>Tosses the doll Shururu. Shururu taunts nearby enemies into attacking it as well as lowering their magical defense.</description>
+    <entrycost>-20</spcost>
+    
+
+    <dynamic>
+
+        <level value="1">
+	        <duration name="Duration" value="10s" />
+            <mp name="mp" value="18" />
+            <mdebuff name="Magic Defense" value="-138" />
+            <range name="Range" value="400px" />
+            <reqlvl name="Required Level" value="10" />
+        </level>
+        <level value="2">
+	        <duration name="Duration" value="10s" />
+            <mp name="mp" value="20" />
+            <mdebuff name="Magic Defense" value="-225" />
+            <range name="Range" value="408px" />
+            <reqlvl name="Required Level" value="13" />
+        </level>
+        <level value="3">
+	        <duration name="Duration" value="10s" />
+            <mp name="mp" value="22" />
+            <mdebuff name="Magic Defense" value="-559" />
+            <range name="Range" value="416px" />
+            <reqlvl name="Required Level" value="16" />
+        </level>
+        <level value="4">
+	        <duration name="Duration" value="10s" />
+            <mp name="mp" value="25" />
+            <mdebuff name="Magic Defense" value="-811" />
+            <range name="Range" value="424px" />
+            <reqlvl name="Required Level" value="19" />
+        </level>
+        <level value="5">
+	        <duration name="Duration" value="10s" />
+            <mp name="mp" value="27" />
+            <mdebuff name="Magic Defense" value="-1091" />
+            <range name="Range" value="432px" />
+            <reqlvl name="Required Level" value="22" />
+        </level>
+        <level value="6">
+	        <duration name="Duration" value="10s" />
+            <mp name="mp" value="30" />
+            <mdebuff name="Magic Defense" value="-1397" />
+            <range name="Range" value="439px" />
+            <reqlvl name="Required Level" value="25" />
+        </level>
+        <level value="7">
+	        <duration name="Duration" value="10s" />
+            <mp name="mp" value="32" />
+            <mdebuff name="Magic Defense" value="-1731" />
+            <range name="Range" value="447px" />
+            <reqlvl name="Required Level" value="28" />
+        </level>
+        <level value="8">
+	        <duration name="Duration" value="10s" />
+            <mp name="mp" value="35" />
+            <mdebuff name="Magic Defense" value="-2092" />
+            <range name="Range" value="455px" />
+            <reqlvl name="Required Level" value="31" />
+        </level>
+        <level value="9">
+	        <duration name="Duration" value="10s" />
+            <mp name="mp" value="37" />
+            <mdebuff name="Magic Defense" value="-2480" />
+            <range name="Range" value="463px" />
+            <reqlvl name="Required Level" value="34" />
+        </level>
+        <level value="10">
+	        <duration name="Duration" value="10s" />
+            <mp name="mp" value="40" />
+            <mdebuff name="Magic Defense" value="-2896" />
+            <range name="Range" value="471px" />
+            <reqlvl name="Required Level" value="37" />
+        </level>
+        <level value="11">
+	        <duration name="Duration" value="10s" />
+            <mp name="mp" value="42" />
+            <mdebuff name="Magic Defense" value="-3338" />
+            <range name="Range" value="479px" />
+            <reqlvl name="Required Level" value="40" />
+        </level>
+        <level value="12">
+	        <duration name="Duration" value="10s" />
+            <mp name="mp" value="45" />
+            <mdebuff name="Magic Defense" value="-3809" />
+            <range name="Range" value="487px" />
+            <reqlvl name="Required Level" value="43" />
+        </level>
+        <level value="13">
+	        <duration name="Duration" value="10s" />
+            <mp name="mp" value="47" />
+            <mdebuff name="Magic Defense" value="-4306" />
+            <range name="Range" value="495px" />
+            <reqlvl name="Required Level" value="46" />
+        </level>
+        <level value="14">
+	        <duration name="Duration" value="10s" />
+            <mp name="mp" value="50" />
+            <mdebuff name="Magic Defense" value="-4831" />
+            <range name="Range" value="503px" />
+            <reqlvl name="Required Level" value="49" />
+        </level>
+        <level value="15">
+	        <duration name="Duration" value="10s" />
+            <mp name="mp" value="52" />
+            <mdebuff name="Magic Defense" value="-5383" />
+            <range name="Range" value="511px" />
+            <reqlvl name="Required Level" value="52" />
+        </level>
+        <level value="16">
+	        <duration name="Duration" value="10s" />
+            <mp name="mp" value="55" />
+            <mdebuff name="Magic Defense" value="-5962" />
+            <range name="Range" value="518px" />
+            <reqlvl name="Required Level" value="55" />
+        </level>
+        <level value="17">
+	        <duration name="Duration" value="10s" />
+            <mp name="mp" value="57" />
+            <mdebuff name="Magic Defense" value="-6569" />
+            <range name="Range" value="526px" />
+            <reqlvl name="Required Level" value="58" />
+        </level>
+        <level value="18">
+	        <duration name="Duration" value="10s" />
+            <mp name="mp" value="60" />
+            <mdebuff name="Magic Defense" value="-7202" />
+            <range name="Range" value="534px" />
+            <reqlvl name="Required Level" value="61" />
+        </level>
+        <level value="19">
+	        <duration name="Duration" value="10s" />
+            <mp name="mp" value="62" />
+            <mdebuff name="Magic Defense" value="-7864" />
+            <range name="Range" value="542px" />
+            <reqlvl name="Required Level" value="64" />
+        </level>
+        <level value="20">
+	        <duration name="Duration" value="10s" />
+            <mp name="mp" value="65" />
+            <mdebuff name="Magic Defense" value="-8552" />
+            <range name="Range" value="550px" />
+            <reqlvl name="Required Level" value="67" />
+        </level>
+
+    </dynamic>
+</skillsplanner>
