@@ -1,0 +1,27 @@
+<skillsplanner>
+
+	<skill>
+		<name> Palm Blast </name>
+		<casttime> 0 </casttime>
+		<spcost> 20 </spcost>
+		<entrycost> 0 </entrycost>
+		<description> Teleports the user away from current location. Can only be activated during hit 
+		frame either on the ground or the air. Pressing directional key before using this skill allows 
+		tone to warp to desired direction. Otherwise, the user will warp a step behind from the current location  </description>
+
+		<dynamic>
+			<level value="1">
+				<level_req name="Level Requirement" value="10" />
+                <mp name="mp" value="20" />
+                <downtime name="Downtime" value="30s" />
+                <delay name="After Warp Delay" value="1s" />
+                <summonedspeedbuffs name="Movement and Attack Speed For Summons" value="+3%" />
+                <summonedstatbuffs name="Str and Int For Summons" value="+15" />
+                <speedbuffs name="Movement and Attack Speed" value="+2%" />
+                <duration name="Buff Duration" value="20s" />
+			</level>
+			
+		</dynamic>
+	</skill>
+</skillsplanner>
+<?xml version="1.0" encoding="UTF-8"?>

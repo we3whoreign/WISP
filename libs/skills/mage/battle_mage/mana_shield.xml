@@ -1,0 +1,97 @@
+<skillsplanner>
+
+	<skill>
+		<name> Mana Shield </name>
+		<casttime> 1 </casttime>
+		<spcost> 20 </spcost>
+		<entrycost> 0 </entrycost>
+		<description> Consumes MP instead of HP for a certain percentage of damages received 
+		from opponents. Casting it once will activate the skill. Casting it second time will 
+		cancel the skill.  </description>
+
+		<dynamic>
+			<level value="1">
+				<level_req name="Level Requirement" value="5" />
+                <mp name="mp" value="10" />
+                <downtime name="Downtime" value="5s" />
+                <absorb name="Damage Absorption" value="10%" />
+                <hp_to_mp name="HP to MP conversion" value="2.5"/>   
+			</level>
+			
+			<level value="2">
+				<level_req name="Level Requirement" value="8" />
+                <mp name="mp" value="10" />
+                <downtime name="Downtime" value="5s" />
+                <absorb name="Damage Absorption" value="12%" />
+                <hp_to_mp name="HP to MP conversion" value="2.14"/>   
+			</level>
+			
+			<level value="3">
+				<level_req name="Level Requirement" value="11" />
+                <mp name="mp" value="10" />
+                <downtime name="Downtime" value="5s" />
+                <absorb name="Damage Absorption" value="13%" />
+                <hp_to_mp name="HP to MP conversion" value="1.88"/>   
+			</level>
+			
+			<level value="4">
+				<level_req name="Level Requirement" value="14" />
+                <mp name="mp" value="10" />
+                <downtime name="Downtime" value="5s" />
+                <absorb name="Damage Absorption" value="15%" />
+                <hp_to_mp name="HP to MP conversion" value="1.67"/>   
+			</level>
+			
+			<level value="5">
+				<level_req name="Level Requirement" value="17" />
+                <mp name="mp" value="10" />
+                <downtime name="Downtime" value="5s" />
+                <absorb name="Damage Absorption" value="17%" />
+                <hp_to_mp name="HP to MP conversion" value="1.50"/>   
+			</level>
+			
+			<level value="6">
+				<level_req name="Level Requirement" value="20" />
+                <mp name="mp" value="10" />
+                <downtime name="Downtime" value="5s" />
+                <absorb name="Damage Absorption" value="18%" />
+                <hp_to_mp name="HP to MP conversion" value="1.36"/>   
+			</level>
+			
+			<level value="7">
+				<level_req name="Level Requirement" value="23" />
+                <mp name="mp" value="10" />
+                <downtime name="Downtime" value="5s" />
+                <absorb name="Damage Absorption" value="20%" />
+                <hp_to_mp name="HP to MP conversion" value="1.25"/>   
+			</level>
+			
+			<level value="8">
+				<level_req name="Level Requirement" value="26" />
+                <mp name="mp" value="10" />
+                <downtime name="Downtime" value="5s" />
+                <absorb name="Damage Absorption" value="22%" />
+                <hp_to_mp name="HP to MP conversion" value="1.15"/>   
+			</level>
+			
+			<level value="9">
+				<level_req name="Level Requirement" value="29" />
+                <mp name="mp" value="10" />
+                <downtime name="Downtime" value="5s" />
+                <absorb name="Damage Absorption" value="23%" />
+                <hp_to_mp name="HP to MP conversion" value="1.07"/>   
+			</level>
+			
+			<level value="10">
+				<level_req name="Level Requirement" value="32" />
+                <mp name="mp" value="10" />
+                <downtime name="Downtime" value="5s" />
+                <absorb name="Damage Absorption" value="25%" />
+                <hp_to_mp name="HP to MP conversion" value="1.00"/>   
+			</level>
+			
+			
+		</dynamic>
+	</skill>
+</skillsplanner>
+<?xml version="1.0" encoding="UTF-8"?>
