@@ -32,7 +32,7 @@ public class Handler {
             return doc;
 		}
 		catch(Exception ex){
-			ex.printStackTrace();
+			//ex.printStackTrace();
 			return null;
 		}
 	}
@@ -53,7 +53,7 @@ public class Handler {
             return doc;
 		}
 		catch(Exception ex){
-			ex.printStackTrace();
+			//ex.printStackTrace();
 			return null;
 		}
 	}
@@ -69,7 +69,7 @@ public class Handler {
 			return d;
 		}
 		catch(Exception ex){
-			ex.printStackTrace();
+			//ex.printStackTrace();
 		}
 		
 		return 0;
@@ -84,7 +84,7 @@ public class Handler {
 			return s;
 		}
 		catch(Exception ex){
-			ex.printStackTrace();
+			//ex.printStackTrace();
 		}
 		
 		return "";
@@ -99,7 +99,7 @@ public class Handler {
 			return Integer.parseInt(s);
 		}
 		catch(Exception ex){
-			ex.printStackTrace();
+			//ex.printStackTrace();
 		}
 		
 		return 0;

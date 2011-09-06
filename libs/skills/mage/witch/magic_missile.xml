@@ -1,0 +1,99 @@
+<skillsplanner>
+    <skill>
+	    <name>Magic Missilei</name>
+
+        <dynamic>
+            <level value="1">
+                
+	            <pen name="Basic Penetration" value="70%" />
+            </level>
+            <level value="2">
+	            <pen name="Basic Penetration" value="70%" />
+            </level>
+            <level value="3">
+	            <pen name="Basic Penetration" value="70%" />
+            </level>
+            <level value="4">
+	            <pen name="Basic Penetration" value="70%" />
+            </level>
+            <level value="5">
+	            <pen name="Basic Penetration" value="70%" />
+            </level>
+            <level value="6">
+	            <pen name="Basic Penetration" value="70%" />
+            </level>
+            <level value="7">
+	            <pen name="Basic Penetration" value="70%" />
+            </level>
+            <level value="8">
+	            <pen name="Basic Penetration" value="70%" />
+            </level>
+            <level value="9">
+	            <pen name="Basic Penetration" value="70%" />
+            </level>
+            <level value="10">
+	            <pen name="Basic Penetration" value="70%" />
+            </level>
+            <level value="11">
+	            <pen name="Basic Penetration" value="70%" />
+            </level>
+            <level value="12">
+	            <pen name="Basic Penetration" value="70%" />
+            </level>
+            <level value="13">
+	            <pen name="Basic Penetration" value="70%" />
+            </level>
+            <level value="14">
+	            <pen name="Basic Penetration" value="70%" />
+            </level>
+            <level value="15">
+	            <pen name="Basic Penetration" value="70%" />
+            </level>
+            <level value="16">
+	            <pen name="Basic Penetration" value="70%" />
+            </level>
+            <level value="17">
+	            <pen name="Basic Penetration" value="70%" />
+            </level>
+            <level value="18">
+	            <pen name="Basic Penetration" value="70%" />
+            </level>
+            <level value="19">
+	            <pen name="Basic Penetration" value="70%" />
+            </level>
+            <level value="20">
+	            <pen name="Basic Penetration" value="70%" />
+            </level>
+            <level value="21">
+	            <pen name="Basic Penetration" value="70%" />
+            </level>
+            <level value="22">
+	            <pen name="Basic Penetration" value="70%" />
+            </level>
+            <level value="23">
+	            <pen name="Basic Penetration" value="70%" />
+            </level>
+            <level value="24">
+	            <pen name="Basic Penetration" value="70%" />
+            </level>
+            <level value="25">
+	            <pen name="Basic Penetration" value="70%" />
+            </level>
+            <level value="26">
+	            <pen name="Basic Penetration" value="70%" />
+            </level>
+            <level value="27">
+	            <pen name="Basic Penetration" value="70%" />
+            </level>
+            <level value="28">
+	            <pen name="Basic Penetration" value="70%" />
+            </level>
+            <level value="29">
+	            <pen name="Basic Penetration" value="70%" />
+            </level>
+            <level value="30">
+	            <pen name="Basic Penetration" value="70%" />
+            </level>
+        </dynamic>
+    </skill>
+</skillsplanner>

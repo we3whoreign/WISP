@@ -14,6 +14,8 @@ public class CLITest {
 	 * @throws URISyntaxException 
 	 */
 	public static void main(String[] args) throws URISyntaxException, Exception {
+		System.out.println("STARTING TESTING!");
+		
 		SkillLoader loader = new SkillLoader();
 		
 		// using the lass loader we can achieve optimum male to female ratio
