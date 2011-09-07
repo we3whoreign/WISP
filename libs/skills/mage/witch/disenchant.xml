@@ -1,0 +1,120 @@
+<skillsplanner>
+	<skill>
+	
+		<name>Disenchant</name>
+		<description></description>
+		<spcost></spcost>
+		
+		<dynamic>
+			<level value="1">
+				<mp name="MP Cost" value="" />
+				<reqlvl name="Required Level" value="" />
+				<cool name="Cooldown" value="" />
+				<range name="Circular Range" value="" />
+				<int name="INT Boost" value="" />
+				<buff name="Buff Duration" value="" />
+				<mvatk name="Move/Attack Speed Debuff" value="" />
+				<debuff name="Debuff Duration" value="" />
+			</level>
+			
+			<level value="2">
+				<mp name="MP Cost" value="" />
+				<reqlvl name="Required Level" value="" />
+				<cool name="Cooldown" value="" />
+				<range name="Circular Range" value="" />
+				<int name="INT Boost" value="" />
+				<buff name="Buff Duration" value="" />
+				<mvatk name="Move/Attack Speed Debuff" value="" />
+				<debuff name="Debuff Duration" value="" />
+			</level>
+			
+			<level value="3">
+				<mp name="MP Cost" value="" />
+				<reqlvl name="Required Level" value="" />
+				<cool name="Cooldown" value="" />
+				<range name="Circular Range" value="" />
+				<int name="INT Boost" value="" />
+				<buff name="Buff Duration" value="" />
+				<mvatk name="Move/Attack Speed Debuff" value="" />
+				<debuff name="Debuff Duration" value="" />
+			</level>
+			
+			<level value="4">
+				<mp name="MP Cost" value="" />
+				<reqlvl name="Required Level" value="" />
+				<cool name="Cooldown" value="" />
+				<range name="Circular Range" value="" />
+				<int name="INT Boost" value="" />
+				<buff name="Buff Duration" value="" />
+				<mvatk name="Move/Attack Speed Debuff" value="" />
+				<debuff name="Debuff Duration" value="" />
+			</level>
+			
+			<level value="5">
+				<mp name="MP Cost" value="" />
+				<reqlvl name="Required Level" value="" />
+				<cool name="Cooldown" value="" />
+				<range name="Circular Range" value="" />
+				<int name="INT Boost" value="" />
+				<buff name="Buff Duration" value="" />
+				<mvatk name="Move/Attack Speed Debuff" value="" />
+				<debuff name="Debuff Duration" value="" />
+			</level>
+			
+			<level value="6">
+				<mp name="MP Cost" value="" />
+				<reqlvl name="Required Level" value="" />
+				<cool name="Cooldown" value="" />
+				<range name="Circular Range" value="" />
+				<int name="INT Boost" value="" />
+				<buff name="Buff Duration" value="" />
+				<mvatk name="Move/Attack Speed Debuff" value="" />
+				<debuff name="Debuff Duration" value="" />
+			</level>
+			
+			<level value="7">
+				<mp name="MP Cost" value="" />
+				<reqlvl name="Required Level" value="" />
+				<cool name="Cooldown" value="" />
+				<range name="Circular Range" value="" />
+				<int name="INT Boost" value="" />
+				<buff name="Buff Duration" value="" />
+				<mvatk name="Move/Attack Speed Debuff" value="" />
+				<debuff name="Debuff Duration" value="" />
+			</level>
+			
+			<level value="8">
+				<mp name="MP Cost" value="" />
+				<reqlvl name="Required Level" value="" />
+				<cool name="Cooldown" value="" />
+				<range name="Circular Range" value="" />
+				<int name="INT Boost" value="" />
+				<buff name="Buff Duration" value="" />
+				<mvatk name="Move/Attack Speed Debuff" value="" />
+				<debuff name="Debuff Duration" value="" />
+			</level>
+			
+			<level value="9">
+				<mp name="MP Cost" value="" />
+				<reqlvl name="Required Level" value="" />
+				<cool name="Cooldown" value="" />
+				<range name="Circular Range" value="" />
+				<int name="INT Boost" value="" />
+				<buff name="Buff Duration" value="" />
+				<mvatk name="Move/Attack Speed Debuff" value="" />
+				<debuff name="Debuff Duration" value="" />
+			</level>
+			
+			<level value="10">
+				<mp name="MP Cost" value="" />
+				<reqlvl name="Required Level" value="" />
+				<cool name="Cooldown" value="" />
+				<range name="Circular Range" value="" />
+				<int name="INT Boost" value="" />
+				<buff name="Buff Duration" value="" />
+				<mvatk name="Move/Attack Speed Debuff" value="" />
+				<debuff name="Debuff Duration" value="" />
+			</level>
+		</dynamic>
+	</skill>
+</skillsplanner>

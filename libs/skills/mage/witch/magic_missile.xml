@@ -1,97 +1,247 @@
 <skillsplanner>
     <skill>
-	    <name>Magic Missilei</name>
-
+	    <name>Magic Missile</name>
+		<description></description>
+		<spcost>15</spcost>
         <dynamic>
             <level value="1">
-                
+                <pct name="Magic Percent" value="90%" />
+                <range name="Range" value="280px" />
+                <reqlvl name="Required Level" value="1" />
+                <mp name="MP Cost" value="8" />
+                <base name="Magic Damage" value="" />
 	            <pen name="Basic Penetration" value="70%" />
             </level>
             <level value="2">
+            	<pct name="Magic Percent" value="102%" />
+                <range name="Range" value="285px" />
+                <reqlvl name="Required Level" value="3" />
+                <mp name="MP Cost" value="9" />
+                <base name="Magic Damage" value="" />
 	            <pen name="Basic Penetration" value="70%" />
             </level>
             <level value="3">
+            	<pct name="Magic Percent" value="115%" />
+                <range name="Range" value="290px" />
+                <reqlvl name="Required Level" value="5" />
+                <mp name="MP Cost" value="10" />
+                <base name="Magic Damage" value="" />
 	            <pen name="Basic Penetration" value="70%" />
             </level>
             <level value="4">
+            	<pct name="Magic Percent" value="127%" />
+                <range name="Range" value="294px" />
+                <reqlvl name="Required Level" value="7" />
+                <mp name="MP Cost" value="11" />
+                <base name="Magic Damage" value="" />
 	            <pen name="Basic Penetration" value="70%" />
             </level>
             <level value="5">
+            	<pct name="Magic Percent" value="140%" />
+                <range name="Range" value="299px" />
+                <reqlvl name="Required Level" value="9" />
+                <mp name="MP Cost" value="12" />
+                <base name="Magic Damage" value="" />
 	            <pen name="Basic Penetration" value="70%" />
             </level>
             <level value="6">
+            	<pct name="Magic Percent" value="152%" />
+                <range name="Range" value="304px" />
+                <reqlvl name="Required Level" value="11" />
+                <mp name="MP Cost" value="13" />
+                <base name="Magic Damage" value="" />
 	            <pen name="Basic Penetration" value="70%" />
             </level>
             <level value="7">
+            	<pct name="Magic Percent" value="164%" />
+                <range name="Range" value="309px" />
+                <reqlvl name="Required Level" value="13" />
+                <mp name="MP Cost" value="14" />
+                <base name="Magic Damage" value="" />
 	            <pen name="Basic Penetration" value="70%" />
             </level>
             <level value="8">
+            	<pct name="Magic Percent" value="177%" />
+                <range name="Range" value="314px" />
+                <reqlvl name="Required Level" value="15" />
+                <mp name="MP Cost" value="16" />
+                <base name="Magic Damage" value="" />
 	            <pen name="Basic Penetration" value="70%" />
             </level>
             <level value="9">
+            	<pct name="Magic Percent" value="189%" />
+                <range name="Range" value="319px" />
+                <reqlvl name="Required Level" value="17" />
+                <mp name="MP Cost" value="17" />
+                <base name="Magic Damage" value="" />
 	            <pen name="Basic Penetration" value="70%" />
             </level>
             <level value="10">
+            	<pct name="Magic Percent" value="202%" />
+                <range name="Range" value="324px" />
+                <reqlvl name="Required Level" value="19" />
+                <mp name="MP Cost" value="18" />
+                <base name="Magic Damage" value="" />
 	            <pen name="Basic Penetration" value="70%" />
             </level>
             <level value="11">
+            	<pct name="Magic Percent" value="214%" />
+                <range name="Range" value="328px" />
+                <reqlvl name="Required Level" value="21" />
+                <mp name="MP Cost" value="19" />
+                <base name="Magic Damage" value="" />
 	            <pen name="Basic Penetration" value="70%" />
             </level>
             <level value="12">
+            	<pct name="Magic Percent" value="227%" />
+                <range name="Range" value="333px" />
+                <reqlvl name="Required Level" value="23" />
+                <mp name="MP Cost" value="20" />
+                <base name="Magic Damage" value="" />
 	            <pen name="Basic Penetration" value="70%" />
             </level>
             <level value="13">
+            	<pct name="Magic Percent" value="239%" />
+                <range name="Range" value="338px" />
+                <reqlvl name="Required Level" value="25" />
+                <mp name="MP Cost" value="21" />
+                <base name="Magic Damage" value="" />
 	            <pen name="Basic Penetration" value="70%" />
             </level>
             <level value="14">
+            	<pct name="Magic Percent" value="251%" />
+                <range name="Range" value="343px" />
+                <reqlvl name="Required Level" value="27" />
+                <mp name="MP Cost" value="23" />
+                <base name="Magic Damage" value="" />
 	            <pen name="Basic Penetration" value="70%" />
             </level>
             <level value="15">
+            	<pct name="Magic Percent" value="264%" />
+                <range name="Range" value="348px" />
+                <reqlvl name="Required Level" value="29" />
+                <mp name="MP Cost" value="24" />
+                <base name="Magic Damage" value="" />
 	            <pen name="Basic Penetration" value="70%" />
             </level>
             <level value="16">
+            	<pct name="Magic Percent" value="276%" />
+                <range name="Range" value="352px" />
+                <reqlvl name="Required Level" value="31" />
+                <mp name="MP Cost" value="25" />
+                <base name="Magic Damage" value="" />
 	            <pen name="Basic Penetration" value="70%" />
             </level>
             <level value="17">
+            	<pct name="Magic Percent" value="289%" />
+                <range name="Range" value="357px" />
+                <reqlvl name="Required Level" value="33" />
+                <mp name="MP Cost" value="26" />
+                <base name="Magic Damage" value="" />
 	            <pen name="Basic Penetration" value="70%" />
             </level>
             <level value="18">
+            	<pct name="Magic Percent" value="301%" />
+                <range name="Range" value="362px" />
+                <reqlvl name="Required Level" value="35" />
+                <mp name="MP Cost" value="27" />
+                <base name="Magic Damage" value="" />
 	            <pen name="Basic Penetration" value="70%" />
             </level>
             <level value="19">
+            	<pct name="Magic Percent" value="313%" />
+                <range name="Range" value="367px" />
+                <reqlvl name="Required Level" value="37" />
+                <mp name="MP Cost" value="28" />
+                <base name="Magic Damage" value="" />
 	            <pen name="Basic Penetration" value="70%" />
             </level>
             <level value="20">
+            	<pct name="Magic Percent" value="326%" />
+                <range name="Range" value="372px" />
+                <reqlvl name="Required Level" value="39" />
+                <mp name="MP Cost" value="30" />
+                <base name="Magic Damage" value="" />
 	            <pen name="Basic Penetration" value="70%" />
             </level>
             <level value="21">
+            	<pct name="Magic Percent" value="338%" />
+                <range name="Range" value="376px" />
+                <reqlvl name="Required Level" value="41" />
+                <mp name="MP Cost" value="31" />
+                <base name="Magic Damage" value="" />
 	            <pen name="Basic Penetration" value="70%" />
             </level>
             <level value="22">
+            	<pct name="Magic Percent" value="351%" />
+                <range name="Range" value="381px" />
+                <reqlvl name="Required Level" value="43" />
+                <mp name="MP Cost" value="32" />
+                <base name="Magic Damage" value="" />
 	            <pen name="Basic Penetration" value="70%" />
             </level>
             <level value="23">
+            	<pct name="Magic Percent" value="363%" />
+                <range name="Range" value="386px" />
+                <reqlvl name="Required Level" value="45" />
+                <mp name="MP Cost" value="33" />
+                <base name="Magic Damage" value="" />
 	            <pen name="Basic Penetration" value="70%" />
             </level>
             <level value="24">
+            	<pct name="Magic Percent" value="376%" />
+                <range name="Range" value="391px" />
+                <reqlvl name="Required Level" value="47" />
+                <mp name="MP Cost" value="34" />
+                <base name="Magic Damage" value="" />
 	            <pen name="Basic Penetration" value="70%" />
             </level>
             <level value="25">
+            	<pct name="Magic Percent" value="388%" />
+                <range name="Range" value="396px" />
+                <reqlvl name="Required Level" value="49" />
+                <mp name="MP Cost" value="35" />
+                <base name="Magic Damage" value="" />
 	            <pen name="Basic Penetration" value="70%" />
             </level>
             <level value="26">
+            	<pct name="Magic Percent" value="400%" />
+                <range name="Range" value="401px" />
+                <reqlvl name="Required Level" value="51" />
+                <mp name="MP Cost" value="37" />
+                <base name="Magic Damage" value="" />
 	            <pen name="Basic Penetration" value="70%" />
             </level>
             <level value="27">
+            	<pct name="Magic Percent" value="413%" />
+                <range name="Range" value="406px" />
+                <reqlvl name="Required Level" value="53" />
+                <mp name="MP Cost" value="38" />
+                <base name="Magic Damage" value="" />
 	            <pen name="Basic Penetration" value="70%" />
             </level>
             <level value="28">
+            	<pct name="Magic Percent" value="425%" />
+                <range name="Range" value="410px" />
+                <reqlvl name="Required Level" value="55" />
+                <mp name="MP Cost" value="39" />
+                <base name="Magic Damage" value="" />
 	            <pen name="Basic Penetration" value="70%" />
             </level>
             <level value="29">
+            	<pct name="Magic Percent" value="438%" />
+                <range name="Range" value="415px" />
+                <reqlvl name="Required Level" value="57" />
+                <mp name="MP Cost" value="40" />
+                <base name="Magic Damage" value="" />
 	            <pen name="Basic Penetration" value="70%" />
             </level>
             <level value="30">
+            	<pct name="Magic Percent" value="450%" />
+                <range name="Range" value="420px" />
+                <reqlvl name="Required Level" value="59" />
+                <mp name="MP Cost" value="41" />
+                <base name="Magic Damage" value="" />
 	            <pen name="Basic Penetration" value="70%" />
             </level>
         </dynamic>

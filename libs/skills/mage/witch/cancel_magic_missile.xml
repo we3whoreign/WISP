@@ -1,0 +1,12 @@
+<skillsplanner>
+	<skill>
+		<name>Cancel Magic Missile</name>
+		<spcost>50</spcost>
+		<description>Allows the normal attack to be canceled in order to cast magic missile</description>
+		<passive>true</passive>
+		<dynamic>
+			<level value="1">
+			</level>
+		</dynamic>
+	</skill>
+</skillsplanner>
