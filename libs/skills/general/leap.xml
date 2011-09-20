@@ -1,6 +1,6 @@
 <skillsplanner>
 	<skill>
-		<name> Leap </name>
+		<name>Leap</name>
 		<casttime> 0.4 </casttime>
 
         <description>Increases your Jumping Strength for a set duration. </description>

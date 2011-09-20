@@ -7,72 +7,86 @@
 		
 		<dynamic>
 			<level value="1">
-				<mp name="MP Cost" value="" />
-				<reqlvl name="Required Level" value="" />
-				<cool name="Cooldown" value="" />
-				<range name="Circular Range" value="" />
-				<int name="INT Boost" value="" />
-				<buff name="Buff Duration" value="" />
-				<mvatk name="Move/Attack Speed Debuff" value="" />
-				<debuff name="Debuff Duration" value="" />
+				<casttime name="Cast Time" value="1s" />
+				<mp name="MP Cost" value="30" />
+				<reqlvl name="Required Level" value="15" />
+				<cool name="Cooldown" value="20s" />
+				<range name="Circular Range" value="400px" />
+				<int name="INT Boost" value="11" />
+				<buff name="Buff Duration" value="20s" />
+				<mvatk name="Move/Attack Speed Debuff" value="-2%" />
+				<debuff name="Debuff Duration" value="2s" />
+				<num name="Number of Buffs Removed" value="1" />
 			</level>
 			
 			<level value="2">
-				<mp name="MP Cost" value="" />
-				<reqlvl name="Required Level" value="" />
-				<cool name="Cooldown" value="" />
-				<range name="Circular Range" value="" />
-				<int name="INT Boost" value="" />
-				<buff name="Buff Duration" value="" />
-				<mvatk name="Move/Attack Speed Debuff" value="" />
-				<debuff name="Debuff Duration" value="" />
+				<num name="Number of Buffs Removed" value="1" />
+				<casttime name="Cast Time" value="1s" />
+				<mp name="MP Cost" value="33" />
+				<reqlvl name="Required Level" value="18" />
+				<cool name="Cooldown" value="19.5" />
+				<range name="Circular Range" value="422px" />
+				<int name="INT Boost" value="15" />
+				<buff name="Buff Duration" value="20s" />
+				<mvatk name="Move/Attack Speed Debuff" value="-4%" />
+				<debuff name="Debuff Duration" value="4s" />
 			</level>
 			
 			<level value="3">
-				<mp name="MP Cost" value="" />
-				<reqlvl name="Required Level" value="" />
-				<cool name="Cooldown" value="" />
-				<range name="Circular Range" value="" />
-				<int name="INT Boost" value="" />
-				<buff name="Buff Duration" value="" />
-				<mvatk name="Move/Attack Speed Debuff" value="" />
-				<debuff name="Debuff Duration" value="" />
+				<num name="Number of Buffs Removed" value="1" />
+				<casttime name="Cast Time" value="0.9s" />
+				<mp name="MP Cost" value="36" />
+				<reqlvl name="Required Level" value="21" />
+				<cool name="Cooldown" value="19s" />
+				<range name="Circular Range" value="444px" />
+				<int name="INT Boost" value="20" />
+				<buff name="Buff Duration" value="20s" />
+				<mvatk name="Move/Attack Speed Debuff" value="-6%" />
+				<debuff name="Debuff Duration" value="6s" />
 			</level>
 			
 			<level value="4">
-				<mp name="MP Cost" value="" />
-				<reqlvl name="Required Level" value="" />
-				<cool name="Cooldown" value="" />
-				<range name="Circular Range" value="" />
-				<int name="INT Boost" value="" />
-				<buff name="Buff Duration" value="" />
-				<mvatk name="Move/Attack Speed Debuff" value="" />
-				<debuff name="Debuff Duration" value="" />
+				<num name="Number of Buffs Removed" value="2" />
+				<casttime name="Cast Time" value="0.9s" />
+				<mp name="MP Cost" value="39" />
+				<reqlvl name="Required Level" value="24" />
+				<cool name="Cooldown" value="18.6" />
+				<range name="Circular Range" value="467px" />
+				<int name="INT Boost" value="25" />
+				<buff name="Buff Duration" value="20s" />
+				<mvatk name="Move/Attack Speed Debuff" value="5%" />
+				<debuff name="Debuff Duration" value="8s" />
 			</level>
 			
 			<level value="5">
-				<mp name="MP Cost" value="" />
-				<reqlvl name="Required Level" value="" />
-				<cool name="Cooldown" value="" />
-				<range name="Circular Range" value="" />
-				<int name="INT Boost" value="" />
-				<buff name="Buff Duration" value="" />
-				<mvatk name="Move/Attack Speed Debuff" value="" />
-				<debuff name="Debuff Duration" value="" />
+				<num name="Number of Buffs Removed" value="2" />
+				<casttime name="Cast Time" value="0.8s" />
+				<mp name="MP Cost" value="42" />
+				<reqlvl name="Required Level" value="27" />
+				<cool name="Cooldown" value="17.6s" />
+				<range name="Circular Range" value="489px" />
+				<int name="INT Boost" value="30" />
+				<buff name="Buff Duration" value="20s" />
+				<mvatk name="Move/Attack Speed Debuff" value="-10%" />
+				<debuff name="Debuff Duration" value="10s" />
 			</level>
 			
 			<level value="6">
-				<mp name="MP Cost" value="" />
-				<reqlvl name="Required Level" value="" />
-				<cool name="Cooldown" value="" />
-				<range name="Circular Range" value="" />
-				<int name="INT Boost" value="" />
-				<buff name="Buff Duration" value="" />
-				<mvatk name="Move/Attack Speed Debuff" value="" />
-				<debuff name="Debuff Duration" value="" />
+				<num name="Number of Buffs Removed" value="2" />
+				<casttime name="Cast Time" value="0.8s" />
+				<mp name="MP Cost" value="45" />
+				<reqlvl name="Required Level" value="30" />
+				<cool name="Cooldown" value="17.2" />
+				<range name="Circular Range" value="511px" />
+				<int name="INT Boost" value="35" />
+				<buff name="Buff Duration" value="20s" />
+				<mvatk name="Move/Attack Speed Debuff" value="-12%" />
+				<debuff name="Debuff Duration" value="12s" />
 			</level>
 			
 			<level value="7">
+				<num name="Number of Buffs Removed" value="3" />
+				<casttime name="Cast Time" value="0.7s" />
 				<mp name="MP Cost" value="" />
 				<reqlvl name="Required Level" value="" />
 				<cool name="Cooldown" value="" />

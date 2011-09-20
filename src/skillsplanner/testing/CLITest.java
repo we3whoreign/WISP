@@ -1,7 +1,9 @@
 package skillsplanner.testing;
 
 import java.net.URISyntaxException;
+import java.util.List;
 
+import skillsplanner.classes.DFOClass;
 import skillsplanner.skills.SkillsTemplate;
 import skillsplanner.utils.jdom.DFOClassLoader;
 import skillsplanner.utils.jdom.SkillLoader;
@@ -37,6 +39,23 @@ public class CLITest {
 			System.out.println("Cast Time: "+st.getCastTime());
 			System.out.println("Entry Cost: "+st.getEntrycost());
 			st.dumpLevelInfo();
+		}
+		
+		System.out.println("");
+		
+		String[] classes = classloader.listClasses();
+		
+		for(int i = 0; i < classes.length; i++){
+			DFOClass c = classloader.getClass(classes[i]);
+			List<SkillsTemplate> skills = c.getSkills();
+			
+			System.out.println("Name: "+c.getName());
+			System.out.println("Description: "+c.getDescription());
+			System.out.println("Skills:\n");
+			for(SkillsTemplate skill : skills){
+				System.out.println(skill.getName());
+			}
+			System.out.println("");
 		}
 
 	}
