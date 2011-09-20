@@ -34,6 +34,16 @@ public class DFOClassLoader {
 		}
 	}
 	
+	public String[] listClasses(){
+		String[] ret = new String[classfiles.size()];
+		int i = 0;
+		for(File file : classfiles){
+			ret[i] = file.getName();
+		}
+		
+		return ret;
+	}
+	
 	/**
 	 * Return the DFOClass object associated with the given class
 	 * @param dfoclass
@@ -65,34 +75,44 @@ public class DFOClassLoader {
 		
 		//cast summon imp
 		Element root = doc.getRootElement();
-		
-		// and the imp sings:
-		Element classattr = root.getChild("dfoclass");
+		//and the imp sings....
 		
 		// Mama...... oooohhhoooooooooo
-		dfoclass.setDescription(classattr.getChildText("description"));
+		dfoclass.setDescription(root.getChildText("description"));
 		
 		// I don't wanna diiiiieeeeeee
-		dfoclass.setName(classattr.getChildText("name"));
+		dfoclass.setName(root.getChildText("name"));
 		
 		// if I don't come back this time tomorrow carry onnnnn....
-		for(Object v : classattr.getChildren("skill")){
+		for(Object v : root.getChildren("skill")){
 			// iterate through every skill tag getting the name
 			Element e = (Element) v;
-			SkillsTemplate st = getSkillFromAttribute(e.getAttribute("name"));
-			dfoclass.addSkill(st);
+			try {
+				getSkillFromElement(e);
+			} catch (Exception e1){}
 		}
+		
+		for(String s : SkillLoader.skillList.keySet()){
+			dfoclass.addSkill(SkillLoader.getSkill(s));
+		}
+		
 		// carry on...
+		/**
 		try{
 			Element skillchange = root.getChild("skill");
 			SkillLoader sl = new SkillLoader();
 			sl.addSkill(sl.getSkillFromElement(skillchange));
 		}
-		catch(Exception e){}
+		catch(Exception e){}*/
 		
 		
 		// 'cuz nothing really matters
 		return dfoclass;
+	}
+
+	private void getSkillFromElement(Element e) throws URISyntaxException, Exception {
+		String name = e.getText();
+		Handler.getSkillLoader().loadSkillFile(name);
 	}
 
 	private SkillsTemplate getSkillFromAttribute(Attribute attribute) {

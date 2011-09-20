@@ -18,7 +18,7 @@ import skillsplanner.utils.FileUtils;
  */
 public class SkillLoader {
 
-	private static HashMap<String,SkillsTemplate> skillList;
+	public static HashMap<String,SkillsTemplate> skillList;
 	
 	public void loadSkills() throws URISyntaxException, Exception{
 		for(File f : FileUtils.getSkillFiles()){
@@ -30,6 +30,14 @@ public class SkillLoader {
 	}
 	
 	public void loadSkillFile(String filename) throws URISyntaxException, Exception{
+		
+		if(filename == null){
+			return;
+		}
+		else if(!filename.endsWith(".xml")){
+			filename=filename+".xml";
+		}
+		
 		for(File f : FileUtils.getSkillFiles()){
 			if(f.getName().equals(filename)){
 				Document doc = Handler.openXMLFile(f);

@@ -15,14 +15,12 @@
 		<!-- SP Cost of the skill -->
 		<spcost> 0 </spcost>
 
-		<!-- Starting level of the skill by default -->
-		<entrylvl> 0 </entrylvl>
-
-		<!-- Extra value added to SP cost to get first level of skill  -->
+		<!-- Extra value added to SP cost to get first level of skill. Put negative if first level is free  -->
 		<entryfee> 0 </entryfee>
 		
 		<!-- Optional passive tag. If set to true cast time and frametime will be ignored. -->
 		<passive> false </passive>
+		
 		<!-- All of the level dependent values go in the dynamic tag -->
 		<dynamic>
 			<!-- separate the values within the level tag -->

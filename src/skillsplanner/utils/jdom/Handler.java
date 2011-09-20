@@ -53,7 +53,7 @@ public class Handler {
             return doc;
 		}
 		catch(Exception ex){
-			//ex.printStackTrace();
+			ex.printStackTrace();
 			return null;
 		}
 	}

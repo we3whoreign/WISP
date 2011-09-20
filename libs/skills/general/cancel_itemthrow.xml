@@ -2,7 +2,7 @@
 	<skill> 
 		<name>Cancel - Item Throw</name>
 		<casttime>0.5</casttime>
-        <spcost>50</casttime>
+        <spcost>50</spcost>
         <description>Cancels normal attacks, then immediately uses a Throw item. </description> 
 		<dynamic>
 			<level value="1">

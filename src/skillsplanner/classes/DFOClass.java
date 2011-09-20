@@ -1,5 +1,6 @@
 package skillsplanner.classes;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.lang.UnsupportedOperationException;
@@ -42,6 +43,13 @@ public class DFOClass {
 	}
 
 	public void addSkill(SkillsTemplate st) {
+		if(skills == null){
+			skills = new ArrayList<SkillsTemplate>();
+		}
 		skills.add(st);
+	}
+	
+	public List<SkillsTemplate> getSkills(){
+		return skills;
 	}
 }
