@@ -1,6 +1,4 @@
 package skillsplanner.gui;
-import com.cloudgarden.layout.AnchorConstraint;
-import com.cloudgarden.layout.AnchorLayout;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
@@ -21,12 +19,12 @@ import javax.swing.border.LineBorder;
 * THIS MACHINE, SO JIGLOO OR THIS CODE CANNOT BE USED
 * LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
 */
-public class WISP extends javax.swing.JFrame {
+public class WISP extends javax.swing.JFrame{
 
 	{
 		//Set Look & Feel
 		try {
-			javax.swing.UIManager.setLookAndFeel("com.jgoodies.looks.plastic.PlasticXPLookAndFeel");
+			javax.swing.UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -89,6 +87,7 @@ public class WISP extends javax.swing.JFrame {
 		try {
 			{
 				this.setTitle("WISP");
+				this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 			}
 			{
 				SkillArea = new JSplitPane();

@@ -17,6 +17,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringTokenizer;
 
 import javax.swing.ImageIcon;
 
@@ -223,6 +224,44 @@ public class FileUtils {
 		}
 		
 		return xmlist;
+	}
+	
+	/**
+	 * Capitilizes the first letter of every word in the input string.
+	 * @param input
+	 * @return
+	 */
+	public static String firstLetterCap(String input){
+		if(input == null){
+			return input;
+		}
+		
+		StringTokenizer st = new StringTokenizer(input);
+		
+		input = "";
+		
+		while(st.hasMoreTokens()){
+			String temp = st.nextToken();
+			input += temp.substring(0,1).toUpperCase() + temp.substring(1).toLowerCase() + " ";
+		}
+		
+		return input;
+	}
+	
+	public static String getParentDir(File f){
+		String path = f.getAbsolutePath();
+		
+		path = path.substring(0,path.lastIndexOf(File.separator));
+		path = path.substring(path.lastIndexOf(File.separator)+1).replace("_", " ");
+		
+		return path;
+	}
+	
+	public static String getParentDir(String path){
+		path = path.substring(0,path.lastIndexOf(File.separator));
+		path = path.substring(path.lastIndexOf(File.separator)+1).replace("_", " ");
+		
+		return path;
 	}
 
 }

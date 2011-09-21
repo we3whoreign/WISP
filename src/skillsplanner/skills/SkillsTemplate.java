@@ -7,6 +7,9 @@ import java.util.List;
  * Framework for making skills
  */
 public class SkillsTemplate {
+	
+	//Indication of what tree the skill is in
+	private String tree;
 
 	// Certified String Name
 	private String name;
@@ -146,6 +149,12 @@ public class SkillsTemplate {
 	}
 	public void setEntrycost(int entrycost) {
 		this.entrycost = entrycost;
+	}
+	public void setTree(String tree) {
+		this.tree = tree;
+	}
+	public String getTree() {
+		return tree;
 	}
 	
 }
