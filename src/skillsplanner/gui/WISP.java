@@ -9,6 +9,7 @@ import javax.swing.*;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
 
+import skillsplanner.utils.jdom.*;
 /**
 * This code was edited or generated using CloudGarden's Jigloo
 * SWT/Swing GUI Builder, which is free for non-commercial
@@ -22,11 +23,11 @@ import javax.swing.border.LineBorder;
 * LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
 */
 public class WISP extends javax.swing.JFrame {
-
+	
 	{
 		//Set Look & Feel
 		try {
-			javax.swing.UIManager.setLookAndFeel("com.jgoodies.looks.plastic.PlasticXPLookAndFeel");
+			javax.swing.UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -66,6 +67,7 @@ public class WISP extends javax.swing.JFrame {
 	private JMenuItem newFileMenuItem;
 	private JMenu jMenu3;
 	private JMenuBar jMenuBar1;
+	
 
 	/**
 	* Auto-generated main method to display this JFrame
@@ -76,6 +78,7 @@ public class WISP extends javax.swing.JFrame {
 				WISP inst = new WISP();
 				inst.setLocationRelativeTo(null);
 				inst.setVisible(true);
+				inst.classAreaGeneration();
 			}
 		});
 	}
@@ -84,6 +87,20 @@ public class WISP extends javax.swing.JFrame {
 		super();
 		initGUI();
 	}
+	
+	/*MY FUCKIN CODE*/
+	private void classAreaGeneration(){
+		String[] classes = Handler.getClassLoader().listClasses();
+		JTree classTree = new JTree();
+		for(int j = 1; j <= classes.length; j++){
+			//screw Cody
+			System.out.println("OVER HEREEEEE:" + classes[j-1]);
+		}
+		ClassArea.add(classTree);
+		
+		
+	}
+	/*NOT MY FUCKIN CODE*/
 	
 	private void initGUI() {
 		try {
