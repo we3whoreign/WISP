@@ -56,11 +56,15 @@ public class SkillLoader {
 			return;
 		}
 		
+		String baseURI = doc.getBaseURI();
+		
 		Element root = doc.getRootElement();
 		
 		Element skillattr = root.getChild("skill");
 		
-		addSkill(getSkillFromElement(skillattr));
+		//Magic to take the base URI and derive the subclass, easy to break 
+		//and heavily depends on folder structure
+		addSkill(getSkillFromElement(skillattr,FileUtils.getParentDir(baseURI)));
 	}
 	
 	/**
@@ -68,9 +72,11 @@ public class SkillLoader {
 	 * @param skillattr
 	 * @return
 	 */
-	public static SkillsTemplate getSkillFromElement(Element skillattr){
+	public static SkillsTemplate getSkillFromElement(Element skillattr,String basename){
 		
 		SkillsTemplate st = new SkillsTemplate();
+		
+		st.setTree(FileUtils.firstLetterCap(basename));
 		
 		st.setAnimationFrameTime(Handler.getDouble(skillattr,"frametime"));
 		
@@ -150,6 +156,10 @@ public class SkillLoader {
 	 * @return
 	 */
 	public static String[] getSkillList(){
+		if(skillList == null){
+			return new String[0];
+		}
+		
 		Object[] oarray = skillList.keySet().toArray();
 		String[] sarray = new String[oarray.length];
 		

@@ -2,7 +2,9 @@ package skillsplanner.utils.jdom;
 
 import java.io.File;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Hashtable;
 
 import org.jdom.Attribute;
 import org.jdom.Document;
@@ -38,7 +40,27 @@ public class DFOClassLoader {
 		String[] ret = new String[classfiles.size()];
 		int i = 0;
 		for(File file : classfiles){
+			
 			ret[i] = file.getName();
+		}
+		
+		return ret;
+	}
+	
+	public Hashtable<String,ArrayList<String>> listClassTable(){
+		Hashtable<String,ArrayList<String>> ret = new Hashtable(21);
+		int i = 0;
+		String parent; 
+		for(File file : classfiles){
+			parent = file.getParent().substring(file.getParent().lastIndexOf(file.separator)+1, file.getParent().length());
+			
+			 if(ret.containsKey(parent)){
+				 ret.get(parent).add(file.getName().replace(".xml", ""));
+			 }
+			 else{
+				 ret.put(parent, new ArrayList<String>());
+				 ret.get(parent).add(file.getName().replace(".xml", ""));
+			 }
 		}
 		
 		return ret;
@@ -52,7 +74,6 @@ public class DFOClassLoader {
 	public DFOClass getClass(String dfoclass){
 		for(File file : classfiles){
 			String name = file.getName();
-			
 			if(name.equals(dfoclass)){
 				return createClassFromFile(file);
 			}

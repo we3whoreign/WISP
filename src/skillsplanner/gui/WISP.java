@@ -1,13 +1,15 @@
 package skillsplanner.gui;
-import com.cloudgarden.layout.AnchorConstraint;
-import com.cloudgarden.layout.AnchorLayout;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
+import java.util.ArrayList;
+import java.util.Hashtable;
+import java.util.Iterator;
 
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
+import javax.swing.tree.DefaultMutableTreeNode;
 
 import skillsplanner.utils.jdom.*;
 /**
@@ -22,12 +24,13 @@ import skillsplanner.utils.jdom.*;
 * THIS MACHINE, SO JIGLOO OR THIS CODE CANNOT BE USED
 * LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
 */
-public class WISP extends javax.swing.JFrame {
-	
+
+public class WISP extends javax.swing.JFrame{
+
 	{
 		//Set Look & Feel
 		try {
-			javax.swing.UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+			javax.swing.UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -90,12 +93,23 @@ public class WISP extends javax.swing.JFrame {
 	
 	/*MY FUCKIN CODE*/
 	private void classAreaGeneration(){
-		String[] classes = Handler.getClassLoader().listClasses();
-		JTree classTree = new JTree();
-		for(int j = 1; j <= classes.length; j++){
-			//screw Cody
-			System.out.println("OVER HEREEEEE:" + classes[j-1]);
+		Hashtable<String,ArrayList<String>> classes = Handler.getClassLoader().listClassTable();
+		DefaultMutableTreeNode root = new DefaultMutableTreeNode("Root");
+		//ArrayList<DefaultMutableTreeNode> parents = new ArrayList<DefaultMutableTreeNode>();
+		
+		//Iterator<DefaultMutableTreeNode> iter = roots.iterator();
+		for(String s1 : classes.keySet()){
+			root.add(new DefaultMutableTreeNode(s1));
+			for(String s2 : classes.get(s1)){
+			((DefaultMutableTreeNode) root.getChildAt(root.getChildCount() - 1)).add(new DefaultMutableTreeNode(s2));
+			}
 		}
+		JTree classTree = new JTree(root);
+		classTree.setRootVisible(false);
+	/*	for(int j = 1; j <= classes.size(); j++){
+			//screw Cody
+			System.out.println("OVER HEREEEEE:" + classes.keys());
+		}*/
 		ClassArea.add(classTree);
 		
 		
@@ -106,6 +120,7 @@ public class WISP extends javax.swing.JFrame {
 		try {
 			{
 				this.setTitle("WISP");
+				this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 			}
 			{
 				SkillArea = new JSplitPane();

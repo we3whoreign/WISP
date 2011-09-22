@@ -81,7 +81,7 @@ public class Handler {
 			
 			s = e.getChildText(childText);
 			
-			return s;
+			return s.trim();
 		}
 		catch(Exception ex){
 			//ex.printStackTrace();
