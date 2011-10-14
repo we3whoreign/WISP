@@ -1,5 +1,7 @@
 package skillsplanner.gui;
 import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Component;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.util.ArrayList;
@@ -10,6 +12,7 @@ import javax.swing.*;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeCellRenderer;
 
 import skillsplanner.utils.jdom.*;
 /**
@@ -45,6 +48,7 @@ public class WISP extends javax.swing.JFrame{
 	private JPanel Tabs;
 	private JLabel LOGO;
 	private JPanel ClassArea;
+	private JScrollPane jScrollPane1;
 	private JPanel RightPane;
 	private JPanel LeftPane;
 	private JPanel ExtraCrap;
@@ -89,9 +93,26 @@ public class WISP extends javax.swing.JFrame{
 	public WISP() {
 		super();
 		initGUI();
+		initListeners();
 	}
 	
+	/**
+	 * Establish the listener for each object in the GUI
+	 */
+	private void initListeners() {
+		SamWise samwise = new SamWise();
+		closeFileMenuItem.addActionListener(samwise);
+		
+		
+		 //TO DO: The rest....
+		
+	}
+
 	/*MY FUCKIN CODE*/
+	/**
+	 * I'm adding a javadoc because a lazy peon forgot to.
+	 * Also this generates the tree for class selection.
+	 */
 	private void classAreaGeneration(){
 		Hashtable<String,ArrayList<String>> classes = Handler.getClassLoader().listClassTable();
 		DefaultMutableTreeNode root = new DefaultMutableTreeNode("Root");
@@ -105,6 +126,10 @@ public class WISP extends javax.swing.JFrame{
 			}
 		}
 		JTree classTree = new JTree(root);
+		
+		//Set a transparent background
+		classTree.setBackground(new Color(0,0,0,0));
+		classTree.setCellRenderer(new MyRenderer());
 		classTree.setRootVisible(false);
 	/*	for(int j = 1; j <= classes.size(); j++){
 			//screw Cody
@@ -217,8 +242,10 @@ public class WISP extends javax.swing.JFrame{
 			}
 			{
 				ClassArea = new JPanel();
-				getContentPane().add(ClassArea, BorderLayout.WEST);
-				ClassArea.setPreferredSize(new java.awt.Dimension(152, 518));
+				jScrollPane1 = new JScrollPane(ClassArea);
+				jScrollPane1.setPreferredSize(new java.awt.Dimension(152, 507));
+				jScrollPane1.setWheelScrollingEnabled(true);
+				getContentPane().add(jScrollPane1, BorderLayout.WEST);
 			}
 			this.setSize(800, 600);
 			{
@@ -232,6 +259,7 @@ public class WISP extends javax.swing.JFrame{
 						newFileMenuItem = new JMenuItem();
 						jMenu3.add(newFileMenuItem);
 						newFileMenuItem.setText("New");
+						newFileMenuItem.setActionCommand("new");
 					}
 					{
 						openFileMenuItem = new JMenuItem();
@@ -307,5 +335,32 @@ public class WISP extends javax.swing.JFrame{
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * Transparent cell renderer for jtree. Thanks javaranch
+	 * @author ryzngard
+	 *
+	 */
+	private class MyRenderer extends DefaultTreeCellRenderer {  
+		  
+        public Component getTreeCellRendererComponent(  
+                JTree tree,  
+                Object value,  
+                boolean sel,  
+                boolean expanded,  
+                boolean leaf,  
+                int row,  
+                boolean hasFocus) {  
+  
+            super.getTreeCellRendererComponent(  
+                    tree, value, sel,  
+                    expanded, leaf, row,  
+                    hasFocus);  
+  
+            setBackgroundNonSelectionColor(tree.getBackground());  
+  
+            return this;  
+        }  
+    }
 
 }

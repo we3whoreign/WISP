@@ -3,10 +3,6 @@ package skillsplanner.gui;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import com.sun.corba.se.spi.orbutil.fsm.Action;
-import com.sun.corba.se.spi.orbutil.fsm.FSM;
-import com.sun.corba.se.spi.orbutil.fsm.Input;
-
 public class SamWise implements ActionListener{
 
 	public static ActionEvent ClassSelection;
@@ -16,19 +12,22 @@ public class SamWise implements ActionListener{
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(ClassSelection.equals(e)){
-			
-		}
-		else if(TabSelection.equals(e)){
-			
-		}
-		else if(SkillUp.equals(e)){
-			
+		String selection = e.getActionCommand();
+		
+		switch(selection){
+			case Constants.CLOSE_OPERATION:
+				break;
+		
+			case Constants.CLASS_SELECTION:
+				break;
+		
+			case Constants.LEVEL_DOWN_OPERATION:
+				break;
+		
+			case Constants.LEVEL_UP_OPERATION:
+				break;
 		}
 		
-		else if(SkillUp.equals(e)){
-			
-		}
 
 	}
 

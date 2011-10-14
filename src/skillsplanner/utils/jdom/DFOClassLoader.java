@@ -48,7 +48,7 @@ public class DFOClassLoader {
 	}
 	
 	public Hashtable<String,ArrayList<String>> listClassTable(){
-		Hashtable<String,ArrayList<String>> ret = new Hashtable(21);
+		Hashtable<String,ArrayList<String>> ret = new Hashtable<String,ArrayList<String>>(21);
 		int i = 0;
 		String parent; 
 		for(File file : classfiles){
