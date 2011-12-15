@@ -11,7 +11,7 @@
 	<property name="buildnum.file" value="./build.num" />
 
 	<property name="project.name" value="DFOPlanner" />
-	<property name="main.class" value="Main" />
+	<property name="main.class" value="skillsplanner.Main" />
 	<property name="version.num" value="0.01a" />
 
 	<!-- include all jar files in the libs directory -->
