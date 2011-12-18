@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+die(){
+	echo >&2 "$@"
+	exit 1
+}
+
+git add src/**
+
+[ "$#" -eq 1 ] || die "1 argument required as message, $# provided" 
+
+git commit -a -m "$1"
