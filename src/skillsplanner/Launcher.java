@@ -3,6 +3,8 @@ package skillsplanner;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
+import skillsplanner.gui.WISP;
+
 /**
  * a launcher wrapper for the GUI
  */
@@ -49,7 +51,7 @@ public class Launcher {
 			e.printStackTrace();
 		}
 
-		// frame = new MainFrame();
+		WISP wisp = new WISP();
 
 	}
 

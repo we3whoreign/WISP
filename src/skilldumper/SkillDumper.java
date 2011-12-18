@@ -33,7 +33,7 @@ public class SkillDumper {
 				listfiles(flist[i]);
 			}
 			else if(flist[i].getName().toLowerCase().endsWith(".xml")){
-				System.out.println("<skill>"+flist[i].getName().substring(0,flist[i].getName().length()-4)+"</skill>");
+				System.out.println(flist[i].getName().substring(0,flist[i].getName().length()-4));
 			}
 		}
 	}
