@@ -6,10 +6,12 @@ import javax.swing.UnsupportedLookAndFeelException;
 import skillsplanner.gui.WISP;
 
 /**
- * a launcher wrapper for the GUI
+ * a launcher wrapper for the GUI. Contains the sole instance of WISP
  */
 
 public class Launcher {
+	
+	public static WISP wisp;
 	
 	public Launcher() {
 		createAndShowGUI();
@@ -29,7 +31,11 @@ public class Launcher {
 		 * javax.swing.SwingUtilities.invokeLater(new Runnable() { public void
 		 * run() { createAndShowGUI(); } });
 		 */
-		new Launcher();
+		javax.swing.SwingUtilities.invokeLater(new Runnable(){
+			public void run(){
+				new Launcher();
+			}
+		});
 
 	}
 
@@ -51,8 +57,16 @@ public class Launcher {
 			e.printStackTrace();
 		}
 
-		WISP wisp = new WISP();
+		System.out.println("STUFF");
+		getWisp();
 
+	}
+	
+	public static WISP getWisp(){
+		if(wisp == null){
+			wisp = new WISP();
+		}
+		return wisp;
 	}
 
 }

@@ -14,6 +14,7 @@ import javax.swing.border.LineBorder;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
 
+import skillsplanner.utils.StringUtils;
 import skillsplanner.utils.jdom.*;
 /**
 * This code was edited or generated using CloudGarden's Jigloo
@@ -38,13 +39,17 @@ public class WISP extends javax.swing.JFrame{
 			e.printStackTrace();
 		}
 	}
-
+	public JButton Tab3;
+	public JButton Tab2;
+	public JButton Tab1;
+	public JButton Tab4;
+	public JTree classTree;
+	public JButton Calculator;
+	public JButton Overview;
+	public JButton General;
 
 	private JMenuItem helpMenuItem;
 	private JMenu jMenu5;
-	private JButton Tab3;
-	private JButton Tab2;
-	private JButton Tab1;
 	private JPanel Tabs;
 	private JLabel LOGO;
 	private JPanel ClassArea;
@@ -53,10 +58,6 @@ public class WISP extends javax.swing.JFrame{
 	private JPanel LeftPane;
 	private JPanel ExtraCrap;
 	private JPanel SkillContainer;
-	private JButton Calculator;
-	private JButton Overview;
-	private JButton General;
-	private JButton Tab4;
 	private JPanel TabArea;
 	private JSplitPane SkillArea;
 	private JMenuItem deleteMenuItem;
@@ -79,7 +80,7 @@ public class WISP extends javax.swing.JFrame{
 	/**
 	* Auto-generated main method to display this JFrame
 	*/
-	public static void main(String[] args) {
+	/**public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				WISP inst = new WISP();
@@ -89,11 +90,14 @@ public class WISP extends javax.swing.JFrame{
 			}
 		});
 	}
+	**/
 	
 	public WISP() {
 		super();
 		initGUI();
 		initListeners();
+		classAreaGeneration();
+		this.setVisible(true);
 	}
 	
 	/**
@@ -120,12 +124,15 @@ public class WISP extends javax.swing.JFrame{
 		
 		//Iterator<DefaultMutableTreeNode> iter = roots.iterator();
 		for(String s1 : classes.keySet()){
-			root.add(new DefaultMutableTreeNode(s1));
+			root.add(new DefaultMutableTreeNode(StringUtils.toCamelCase(s1)));
 			for(String s2 : classes.get(s1)){
-			((DefaultMutableTreeNode) root.getChildAt(root.getChildCount() - 1)).add(new DefaultMutableTreeNode(s2));
+				s2 = StringUtils.toCamelCase(s2);
+				((DefaultMutableTreeNode) root.getChildAt(root.getChildCount() - 1)).add(new DefaultMutableTreeNode(s2));
 			}
 		}
-		JTree classTree = new JTree(root);
+		classTree = new JTree(root);
+		
+		classTree.addTreeSelectionListener(new TreeBeard());
 		
 		//Set a transparent background
 		//classTree.setBackground(new Color(0,0,0,0));
@@ -242,6 +249,7 @@ public class WISP extends javax.swing.JFrame{
 			}
 			{
 				ClassArea = new JPanel();
+				ClassArea.setBackground(Color.WHITE);
 				jScrollPane1 = new JScrollPane(ClassArea);
 				jScrollPane1.setPreferredSize(new java.awt.Dimension(152, 507));
 				jScrollPane1.setWheelScrollingEnabled(true);

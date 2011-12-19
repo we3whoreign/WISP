@@ -34,6 +34,9 @@ public class FileUtils {
 	 */
 	private static List<File> skillArray;
 	private static List<File> classArray;
+	
+	public static String CLASSES_PATH = "libs/classes";
+	public static String SKILLS_PATH = "libs/skills";
 
 	/**
 	 * By default all paths have been made using linux conventions, at least all
@@ -50,8 +53,8 @@ public class FileUtils {
 		path = path.replace("/", File.separator);
 		path = path.replace("\\", File.separator);
 		
-		System.out.println(path);
-		System.out.println(Launcher.class.getResource(path));
+		//System.out.println(path);
+		//System.out.println(Launcher.class.getResource(path));
 		
 		return Launcher.class.getResource(path);
 	}
@@ -167,7 +170,7 @@ public class FileUtils {
 			return classArray;
 		}
 		
-		URL path = makePath("libs/classes");
+		URL path = makePath(CLASSES_PATH);
 		
 		classArray = traverseDirectoryForXML(new File(path.toURI()));
 		
@@ -184,7 +187,7 @@ public class FileUtils {
 		if(skillArray != null){
 			return skillArray;
 		}
-		URL path = makePath("libs/skills");
+		URL path = makePath(SKILLS_PATH);
 		
 		skillArray = traverseDirectoryForXML(new File(path.toURI()));
 		
@@ -228,11 +231,14 @@ public class FileUtils {
 	
 	/**
 	 * Capitilizes the first letter of every word in the input string.
+	 * Obsolete, migrated to StringUtils
 	 * @param input
 	 * @return
 	 */
 	public static String firstLetterCap(String input){
-		if(input == null){
+		
+		return StringUtils.toCamelCase(input);
+		/**if(input == null){
 			return input;
 		}
 		
@@ -245,7 +251,7 @@ public class FileUtils {
 			input += temp.substring(0,1).toUpperCase() + temp.substring(1).toLowerCase() + " ";
 		}
 		
-		return input;
+		return input;**/
 	}
 	
 	public static String getParentDir(File f){
@@ -262,6 +268,53 @@ public class FileUtils {
 		path = path.substring(path.lastIndexOf(File.separator)+1).replace("_", " ");
 		
 		return path;
+	}
+
+	/**
+	 * Determins if the path points to a class file. Prepends the CLASSES_PATH to the beginning and appends .xml
+	 * to the end.
+	 * @param path
+	 * @return
+	 */
+	public static boolean isClassFile(String path) {
+		URL url = makePath(CLASSES_PATH + "/" + path + ".xml");
+		try {
+			//System.out.println(url.toURI().toString());
+			if(url != null && new File(url.toURI()).isFile()){
+				return true;
+			}
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	public static List<String> getSubclasses(String path) {
+		URL url = makePath(SKILLS_PATH + "/" + path);
+		
+		if(url == null){
+			return null;
+		}
+		
+		try {
+			File f = new File(url.toURI());
+			ArrayList<String> ret = new ArrayList<String>();
+			
+			for(File child : f.getParentFile().listFiles()){
+				if(child.isDirectory()){
+					System.out.println(child.getName());
+					ret.add(child.getName());
+				}
+			}
+			
+			return ret;
+			
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 }
