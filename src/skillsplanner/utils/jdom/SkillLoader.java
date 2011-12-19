@@ -21,11 +21,14 @@ public class SkillLoader {
 	public static HashMap<String,SkillsTemplate> skillList;
 	
 	public void loadSkills() throws URISyntaxException, Exception{
-		for(File f : FileUtils.getSkillFiles()){
-			System.out.println("Reading file:"+f.getName());
-			Document doc = Handler.openXMLFile(f);
-			
-			mapSkill(doc);
+		if(!FileUtils.isJar){
+			for(Object f : FileUtils.getSkillFiles()){
+				File file = (File) f;
+				System.out.println("Reading file:"+file.getName());
+				Document doc = Handler.openXMLFile(file);
+				
+				mapSkill(doc);
+			}
 		}
 	}
 	
@@ -38,9 +41,10 @@ public class SkillLoader {
 			filename=filename+".xml";
 		}
 		
-		for(File f : FileUtils.getSkillFiles()){
-			if(f.getName().equals(filename)){
-				Document doc = Handler.openXMLFile(f);
+		for(Object f : FileUtils.getSkillFiles()){
+			File file = (File) f;
+			if(file.getName().equals(filename)){
+				Document doc = Handler.openXMLFile(file);
 				mapSkill(doc);
 				break;
 			}

@@ -1,0 +1,19 @@
+<skillplanner>
+	<description>Pwn little lolly</description>
+	<name>Summoner</name>
+	
+	<!-- Skills -->
+	
+	
+	<!-- Battle Mage Skills -->
+	<skill>cancel_weapon_uppercut</skill>
+	<skill>dragon_fang</skill>
+	<skill>weapon_uppercut.xml</skill>
+	
+	<!-- Witch Skills -->
+	<skill>ancient_library</skill>
+	<skill>cancel_magic_missile</skill>
+	<skill>disenchant</skill>
+	<skill>magic_missile</skill>
+	<skill>shururu</skill>
+</skillplanner>

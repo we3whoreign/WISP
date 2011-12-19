@@ -22,7 +22,7 @@ import skillsplanner.utils.FileUtils;
  */
 public class DFOClassLoader {
 	
-	private List<File> classfiles;
+	private List<Object> classfiles;
 	
 	public DFOClassLoader(){
 		try {
@@ -36,31 +36,78 @@ public class DFOClassLoader {
 		}
 	}
 	
+	/**
+	 * Check the classfiles list for this object
+	 * @param c
+	 * @return
+	 */
+	public boolean hasClass(String c){
+		for(Object o : classfiles){
+			System.out.println("Checking "+c +" against "+o);
+			if(((String)o).contains(c)){
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	public String[] listClasses(){
 		String[] ret = new String[classfiles.size()];
 		int i = 0;
-		for(File file : classfiles){
-			
-			ret[i] = file.getName();
+		if(!FileUtils.isJar){
+			for(Object file : classfiles){
+				File f = (File) file;
+				ret[i] = f.getName();
+				i++;
+			}
+		}
+		else{
+			for(Object file : classfiles){
+				ret[i] = (String) file;
+				i++;
+			}
 		}
 		
 		return ret;
 	}
 	
 	public Hashtable<String,ArrayList<String>> listClassTable(){
+		System.out.println("List Class Table");
 		Hashtable<String,ArrayList<String>> ret = new Hashtable<String,ArrayList<String>>(21);
-		int i = 0;
 		String parent; 
-		for(File file : classfiles){
-			parent = file.getParent().substring(file.getParent().lastIndexOf(file.separator)+1, file.getParent().length());
-			
-			 if(ret.containsKey(parent)){
-				 ret.get(parent).add(file.getName().replace(".xml", ""));
-			 }
-			 else{
-				 ret.put(parent, new ArrayList<String>());
-				 ret.get(parent).add(file.getName().replace(".xml", ""));
-			 }
+		
+		if(!FileUtils.isJar){
+			for(Object f : classfiles){
+				File file = (File) f;
+				parent = file.getParent().substring(file.getParent().lastIndexOf(file.separator)+1, file.getParent().length());
+				
+				 if(ret.containsKey(parent)){
+					 ret.get(parent).add(file.getName().replace(".xml", ""));
+				 }
+				 else{
+					 ret.put(parent, new ArrayList<String>());
+					 ret.get(parent).add(file.getName().replace(".xml", ""));
+				 }
+			}
+		}
+		else{
+			for(Object f : classfiles){
+				System.out.println(f);
+				String file = (String) f;
+				
+				if(file.endsWith(".xml")){
+					parent = file.substring(0,file.lastIndexOf(File.separator));
+					parent = parent.substring(parent.lastIndexOf(File.separator)+1);
+					String child = file.substring(file.lastIndexOf(File.separator)+1).replaceAll(".xml", "");
+					if(ret.containsKey(parent)){
+						ret.get(parent).add(child);
+					}
+					else{
+						ret.put(parent, new ArrayList<String>());
+						ret.get(parent).add(child);
+					}
+				}
+			}
 		}
 		
 		return ret;
@@ -72,13 +119,16 @@ public class DFOClassLoader {
 	 * @return
 	 */
 	public DFOClass getClass(String dfoclass){
-		for(File file : classfiles){
-			String name = file.getName();
-			if(name.equals(dfoclass)){
-				return createClassFromFile(file);
+		if(!FileUtils.isJar){
+			for(Object f : classfiles){
+				File file = (File) f;
+				String name = file.getName();
+				if(name.equals(dfoclass)){
+					return createClassFromFile(file);
+				}
 			}
 		}
-		
+				
 		return null;
 	}
 	
@@ -111,7 +161,7 @@ public class DFOClassLoader {
 			try {
 				getSkillFromElement(e);
 			} catch (Exception e1){}
-		}
+ 		}
 		
 		for(String s : SkillLoader.skillList.keySet()){
 			dfoclass.addSkill(SkillLoader.getSkill(s));

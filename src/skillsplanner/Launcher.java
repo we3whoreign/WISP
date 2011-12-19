@@ -1,13 +1,21 @@
 package skillsplanner;
 
+import java.io.File;
+import java.net.URISyntaxException;
+
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
+import skillsplanner.gui.WISP;
+import skillsplanner.utils.FileUtils;
+
 /**
- * a launcher wrapper for the GUI
+ * a launcher wrapper for the GUI. Contains the sole instance of WISP
  */
 
 public class Launcher {
+	
+	public static WISP wisp;
 	
 	public Launcher() {
 		createAndShowGUI();
@@ -27,7 +35,11 @@ public class Launcher {
 		 * javax.swing.SwingUtilities.invokeLater(new Runnable() { public void
 		 * run() { createAndShowGUI(); } });
 		 */
-		new Launcher();
+		javax.swing.SwingUtilities.invokeLater(new Runnable(){
+			public void run(){
+				new Launcher();
+			}
+		});
 
 	}
 
@@ -49,8 +61,25 @@ public class Launcher {
 			e.printStackTrace();
 		}
 
-		// frame = new MainFrame();
+		/**
+		 * Check if we're running from a jar by checking if a resource can be loaded
+		 */
+		if(this.getClass().getClassLoader().getResource(".") == null){
+			FileUtils.isJar = true;
+		}
+		else{
+			FileUtils.isJar = false;
+		}
+		
+		getWisp();
 
 	}
+	
+	public static WISP getWisp(){
+		if(wisp == null){
+			wisp = new WISP();
+		}
+		return wisp;
+	} 
 
 }

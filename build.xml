@@ -1,23 +1,23 @@
 <?xml version="1.0"?>
 <project name="DFO Planner" default="jar" basedir=".">
 
-	<property name="src.dir" value="./src"/>
+	<property name="src.dir" value="src"/>
 	<property name="build.dir" value="build" />
 	<property name="doc.dir" value="docs" />
 	<property name="libs.dest.dir" value="build/libs" />
-	<property name="libs.src.dir" value="./libs" />
+	<property name="libs.src.dir" value="libs" />
 	<property name="debug.level" value="lines,vars,source" />
-	<property name="jars.dir"  value="./jars" />
-	<property name="buildnum.file" value="./build.num" />
+	<property name="jars.dir"  value="jars" />
+	<property name="buildnum.file" value="build.num" />
 
 	<property name="project.name" value="DFOPlanner" />
-	<property name="main.class" value="skillsplanner.Main" />
+	<property name="main.class" value="skillsplanner.Launcher" />
 	<property name="version.num" value="0.01a" />
 
 	<!-- include all jar files in the libs directory -->
   
 	<path id="external.jars">
-	    <fileset dir="${libs.src.dir}" includes="**/*.jar"/>
+	    <fileset dir="${libs.src.dir}" includes="**"/>
 	</path>
 
 	<path id="project.classpath">
@@ -87,8 +87,8 @@
 			<!-- include all class files -->
 			<fileset dir="${build.dir}" includes="**/*.class" />
 
-			<!-- include the jar files that the project depends on -->
-			<zipgroupfileset dir="${libs.src.dir}" includes="**/*.jar" />
+			<!-- Include all library files -->
+			<zipfileset dir="${libs.src.dir}" includes="*" prefix="${libs.src.dir}" />
 		</jar>
 	</target>
 </project>
