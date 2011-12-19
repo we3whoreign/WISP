@@ -39,13 +39,13 @@ public class SkillDumper {
 	}
 	public static void main(String args[]) throws URISyntaxException, Exception{
 		FileUtils utils = new FileUtils();
-		URL u = utils.makePath(DIR);
+		//URL u = utils.makePath(DIR);
 		
-		List<File> subdirs = getDirs(new File(u.toURI()));
+		//List<File> subdirs = getDirs(utils.getFile(DIR));//new File(u.toURI()));
 		
-		for(File dir : subdirs){
-			listfiles(dir);
-		}
+		//for(File dir : subdirs){
+		//	listfiles(dir);
+		//}
 	
 	}
 

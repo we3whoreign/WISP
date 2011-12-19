@@ -6,6 +6,7 @@ die(){
 }
 
 git add src/**
+git add libs/**
 
 [ "$#" -eq 1 ] || die "1 argument required as message, $# provided" 
 
