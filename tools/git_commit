@@ -5,8 +5,9 @@ die(){
 	exit 1
 }
 
-git add src/**
-git add libs/**
+git add ../src/**
+git add ../libs/**
+git add ../tools/**
 
 [ "$#" -eq 1 ] || die "1 argument required as message, $# provided" 
 

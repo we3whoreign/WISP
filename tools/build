@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+JAVA_HOME='/usr/java/latest'
+export JAVA_HOME
+cd /home/ryzngard/workspace/WISP; ant -v
