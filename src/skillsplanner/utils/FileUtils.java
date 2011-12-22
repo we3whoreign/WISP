@@ -61,7 +61,7 @@ public class FileUtils {
 		//System.out.println(path);
 		//System.out.println(Launcher.class.getResource(path));
 		
-		System.out.println(Launcher.class.getClassLoader().getResource("."));
+		//System.out.println(Launcher.class.getClassLoader().getResource("."));
 		return Launcher.class.getResource(path);
 	}
 	
@@ -187,7 +187,7 @@ public class FileUtils {
 		if(!isJar){
 			URL path = makePath(CLASSES_PATH);
 		
-			System.out.println(path);
+			//System.out.println(path);
 		
 			classArray = traverseDirectoryForXML(new File(path.toURI()));
 		
@@ -322,7 +322,7 @@ public class FileUtils {
 
 	public static List<String> getSubclasses(String path) {
 		if(isJar){
-			return null;
+			return JarUtils.getSubclasses(path);
 		}
 		
 		URL url = makePath(SKILLS_PATH + "/" + path);
@@ -337,7 +337,7 @@ public class FileUtils {
 			
 			for(File child : f.getParentFile().listFiles()){
 				if(child.isDirectory()){
-					System.out.println(child.getName());
+					//System.out.println(child.getName());
 					ret.add(child.getName());
 				}
 			}

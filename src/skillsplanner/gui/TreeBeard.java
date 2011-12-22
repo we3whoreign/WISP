@@ -20,12 +20,13 @@ public class TreeBeard implements TreeSelectionListener {
 		
 		String path = selectionToPath(selection);
 		
+		//System.out.println(path);
 		if(FileUtils.isClassFile(path)){
 			if(Launcher.getWisp()==null){
 				System.out.println("FUCKK FUCK FUCK FUCK FUCK FUCK FUCK FUCK FUCK");
 			}
 			else{
-				System.out.println("OHAI");
+				//System.out.println("OHAI");
 				List<String> subclasses = FileUtils.getSubclasses(path);
 				
 				Launcher.getWisp().Tab1.setText(StringUtils.toCamelCase((subclasses.get(0) == null) ? "" : subclasses.get(0)));

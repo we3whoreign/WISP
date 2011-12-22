@@ -10,9 +10,14 @@ public class StringUtils {
 	 * @return
 	 */
 	public static String toCamelCase(String input){
+		
+		String breakchar = "_";
+		if(input.contains(" ")){
+			breakchar = " ";
+		}
 		String ret = "";
 		
-		StringTokenizer tokenizer = new StringTokenizer(input,"_");
+		StringTokenizer tokenizer = new StringTokenizer(input,breakchar);
 		
 		while(tokenizer.hasMoreElements()){
 			ret += capitalizeFirst(tokenizer.nextElement().toString())+ " ";

@@ -67,9 +67,45 @@ public class JarUtils {
 	 * @return
 	 */
 	public static boolean isClassFile(String path) {
-		System.out.println("Checking: "+path + ".xml");
+		//System.out.println("Checking: "+path + ".xml");
 		path = path + ".xml";
 		return Handler.getClassLoader().hasClass(path);
+	}
+
+
+	/**
+	 * Takes in a path used from the classes tree to derive the parent path and list all subclasses within it.
+	 * @param path
+	 * @return
+	 */
+	public static List<String> getSubclasses(String path) {
+		// Get the parent class
+		try{
+			path = path.substring(0,path.lastIndexOf(File.separator));
+		}
+		catch(Exception e){
+			return null;
+		}
+		
+		// Define regex patterns to search
+		String pattern = ".*" + File.separator + "skills" + File.separator + path + File.separator + "[\\S]+";
+		String xmlpattern = ".*\\.[xX][mM][lL]";
+		
+		
+		List<String> list = new ArrayList<String>();
+		Enumeration<JarEntry> em = getJarFile().entries();
+		
+		while(em.hasMoreElements()){
+			String str = em.nextElement().getName().toLowerCase();
+			if(str.matches(pattern) && !str.matches(xmlpattern)){
+				if(str.endsWith(File.separator)){
+					str = str.substring(0,str.length()-1);
+				}
+				list.add(str.substring(str.lastIndexOf(File.separator)+1).replaceAll(".xml", ""));
+			}
+		}
+		
+		return list;
 	}
 	
 }

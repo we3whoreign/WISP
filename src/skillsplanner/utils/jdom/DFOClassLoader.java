@@ -43,7 +43,7 @@ public class DFOClassLoader {
 	 */
 	public boolean hasClass(String c){
 		for(Object o : classfiles){
-			System.out.println("Checking "+c +" against "+o);
+			//System.out.println("Checking "+c +" against "+o);
 			if(((String)o).contains(c)){
 				return true;
 			}
@@ -92,7 +92,7 @@ public class DFOClassLoader {
 		}
 		else{
 			for(Object f : classfiles){
-				System.out.println(f);
+				//System.out.println(f);
 				String file = (String) f;
 				
 				if(file.endsWith(".xml")){
