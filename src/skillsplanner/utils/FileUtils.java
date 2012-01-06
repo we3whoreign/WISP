@@ -58,10 +58,6 @@ public class FileUtils {
 		path = path.replace("/", File.separator);
 		path = path.replace("\\", File.separator);
 		
-		//System.out.println(path);
-		//System.out.println(Launcher.class.getResource(path));
-		
-		//System.out.println(Launcher.class.getClassLoader().getResource("."));
 		return Launcher.class.getResource(path);
 	}
 	
@@ -187,8 +183,6 @@ public class FileUtils {
 		if(!isJar){
 			URL path = makePath(CLASSES_PATH);
 		
-			//System.out.println(path);
-		
 			classArray = traverseDirectoryForXML(new File(path.toURI()));
 		
 			return classArray;
@@ -309,7 +303,6 @@ public class FileUtils {
 		
 		URL url = makePath(CLASSES_PATH + "/" + path + ".xml");
 		try {
-			//System.out.println(url.toURI().toString());
 			if(url != null && new File(url.toURI()).isFile()){
 				return true;
 			}
@@ -337,7 +330,6 @@ public class FileUtils {
 			
 			for(File child : f.getParentFile().listFiles()){
 				if(child.isDirectory()){
-					//System.out.println(child.getName());
 					ret.add(child.getName());
 				}
 			}
@@ -349,6 +341,14 @@ public class FileUtils {
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	public static String getSeparator() {
+		if(isJar){
+			return JarUtils.getSeparator();
+		}
+		
+		return File.separator;
 	}
 
 }

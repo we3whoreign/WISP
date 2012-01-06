@@ -1,0 +1,25 @@
+# Compiled Code #
+##################
+build/**
+*.class
+*.dll
+*.exe
+
+
+
+# Javadoc #
+###########
+docs/**
+
+
+# Compiled Jar Files #
+######################
+jars/**
+
+#project settings #
+###################
+*.project
+
+#any launch configuration for eclipse#
+######################################
+**.launch

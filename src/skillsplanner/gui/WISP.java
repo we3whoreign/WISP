@@ -134,14 +134,7 @@ public class WISP extends javax.swing.JFrame{
 		
 		classTree.addTreeSelectionListener(new TreeBeard());
 		
-		//Set a transparent background
-		//classTree.setBackground(new Color(0,0,0,0));
-		//classTree.setCellRenderer(new MyRenderer());
 		classTree.setRootVisible(false);
-	/*	for(int j = 1; j <= classes.size(); j++){
-			//screw Cody
-			System.out.println("OVER HEREEEEE:" + classes.keys());
-		}*/
 		ClassArea.add(classTree);
 		
 		

@@ -24,7 +24,6 @@ public class SkillLoader {
 		if(!FileUtils.isJar){
 			for(Object f : FileUtils.getSkillFiles()){
 				File file = (File) f;
-				//System.out.println("Reading file:"+file.getName());
 				Document doc = Handler.openXMLFile(file);
 				
 				mapSkill(doc);
