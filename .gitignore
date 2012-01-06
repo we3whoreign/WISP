@@ -1,0 +1,17 @@
+# Compiled Code #
+##################
+build/**
+*.class
+*.dll
+*.exe
+
+
+
+# Javadoc #
+###########
+docs/**
+
+
+# Compiled Jar Files #
+######################
+jars/**
