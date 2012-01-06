@@ -43,7 +43,6 @@ public class DFOClassLoader {
 	 */
 	public boolean hasClass(String c){
 		for(Object o : classfiles){
-			//System.out.println("Checking "+c +" against "+o);
 			if(((String)o).contains(c)){
 				return true;
 			}
@@ -72,7 +71,6 @@ public class DFOClassLoader {
 	}
 	
 	public Hashtable<String,ArrayList<String>> listClassTable(){
-		System.out.println("List Class Table");
 		Hashtable<String,ArrayList<String>> ret = new Hashtable<String,ArrayList<String>>(21);
 		String parent; 
 		
@@ -92,13 +90,12 @@ public class DFOClassLoader {
 		}
 		else{
 			for(Object f : classfiles){
-				//System.out.println(f);
 				String file = (String) f;
 				
 				if(file.endsWith(".xml")){
-					parent = file.substring(0,file.lastIndexOf(File.separator));
-					parent = parent.substring(parent.lastIndexOf(File.separator)+1);
-					String child = file.substring(file.lastIndexOf(File.separator)+1).replaceAll(".xml", "");
+					parent = file.substring(0,file.lastIndexOf(FileUtils.getSeparator()));
+					parent = parent.substring(parent.lastIndexOf(FileUtils.getSeparator())+1);
+					String child = file.substring(file.lastIndexOf(FileUtils.getSeparator())+1).replaceAll(".xml", "");
 					if(ret.containsKey(parent)){
 						ret.get(parent).add(child);
 					}

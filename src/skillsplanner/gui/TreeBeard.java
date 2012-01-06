@@ -26,7 +26,6 @@ public class TreeBeard implements TreeSelectionListener {
 				System.out.println("FUCKK FUCK FUCK FUCK FUCK FUCK FUCK FUCK FUCK");
 			}
 			else{
-				//System.out.println("OHAI");
 				List<String> subclasses = FileUtils.getSubclasses(path);
 				
 				Launcher.getWisp().Tab1.setText(StringUtils.toCamelCase((subclasses.get(0) == null) ? "" : subclasses.get(0)));
