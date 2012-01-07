@@ -1,6 +1,7 @@
 package skillsplanner.utils.jdom;
 
 import java.io.File;
+import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,6 +10,7 @@ import org.jdom.*;
 
 import skillsplanner.skills.SkillsTemplate;
 import skillsplanner.utils.FileUtils;
+import skillsplanner.utils.JarUtils;
 
 /**
  * Handles the skill list including loading all the xml files
@@ -20,7 +22,12 @@ public class SkillLoader {
 
 	public static HashMap<String,SkillsTemplate> skillList;
 	
-	public void loadSkills() throws URISyntaxException, Exception{
+	/**
+	 * Loads the skills into the static HashMap skillList. 
+	 * @throws URISyntaxException
+	 * @throws Exception
+	 */
+	public void loadSkills() throws Exception{
 		if(!FileUtils.isJar){
 			for(Object f : FileUtils.getSkillFiles()){
 				File file = (File) f;
@@ -29,10 +36,17 @@ public class SkillLoader {
 				mapSkill(doc);
 			}
 		}
+		else{
+			for(Object f : JarUtils.getSkillFiles()){
+				InputStream stream = JarUtils.getResource((String) f);
+				Document doc = Handler.openXMLFile(stream);
+				
+				mapSkill(doc);
+			}
+		}
 	}
 	
 	public void loadSkillFile(String filename) throws URISyntaxException, Exception{
-		
 		if(filename == null){
 			return;
 		}

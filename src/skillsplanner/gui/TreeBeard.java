@@ -2,6 +2,7 @@ package skillsplanner.gui;
 
 import java.util.List;
 
+import javax.swing.JOptionPane;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -10,6 +11,7 @@ import javax.swing.tree.TreePath;
 import skillsplanner.Launcher;
 import skillsplanner.utils.FileUtils;
 import skillsplanner.utils.StringUtils;
+import skillsplanner.utils.jdom.Handler;
 
 public class TreeBeard implements TreeSelectionListener {
 
@@ -52,7 +54,12 @@ public class TreeBeard implements TreeSelectionListener {
 				Launcher.getWisp().General.setText("General");
 				
 				//Launcher.getWisp().repaint();
-				
+				try{
+					Launcher.getCharacter().setDFOClass(Handler.getClassLoader().getClass(path));
+				}
+				catch(Exception e){
+					JOptionPane.showMessageDialog(null, "Could not initiate class selection " +path);
+				}
 			}
 		}
 		

@@ -1,6 +1,8 @@
 package skillsplanner.utils.jdom;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +15,7 @@ import org.jdom.Element;
 import skillsplanner.classes.DFOClass;
 import skillsplanner.skills.SkillsTemplate;
 import skillsplanner.utils.FileUtils;
+import skillsplanner.utils.JarUtils;
 
 /**
  * Loads the class xml files.
@@ -114,8 +117,9 @@ public class DFOClassLoader {
 	 * Return the DFOClass object associated with the given class
 	 * @param dfoclass
 	 * @return
+	 * @throws IOException 
 	 */
-	public DFOClass getClass(String dfoclass){
+	public DFOClass getClass(String dfoclass) throws IOException{
 		if(!FileUtils.isJar){
 			for(Object f : classfiles){
 				File file = (File) f;
@@ -125,10 +129,48 @@ public class DFOClassLoader {
 				}
 			}
 		}
+		else{
+			for(Object f : classfiles){
+				String name = (String) f;
+				if(name.equals(dfoclass)){
+					return createClassFromStream(JarUtils.getResource(dfoclass));
+				}
+			}
+		}
 				
 		return null;
 	}
 	
+	/**
+	 * Functions like createClassFromFile, it gets the doc object and reads the xml to map it to a dfoclass object.
+	 * @param resource
+	 * @return
+	 */
+	private DFOClass createClassFromStream(InputStream resource) {
+		DFOClass dfoclass = new DFOClass();
+		
+		Document doc = Handler.openXMLFile(resource);
+
+		Element root = doc.getRootElement();
+		
+		dfoclass.setDescription(root.getChildText("description"));
+		
+		dfoclass.setName(root.getChildText("name"));
+		
+		for(Object v : root.getChildren("skill")){
+			Element e = (Element) v;
+			try {
+				getSkillFromElement(e);
+			} catch (Exception e1){}
+ 		}
+		
+		for(String s : SkillLoader.skillList.keySet()){
+			dfoclass.addSkill(SkillLoader.getSkill(s));
+		}
+		
+		return dfoclass;
+	}
+
 	/**
 	 * Creates a DFO Class from File
 	 * @param f

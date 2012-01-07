@@ -284,8 +284,8 @@ public class FileUtils {
 	}
 	
 	public static String getParentDir(String path){
-		path = path.substring(0,path.lastIndexOf(File.separator));
-		path = path.substring(path.lastIndexOf(File.separator)+1).replace("_", " ");
+		path = path.substring(0,path.lastIndexOf(JarUtils.getSeparator()));
+		path = path.substring(path.lastIndexOf(JarUtils.getSeparator())+1).replace("_", " ");
 		
 		return path;
 	}

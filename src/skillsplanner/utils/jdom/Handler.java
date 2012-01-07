@@ -1,6 +1,7 @@
 package skillsplanner.utils.jdom;
 
 import java.io.File;
+import java.io.InputStream;
 
 import org.jdom.*;
 import org.jdom.input.SAXBuilder;
@@ -119,6 +120,26 @@ public class Handler {
 		}
 		
 		return dfoclassloader;
+	}
+
+	/**
+	 * Opens an XML file given an inputstream
+	 * @param stream
+	 * @return
+	 */
+	public static Document openXMLFile(InputStream stream) {
+		try{
+			// Build the document with SAX and Xerces, no validation
+            SAXBuilder builder = new SAXBuilder();
+            // Create the document
+            Document doc = builder.build(stream);
+            
+            return doc;
+		}
+		catch(Exception ex){
+			ex.printStackTrace();
+			return null;
+		}
 	}
 	
 	
