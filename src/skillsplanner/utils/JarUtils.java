@@ -2,6 +2,7 @@ package skillsplanner.utils;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
@@ -30,7 +31,6 @@ public class JarUtils {
 		while(em.hasMoreElements()){
 			String str = em.nextElement().getName().toLowerCase();
 			if(str.contains("libs/classes/") && str.endsWith(".xml")){
-				System.out.println(str);
 				list.add(str);
 			}
 		}
@@ -38,7 +38,38 @@ public class JarUtils {
 		return list;
 	}
 	
+	/**
+	 * Returns the path of all skill files found within the jar.
+	 * @return
+	 */
+	public static List<Object> getSkillFiles(){
+		System.out.println("Here we go...");
+		Enumeration<JarEntry> em = getJarFile().entries();
+		List<Object> list = new ArrayList<Object>();
+		while(em.hasMoreElements()){
+			String str = em.nextElement().getName();
+			if(str.toLowerCase().contains("libs/skills/") && str.toLowerCase().endsWith(".xml")){
+				list.add(str);
+			}
+		}
 		
+		return list;
+	}
+	
+	/**
+	 * Returns an InputStream relating to the resource given within the jarfile
+	 * @param resource
+	 * @return InputStream of the resource
+	 * @throws IOException 
+	 */
+	public static InputStream getResource(String resource) throws IOException{
+		return getJarFile().getInputStream(getJarFile().getEntry(resource));
+	}
+	
+	/**
+	 * Returns the jarfile object that is being run
+	 * @return
+	 */
 	public static JarFile getJarFile(){
 		if(jar == null){
 			try{
@@ -52,6 +83,10 @@ public class JarUtils {
 		return jar;
 	}
 	
+	/**
+	 * Gets the jar file path  being run with JarUtils
+	 * @return
+	 */
 	private static String getJarFilePath() {
 	    String name = JarUtils.class.getName().replace('.', '/');
 	    String s = JarUtils.class.getClass().getResource("/" + name + ".class").toString();

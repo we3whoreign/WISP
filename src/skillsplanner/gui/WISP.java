@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Iterator;
@@ -94,6 +95,7 @@ public class WISP extends javax.swing.JFrame{
 	
 	public WISP() {
 		super();
+		loadFiles();
 		initGUI();
 		initListeners();
 		classAreaGeneration();
@@ -101,12 +103,38 @@ public class WISP extends javax.swing.JFrame{
 	}
 	
 	/**
+	 * Loads the xml skill files into memory
+	 */
+	private void loadFiles() {
+		// TODO Auto-generated method stub
+		try {
+			Handler.getSkillLoader().loadSkills();
+		}
+		catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, e.getMessage());
+			System.exit(1);
+		}
+	}
+
+	/**
 	 * Establish the listener for each object in the GUI
 	 */
 	private void initListeners() {
 		SamWise samwise = new SamWise();
 		closeFileMenuItem.addActionListener(samwise);
+		Tab1.addActionListener(samwise);
+		Tab2.addActionListener(samwise);
+		Tab3.addActionListener(samwise);
+		Tab4.addActionListener(samwise);
+		General.addActionListener(samwise);
 		
+		Tab1.setActionCommand(Constants.SUBCLASS_SKILL_TREE_SELECTION);
+		Tab2.setActionCommand(Constants.SUBCLASS_SKILL_TREE_SELECTION);
+		Tab3.setActionCommand(Constants.SUBCLASS_SKILL_TREE_SELECTION);
+		Tab4.setActionCommand(Constants.SUBCLASS_SKILL_TREE_SELECTION);
+		General.setActionCommand(Constants.SUBCLASS_SKILL_TREE_SELECTION);
 		
 		 //TO DO: The rest....
 		

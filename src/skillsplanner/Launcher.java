@@ -10,12 +10,13 @@ import skillsplanner.gui.WISP;
 import skillsplanner.utils.FileUtils;
 
 /**
- * a launcher wrapper for the GUI. Contains the sole instance of WISP
+ * a launcher wrapper for the GUI. Contains the sole instance of WISP and DFOCharacter
  */
 
 public class Launcher {
 	
 	public static WISP wisp;
+	public static DFOCharacter character; 
 	
 	public Launcher() {
 		createAndShowGUI();
@@ -81,5 +82,14 @@ public class Launcher {
 		}
 		return wisp;
 	} 
+	
+	public static DFOCharacter getCharacter(){
+		if(character == null){
+			character = new DFOCharacter();
+		}
+		return character;
+	}
+		
+	
 
 }

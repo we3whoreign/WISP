@@ -18,7 +18,7 @@ jars/**
 
 #project settings #
 ###################
-*.project
+*.project**
 
 #any launch configuration for eclipse#
 ######################################

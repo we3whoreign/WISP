@@ -91,4 +91,51 @@
 			<zipfileset dir="${libs.src.dir}" includes="*" prefix="${libs.src.dir}" />
 		</jar>
 	</target>
+	
+	<target name="justjar" depends="library">
+		
+		<!-- Compile -->
+		<javac srcdir="${src.dir}" 
+					destdir="${build.dir}" 
+					debug="true" 
+					classpathref="project.classpath"
+					debuglevel= "${debug.level}"
+					includeantruntime="false">
+					<compilerarg value="-Xlint:unchecked" />
+		</javac>
+		
+	
+		<!-- Make the jar file -->
+
+		<!-- delete old manifest file and create new one -->
+		<delete file="MANIFEST.MF" />
+
+	    <manifest file="MANIFEST.MF">
+	        <attribute name="Built-By" value="${user.name}"/>
+	        <attribute name="Main-Class" value="${main.class}"/>
+	        <attribute name="Implementation-Version" 
+	                     value="${version.num}"/> 
+	    </manifest>
+
+		<property name="jar.name" value="${project.name}.${version.num}.jar" />
+
+		<delete file="${jar.name}" />
+
+		<!-- create runnable jar file -->
+		<jar 
+			destfile="${jar.name}"
+			basedir="${build.dir}"
+			manifest="MANIFEST.MF"
+			>
+			<!-- include all class files -->
+			<fileset dir="${build.dir}" includes="**/*.class" />
+
+			<!-- Include all library files -->
+			<zipfileset dir="${libs.src.dir}" includes="*" prefix="${libs.src.dir}" />
+		</jar>
+		
+		
+		<!-- Do a full clean up of the build-->
+		<delete dir="${build.dir}" />
+	</target>
 </project>
