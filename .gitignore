@@ -15,10 +15,12 @@ docs/**
 # Compiled Jar Files #
 ######################
 jars/**
+MANIFEST.MF
+build.num
 
 #project settings #
 ###################
-*.project**
+#*.project**
 
 #any launch configuration for eclipse#
 ######################################

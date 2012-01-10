@@ -11,6 +11,7 @@ import skillsplanner.utils.FileUtils;
 
 /**
  * a launcher wrapper for the GUI. Contains the sole instance of WISP and DFOCharacter
+ * @author ryzngard
  */
 
 public class Launcher {
@@ -23,7 +24,7 @@ public class Launcher {
 	}
 
 	public static void main(String args[]) throws Exception {
-		/**
+		/*
 		 * SkillsLoader sk = new SkillsLoader(); Map<String,SkillsTemplate> m =
 		 * sk.getClassObjects();
 		 * 

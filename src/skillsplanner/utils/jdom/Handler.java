@@ -91,6 +91,12 @@ public class Handler {
 		return "";
 	}
 
+	/**
+	 * Parses an Element for child string and returns the integer value
+	 * @param skillattr
+	 * @param string
+	 * @return int value
+	 */
 	public static int getInteger(Element skillattr, String string) {
 		try{
 			String s;
@@ -106,6 +112,10 @@ public class Handler {
 		return 0;
 	}
 	
+	/**
+	 * Returns the reference to skillLoader, or makes it if necessary
+	 * @return skillLoader
+	 */
 	public static SkillLoader getSkillLoader(){
 		if(skillloader == null){
 			skillloader = new SkillLoader();
@@ -114,6 +124,10 @@ public class Handler {
 		return skillloader;
 	}
 	
+	/**
+	 * Returns the reference to classLoader, or creates it if necessary
+	 * @return dfoclassLoader	
+	 */
 	public static DFOClassLoader getClassLoader(){
 		if(dfoclassloader == null){
 			dfoclassloader = new DFOClassLoader();
@@ -125,7 +139,7 @@ public class Handler {
 	/**
 	 * Opens an XML file given an inputstream
 	 * @param stream
-	 * @return
+	 * @return Document object for use with jdom parsing
 	 */
 	public static Document openXMLFile(InputStream stream) {
 		try{

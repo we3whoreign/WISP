@@ -351,4 +351,29 @@ public class FileUtils {
 		return File.separator;
 	}
 
+	/**
+	 * Take in string path, held in the JTRee for class selection, and translates it into the string that can be loaded
+	 * @param path
+	 * @return
+	 */
+	public static String getDFOClass(String path) {
+		if(!isJar){
+			path = path.substring(path.lastIndexOf(JarUtils.getSeparator())+1,path.length());
+			path+=".xml";
+			return path;
+		}
+		else{
+			return path;
+		}
+	}
+
+	/**
+	 * Parses a URI for the filename with extensions
+	 * @param baseURI
+	 * @return
+	 */
+	public static String getFileName(String baseURI) {
+		return baseURI.substring(baseURI.lastIndexOf(JarUtils.getSeparator())+1);
+	}
+
 }

@@ -31,6 +31,7 @@ public class DFOClass {
 	}
 
 	public void setDescription(String description) {
+		System.out.println("Setting description to: "+description);
 		this.description = description;
 	}
 
@@ -39,6 +40,7 @@ public class DFOClass {
 	}
 
 	public void setName(String name) {
+		System.out.println("Setting name to: "+name);
 		this.name = name;
 	}
 
@@ -46,6 +48,7 @@ public class DFOClass {
 		if(skills == null){
 			skills = new ArrayList<SkillsTemplate>();
 		}
+		System.out.println("Adding "+st.getName()+" to skills");
 		skills.add(st);
 	}
 	
