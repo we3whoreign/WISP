@@ -22,6 +22,9 @@ public class SamWise implements ActionListener{
 		
 		switch(selection){
 			case Constants.CLASS_SELECTION:
+				Object source = e.getSource();
+				String name = ((JButton)source).getText();
+				System.out.println("Selecting skills for "+name);
 				break;
 		
 			case Constants.LEVEL_DOWN_OPERATION:
