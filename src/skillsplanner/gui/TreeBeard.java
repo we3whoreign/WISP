@@ -1,5 +1,6 @@
 package skillsplanner.gui;
 
+import java.io.IOException;
 import java.util.List;
 
 import javax.swing.JOptionPane;
@@ -13,6 +14,11 @@ import skillsplanner.utils.FileUtils;
 import skillsplanner.utils.StringUtils;
 import skillsplanner.utils.jdom.Handler;
 
+/**
+ * Listener for any event sent from the JTRee that holds the class hierarchy.
+ * @author ryzngard
+ *
+ */
 public class TreeBeard implements TreeSelectionListener {
 
 	@Override
@@ -53,12 +59,16 @@ public class TreeBeard implements TreeSelectionListener {
 				
 				Launcher.getWisp().General.setText("General");
 				
-				//Launcher.getWisp().repaint();
-				try{
-					Launcher.getCharacter().setDFOClass(Handler.getClassLoader().getClass(path));
-				}
-				catch(Exception e){
-					JOptionPane.showMessageDialog(null, "Could not initiate class selection " +path);
+				//Change the DFOCharacter object to reflect change in class
+				try {
+					System.out.println("Setting character class to "+path);
+					Launcher.getCharacter().setDFOClass(
+							Handler.getClassLoader().getClass(FileUtils.getDFOClass(path))
+							);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					JOptionPane.showMessageDialog(null, e.getMessage());
 				}
 			}
 		}

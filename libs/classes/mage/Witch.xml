@@ -6,9 +6,9 @@
 	
 	
 	<!-- Battle Mage Skills -->
-	<skill>cancel_weapon_uppercut</skill>
+	<!-- <skill>cancel_weapon_uppercut</skill> -->
 	<skill>dragon_fang</skill>
-	<skill>weapon_uppercut.xml</skill>
+	<skill>weapon_uppercut</skill>
 	
 	<!-- Witch Skills -->
 	<skill>ancient_library</skill>

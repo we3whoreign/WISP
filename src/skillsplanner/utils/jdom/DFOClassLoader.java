@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Hashtable;
 
+import javax.swing.JOptionPane;
+
 import org.jdom.Attribute;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -120,14 +122,17 @@ public class DFOClassLoader {
 	 * @throws IOException 
 	 */
 	public DFOClass getClass(String dfoclass) throws IOException{
+		System.out.println("GETCLASS");
 		if(!FileUtils.isJar){
 			for(Object f : classfiles){
 				File file = (File) f;
 				String name = file.getName();
-				if(name.equals(dfoclass)){
+				System.out.println(name);
+				if(name.equalsIgnoreCase(dfoclass)){
 					return createClassFromFile(file);
 				}
 			}
+			JOptionPane.showMessageDialog(null, "Couldn't find "+dfoclass);
 		}
 		else{
 			for(Object f : classfiles){
@@ -177,6 +182,7 @@ public class DFOClassLoader {
 	 * @return
 	 */
 	private DFOClass createClassFromFile(File f){
+		System.out.println("Loading class from file "+f.getName());
 		DFOClass dfoclass = new DFOClass();
 		
 		Document doc = Handler.openXMLFile(f.getAbsolutePath());
@@ -198,13 +204,11 @@ public class DFOClassLoader {
 			// iterate through every skill tag getting the name
 			Element e = (Element) v;
 			try {
-				getSkillFromElement(e);
-			} catch (Exception e1){}
+				dfoclass.addSkill(getSkillFromElement(e));
+			} catch (Exception e1){
+				e1.printStackTrace();
+			}
  		}
-		
-		for(String s : SkillLoader.skillList.keySet()){
-			dfoclass.addSkill(SkillLoader.getSkill(s));
-		}
 		
 		// carry on...
 		/**
@@ -220,9 +224,24 @@ public class DFOClassLoader {
 		return dfoclass;
 	}
 
-	private void getSkillFromElement(Element e) throws URISyntaxException, Exception {
+	/**
+	 * Returns a Skill from the SkillLoader using the name contained in the element
+	 * @param e
+	 * @return
+	 * @throws URISyntaxException
+	 * @throws Exception
+	 */
+	private SkillsTemplate getSkillFromElement(Element e) throws URISyntaxException, Exception {
 		String name = e.getText();
-		Handler.getSkillLoader().loadSkillFile(name);
+		
+		//Add xml if needed
+		if(!name.endsWith(".xml")){
+			name += ".xml";
+		}
+		
+		System.out.println("Trying to load "+name );
+		Handler.getSkillLoader();
+		return SkillLoader.getSkill(name);
 	}
 
 	private SkillsTemplate getSkillFromAttribute(Attribute attribute) {

@@ -46,6 +46,12 @@ public class SkillLoader {
 		}
 	}
 	
+	/**
+	 * Loads a skill given a file
+	 * @param filename
+	 * @throws URISyntaxException
+	 * @throws Exception
+	 */
 	public void loadSkillFile(String filename) throws URISyntaxException, Exception{
 		if(filename == null){
 			return;
@@ -81,13 +87,13 @@ public class SkillLoader {
 		
 		//Magic to take the base URI and derive the subclass, easy to break 
 		//and heavily depends on folder structure
-		addSkill(getSkillFromElement(skillattr,FileUtils.getParentDir(baseURI)));
+		addSkill(getSkillFromElement(skillattr,FileUtils.getParentDir(baseURI)),FileUtils.getFileName(doc.getBaseURI()));
 	}
 	
 	/**
 	 * Create a SkillsTemplate object from a jdom Element
 	 * @param skillattr
-	 * @return
+	 * @return SkillsTemplate object relating to the xml 
 	 */
 	public static SkillsTemplate getSkillFromElement(Element skillattr,String basename){
 		
@@ -132,31 +138,31 @@ public class SkillLoader {
 	}
 	
 	/**
-	 * add a skill to the list
+	 * add a skill to the list using the filename as the key
 	 * @param st
 	 */
-	public static void addSkill(SkillsTemplate st){
+	public static void addSkill(SkillsTemplate st, String filename){
 		
 		if(skillList == null){
 			skillList = new HashMap<String,SkillsTemplate>();
 		}
 			
 		try{
-			skillList.put(st.getName(), st);
+			skillList.put(filename, st);
 		}
 		catch(Exception e){
 			// this needs to be reduced to only the duplicate exception
 			
 			// overwrite old with new
-			skillList.remove(st.getName());
-			skillList.put(st.getName(), st);
+			skillList.remove(filename);
+			skillList.put(filename, st);
 		}
 	}
 
 	/**
 	 * Return a skill given the skill name
 	 * @param skillname
-	 * @return
+	 * @return SkillsTemplate from skillList
 	 */
 	public static SkillsTemplate getSkill(String skillname) {
 		try{
@@ -170,7 +176,7 @@ public class SkillLoader {
 	
 	/**
 	 * Gets a list of all the skill names in a string array
-	 * @return
+	 * @return array of the skills
 	 */
 	public static String[] getSkillList(){
 		if(skillList == null){
