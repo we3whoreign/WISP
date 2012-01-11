@@ -199,10 +199,10 @@ public class FileUtils {
 	 * @throws Exception
 	 */
 	public static List<Object> getSkillFiles() throws URISyntaxException, Exception{
-		if(skillArray != null){
+		if(skillArray != null && !isJar){
 			return skillArray;
 		}
-		if(!isJar){
+		else if(!isJar){
 			URL path = makePath(SKILLS_PATH);
 			
 			skillArray = traverseDirectoryForXML(new File(path.toURI()));
@@ -314,6 +314,7 @@ public class FileUtils {
 	}
 
 	public static List<String> getSubclasses(String path) {
+		System.out.println(path);
 		if(isJar){
 			return JarUtils.getSubclasses(path);
 		}

@@ -5,9 +5,11 @@ import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import org.jdom.*;
 
+import skillsplanner.Launcher;
 import skillsplanner.skills.SkillsTemplate;
 import skillsplanner.utils.FileUtils;
 import skillsplanner.utils.JarUtils;
@@ -191,6 +193,66 @@ public class SkillLoader {
 		}
 		
 		return sarray;
+	}
+
+	/**
+	 * Takes subclass name and searches the skills directory for a matching class then checks the skilList for any skills that match availability
+	 * @param name
+	 */
+	public List<SkillsTemplate> fetchSubclassSkills(String name) {
+		List<SkillsTemplate> list = new ArrayList<SkillsTemplate>();
+		if(Launcher.character.getClass() == null){
+			System.out.println("NO CLASS");
+			return null;
+		}
+		else{
+			for(SkillsTemplate st : Launcher.character.getDFOClass().getSkills()){
+				if(st.getTree().equalsIgnoreCase(name)){
+					list.add(st);
+					System.out.println("Added "+st.getName());
+				}
+			}
+		}
+		
+		return list;
+	}
+	
+	/**
+	 * Checks for a skill in the skill files
+	 * @param name
+	 * @return boolean
+	 */
+	public static boolean checkForSkill(String name){
+		if(FileUtils.isJar){
+			for(Object obj : JarUtils.getSkillFiles()){
+				String tmp = (String) obj;
+				System.out.println(tmp + " == "+name);
+				if(tmp.toLowerCase().contains(name.toLowerCase())){
+					return true;
+				}
+			}
+			
+			return false;
+		}
+		else{
+			try {
+				for(Object o : FileUtils.getSkillFiles()){
+					File f = (File) o;
+					System.out.println(f.getName() +" == "+name);
+					if(f.getName().equalsIgnoreCase(name)){
+						return true;
+					}
+				}
+			} catch (URISyntaxException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			return false;
+		}
 	}
 	
 }

@@ -65,6 +65,9 @@ public class TreeBeard implements TreeSelectionListener {
 					Launcher.getCharacter().setDFOClass(
 							Handler.getClassLoader().getClass(FileUtils.getDFOClass(path))
 							);
+					if(Launcher.getCharacter().getDFOClass() == null){
+						System.out.println("FUCK OFF");
+					}
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

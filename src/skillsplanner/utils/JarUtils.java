@@ -152,5 +152,14 @@ public class JarUtils {
 	public static String getSeparator() {
 		return "/";
 	}
+
+	/**
+	 * @param o
+	 * @param name
+	 * @return boolean of existance
+	 */
+	public static boolean checkFor(String name) {
+		return false;
+	}
 	
 }

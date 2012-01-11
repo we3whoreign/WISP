@@ -3,11 +3,14 @@ package skillsplanner.gui;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 import skillsplanner.Launcher;
+import skillsplanner.skills.SkillsTemplate;
+import skillsplanner.utils.StringUtils;
 import skillsplanner.utils.jdom.Handler;
 
 /**
@@ -19,12 +22,17 @@ public class SamWise implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String selection = e.getActionCommand();
+		System.out.println(selection);
 		
 		switch(selection){
-			case Constants.CLASS_SELECTION:
+			case Constants.SUBCLASS_SKILL_TREE_SELECTION:
 				Object source = e.getSource();
 				String name = ((JButton)source).getText();
+				name = StringUtils.toFileName(name);
 				System.out.println("Selecting skills for "+name);
+				List<SkillsTemplate> list = Handler.getSkillLoader().fetchSubclassSkills(name);
+				
+				//CREATE JPANELS FOR THE SKILLS
 				break;
 		
 			case Constants.LEVEL_DOWN_OPERATION:

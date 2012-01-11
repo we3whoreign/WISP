@@ -1,7 +1,6 @@
 package skillsplanner.skills;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Framework for making skills

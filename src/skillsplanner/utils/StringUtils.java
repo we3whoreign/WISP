@@ -2,6 +2,9 @@ package skillsplanner.utils;
 
 import java.util.StringTokenizer;
 
+import javax.swing.AbstractButton;
+import javax.swing.JButton;
+
 public class StringUtils {
 	
 	/**
@@ -30,10 +33,18 @@ public class StringUtils {
 	/**
 	 * Returns the first letter capitalized of input, and the rest lowercase
 	 * @param input
-	 * @return
+	 * @return capitalize the first letter of each word
 	 */
 	public static String capitalizeFirst(String input){
 		return input.substring(0, 1).toUpperCase() + input.substring(1).toLowerCase();
+	}
+
+	/**
+	 * @param source
+	 * @return source with all spaces changed to _ and lowercase
+	 */
+	public static String toFileName(String source) {
+		return source.replaceAll(" ", "_").toLowerCase().trim();
 	}
 
 }
