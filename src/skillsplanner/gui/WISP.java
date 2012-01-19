@@ -15,6 +15,8 @@ import javax.swing.border.LineBorder;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
 
+import skillsplanner.gui.custom.ClickablePanel;
+import skillsplanner.skills.SkillsTemplate;
 import skillsplanner.utils.StringUtils;
 import skillsplanner.utils.jdom.*;
 
@@ -385,5 +387,23 @@ public class WISP extends javax.swing.JFrame{
             return this;  
         }  
     }
+
+	/**
+	 * Clears all the skills from the RightPane by completely reinstantiating it.
+	 */
+	public void wipeSkills() {
+		// TODO Auto-generated method stub
+		RightPane = new JPanel();
+	}
+
+	/**
+	 * @param st
+	 */
+	public void addSkill(SkillsTemplate st) {
+		// TODO Auto-generated method stub
+		ClickablePanel panel = new ClickablePanel(st.getName());
+		RightPane.add(panel);
+		System.out.println("Adding Panel: "+panel.getName());
+	}
 
 }

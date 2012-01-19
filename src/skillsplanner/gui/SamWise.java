@@ -31,8 +31,15 @@ public class SamWise implements ActionListener{
 				name = StringUtils.toFileName(name);
 				System.out.println("Selecting skills for "+name);
 				List<SkillsTemplate> list = Handler.getSkillLoader().fetchSubclassSkills(name);
+			
+				//Wipe Skills
+				Launcher.wisp.wipeSkills();
 				
 				//CREATE JPANELS FOR THE SKILLS
+				for(SkillsTemplate st : list){
+					Launcher.wisp.addSkill(st);
+				}
+				
 				break;
 		
 			case Constants.LEVEL_DOWN_OPERATION:

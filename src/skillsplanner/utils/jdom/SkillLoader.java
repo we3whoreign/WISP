@@ -206,7 +206,8 @@ public class SkillLoader {
 			return null;
 		}
 		else{
-			for(SkillsTemplate st : Launcher.character.getDFOClass().getSkills()){
+			for(String key : skillList.keySet()){
+				SkillsTemplate st = skillList.get(key);
 				if(st.getTree().equalsIgnoreCase(name)){
 					list.add(st);
 					System.out.println("Added "+st.getName());

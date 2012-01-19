@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Framework for making skills
  */
-public class SkillsTemplate {
+public class SkillsTemplate{
 	
 	//Indication of what tree the skill is in
 	private String tree;
@@ -156,4 +156,7 @@ public class SkillsTemplate {
 		return tree;
 	}
 	
+	public int hashCode(){
+		return this.name.hashCode();
+	}
 }

@@ -20,7 +20,7 @@ public class DFOClass {
 
 	private String description;
 	private String name; 
-	private List<SkillsTemplate> skills;
+	private HashMap<Integer,SkillsTemplate> skills;
 
 	public HashMap<String, SkillsTemplate> loadSkills(){
 		throw new UnsupportedOperationException();
@@ -46,13 +46,13 @@ public class DFOClass {
 
 	public void addSkill(SkillsTemplate st) {
 		if(skills == null){
-			skills = new ArrayList<SkillsTemplate>();
+			skills = new HashMap<Integer,SkillsTemplate>();
 		}
 		System.out.println("Adding "+st.getName()+" to skills");
-		skills.add(st);
+		skills.put(st.hashCode(),st);
 	}
 	
-	public List<SkillsTemplate> getSkills(){
+	public HashMap<Integer,SkillsTemplate> getSkills(){
 		return skills;
 	}
 }

@@ -1,6 +1,7 @@
 package skillsplanner.testing;
 
 import java.net.URISyntaxException;
+import java.util.HashMap;
 import java.util.List;
 
 import skillsplanner.classes.DFOClass;
@@ -47,12 +48,12 @@ public class CLITest {
 		
 		for(int i = 0; i < classes.length; i++){
 			DFOClass c = Handler.getClassLoader().getClass(classes[i]);
-			List<SkillsTemplate> skills = c.getSkills();
+			HashMap<Integer,SkillsTemplate> skills = c.getSkills();
 			
 			System.out.println("Name: "+c.getName());
 			System.out.println("Description: "+c.getDescription());
 			System.out.println("Skills:\n");
-			for(SkillsTemplate skill : skills){
+			for(SkillsTemplate skill : skills.values()){
 				System.out.println(skill.getName());
 			}
 			System.out.println("");
