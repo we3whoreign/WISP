@@ -1,6 +1,7 @@
 package skillsplanner.skills;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -33,6 +34,9 @@ public class SkillsTemplate {
 	
 	//Entry Fee (CODYFLAG)
 	private int entrycost;
+	
+	//Linked list which holds all prerequisite skills as SkillRequirements
+	private LinkedList<SkillRequirement> skillRequirements;
 	
 	// List of level dependent values
 	private ArrayList<ArrayList<String>> dynamic;
@@ -134,6 +138,22 @@ public class SkillsTemplate {
 	}
 	public int getSpcost() {
 		return spcost;
+	}
+	public LinkedList<SkillRequirement> getSkillRequirements(){
+		return skillRequirements;
+	}
+	/*
+	 * This takes in a String an an int, converts them to a SkillRequirement, and
+	 * then adds them to the stored LinkedList of SkillRequirements.
+	 */
+	public boolean addSkillRequirement(String skillName, int skillLevel ){
+		if(skillRequirements == null){
+			skillRequirements = new LinkedList<SkillRequirement>();
+		}
+		
+		SkillRequirement newReq = new SkillRequirement(skillName,skillLevel);
+		
+		return(skillRequirements.add(newReq));
 	}
 	public void setSpcost(int spcost) {
 		this.spcost = spcost;
