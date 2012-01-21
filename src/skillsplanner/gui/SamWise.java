@@ -40,6 +40,9 @@ public class SamWise implements ActionListener{
 					Launcher.wisp.addSkill(st);
 				}
 				
+				Launcher.wisp.validate();
+				Launcher.wisp.update(Launcher.wisp.getGraphics());
+				
 				break;
 		
 			case Constants.LEVEL_DOWN_OPERATION:

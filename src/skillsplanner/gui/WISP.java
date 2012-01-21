@@ -179,7 +179,9 @@ public class WISP extends javax.swing.JFrame{
 				SkillArea.setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED));
 				{
 					LeftPane = new JPanel();
-					SkillArea.add(LeftPane, JSplitPane.LEFT);
+					JScrollPane sp = new JScrollPane(LeftPane);
+					sp.setWheelScrollingEnabled(true);
+					SkillArea.add(sp, JSplitPane.LEFT);
 				}
 				{
 					RightPane = new JPanel();
@@ -393,7 +395,14 @@ public class WISP extends javax.swing.JFrame{
 	 */
 	public void wipeSkills() {
 		// TODO Auto-generated method stub
-		RightPane = new JPanel();
+		LeftPane.setBackground(Color.pink);
+		RightPane.setBackground(Color.blue);
+		for(Component c : LeftPane.getComponents()){
+			LeftPane.remove(c);
+		}
+		//LeftPane.setLayout(new BorderLayout());
+		LeftPane.setLayout(new BoxLayout(LeftPane,BoxLayout.Y_AXIS));
+		LeftPane.validate();
 	}
 
 	/**
@@ -402,7 +411,7 @@ public class WISP extends javax.swing.JFrame{
 	public void addSkill(SkillsTemplate st) {
 		// TODO Auto-generated method stub
 		ClickablePanel panel = new ClickablePanel(st.getName());
-		RightPane.add(panel);
+		LeftPane.add(panel);
 		System.out.println("Adding Panel: "+panel.getName());
 	}
 

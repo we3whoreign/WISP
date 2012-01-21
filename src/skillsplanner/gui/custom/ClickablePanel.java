@@ -1,10 +1,13 @@
 package skillsplanner.gui.custom;
 
+import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.BorderFactory;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 
@@ -27,19 +30,28 @@ public class ClickablePanel extends JPanel implements MouseListener{
 	
 	public ClickablePanel(){
 		setDimensions();
+		this.setBackground(Color.cyan);
 	}
 	
 	/**
 	 * Sets the size for the clickable label
 	 */
 	private void setDimensions(){
-		setMinimumSize(new Dimension(width,height));
-		this.setSize(new Dimension(width,height));
+		//this.setMinimumSize(new Dimension(width,height));
+		//this.setSize(new Dimension(width,height));
+		//this.setPreferredSize(new Dimension(width,height));
 		this.setToolTipText("Click to level up. Right click to level down");
 		
 		raised = BorderFactory.createRaisedBevelBorder();
 		lowered = BorderFactory.createLoweredBevelBorder();
 		empty = BorderFactory.createEmptyBorder();
+		
+		//this.setBorder(lowered);
+		this.add(new JLabel(this.getName()));
+		
+		this.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		this.addMouseListener(this);
+		
 	}
 	
 	public void setSkillName(String skill){
