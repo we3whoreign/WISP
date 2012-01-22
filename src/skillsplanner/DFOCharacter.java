@@ -6,7 +6,7 @@ import skillsplanner.classes.DFOClass;
 
 /**
  * Represents the character object that encapsulates what the player would be.
- * Includes a class and stats, as well as skills and sp.
+ * Includes a DFOClass that can be reassigned
  */
 public class DFOCharacter{
 	private int remainingSP;

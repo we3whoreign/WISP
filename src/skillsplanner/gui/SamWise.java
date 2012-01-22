@@ -41,7 +41,8 @@ public class SamWise implements ActionListener{
 				}
 				
 				Launcher.wisp.validate();
-				Launcher.wisp.update(Launcher.wisp.getGraphics());
+				Launcher.wisp.repaint();
+				//Launcher.wisp.update(Launcher.wisp.getGraphics());
 				
 				break;
 		
