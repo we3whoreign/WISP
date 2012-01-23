@@ -409,7 +409,7 @@ public class WISP extends javax.swing.JFrame{
 	 */
 	public void addSkill(SkillsTemplate st) {
 		// TODO Auto-generated method stub
-		ClickablePanel panel = new ClickablePanel(st.getName());
+		ClickablePanel panel = new ClickablePanel(st);
 		LeftPane.add(panel);
 		System.out.println("Adding Panel: "+panel.getName());
 	}

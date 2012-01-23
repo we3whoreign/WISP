@@ -31,6 +31,7 @@ public class ClickablePanel extends JPanel implements MouseListener{
 	SkillsTemplate skill;
 	
 	public ClickablePanel(SkillsTemplate st){
+		System.out.println(st.getName());
 		this.setName(st.getName());
 		skill = st;
 		setDimensions();
@@ -40,6 +41,11 @@ public class ClickablePanel extends JPanel implements MouseListener{
 		setDimensions();
 	}
 	
+	public ClickablePanel(String string) {
+		// TODO Auto-generated constructor stub
+		this.setName(string);
+	}
+
 	/**
 	 * Sets the size for the clickable label as well as some other setup
 	 */
