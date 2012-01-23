@@ -15,6 +15,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 
+import skillsplanner.skills.SkillsTemplate;
+
 /**
  * A clickable panel with the option of storing a skill name. Used for Leveling up skills. Registers Right click as level down and left click as level up.
  *
@@ -26,9 +28,11 @@ public class ClickablePanel extends JPanel implements MouseListener{
 	Border lowered;
 	Border empty;
 	Color currentColor;
+	SkillsTemplate skill;
 	
-	public ClickablePanel(String skill){
-		this.setName(skill);
+	public ClickablePanel(SkillsTemplate st){
+		this.setName(st.getName());
+		skill = st;
 		setDimensions();
 	}
 	
