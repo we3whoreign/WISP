@@ -48,7 +48,7 @@ public class CLITest {
 		
 		for(int i = 0; i < classes.length; i++){
 			DFOClass c = Handler.getClassLoader().getClass(classes[i]);
-			HashMap<Integer,SkillsTemplate> skills = c.getSkills();
+			HashMap<String,SkillsTemplate> skills = c.getSkills();
 			
 			System.out.println("Name: "+c.getName());
 			System.out.println("Description: "+c.getDescription());

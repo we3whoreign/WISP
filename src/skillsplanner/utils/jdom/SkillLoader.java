@@ -113,6 +113,11 @@ public class SkillLoader {
 		
 		st.setEntrycost(Handler.getInteger(skillattr,"entrycost"));
 		
+		//Gets and adds all relevant skill requirements
+		for(Object req : skillattr.getChildren("skillreq")){
+			st.addSkillRequirement(((Element)req).getAttributeValue("name"), Integer.parseInt(((Element)req).getAttributeValue("level")));
+		}
+		
 		Element dynamic = skillattr.getChild("dynamic");
 		
 		//add a level 0 if entry cost is positive (CODYFLAG)
