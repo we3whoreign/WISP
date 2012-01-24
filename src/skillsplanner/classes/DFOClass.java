@@ -20,12 +20,9 @@ public class DFOClass {
 
 	private String description;
 	private String name; 
-	private HashMap<Integer,SkillsTemplate> skills;
+	private HashMap<String,SkillsTemplate> skills;
 
-	public HashMap<String, SkillsTemplate> loadSkills(){
-		throw new UnsupportedOperationException();
-	}
-
+	
 	public String getDescription() {
 		return this.description;
 	}
@@ -46,13 +43,13 @@ public class DFOClass {
 
 	public void addSkill(SkillsTemplate st) {
 		if(skills == null){
-			skills = new HashMap<Integer,SkillsTemplate>();
+			skills = new HashMap<String,SkillsTemplate>();
 		}
 		System.out.println("Adding "+st.getName()+" to skills");
-		skills.put(st.hashCode(),st);
+		skills.put(st.getName(),st);
 	}
 	
-	public HashMap<Integer,SkillsTemplate> getSkills(){
+	public HashMap<String,SkillsTemplate> getSkills(){
 		return skills;
 	}
 }

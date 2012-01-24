@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import skillsplanner.classes.DFOClass;
+
+
 /**
  * Framework for making skills
  */
@@ -155,6 +158,26 @@ public class SkillsTemplate {
 		
 		return(skillRequirements.add(newReq));
 	}
+	/**
+	 * Takes a DFOClass and returns if the class (character) currently
+	 * has the skills required to add *this* one.
+	 * @param DFOClass character
+	 * @return boolean satisfied
+	 */
+	public boolean requirementsFulfilled(DFOClass character){
+		boolean satisfied = true;
+		
+		for(SkillRequirement skill : skillRequirements){
+						
+			if(skill.getLevel() < (character.getSkills()).get(skill.getName()).getLevel()){
+				satisfied = false;
+			}
+			
+		}
+		
+		return satisfied;
+	}
+	
 	public void setSpcost(int spcost) {
 		this.spcost = spcost;
 	}
@@ -175,10 +198,6 @@ public class SkillsTemplate {
 	}
 	public String getTree() {
 		return tree;
-	}
-	
-	public int hashCode(){
-		return this.getName().hashCode();
 	}
 	
 }
