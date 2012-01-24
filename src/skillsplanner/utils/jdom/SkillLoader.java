@@ -101,7 +101,7 @@ public class SkillLoader {
 		
 		SkillsTemplate st = new SkillsTemplate();
 		
-		st.setTree(FileUtils.firstLetterCap(basename));
+		st.setTree(basename);
 		
 		st.setAnimationFrameTime(Handler.getDouble(skillattr,"frametime"));
 		
