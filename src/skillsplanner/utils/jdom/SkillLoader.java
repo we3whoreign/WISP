@@ -215,7 +215,8 @@ public class SkillLoader {
 		else{
 			for(String key : skillList.keySet()){
 				SkillsTemplate st = skillList.get(key);
-				if(st.getTree().equalsIgnoreCase(name)){
+				//System.out.println("YO BITCH, YOUR NAME IS " + name);
+				if(st.getTree().equalsIgnoreCase(name) && StaticResources.getCharacter().getDFOClass().getSkills().containsKey(st.getName())){
 					list.add(st);
 					System.out.println("Added "+st.getName());
 				}

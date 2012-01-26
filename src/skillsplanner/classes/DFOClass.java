@@ -51,7 +51,7 @@ public class DFOClass {
 			return;
 		}
 		System.out.println("Adding "+st.getName()+" to skills");
-		skills.put(st.getName(),st.getMinLevel()+1);
+		skills.put(st.getName(),st.getMinLevel());
 	}
 	
 	public HashMap<String,Integer> getSkills(){
