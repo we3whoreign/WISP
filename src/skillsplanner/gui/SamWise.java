@@ -8,7 +8,7 @@ import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
-import skillsplanner.Launcher;
+import skillsplanner.resources.StaticResources;
 import skillsplanner.skills.SkillsTemplate;
 import skillsplanner.utils.StringUtils;
 import skillsplanner.utils.jdom.Handler;
@@ -33,15 +33,15 @@ public class SamWise implements ActionListener{
 				List<SkillsTemplate> list = Handler.getSkillLoader().fetchSubclassSkills(name);
 			
 				//Wipe Skills
-				Launcher.wisp.wipeSkills();
+				StaticResources.getWisp().wipeSkills();
 				
 				//CREATE JPANELS FOR THE SKILLS
 				for(SkillsTemplate st : list){
-					Launcher.wisp.addSkill(st);
+					StaticResources.getWisp().addSkill(st);
 				}
 				
-				Launcher.wisp.validate();
-				Launcher.wisp.repaint();
+				StaticResources.getWisp().validate();
+				StaticResources.getWisp().repaint();
 				//Launcher.wisp.update(Launcher.wisp.getGraphics());
 				
 				break;

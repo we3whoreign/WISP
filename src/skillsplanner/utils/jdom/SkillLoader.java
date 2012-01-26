@@ -9,7 +9,7 @@ import java.util.List;
 
 import org.jdom.*;
 
-import skillsplanner.Launcher;
+import skillsplanner.resources.StaticResources;
 import skillsplanner.skills.SkillsTemplate;
 import skillsplanner.utils.FileUtils;
 import skillsplanner.utils.JarUtils;
@@ -206,7 +206,7 @@ public class SkillLoader {
 	 */
 	public List<SkillsTemplate> fetchSubclassSkills(String name) {
 		List<SkillsTemplate> list = new ArrayList<SkillsTemplate>();
-		if(Launcher.character.getClass() == null){
+		if(StaticResources.getCharacter().getClass() == null){
 			System.out.println("NO CLASS");
 			return null;
 		}

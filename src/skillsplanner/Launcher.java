@@ -6,7 +6,7 @@ import java.net.URISyntaxException;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-import skillsplanner.gui.WISP;
+import skillsplanner.resources.StaticResources;
 import skillsplanner.utils.FileUtils;
 
 /**
@@ -15,9 +15,6 @@ import skillsplanner.utils.FileUtils;
  */
 
 public class Launcher {
-	
-	public static WISP wisp;
-	public static DFOCharacter character; 
 	
 	public Launcher() {
 		createAndShowGUI();
@@ -73,22 +70,8 @@ public class Launcher {
 			FileUtils.isJar = false;
 		}
 		
-		getWisp();
+		StaticResources.getWisp();
 
-	}
-	
-	public static WISP getWisp(){
-		if(wisp == null){
-			wisp = new WISP();
-		}
-		return wisp;
-	} 
-	
-	public static DFOCharacter getCharacter(){
-		if(character == null){
-			character = new DFOCharacter();
-		}
-		return character;
 	}
 		
 	

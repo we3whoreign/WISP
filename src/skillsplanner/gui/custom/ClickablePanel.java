@@ -12,16 +12,22 @@ import java.awt.event.MouseListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 
+import skillsplanner.skills.SkillHandler;
 import skillsplanner.skills.SkillsTemplate;
+import skillsplanner.skills.errors.MaxLevelException;
+import skillsplanner.skills.errors.RequirementsNotMetException;
+import skillsplanner.skills.errors.SPException;
 
 /**
  * A clickable panel with the option of storing a skill name. Used for Leveling up skills. Registers Right click as level down and left click as level up.
  *
  */
 public class ClickablePanel extends JPanel implements MouseListener{
+	private static final long serialVersionUID = 1L;
 	private final int width = 250;
 	private final int height = 50;
 	Border raised;
@@ -114,6 +120,16 @@ public class ClickablePanel extends JPanel implements MouseListener{
 	public void mousePressed(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 		this.setBorder(lowered);
+		try {
+			SkillHandler.levelUp(this.skill);
+		} catch (RequirementsNotMetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, e.getMessage());
+		} 
 		
 	}
 

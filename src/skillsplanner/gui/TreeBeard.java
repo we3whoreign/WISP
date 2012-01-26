@@ -9,7 +9,7 @@ import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreePath;
 
-import skillsplanner.Launcher;
+import skillsplanner.resources.StaticResources;
 import skillsplanner.utils.FileUtils;
 import skillsplanner.utils.StringUtils;
 import skillsplanner.utils.jdom.Handler;
@@ -30,42 +30,42 @@ public class TreeBeard implements TreeSelectionListener {
 		
 		//System.out.println(path);
 		if(FileUtils.isClassFile(path)){
-			if(Launcher.getWisp()==null){
+			if(StaticResources.getWisp()==null){
 				System.out.println("FUCKK FUCK FUCK FUCK FUCK FUCK FUCK FUCK FUCK");
 			}
 			else{
 				List<String> subclasses = FileUtils.getSubclasses(path);
 				
-				Launcher.getWisp().Tab1.setText(StringUtils.toCamelCase((subclasses.get(0) == null) ? "" : subclasses.get(0)));
-				Launcher.getWisp().Tab2.setText(StringUtils.toCamelCase((subclasses.get(1) == null) ? "" : subclasses.get(1)));
+				StaticResources.getWisp().Tab1.setText(StringUtils.toCamelCase((subclasses.get(0) == null) ? "" : subclasses.get(0)));
+				StaticResources.getWisp().Tab2.setText(StringUtils.toCamelCase((subclasses.get(1) == null) ? "" : subclasses.get(1)));
 				
 				
 				/**
 				 * 3 and 4 may not exist for some classes
 				 */
 				try{
-					Launcher.getWisp().Tab3.setText(StringUtils.toCamelCase((subclasses.get(2) == null) ? "" : subclasses.get(2)));
+					StaticResources.getWisp().Tab3.setText(StringUtils.toCamelCase((subclasses.get(2) == null) ? "" : subclasses.get(2)));
 				}
 				catch(Exception e){
-					Launcher.getWisp().Tab3.setText("");
+					StaticResources.getWisp().Tab3.setText("");
 				}
 				
 				try{
-					Launcher.getWisp().Tab4.setText(StringUtils.toCamelCase((subclasses.get(3) == null) ? "" : subclasses.get(3)));
+					StaticResources.getWisp().Tab4.setText(StringUtils.toCamelCase((subclasses.get(3) == null) ? "" : subclasses.get(3)));
 				}
 				catch(Exception e){
-					Launcher.getWisp().Tab4.setText("");
+					StaticResources.getWisp().Tab4.setText("");
 				}
 				
-				Launcher.getWisp().General.setText("General");
+				StaticResources.getWisp().General.setText("General");
 				
 				//Change the DFOCharacter object to reflect change in class
 				try {
 					System.out.println("Setting character class to "+path);
-					Launcher.getCharacter().setDFOClass(
+					StaticResources.getCharacter().setDFOClass(
 							Handler.getClassLoader().getClass(FileUtils.getDFOClass(path))
 							);
-					if(Launcher.getCharacter().getDFOClass() == null){
+					if(StaticResources.getCharacter().getDFOClass() == null){
 						System.out.println("FUCK OFF");
 					}
 				} catch (IOException e) {

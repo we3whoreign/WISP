@@ -6,7 +6,7 @@ import skillsplanner.classes.DFOClass;
 
 /**
  * Represents the character object that encapsulates what the player would be.
- * Includes a DFOClass that can be reassigned
+ * Includes a DFOClass that can be reassigned as well as SP management
  */
 public class DFOCharacter{
 	private int remainingSP;
@@ -18,6 +18,7 @@ public class DFOCharacter{
 
 	public DFOCharacter() {
 		this.charclass = null;
+		this.remainingSP = totalSP;
 	}
 
 	public void setDFOClass(DFOClass charclass) {
@@ -27,4 +28,17 @@ public class DFOCharacter{
 	public DFOClass getDFOClass() {
 		return this.charclass;
 	}
+	
+	/**
+	 * Important to note that this does not check bounds so will go negative. The checking is done with the SkillHandler
+	 * @param cost
+	 */
+	public void spendSp(int cost){
+		remainingSP = remainingSP - cost;
+	}
+	
+	public int getRemainingSP(){
+		return this.remainingSP;
+	}
+	
 }

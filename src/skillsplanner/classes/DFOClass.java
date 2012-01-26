@@ -45,6 +45,11 @@ public class DFOClass {
 		if(skills == null){
 			skills = new HashMap<String,SkillsTemplate>();
 		}
+		
+		//don't add the skill if it exists
+		if(skills.containsKey(st.getName())){
+			return;
+		}
 		System.out.println("Adding "+st.getName()+" to skills");
 		skills.put(st.getName(),st);
 	}
