@@ -166,15 +166,17 @@ public class SkillsTemplate {
 	 */
 	public boolean requirementsFulfilled(DFOClass character){
 		boolean satisfied = true;
-		
-		for(SkillRequirement skill : skillRequirements){
-						
-			if(skill.getLevel() < (character.getSkills()).get(skill.getName()).getLevel()){
-				satisfied = false;
-			}
+
+		if(skillRequirements != null){
 			
+			for(SkillRequirement skill : skillRequirements){
+							
+				if(skill.getLevel() < (character.getSkills()).get(skill.getName()).getLevel()){
+					satisfied = false;
+				}
+				
+			}
 		}
-		
 		return satisfied;
 	}
 	
