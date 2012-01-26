@@ -48,14 +48,14 @@ public class CLITest {
 		
 		for(int i = 0; i < classes.length; i++){
 			DFOClass c = Handler.getClassLoader().getClass(classes[i]);
-			HashMap<String,SkillsTemplate> skills = c.getSkills();
+			HashMap<String,Integer> skills = c.getSkills();
 			
 			System.out.println("Name: "+c.getName());
 			System.out.println("Description: "+c.getDescription());
 			System.out.println("Skills:\n");
-			for(SkillsTemplate skill : skills.values()){
-				System.out.println(skill.getName());
-			}
+			//for(SkillsTemplate skill : skills.values()){
+				System.out.println("Fuck the clit");
+			//}
 			System.out.println("");
 		}
 

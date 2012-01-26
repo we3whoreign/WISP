@@ -43,7 +43,7 @@ public class SkillHandler {
 		}
 		
 		//Check level constraints
-		if(st.getLevel() == st.getMaxLevel()){
+		if(character.getDFOClass().getSkills().get(st.getName()) == st.getMaxLevel()){
 			throw new MaxLevelException(st);
 		}
 		
@@ -55,11 +55,11 @@ public class SkillHandler {
 		
 		//Add the skill if not already in there
 		character.getDFOClass().addSkill(st);
-		System.out.println("BEFORE: "+character.getDFOClass().getSkills().get(st.getName()).getLevel());
+		System.out.println("BEFORE: "+character.getDFOClass().getSkills().get(st.getName()));
 		
-		st.levelUp();
+		character.getDFOClass().getSkills().put(st.getName(),character.getDFOClass().getSkills().get(st.getName())+1);
 		
-		System.out.println("AFTER: "+character.getDFOClass().getSkills().get(st.getName()).getLevel());
+		System.out.println("AFTER: "+character.getDFOClass().getSkills().get(st.getName()));
 		
 	}
 	

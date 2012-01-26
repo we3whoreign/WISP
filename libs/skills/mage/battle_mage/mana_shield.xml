@@ -2,10 +2,10 @@
 <skillsplanner>
 
 	<skill>
-		<name> Mana Shield </name>
-		<casttime> 1 </casttime>
-		<spcost> 20 </spcost>
-		<entrycost> 0 </entrycost>
+		<name>Mana Shield</name>
+		<casttime>1</casttime>
+		<spcost>20</spcost>
+		<entrycost>0</entrycost>
 		<description> Consumes MP instead of HP for a certain percentage of damages received 
 		from opponents. Casting it once will activate the skill. Casting it second time will 
 		cancel the skill.  </description>

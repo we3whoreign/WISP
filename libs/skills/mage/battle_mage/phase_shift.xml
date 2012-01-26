@@ -2,10 +2,10 @@
 <skillsplanner>
 
 	<skill>
-		<name> Phase Shift </name>
-		<casttime> 0 </casttime>
-		<spcost> 20 </spcost>
-		<entrycost> 0 </entrycost>
+		<name>Phase Shift</name>
+		<casttime>0</casttime>
+		<spcost>20</spcost>
+		<entrycost>0</entrycost>
 		<description> Teleports the user away from current location. Can only be activated during hit 
 		frame either on the ground or the air. Pressing directional key before using this skill allows 
 		tone to warp to desired direction. Otherwise, the user will warp a step behind from the current location  </description>

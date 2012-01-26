@@ -20,7 +20,7 @@ public class DFOClass {
 
 	private String description;
 	private String name; 
-	private HashMap<String,SkillsTemplate> skills;
+	private HashMap<String,Integer> skills;
 
 	
 	public String getDescription() {
@@ -43,7 +43,7 @@ public class DFOClass {
 
 	public void addSkill(SkillsTemplate st) {
 		if(skills == null){
-			skills = new HashMap<String,SkillsTemplate>();
+			skills = new HashMap<String,Integer>();
 		}
 		
 		//don't add the skill if it exists
@@ -51,10 +51,10 @@ public class DFOClass {
 			return;
 		}
 		System.out.println("Adding "+st.getName()+" to skills");
-		skills.put(st.getName(),st);
+		skills.put(st.getName(),st.getMinLevel()+1);
 	}
 	
-	public HashMap<String,SkillsTemplate> getSkills(){
+	public HashMap<String,Integer> getSkills(){
 		return skills;
 	}
 }

@@ -18,12 +18,12 @@ public class SkillsTemplate {
 	// Certified String Name
 	private String name;
 
-	// Skill Level
-	private int level;
-
 	// Max Level
 	private int maxlevel;
 
+	// Minimum Level
+	private int minlevel;
+	
 	// Cast time
 	private double casttime;
 
@@ -63,26 +63,6 @@ public class SkillsTemplate {
 		this.name = name;
 	}
 
-	/**
-	 * Get the current level of the skill
-	 */
-	public int getLevel() {
-		return level;
-	}
-
-	/**
-	 * Set the current level of the skill
-	 */
-	public void setLevel(int level) {
-		this.level = level;
-	}
-
-	/**
-	 * Increase the level by 1
-	 */
-	public void levelUp() {
-		this.level++;
-	}
 
 	/**
 	 * Set the max level for this skill
@@ -114,7 +94,7 @@ public class SkillsTemplate {
 		return this.animationframe;
 	}
 	
-	public ArrayList<String> getDynamic(){
+	public ArrayList<String> getDynamic(int level){
 		return dynamic.get(level);
 	}
 	
@@ -128,11 +108,9 @@ public class SkillsTemplate {
 	 * This does a print of all information for each level
 	 */
 	public void dumpLevelInfo() {
-		int tmplevel = level;
 		
 		for(int i = 0; i < maxlevel; i++){
-			level = i;
-			for(String s : getDynamic()){
+			for(String s : getDynamic(i)){
 				System.out.println(s);
 			}
 			System.out.println("--------------------------------------");
@@ -171,7 +149,7 @@ public class SkillsTemplate {
 			
 			for(SkillRequirement skill : skillRequirements){
 							
-				if(skill.getLevel() < (character.getSkills()).get(skill.getName()).getLevel()){
+				if(skill.getLevel() < (character.getSkills()).get(skill.getName())){
 					satisfied = false;
 				}
 				
@@ -200,6 +178,12 @@ public class SkillsTemplate {
 	}
 	public String getTree() {
 		return tree;
+	}
+	public int getMinLevel() {
+		return minlevel;
+	}
+	public void setMinLevel(int minlevel) {
+		this.minlevel = minlevel;
 	}
 	
 }

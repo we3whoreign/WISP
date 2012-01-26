@@ -113,6 +113,8 @@ public class SkillLoader {
 		
 		st.setEntrycost(Handler.getInteger(skillattr,"entrycost"));
 		
+		st.setMinLevel(st.getEntrycost() < 0 ? 1 : 0);
+				
 		//Gets and adds all relevant skill requirements
 		for(Object req : skillattr.getChildren("skillreq")){
 			st.addSkillRequirement(((Element)req).getAttributeValue("name"), Integer.parseInt(((Element)req).getAttributeValue("level")));
