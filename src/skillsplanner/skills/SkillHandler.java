@@ -43,7 +43,7 @@ public class SkillHandler {
 		}
 		
 		//Check level constraints
-		if(character.getDFOClass().getSkills().get(st.getName()) == st.getMaxLevel()){
+		if(character.getDFOClass().getSkills().containsKey(st.getName()) && character.getDFOClass().getSkills().get(st.getName()) == st.getMaxLevel()){
 			throw new MaxLevelException(st);
 		}
 		

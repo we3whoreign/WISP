@@ -6,14 +6,17 @@ import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.GridLayout;
 import java.awt.RenderingHints;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 
 import skillsplanner.skills.SkillHandler;
@@ -35,6 +38,7 @@ public class ClickablePanel extends JPanel implements MouseListener{
 	Border empty;
 	Color currentColor;
 	SkillsTemplate skill;
+	JLabel levelInfo;
 	
 	public ClickablePanel(SkillsTemplate st){
 		System.out.println(st.getName());
@@ -56,6 +60,8 @@ public class ClickablePanel extends JPanel implements MouseListener{
 	 * Sets the size for the clickable label as well as some other setup
 	 */
 	private void setDimensions(){
+		
+		this.setLayout(new GridLayout(0,1));
 		this.setMinimumSize(new Dimension(width,height));
 		//this.setPreferredSize(new Dimension(width,height));
 		this.setMaximumSize(new Dimension(Short.MAX_VALUE,height));
@@ -67,9 +73,14 @@ public class ClickablePanel extends JPanel implements MouseListener{
 		
 		//this.setBorder(lowered);
 		JLabel label = new JLabel(this.getName());
-		label.setVerticalTextPosition(JLabel.CENTER);
+		label.setHorizontalAlignment(JLabel.CENTER);
 		label.setForeground(Color.WHITE);
 		this.add(label);
+		
+		levelInfo = new JLabel("Current Level: 0    Max Level: "+ skill.getMaxLevel());
+		levelInfo.setHorizontalAlignment(JLabel.CENTER);
+		levelInfo.setForeground(Color.WHITE);
+		this.add(levelInfo);
 		
 		this.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		this.addMouseListener(this);
@@ -122,6 +133,7 @@ public class ClickablePanel extends JPanel implements MouseListener{
 		this.setBorder(lowered);
 		try {
 			SkillHandler.levelUp(this.skill);
+			updateInformation();
 		} catch (RequirementsNotMetException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -131,6 +143,11 @@ public class ClickablePanel extends JPanel implements MouseListener{
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		} 
 		
+	}
+
+	private void updateInformation() {
+		// TODO Auto-generated method stub
+		this.levelInfo.setText("Current Level: 0    Max Level: "+skill.getMaxLevel());
 	}
 
 	@Override

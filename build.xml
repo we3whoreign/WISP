@@ -47,10 +47,11 @@
 		destdir="${doc.dir}"
 		classpathref="project.classpath"
 		version="true"
-		use="true"/>
+		use="true"
+		maxmemory="512M"/>
 	</target>
 	<!-- Compile the code -->
-	<target name="compile" depends="javadoc">
+	<target name="compile" depends="library">
 		<javac srcdir="${src.dir}" 
 			destdir="${build.dir}" 
 			debug="true" 

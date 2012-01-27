@@ -17,7 +17,7 @@ public class DFOCharacter{
 	private DFOClass charclass;
 
 	public DFOCharacter() {
-		this.charclass = null;
+		this.charclass = new DFOClass();
 		this.remainingSP = totalSP;
 	}
 
