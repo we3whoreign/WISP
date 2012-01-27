@@ -6,14 +6,15 @@
 	
 	
 	<!-- Battle Mage Skills -->
-	<skill>cancel_weapon_uppercut</skill>
-	<skill>dragon_fang</skill>
-	<skill>weapon_uppercut.xml</skill>
+	<skill>Cancel Weapon Uppercut</skill>
+	<skill>Dragon Fang</skill>
+	<skill>Mana Shield</skill>
+	<skill>Weapon Uppercut</skill>
 	
 	<!-- Witch Skills -->
-	<skill>ancient_library</skill>
-	<skill>cancel_magic_missile</skill>
-	<skill>disenchant</skill>
-	<skill>magic_missile</skill>
-	<skill>shururu</skill>
+	<skill>Ancient Library</skill>
+	<skill>Cancel Magic Missile</skill>
+	<skill>Disenchant</skill>
+	<skill>Magic Missile</skill>
+	<skill>Cheeky Doll Shururu</skill>
 </skillplanner>

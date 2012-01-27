@@ -88,9 +88,10 @@ public class SkillLoader {
 		
 		Element skillattr = root.getChild("skill");
 		
-		//Magic to take the base URI and derive the subclass, easy to break 
-		//and heavily depends on folder structure
-		addSkill(getSkillFromElement(skillattr,FileUtils.getParentDir(baseURI)),FileUtils.getFileName(doc.getBaseURI()));
+		SkillsTemplate st = getSkillFromElement(skillattr,FileUtils.getParentDir(baseURI));
+
+		
+		addSkill(st,st.getName());
 	}
 	
 	/**

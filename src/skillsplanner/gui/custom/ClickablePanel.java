@@ -22,7 +22,9 @@ import javax.swing.border.Border;
 import skillsplanner.resources.StaticResources;
 import skillsplanner.skills.SkillHandler;
 import skillsplanner.skills.SkillsTemplate;
+import skillsplanner.skills.errors.CurrentRequirementException;
 import skillsplanner.skills.errors.MaxLevelException;
+import skillsplanner.skills.errors.MinLevelException;
 import skillsplanner.skills.errors.RequirementsNotMetException;
 import skillsplanner.skills.errors.SPException;
 
@@ -112,6 +114,7 @@ public class ClickablePanel extends JPanel implements MouseListener{
 		}
 		else if(arg0.getButton() == MouseEvent.BUTTON3){
 			System.out.println("Right Click" + this.getName());
+			levelDownSkill();
 		}
 		
 	}
@@ -140,6 +143,19 @@ public class ClickablePanel extends JPanel implements MouseListener{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			JOptionPane.showMessageDialog(null, e.getMessage());
+		} 
+	}
+	
+	private void levelDownSkill(){
+		try {
+			SkillHandler.levelDown(this.skill);
+			updateInformation();
+		} catch (MinLevelException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (CurrentRequirementException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		} 
 	}
 	

@@ -234,11 +234,6 @@ public class DFOClassLoader {
 	private SkillsTemplate getSkillFromElement(Element e) throws URISyntaxException, Exception {
 		String name = e.getText();
 		
-		//Add xml if needed
-		if(!name.endsWith(".xml")){
-			name += ".xml";
-		}
-		
 		System.out.println("Trying to load "+name );
 		Handler.getSkillLoader();
 		return Handler.getSkillLoader().getSkill(name);
