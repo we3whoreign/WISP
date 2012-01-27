@@ -146,10 +146,8 @@ public class SkillsTemplate {
 		boolean satisfied = true;
 
 		if(skillRequirements != null){
-			
-			for(SkillRequirement skill : skillRequirements){
-							
-				if(skill.getLevel() < (character.getSkills()).get(skill.getName())){
+			for(SkillRequirement req : skillRequirements){
+				if(req.getLevel() > (character.getSkills()).get(req.getName())){
 					satisfied = false;
 				}
 				

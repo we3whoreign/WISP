@@ -54,7 +54,7 @@ public class SkillHandler {
 		}
 		
 		//Add the skill if not already in there
-		character.getDFOClass().addSkill(st);
+		//character.getDFOClass().addSkill(st);
 		System.out.println("BEFORE: "+character.getDFOClass().getSkills().get(st.getName()));
 		
 		character.getDFOClass().getSkills().put(st.getName(),character.getDFOClass().getSkills().get(st.getName())+1);
