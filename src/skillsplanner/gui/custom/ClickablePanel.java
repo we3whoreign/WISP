@@ -19,6 +19,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 
+import skillsplanner.resources.StaticResources;
 import skillsplanner.skills.SkillHandler;
 import skillsplanner.skills.SkillsTemplate;
 import skillsplanner.skills.errors.MaxLevelException;
@@ -77,7 +78,7 @@ public class ClickablePanel extends JPanel implements MouseListener{
 		label.setForeground(Color.WHITE);
 		this.add(label);
 		
-		levelInfo = new JLabel("Current Level: 0    Max Level: "+ skill.getMaxLevel());
+		levelInfo = new JLabel("Current Level: "+StaticResources.getCharacter().getDFOClass().getSkills().get(skill.getName())+"    Max Level: "+ skill.getMaxLevel());
 		levelInfo.setHorizontalAlignment(JLabel.CENTER);
 		levelInfo.setForeground(Color.WHITE);
 		this.add(levelInfo);
@@ -147,7 +148,7 @@ public class ClickablePanel extends JPanel implements MouseListener{
 
 	private void updateInformation() {
 		// TODO Auto-generated method stub
-		this.levelInfo.setText("Current Level: 0    Max Level: "+skill.getMaxLevel());
+		this.levelInfo.setText("Current Level: "+StaticResources.getCharacter().getDFOClass().getSkills().get(skill.getName())+"    Max Level: "+skill.getMaxLevel());
 	}
 
 	@Override

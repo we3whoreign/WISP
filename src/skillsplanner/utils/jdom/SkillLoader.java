@@ -122,11 +122,6 @@ public class SkillLoader {
 		
 		Element dynamic = skillattr.getChild("dynamic");
 		
-		//add a level 0 if entry cost is positive (CODYFLAG)
-		if(st.getEntrycost() >= 0) {
-			st.addDynamic(new ArrayList<String>());
-		}
-		
 		//For each level
 		for(Object o : dynamic.getChildren()){
 			Element e = (Element) o;
