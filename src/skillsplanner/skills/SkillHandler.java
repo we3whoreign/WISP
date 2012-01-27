@@ -101,7 +101,6 @@ public class SkillHandler {
 	 */
 	private static boolean isCurrentlyRequired(SkillsTemplate st){
 		DFOCharacter character = StaticResources.getCharacter();
-		boolean required = false;
 		
 		//Get all the skills for the class  KAAAA
 		for(String s : character.getDFOClass().getSkills().keySet()){		
@@ -120,13 +119,13 @@ public class SkillHandler {
 								&& Handler.getSkillLoader().getSkill(s).getSkillRequirements().get(i).getLevel() == character.getDFOClass().getSkills().get(st.getName())){						
 							
 							//Yup. Don't touch me there. DAMN YOU KAKAROTTTTT
-							required = true;
+							return true;
 						}
 					}	
 				}
 			}
 		}
-		return required;
+		return false;
 		
 	}
 	
