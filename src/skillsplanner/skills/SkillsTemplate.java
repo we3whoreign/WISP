@@ -184,4 +184,8 @@ public class SkillsTemplate {
 		this.minlevel = minlevel;
 	}
 	
+	public String toString(){
+		return this.getName();
+	}
+	
 }

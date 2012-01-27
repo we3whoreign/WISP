@@ -105,6 +105,7 @@ public class ClickablePanel extends JPanel implements MouseListener{
 	public void mouseClicked(MouseEvent arg0) {
 		if(arg0.getButton() == MouseEvent.BUTTON1){
 			System.out.println("Left Click on "+this.getName());
+			levelUpSkill();
 		}
 		else if(arg0.getButton() == MouseEvent.BUTTON2){
 			System.out.println("Middle Click on "+this.getName());
@@ -128,10 +129,7 @@ public class ClickablePanel extends JPanel implements MouseListener{
 		this.setBorder(empty);
 	}
 
-	@Override
-	public void mousePressed(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		this.setBorder(lowered);
+	private void levelUpSkill(){
 		try {
 			SkillHandler.levelUp(this.skill);
 			updateInformation();
@@ -143,7 +141,12 @@ public class ClickablePanel extends JPanel implements MouseListener{
 			e.printStackTrace();
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		} 
-		
+	}
+	
+	@Override
+	public void mousePressed(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		this.setBorder(lowered);
 	}
 
 	private void updateInformation() {

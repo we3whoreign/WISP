@@ -12,8 +12,8 @@ public class MaxLevelException extends Exception {
 	}
 	
 	public MaxLevelException(SkillsTemplate st){
-		super(st.getName() + " cannot accede "+st.getMaxLevel());
-		error = st.getName() +" cannot accede "+st.getMaxLevel();
+		super(st.getName() + " cannot exceed "+st.getMaxLevel());
+		error = st.getName() +" cannot exceed "+st.getMaxLevel();
 	}
 	
 	public String getError(){

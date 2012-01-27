@@ -28,36 +28,36 @@ public class CLITest {
 		//DFOClassLoader classloader = new DFOClassLoader();
 		
 		Handler.getSkillLoader().loadSkills();
-		
-		String[] skilllist = Handler.getSkillLoader().getSkillList();
-		
-		System.out.println("Dumping skills...");
-		
-		for(int i = 0; i < skilllist.length; i++){
-			SkillsTemplate st = Handler.getSkillLoader().getSkill(skilllist[i]);
-			
-			System.out.println("Name: "+st.getName());
-			System.out.println("Cast Time: "+st.getCastTime());
-			System.out.println("Entry Cost: "+st.getEntrycost());
-			st.dumpLevelInfo();
-		}
-		
-		System.out.println("");
-		
-		String[] classes = Handler.getClassLoader().listClasses();
-		
-		for(int i = 0; i < classes.length; i++){
-			DFOClass c = Handler.getClassLoader().getClass(classes[i]);
-			HashMap<String,Integer> skills = c.getSkills();
-			
-			System.out.println("Name: "+c.getName());
-			System.out.println("Description: "+c.getDescription());
-			System.out.println("Skills:\n");
-			//for(SkillsTemplate skill : skills.values()){
-				System.out.println("Fuck the clit");
-			//}
-			System.out.println("");
-		}
+//		
+////		String[] skilllist = Handler.getSkillLoader().getSkillList();
+//		
+//		System.out.println("Dumping skills...");
+//		
+//		for(int i = 0; i < skilllist.length; i++){
+//			SkillsTemplate st = Handler.getSkillLoader().getSkill(skilllist[i]);
+//			
+//			System.out.println("Name: "+st.getName());
+//			System.out.println("Cast Time: "+st.getCastTime());
+//			System.out.println("Entry Cost: "+st.getEntrycost());
+//			st.dumpLevelInfo();
+//		}
+//		
+//		System.out.println("");
+//		
+//		String[] classes = Handler.getClassLoader().listClasses();
+//		
+//		for(int i = 0; i < classes.length; i++){
+//			DFOClass c = Handler.getClassLoader().getClass(classes[i]);
+//			HashMap<String,Integer> skills = c.getSkills();
+//			
+//			System.out.println("Name: "+c.getName());
+//			System.out.println("Description: "+c.getDescription());
+//			System.out.println("Skills:\n");
+//			//for(SkillsTemplate skill : skills.values()){
+//				System.out.println("Fuck the clit");
+//			//}
+//			System.out.println("");
+//		}
 
 	}
 

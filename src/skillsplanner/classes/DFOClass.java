@@ -57,4 +57,8 @@ public class DFOClass {
 	public HashMap<String,Integer> getSkills(){
 		return skills;
 	}
+	
+	public String toString(){
+		return this.name;
+	}
 }

@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.List;
 
 import org.jdom.*;
@@ -22,7 +23,7 @@ import skillsplanner.utils.JarUtils;
  */
 public class SkillLoader {
 
-	public static HashMap<String,SkillsTemplate> skillList;
+	private HashMap<String,SkillsTemplate> skillList;
 	
 	/**
 	 * Loads the skills into the static HashMap skillList. 
@@ -145,7 +146,7 @@ public class SkillLoader {
 	 * add a skill to the list using the filename as the key
 	 * @param st
 	 */
-	public static void addSkill(SkillsTemplate st, String filename){
+	public void addSkill(SkillsTemplate st, String filename){
 		
 		if(skillList == null){
 			skillList = new HashMap<String,SkillsTemplate>();
@@ -168,7 +169,7 @@ public class SkillLoader {
 	 * @param skillname
 	 * @return SkillsTemplate from skillList
 	 */
-	public static SkillsTemplate getSkill(String skillname) {
+	public SkillsTemplate getSkill(String skillname) {
 		try{
 			return skillList.get(skillname);
 		}
@@ -178,24 +179,26 @@ public class SkillLoader {
 		}
 	}
 	
-	/**
-	 * Gets a list of all the skill names in a string array
-	 * @return array of the skills
-	 */
-	public static String[] getSkillList(){
-		if(skillList == null){
-			return new String[0];
-		}
-		
-		Object[] oarray = skillList.keySet().toArray();
-		String[] sarray = new String[oarray.length];
-		
-		for(int i=0; i < oarray.length; i++){
-			sarray[i] = (String) oarray[i];
-		}
-		
-		return sarray;
-	}
+//	/**
+//	 * Gets a list of all the skill names in a string array
+//	 * @return array of the skills
+//	 */
+//	public String[] getSkillList(){
+//		if(skillList == null){
+//			return new String[0];
+//		}
+//		
+//		Object[] oarray = skillList.keySet().toArray();
+//		String[] sarray = new String[oarray.length];
+//		
+//		for(int i=0; i < oarray.length; i++){
+//			sarray[i] = (String) oarray[i];
+//		}
+//		
+//		return sarray;
+//	}
+	
+	
 
 	/**
 	 * Takes subclass name and searches the skills directory for a matching class then checks the skilList for any skills that match availability
@@ -257,6 +260,10 @@ public class SkillLoader {
 			
 			return false;
 		}
+	}
+
+	public HashMap<String, SkillsTemplate> getSkillList() {
+		return this.skillList;
 	}
 	
 }

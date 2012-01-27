@@ -169,8 +169,8 @@ public class DFOClassLoader {
 			} catch (Exception e1){}
  		}
 		
-		for(String s : SkillLoader.skillList.keySet()){
-			dfoclass.addSkill(SkillLoader.getSkill(s));
+		for(String s : Handler.getSkillLoader().getSkillList().keySet()){
+			dfoclass.addSkill(Handler.getSkillLoader().getSkill(s));
 		}
 		
 		return dfoclass;
@@ -241,13 +241,36 @@ public class DFOClassLoader {
 		
 		System.out.println("Trying to load "+name );
 		Handler.getSkillLoader();
-		return SkillLoader.getSkill(name);
+		return Handler.getSkillLoader().getSkill(name);
 	}
 
 	private SkillsTemplate getSkillFromAttribute(Attribute attribute) {
 		String skillname = attribute.getValue();
 		
-		return SkillLoader.getSkill(skillname);
+		return Handler.getSkillLoader().getSkill(skillname);
+	}
+
+	public ArrayList<DFOClass> getClasses() {
+		ArrayList<DFOClass> list = new ArrayList<DFOClass>();
+		if(!FileUtils.isJar){
+			for(Object f : classfiles){
+				File file = (File) f;
+				list.add(createClassFromFile(file));
+			}
+		}
+		else{
+			for(Object f : classfiles){
+				String name = (String) f;
+				try {
+					list.add(createClassFromStream(JarUtils.getResource(name)));
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		return list;
 	}
 	
 	

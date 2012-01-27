@@ -276,7 +276,7 @@ public class WISP extends javax.swing.JFrame{
 				jScrollPane1.setWheelScrollingEnabled(true);
 				getContentPane().add(jScrollPane1, BorderLayout.WEST);
 			}
-			this.setSize(800, 600);
+			this.setSize(900, 600);
 			{
 				jMenuBar1 = new JMenuBar();
 				setJMenuBar(jMenuBar1);
