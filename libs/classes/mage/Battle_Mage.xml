@@ -8,6 +8,7 @@
 	<!-- Battle Mage Skills -->
 	<skill>cancel_weapon_uppercut</skill>
 	<skill>dragon_fang</skill>
+	<skill>mana_shield</skill>
 	<skill>weapon_uppercut.xml</skill>
 	
 	<!-- Witch Skills -->
