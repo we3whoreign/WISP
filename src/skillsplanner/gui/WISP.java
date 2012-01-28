@@ -49,6 +49,7 @@ public class WISP extends javax.swing.JFrame{
 	private JMenu jMenu5;
 	private JPanel Tabs;
 	private JLabel LOGO;
+	private JLabel SPRemaining;
 	private JPanel ClassArea;
 	private JScrollPane jScrollPane1;
 	private JPanel RightPane;
@@ -56,6 +57,7 @@ public class WISP extends javax.swing.JFrame{
 	private JPanel ExtraCrap;
 	private JPanel SkillContainer;
 	private JPanel TabArea;
+	private JPanel SPArea;
 	private JSplitPane SkillArea;
 	private JMenuItem deleteMenuItem;
 	private JSeparator jSeparator1;
@@ -276,6 +278,19 @@ public class WISP extends javax.swing.JFrame{
 				jScrollPane1.setWheelScrollingEnabled(true);
 				getContentPane().add(jScrollPane1, BorderLayout.WEST);
 			}
+			{
+				SPArea = new JPanel();
+				SPArea.setBackground(Color.DARK_GRAY);
+				getContentPane().add(SPArea,BorderLayout.SOUTH);
+				SPArea.setPreferredSize(new java.awt.Dimension(790, 40));
+				{
+					SPRemaining = new JLabel();
+					SPArea.add(SPRemaining,BorderLayout.WEST);
+					SPRemaining.setForeground(Color.WHITE);
+					SPRemaining.setText("Please select a class.");
+					SPRemaining.setPreferredSize(new java.awt.Dimension(200,40));
+				}
+			}
 			this.setSize(900, 600);
 			{
 				jMenuBar1 = new JMenuBar();
@@ -414,4 +429,12 @@ public class WISP extends javax.swing.JFrame{
 		System.out.println("Adding Panel: "+panel.getName());
 	}
 
+	/**
+	 * Updates the displayed SP Remaining.
+	 * @param sp
+	 */
+	public void updateRemainingSP(int sp){
+		SPRemaining.setText("SP Remaining: " + sp);
+		SPRemaining.validate();
+	}
 }
