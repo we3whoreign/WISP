@@ -63,8 +63,11 @@ public class TreeBeard implements TreeSelectionListener {
 				try {
 					System.out.println("Setting character class to "+path);
 					StaticResources.getCharacter().setDFOClass(
-							Handler.getClassLoader().getClass(FileUtils.getDFOClass(path))
-							);
+							Handler.getClassLoader().getClass(FileUtils.getDFOClass(path)));
+					//Reset characters SP and update 
+					StaticResources.getCharacter().resetSp();
+					StaticResources.getWisp().updateRemainingSP(StaticResources.getCharacter().getRemainingSP());
+					
 					if(StaticResources.getCharacter().getDFOClass() == null){
 						System.out.println("FUCK OFF");
 					}

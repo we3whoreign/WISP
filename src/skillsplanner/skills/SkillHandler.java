@@ -56,12 +56,27 @@ public class SkillHandler {
 			
 		}
 		
-		//Increase skill level
-		System.out.println("BEFORE: "+character.getDFOClass().getSkills().get(st.getName()));
+
+		System.out.println("BEFORE: "+character.getDFOClass().getSkills().get(st.getName()) + " SP TOT: " + character.getRemainingSP());
 		
+		/* Checks to see if the entry cost should apply, please note
+		 * that skills with negative entry cost will never be level 0.
+		 */
+		if(character.getDFOClass().getSkills().get(st.getName()) == 0){
+			character.spendSp(st.getSpcost() + st.getEntrycost());
+		}
+		else{
+			character.spendSp(st.getSpcost());
+		}
+		
+		//Reflect SP change in GUI
+		StaticResources.getWisp().updateRemainingSP(character.getRemainingSP());
+		
+		//Increase level
 		character.getDFOClass().getSkills().put(st.getName(),character.getDFOClass().getSkills().get(st.getName())+1);
 		
-		System.out.println("AFTER: "+character.getDFOClass().getSkills().get(st.getName()));
+		System.out.println("AFTER: "+character.getDFOClass().getSkills().get(st.getName()) + " SP TOT: " + character.getRemainingSP());
+		
 		
 	}
 	
@@ -84,12 +99,27 @@ public class SkillHandler {
 		if(isCurrentlyRequired(st)){
 			throw new CurrentRequirementException(st.getName());
 		}
-		//Decrease skill level
-		System.out.println("BEFORE: "+character.getDFOClass().getSkills().get(st.getName()));
+
+		System.out.println("BEFORE: "+character.getDFOClass().getSkills().get(st.getName()) + " SP TOT: " + character.getRemainingSP());
 		
+		/* Checks if the skill will be going down to level 0 and 
+		 * therefore need to refund the entry cost SP for the skill.  Note
+		 * that skills with negative entry cost will never be able to hit level 0.
+		 */
+		if((character.getDFOClass().getSkills().get(st.getName()) -1 ) == 0){
+			character.refundSp(st.getSpcost() + st.getEntrycost());
+		}
+		else{
+			character.refundSp(st.getSpcost());
+		}
+		
+		//Reflect SP change in GUI
+		StaticResources.getWisp().updateRemainingSP(character.getRemainingSP());
+		
+		//Decrease level
 		character.getDFOClass().getSkills().put(st.getName(),character.getDFOClass().getSkills().get(st.getName())-1);
 		
-		System.out.println("AFTER: "+character.getDFOClass().getSkills().get(st.getName()));
+		System.out.println("AFTER: "+character.getDFOClass().getSkills().get(st.getName()) + " SP TOT: " + character.getRemainingSP());
 		
 	}
 	

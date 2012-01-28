@@ -11,8 +11,7 @@ import skillsplanner.classes.DFOClass;
 public class DFOCharacter{
 	private int remainingSP;
 
-	// CHANGE LATER
-	private static final int totalSP = 500;
+	private static final int totalSP = 7069;
 
 	private DFOClass charclass;
 
@@ -35,6 +34,21 @@ public class DFOCharacter{
 	 */
 	public void spendSp(int cost){
 		remainingSP = remainingSP - cost;
+	}
+	
+	/**
+	 * Adds specified amount back into remaining SP pool.
+	 * @param amount
+	 */
+	public void refundSp(int amount){
+		remainingSP = remainingSP + amount;
+	}
+	
+	/**
+	 * Resets SP to the original total
+	 */
+	public void resetSp(){
+		remainingSP = totalSP;
 	}
 	
 	public int getRemainingSP(){
