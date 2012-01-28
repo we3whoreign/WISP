@@ -6,6 +6,8 @@ import java.io.InputStream;
 import org.jdom.*;
 import org.jdom.input.SAXBuilder;
 
+import skillsplanner.utils.FileUtils;
+
 /**
  * This handles the general utilities for JDOM. Anything that isn't specific 
  * to a class or job is put here.
@@ -154,6 +156,15 @@ public class Handler {
 			ex.printStackTrace();
 			return null;
 		}
+	}
+	
+	/**
+	 * Sets the location of the library directory in FileUtils. It defaults at just libs
+	 * @param libs
+	 */
+	public static void setLibsLocation(String libs){
+		FileUtils.CLASSES_PATH = libs+"/classes";
+		FileUtils.SKILLS_PATH = libs+"/skills";
 	}
 	
 	

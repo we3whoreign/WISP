@@ -38,8 +38,8 @@ public class FileUtils {
 	private static List<Object> skillArray;
 	private static List<Object> classArray;
 	
-	public static String CLASSES_PATH = "libs/classes";
-	public static String SKILLS_PATH = "libs/skills";
+	public static String CLASSES_PATH = "../libs/classes";
+	public static String SKILLS_PATH = "../libs/skills";
 	
 	public static boolean isJar;
 
@@ -52,17 +52,19 @@ public class FileUtils {
 	public static URL makePath(String path) {
 
 		//Make the path go up a directory since we are using skillsplanner.Launcher for reference
-		path = "../"+path;
+		//path = "../"+path;
+		//edited, changed the defaults to included ../
 		
 		//Make the path OS independent
-		path = path.replace("/", File.separator);
-		path = path.replace("\\", File.separator);
+		path = path.replace("//",FileUtils.getSeparator());
+		path = path.replace("/", FileUtils.getSeparator());
+		path = path.replace("\\", FileUtils.getSeparator());
 		
 		return Launcher.class.getResource(path);
 	}
 	
 	public static InputStream getInputStream(String path){
-		path = "../"+path;
+		//path = "../"+path;
 		
 		path = path.replaceAll("/", File.separator);
 		path = path.replaceAll("\\", File.separator);
@@ -205,7 +207,12 @@ public class FileUtils {
 		else if(!isJar){
 			URL path = makePath(SKILLS_PATH);
 			
-			skillArray = traverseDirectoryForXML(new File(path.toURI()));
+			if(path != null){
+				skillArray = traverseDirectoryForXML(new File(path.toURI()));
+			}
+			else{
+				skillArray = traverseDirectoryForXML(new File(makeStringPath(SKILLS_PATH)));
+			}
 			
 			return skillArray;
 		}
@@ -214,11 +221,20 @@ public class FileUtils {
 		}
 	}
 	
+	private static String makeStringPath(String path) {
+		// TODO Auto-generated method stub
+		path = path.replace("//", FileUtils.getSeparator());
+		path = path.replace("/", FileUtils.getSeparator());
+		path = path.replace("\\", FileUtils.getSeparator());
+		
+		return path;
+	}
+
 	/**
 	 * traverse a directory looking for XML files to load
 	 */
 	public static List<Object> traverseDirectoryForXML(File file) throws Exception {
-		if (file == null) {
+		if (file == null || !file.exists()) {
 			throw new FileNotFoundException();
 		} else if (!file.isDirectory()) {
 			// we can't traverse this

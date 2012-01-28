@@ -5,6 +5,7 @@ import java.awt.Component;
 
 import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
+import javax.swing.WindowConstants;
 
 public class XMLE extends JFrame {
 
@@ -14,6 +15,7 @@ public class XMLE extends JFrame {
 	}
 	
 	private void initGUI(){
+		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		this.setLayout(new BorderLayout());
 		JTabbedPane tabbedPane = new JTabbedPane();
 		tabbedPane.addTab("Skills",makeSkillsTab());
