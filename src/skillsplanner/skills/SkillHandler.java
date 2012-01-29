@@ -57,7 +57,7 @@ public class SkillHandler {
 		}
 		
 
-		System.out.println("BEFORE: "+character.getDFOClass().getSkills().get(st.getName()) + " SP TOT: " + character.getRemainingSP());
+		//System.out.println("BEFORE: "+character.getDFOClass().getSkills().get(st.getName()) + " SP TOT: " + character.getRemainingSP());
 		
 		/* Checks to see if the entry cost should apply, please note
 		 * that skills with negative entry cost will never be level 0.
@@ -75,7 +75,7 @@ public class SkillHandler {
 		//Increase level
 		character.getDFOClass().getSkills().put(st.getName(),character.getDFOClass().getSkills().get(st.getName())+1);
 		
-		System.out.println("AFTER: "+character.getDFOClass().getSkills().get(st.getName()) + " SP TOT: " + character.getRemainingSP());
+		//System.out.println("AFTER: "+character.getDFOClass().getSkills().get(st.getName()) + " SP TOT: " + character.getRemainingSP());
 		
 		
 	}
@@ -100,7 +100,7 @@ public class SkillHandler {
 			throw new CurrentRequirementException(st.getName());
 		}
 
-		System.out.println("BEFORE: "+character.getDFOClass().getSkills().get(st.getName()) + " SP TOT: " + character.getRemainingSP());
+		//System.out.println("BEFORE: "+character.getDFOClass().getSkills().get(st.getName()) + " SP TOT: " + character.getRemainingSP());
 		
 		/* Checks if the skill will be going down to level 0 and 
 		 * therefore need to refund the entry cost SP for the skill.  Note
@@ -119,7 +119,7 @@ public class SkillHandler {
 		//Decrease level
 		character.getDFOClass().getSkills().put(st.getName(),character.getDFOClass().getSkills().get(st.getName())-1);
 		
-		System.out.println("AFTER: "+character.getDFOClass().getSkills().get(st.getName()) + " SP TOT: " + character.getRemainingSP());
+		//System.out.println("AFTER: "+character.getDFOClass().getSkills().get(st.getName()) + " SP TOT: " + character.getRemainingSP());
 		
 	}
 	

@@ -2,6 +2,8 @@ package skillsplanner;
 
 import java.util.Observable;
 
+import javax.swing.JOptionPane;
+
 import skillsplanner.classes.DFOClass;
 
 /**
@@ -53,6 +55,15 @@ public class DFOCharacter{
 	
 	public int getRemainingSP(){
 		return this.remainingSP;
+	}
+
+	public boolean resetOK() {
+		if(remainingSP == totalSP){
+			return true;
+		}
+		else{
+			return JOptionPane.showConfirmDialog(null, "Choose new class and reset skill points?") == JOptionPane.OK_OPTION;
+		}
 	}
 	
 }

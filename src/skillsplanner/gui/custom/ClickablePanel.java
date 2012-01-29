@@ -44,7 +44,7 @@ public class ClickablePanel extends JPanel implements MouseListener{
 	JLabel levelInfo;
 	
 	public ClickablePanel(SkillsTemplate st){
-		System.out.println(st.getName());
+		//System.out.println(st.getName());
 		this.setName(st.getName());
 		skill = st;
 		setDimensions();
@@ -106,14 +106,14 @@ public class ClickablePanel extends JPanel implements MouseListener{
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		if(arg0.getButton() == MouseEvent.BUTTON1){
-			System.out.println("Left Click on "+this.getName());
+			//System.out.println("Left Click on "+this.getName());
 			levelUpSkill();
 		}
 		else if(arg0.getButton() == MouseEvent.BUTTON2){
-			System.out.println("Middle Click on "+this.getName());
+			//System.out.println("Middle Click on "+this.getName());
 		}
 		else if(arg0.getButton() == MouseEvent.BUTTON3){
-			System.out.println("Right Click" + this.getName());
+			//System.out.println("Right Click" + this.getName());
 			levelDownSkill();
 		}
 		
@@ -135,7 +135,7 @@ public class ClickablePanel extends JPanel implements MouseListener{
 	private void levelUpSkill(){
 		try {
 			SkillHandler.levelUp(this.skill);
-			updateInformation();
+			//updateInformation();
 		} catch (RequirementsNotMetException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -149,7 +149,7 @@ public class ClickablePanel extends JPanel implements MouseListener{
 	private void levelDownSkill(){
 		try {
 			SkillHandler.levelDown(this.skill);
-			updateInformation();
+			//updateInformation();
 		} catch (MinLevelException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -182,6 +182,7 @@ public class ClickablePanel extends JPanel implements MouseListener{
 	 */
 	@Override
 	public void paintComponent(Graphics g){
+		updateInformation();
 		//System.out.println("Paint called, color is :"+currentColor.toString()+ " " +currentColor.getAlpha());
 		int x = 2;
 		int y = 2;

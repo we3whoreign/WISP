@@ -330,7 +330,7 @@ public class FileUtils {
 	}
 
 	public static List<String> getSubclasses(String path) {
-		System.out.println(path);
+		//System.out.println(path);
 		if(isJar){
 			return JarUtils.getSubclasses(path);
 		}

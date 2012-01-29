@@ -28,7 +28,7 @@ public class DFOClass {
 	}
 
 	public void setDescription(String description) {
-		System.out.println("Setting description to: "+description);
+		//System.out.println("Setting description to: "+description);
 		this.description = description;
 	}
 

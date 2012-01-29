@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.swing.JOptionPane;
+import javax.swing.JTree;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -20,11 +21,17 @@ import skillsplanner.utils.jdom.Handler;
  *
  */
 public class TreeBeard implements TreeSelectionListener {
+	private TreePath oldSelection;
 
 	@Override
 	public void valueChanged(TreeSelectionEvent arg0) {
-		
 		TreePath selection = arg0.getPath();
+		
+		//Check if the path hasn't changed
+		if(selection == oldSelection){
+			return;
+		}
+		//System.out.println("Changing tree value");
 		
 		String path = selectionToPath(selection);
 		
@@ -60,24 +67,34 @@ public class TreeBeard implements TreeSelectionListener {
 				StaticResources.getWisp().General.setText("General");
 				
 				//Change the DFOCharacter object to reflect change in class
-				try {
-					System.out.println("Setting character class to "+path);
-					StaticResources.getCharacter().setDFOClass(
-							Handler.getClassLoader().getClass(FileUtils.getDFOClass(path)));
-					//Reset characters SP and update 
-					StaticResources.getCharacter().resetSp();
-					StaticResources.getWisp().updateRemainingSP(StaticResources.getCharacter().getRemainingSP());
-					
-					if(StaticResources.getCharacter().getDFOClass() == null){
-						System.out.println("FUCK OFF");
+				if(StaticResources.getCharacter().resetOK()){
+					try {
+						//System.out.println("Setting character class to "+path);
+						StaticResources.getCharacter().setDFOClass(
+								Handler.getClassLoader().getClass(FileUtils.getDFOClass(path)));
+						//Reset characters SP and update 
+						StaticResources.getCharacter().resetSp();
+						StaticResources.getWisp().updateRemainingSP(StaticResources.getCharacter().getRemainingSP());
+						
+						oldSelection = selection;
+						if(StaticResources.getCharacter().getDFOClass() == null){
+							System.out.println("FUCK OFF");
+						}
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+						JOptionPane.showMessageDialog(null, e.getMessage());
 					}
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-					JOptionPane.showMessageDialog(null, e.getMessage());
+				}
+				else{
+					JTree jtree = (JTree)arg0.getSource();
+					jtree.setSelectionPath(oldSelection);
 				}
 			}
 		}
+		
+		//StaticResources.getWisp().revalidate();
+		StaticResources.getWisp().repaint();
 		
 
 	}

@@ -22,14 +22,14 @@ public class SamWise implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String selection = e.getActionCommand();
-		System.out.println(selection);
+		//System.out.println(selection);
 		
 		switch(selection){
 			case Constants.SUBCLASS_SKILL_TREE_SELECTION:
 				Object source = e.getSource();
 				String name = ((JButton)source).getText();
 				name = StringUtils.toFileName(name);
-				System.out.println("Selecting skills for "+name);
+				//System.out.println("Selecting skills for "+name);
 				List<SkillsTemplate> list = Handler.getSkillLoader().fetchSubclassSkills(name);
 			
 				//Wipe Skills

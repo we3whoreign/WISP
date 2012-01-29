@@ -43,7 +43,7 @@ public class JarUtils {
 	 * @return
 	 */
 	public static List<Object> getSkillFiles(){
-		System.out.println("Here we go...");
+		//System.out.println("Here we go...");
 		Enumeration<JarEntry> em = getJarFile().entries();
 		List<Object> list = new ArrayList<Object>();
 		while(em.hasMoreElements()){
