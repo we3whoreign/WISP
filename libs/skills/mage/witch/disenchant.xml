@@ -3,7 +3,7 @@
 	
 		<name>Disenchant</name>
 		<description></description>
-		<spcost></spcost>
+		<spcost>20</spcost>
 		
 		<dynamic>
 			<level value="1">

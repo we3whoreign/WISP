@@ -10,6 +10,12 @@
 	<skill>Dragon Fang</skill>
 	<skill>Mana Shield</skill>
 	<skill>Weapon Uppercut</skill>
+	<skill>Palm Blast</skill>
+	<skill>Phase Shift</skill>
+	
+	<!-- Summoner Skills -->
+	<skill>Lasher</skill>
+	<skill>Hired Summon: Panzer Hodor</skill>
 	
 	<!-- Witch Skills -->
 	<skill>Ancient Library</skill>
@@ -17,4 +23,13 @@
 	<skill>Disenchant</skill>
 	<skill>Magic Missile</skill>
 	<skill>Cheeky Doll Shururu</skill>
+	
+	<!-- Elementalist Skills -->
+	<skill>Lantern Firebomb</skill>
+	<skill>Frosty's Head</skill>
+	<skill>Pluto</skill>
+	<skill>Florae Circle</skill>
+	<skill>Magic Festival</skill>
+	<skill>Aerial Lantern Firebomb</skill>
+	<skill>Elemental Burn</skill>
 </skillplanner>

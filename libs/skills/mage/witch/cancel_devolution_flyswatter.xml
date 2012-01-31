@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skillsplanner>
+    <skill>
+        <name>Cancel - Devolution Flyswatter</name>
+        <casttime>0.0</casttime>
+        <spcost>50</spcost>
+        <entrycost>0</entrycost>
+        <description></description>
+		
+		<skillreq name="Devolution Flyswatter" level="5" />
+		
+        <dynamic>
+            <level value="1" />
+        </dynamic>
+    </skill>
+</skillsplanner>
+

@@ -27,7 +27,7 @@ public class Tester extends JPanel{
 	private void guiSetup() {
 		this.setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
 		for(int i = 0; i < 10; i++){
-			this.add(new ClickablePanel((String.valueOf(i))));
+			this.add(new ClickableSkillPanel((String.valueOf(i))));
 		}
 		
 	}

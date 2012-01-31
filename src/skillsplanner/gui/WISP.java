@@ -15,7 +15,7 @@ import javax.swing.border.LineBorder;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
 
-import skillsplanner.gui.custom.ClickablePanel;
+import skillsplanner.gui.custom.ClickableSkillPanel;
 import skillsplanner.skills.SkillsTemplate;
 import skillsplanner.utils.StringUtils;
 import skillsplanner.utils.jdom.*;
@@ -41,8 +41,8 @@ public class WISP extends javax.swing.JFrame{
 	public JButton Tab1;
 	public JButton Tab4;
 	public JTree classTree;
-	public JButton Calculator;
-	public JButton Overview;
+	//public JButton Calculator;
+	//public JButton Overview;
 	public JButton General;
 
 	private JMenuItem helpMenuItem;
@@ -257,16 +257,16 @@ public class WISP extends javax.swing.JFrame{
 						ExtraCrap.setLayout(ExtraCrapLayout);
 						Tabs.add(ExtraCrap);
 						ExtraCrap.setPreferredSize(new java.awt.Dimension(188, 38));
-						{
-							Calculator = new JButton();
-							ExtraCrap.add(Calculator);
-							Calculator.setPreferredSize(new java.awt.Dimension(88, 38));
-						}
-						{
-							Overview = new JButton();
-							ExtraCrap.add(Overview);
-							Overview.setPreferredSize(new java.awt.Dimension(88, 38));
-						}
+//						{
+//							Calculator = new JButton();
+//							ExtraCrap.add(Calculator);
+//							Calculator.setPreferredSize(new java.awt.Dimension(88, 38));
+//						}
+//						{
+//							Overview = new JButton();
+//							ExtraCrap.add(Overview);
+//							Overview.setPreferredSize(new java.awt.Dimension(88, 38));
+//						}
 					}
 				}
 			}
@@ -424,7 +424,7 @@ public class WISP extends javax.swing.JFrame{
 	 */
 	public void addSkill(SkillsTemplate st) {
 		// TODO Auto-generated method stub
-		ClickablePanel panel = new ClickablePanel(st);
+		ClickableSkillPanel panel = new ClickableSkillPanel(st);
 		LeftPane.add(panel);
 		//System.out.println("Adding Panel: "+panel.getName());
 	}

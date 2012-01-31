@@ -10,6 +10,12 @@
 	<skill>Dragon Fang</skill>
 	<skill>Mana Shield</skill>
 	<skill>Weapon Uppercut</skill>
+	<skill>Palm Blast</skill>
+	<skill>Phase Shift</skill>
+	
+	<!-- Summoner Skills -->
+	<skill>Lasher</skill>
+	<skill>Hired Summon: Panzer Hodor</skill>
 	
 	<!-- Witch Skills -->
 	<skill>Ancient Library</skill>
