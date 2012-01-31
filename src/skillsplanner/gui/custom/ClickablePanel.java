@@ -1,6 +1,7 @@
 package skillsplanner.gui.custom;
 
 import java.awt.BasicStroke;
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
@@ -64,7 +65,7 @@ public class ClickablePanel extends JPanel implements MouseListener{
 	 */
 	private void setDimensions(){
 		
-		this.setLayout(new GridLayout(0,1));
+		this.setLayout(new BorderLayout());
 		this.setMinimumSize(new Dimension(width,height));
 		//this.setPreferredSize(new Dimension(width,height));
 		this.setMaximumSize(new Dimension(Short.MAX_VALUE,height));
@@ -75,15 +76,24 @@ public class ClickablePanel extends JPanel implements MouseListener{
 		empty = BorderFactory.createEtchedBorder(Color.white, Color.DARK_GRAY);
 		
 		//this.setBorder(lowered);
+		JPanel centerPanel = new JPanel(new GridLayout(0,1));
+		centerPanel.setOpaque(false);
 		JLabel label = new JLabel(this.getName());
 		label.setHorizontalAlignment(JLabel.CENTER);
 		label.setForeground(Color.WHITE);
-		this.add(label);
+		centerPanel.add(label);
 		
 		levelInfo = new JLabel("Current Level: "+StaticResources.getCharacter().getDFOClass().getSkills().get(skill.getName())+"    Max Level: "+ skill.getMaxLevel());
 		levelInfo.setHorizontalAlignment(JLabel.CENTER);
 		levelInfo.setForeground(Color.WHITE);
-		this.add(levelInfo);
+		centerPanel.add(levelInfo);
+		
+		this.add(centerPanel,BorderLayout.CENTER);
+		
+		JLabel spCostLabel = new JLabel("SP: "+skill.getSpcost());
+		spCostLabel.setForeground(Color.WHITE);
+		spCostLabel.setPreferredSize(new Dimension((int) (this.getPreferredSize().getWidth()/6),(int) this.getPreferredSize().getHeight()));
+		this.add(spCostLabel,BorderLayout.EAST);
 		
 		this.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		this.addMouseListener(this);

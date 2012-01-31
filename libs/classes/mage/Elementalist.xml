@@ -17,4 +17,33 @@
 	<skill>Disenchant</skill>
 	<skill>Magic Missile</skill>
 	<skill>Cheeky Doll Shururu</skill>
+	
+	<!-- Elementalist Skills -->
+	<skill>Lantern Firebomb</skill>
+	<skill>Frosty's Head</skill>
+	<skill>Pluto</skill>
+	<skill>Florae Circle</skill>
+	<skill>Magic Festival</skill>
+	<skill>Aerial Lantern Firebomb</skill>
+	<skill>Elemental Burn</skill>
+	
+	
+	<!-- Ele Only Skill -->
+	<skill>Memorize</skill>
+	<skill>Mobile Cast</skill>
+	<skill>Fire Pillar</skill>
+	<skill>Sun Burst</skill>
+	<skill>Ice Wall</skill>
+	<skill>The Void</skill>
+	<skill>Elemental Mastery:Fire</skill>
+	<skill>Elemental Mastery:Water</skill>
+	<skill>Elemental Mastery:Shadow</skill>
+	<skill>Elemental Mastery:Light</skill>
+	<skill>Halloween Buster</skill>
+	<skill>Lightning Strike</skill>
+	<skill>Arctic Burst</skill>
+	<skill>Black Hole</skill>
+	<skill>Elemental Focus</skill>
+	<skill>Astral Storm</skill>
+	
 </skillplanner>

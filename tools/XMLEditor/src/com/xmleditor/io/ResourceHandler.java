@@ -1,6 +1,5 @@
 package com.xmleditor.io;
 
-import java.io.File;
 import java.io.InputStream;
 import java.util.List;
 
@@ -17,7 +16,7 @@ public interface ResourceHandler {
 	 * Method for getting all the objects created by the Resourcehandler
 	 * @return
 	 */
-	public List<Object> getObjects();
+	public List<InputStream> getObjects();
 	
 	
 	 /**
