@@ -5,6 +5,7 @@
         <casttime>0.0</casttime>
         <spcost>25</spcost>
         <entrycost>0</entrycost>
+		<reqlevel>20</reqlevel>
         <description></description>
 		
 		<skillreq name="Magic Missile" level="5" />

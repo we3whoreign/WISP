@@ -12,7 +12,7 @@ import com.xmleditor.beans.Skill;
 public class SkillMapper {
 	
 	public static Skill createSkillFromStream(InputStream is){
-		Document doc = new Document();
+		Document doc = Handler.openXMLFile(is);
 		
 		String baseURI = doc.getBaseURI();
 		
@@ -75,11 +75,6 @@ public class SkillMapper {
 		}
 		
 		return st;
-	}
-
-	public static Skill getSkillFromStream(InputStream is) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

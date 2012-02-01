@@ -1,14 +1,16 @@
 package com.xmleditor.util.skills;
 
-import java.util.ArrayList;
+import java.io.InputStream;
+import java.util.HashMap;
 
-import skillsplanner.skills.SkillsTemplate;
-import skillsplanner.utils.jdom.Handler;
-import skillsplanner.utils.jdom.SkillLoader;
+import com.xmleditor.beans.Skill;
+import com.xmleditor.io.IOHandler;
+import com.xmleditor.util.jdom.SkillMapper;
 
 public class SkillManager {
 
 	private static SkillManager sm;
+	private HashMap<String,Skill>skillList;
 	
 	public static SkillManager getInstance(){
 		if(sm == null){
@@ -18,31 +20,21 @@ public class SkillManager {
 	}
 	
 	public SkillManager(){
-		try {
-			Handler.getSkillLoader().loadSkills();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
-	public SkillsTemplate getSkill(String name){
-		for(String key : Handler.getSkillLoader().getSkillList().keySet()){
-			if(key.equals(name)){
-				return Handler.getSkillLoader().getSkill(name);
+		skillList = new HashMap<String,Skill>();
+		for(InputStream stream : IOHandler.getAllSkills()){
+			Skill sk = SkillMapper.createSkillFromStream(stream);
+			if(sk == null){
+				System.out.println("Hmmm");
 			}
+			skillList.put(sk.getName(), sk);
 		}
-		
-		return null;
 	}
 	
-	public ArrayList<SkillsTemplate> getAllSkills(){
-		ArrayList<SkillsTemplate> list = new ArrayList<SkillsTemplate>();
-		
-		for(String key : Handler.getSkillLoader().getSkillList().keySet()){
-			list.add(Handler.getSkillLoader().getSkillList().get(key));
-		}
-		
-		return list;
+	public Skill getSkill(String name){
+		return skillList.get(name);
+	}
+	
+	public HashMap<String,Skill> getAllSkills(){
+		return skillList;
 	}
 }

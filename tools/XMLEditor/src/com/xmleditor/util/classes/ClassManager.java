@@ -8,35 +8,38 @@ import java.util.List;
 
 import com.xmleditor.beans.DFOClass;
 import com.xmleditor.io.FileSystemResource;
+import com.xmleditor.io.IOHandler;
 import com.xmleditor.io.JarResource;
 import com.xmleditor.io.ResourceHandler;
 import com.xmleditor.util.jdom.ClassMapper;
 
 
 public class ClassManager {
-	private final String CLASSES_LOCATION = "libs/classes/";
 	private HashMap<String,DFOClass> classes;
-	ResourceHandler manager;
+	private static ClassManager cm;
 	
-	public ClassManager(boolean isJar){
+	public ClassManager(){
 		classes = new HashMap<String,DFOClass>();
-		if(isJar){
-			manager = new JarResource(CLASSES_LOCATION);
+		
+		for(InputStream stream : IOHandler.getAllClasses()){
+			DFOClass dfoclass = ClassMapper.createClassFromStream(stream);
+			classes.put(dfoclass.getName(), dfoclass);
 		}
-		else{
-			manager = new FileSystemResource(CLASSES_LOCATION);
+	}
+	
+	public static ClassManager getInstance(){
+		if(cm == null){
+			cm = new ClassManager();
 		}
 		
-		for(InputStream is : manager.getObjects()){
-			//DFOClass sk = ClassMapper.getSkillFromStream(is);
-		}
+		return cm;
 	}
 	
 	public DFOClass getDFOClass(String name){
 		return null;
 	}
 	
-	public ArrayList<DFOClass> getAllClasses(){
-		return Handler.getClassLoader().getClasses();
+	public HashMap<String,DFOClass> getAllClasses(){
+		return classes;
 	}
 }

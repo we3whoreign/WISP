@@ -2,8 +2,9 @@
 	<skill>
 		<name>Ancient Library</name>
 		<spcost>20</spcost>
-		<description></description>
 		<casttime>0.8</casttime>
+		<reqlevel>5</reqlevel>
+		<description></description>
 		
 		<dynamic>
 			<level value="1">

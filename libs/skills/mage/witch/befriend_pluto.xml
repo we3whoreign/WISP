@@ -2,6 +2,7 @@
 	<skill>
 		<name>Befriend Pluto</name>
 		<spcost>20</spcost>
+		<reqlevel>18</reqlevel>
 		<description>Increases the effectiveness of pluto based witch skills</description>
 		<passive>true</passive>
 		

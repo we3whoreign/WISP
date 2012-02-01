@@ -1,6 +1,7 @@
 <skillsplanner>
     <skill>
 	    <name>Magic Missile</name>
+		<reqlevel>1</reqlevel>
 		<description></description>
 		<spcost>15</spcost>
         <dynamic>

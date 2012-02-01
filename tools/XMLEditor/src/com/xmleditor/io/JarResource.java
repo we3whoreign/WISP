@@ -5,8 +5,6 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.jar.JarFile;
 
-import skillsplanner.utils.JarUtils;
-
 public class JarResource implements ResourceHandler {
 	private JarFile jar;
 	private String path = "";
@@ -65,7 +63,7 @@ public class JarResource implements ResourceHandler {
 	 */
 	private String getJarFilePath() {
 		String name = JarResource.class.getName().replace('.', '/');
-	    String s = JarUtils.class.getClass().getResource("/" + name + ".class").toString();
+	    String s = JarResource.class.getClass().getResource("/" + name + ".class").toString();
 	    s = s.substring(0, s.lastIndexOf(".jar")+4);
 	    s = s.substring(s.lastIndexOf(':')+1);
 	    return s;

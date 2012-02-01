@@ -11,19 +11,11 @@ import java.util.List;
  */
 public class IOHandler {
 
-	private static ResourceHandler resourceHandler;
+	private static String SKILLS_DIR = "libs/skills";
+	private static String CLASSES_DIR = "libs/classes";
 	
-	/**
-	 * Creates the appropriate resource handler based on whether or not we are in the filesystem or a jar
-	 */
-	private static void defineResourceHandler(){
-		if(isJar()){
-			resourceHandler = new JarResource();
-		}
-		else{
-			resourceHandler = new FileSystemResource();
-		}
-		
+	public static List<InputStream> getAllSkills(){
+		return IOHandler.getResourcesIn(SKILLS_DIR);
 	}
 	
 	/**
@@ -40,20 +32,28 @@ public class IOHandler {
 	 * @return
 	 */
 	public static List<InputStream> getResourcesIn(String dirName){
-		if(resourceHandler == null){
-			defineResourceHandler();
-		}
+		ResourceHandler resourceHandler = (IOHandler.isJar()) ? new JarResource(dirName) : new FileSystemResource(dirName);
+		
 		List<InputStream> streamList = new ArrayList<InputStream>();
 		
-		for(String s : resourceHandler.getAllMatches("^"+dirName)){
+		for(String s : resourceHandler.getAllMatches(".*\\.xml")){
+			System.out.println("Resource: "+s);
 			streamList.add(resourceHandler.getResource(s));
 		}
 		
 		return streamList;
 	}
 	
-	public static InputStream getResource(String resource){
-		return resourceHandler.getResource(resource);
+	public static void setSkillsDir(String dir){
+		SKILLS_DIR = dir;
+	}
+	
+	public static void setClassDir(String dir){
+		CLASSES_DIR = dir;
+	}
+
+	public static List<InputStream> getAllClasses() {
+		return IOHandler.getResourcesIn(CLASSES_DIR);
 	}
 	
 	

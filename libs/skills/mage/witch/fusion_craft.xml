@@ -5,6 +5,7 @@
         <casttime>0.0</casttime>
         <spcost>80</spcost>
         <entrycost>0</entrycost>
+		<reqlevel>48</reqlevel>
         <description></description>
 		
 		<skillreq name="Befriend Pluto" level="2" />

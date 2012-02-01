@@ -2,6 +2,7 @@
 	<skill>
 	
 		<name>Disenchant</name>
+		<reqlevel>15</reqlevel>
 		<description></description>
 		<spcost>20</spcost>
 		

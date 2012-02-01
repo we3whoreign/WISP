@@ -7,10 +7,8 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-import skillsplanner.utils.FileUtils;
-import skillsplanner.utils.jdom.Handler;
-
 import com.xmleditor.gui.XMLE;
+import com.xmleditor.io.IOHandler;
 
 public class Launcher {
 
@@ -38,14 +36,9 @@ public class Launcher {
 		
 		if(ret == fc.APPROVE_OPTION){
 			File f = fc.getSelectedFile();
-			System.out.println("Setting libs path to "+f.getAbsolutePath());
-			try {
-				Handler.setLibsLocation(f.toPath().toString());
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-				System.exit(0);
-			}
+			System.out.println("Setting libs path to "+f.getAbsolutePath().replaceAll("\\\\", "/")+"/classes");
+			IOHandler.setClassDir(f.getAbsolutePath().replaceAll("\\\\", "/")+"/classes");
+			IOHandler.setSkillsDir(f.getAbsolutePath().replaceAll("\\\\", "/")+"/skills");
 		}
 		
 	}

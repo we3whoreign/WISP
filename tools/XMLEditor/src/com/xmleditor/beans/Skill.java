@@ -3,8 +3,7 @@ package com.xmleditor.beans;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-import skillsplanner.classes.DFOClass;
-import skillsplanner.skills.SkillRequirement;
+import com.xmleditor.util.skills.SkillRequirement;
 
 public class Skill {
 	//Indication of what tree the skill is in

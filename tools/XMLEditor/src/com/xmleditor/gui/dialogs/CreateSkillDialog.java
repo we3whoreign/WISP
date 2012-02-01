@@ -14,10 +14,10 @@ import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
+import com.xmleditor.beans.DFOClass;
+import com.xmleditor.beans.Skill;
 import com.xmleditor.util.classes.ClassManager;
 
-import skillsplanner.classes.DFOClass;
-import skillsplanner.skills.SkillsTemplate;
 
 public class CreateSkillDialog extends JFrame implements ActionListener{
 	
@@ -25,14 +25,14 @@ public class CreateSkillDialog extends JFrame implements ActionListener{
 	private final String PREVIOUS = "PREVIOUS";
 	private final String FINISH = "FINISH";
 	
-	private SkillsTemplate st;
+	private Skill st;
 	
 	private JPanel cards;
 	
 	public CreateSkillDialog(){
 		super();
 		initGUI();
-		st = new SkillsTemplate();
+		st = new Skill();
 	}
 	
 	private void initGUI(){
@@ -76,8 +76,8 @@ public class CreateSkillDialog extends JFrame implements ActionListener{
 		
 		JPanel classPanel = new JPanel();
 		JComboBox<DFOClass> classSelector = new JComboBox<DFOClass>();
-		for(DFOClass c : ClassManager.getInstance().getAllClasses()){
-			classSelector.addItem(c);
+		for(String key : ClassManager.getInstance().getAllClasses().keySet()){
+			classSelector.addItem(ClassManager.getInstance().getAllClasses().get(key));
 		}
 		
 		firstpanel.add(namePanel);

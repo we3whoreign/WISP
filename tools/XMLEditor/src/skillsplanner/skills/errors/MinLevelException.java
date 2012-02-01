@@ -1,6 +1,7 @@
 package skillsplanner.skills.errors;
 
-import skillsplanner.skills.SkillsTemplate;
+import com.xmleditor.beans.Skill;
+
 
 public class MinLevelException extends Exception {
 	private static final long serialVersionUID = 3L;
@@ -11,7 +12,7 @@ public class MinLevelException extends Exception {
 		error = "UNKNOWN";
 	}
 	
-	public MinLevelException(SkillsTemplate st){
+	public MinLevelException(Skill st){
 		super(st.getName() + " is already at its minimum level.");
 		error = st.getName() + " is already at its minimum level.";
 	}

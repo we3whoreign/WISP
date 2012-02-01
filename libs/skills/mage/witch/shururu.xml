@@ -2,6 +2,7 @@
     <skill>
         <name>Cheeky Doll Shururu</name>
         <spcost>20</spcost>
+		<reqlevel>10</reqlevel>
         <description>Tosses the doll Shururu. Shururu taunts nearby enemies into attacking it as well as lowering their magical defense.</description>
         <entrycost>-20</entrycost>
         

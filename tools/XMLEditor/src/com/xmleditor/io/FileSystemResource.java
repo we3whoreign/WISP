@@ -17,6 +17,7 @@ public class FileSystemResource implements ResourceHandler {
 		this.rootDir = new File(rootDir);
 	}
 
+
 	@Override
 	public List<InputStream> getObjects() {
 		List<InputStream> list = new ArrayList<InputStream>();
@@ -29,7 +30,7 @@ public class FileSystemResource implements ResourceHandler {
 	@Override
 	public InputStream getResource(String resource) {
 		//Use resourceLookup to get the exact resource
-		resource = resourceLookup(resource);
+		//resource = resourceLookup(resource);
 		InputStream is = null;
 		try {
 			is = new FileInputStream(resource);
@@ -49,7 +50,7 @@ public class FileSystemResource implements ResourceHandler {
 		List<String> list = new ArrayList<String>();
 		
 		for(File f : fileList){
-			list.add(f.getPath());
+			list.add(FileSystemResource.pathify(f.getPath()));
 		}
 		
 		return list;
@@ -96,6 +97,13 @@ public class FileSystemResource implements ResourceHandler {
 		
 		return list;
 		
+	}
+	
+	public static String pathify(String path){
+		path = path.replaceAll("\\\\", "/");
+		path = path.replaceAll("//","/");
+		
+		return path;
 	}
 
 }

@@ -2,20 +2,17 @@ package com.xmleditor.gui;
 
 import java.awt.BorderLayout;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 
-import skillsplanner.classes.DFOClass;
-import skillsplanner.skills.SkillsTemplate;
-
-import com.xmleditor.gui.listeners.Agni;
+import com.xmleditor.beans.Skill;
 import com.xmleditor.gui.listeners.Rudra;
+import com.xmleditor.util.ListUtils;
 import com.xmleditor.util.skills.SkillManager;
 
 public class SkillsTab extends JPanel{
@@ -28,9 +25,9 @@ public class SkillsTab extends JPanel{
 	private void initGUI(){
 		this.setLayout(new BorderLayout());
 		//CENTER
-		ArrayList<SkillsTemplate> list = SkillManager.getInstance().getAllSkills();
-		SkillsTemplate[] holder = new SkillsTemplate[list.size()];
-		JList<SkillsTemplate> listpane = new JList<SkillsTemplate>(list.toArray(holder));
+		List<Skill> list = ListUtils.getListFromMap(SkillManager.getInstance().getAllSkills());
+		Skill[] holder = new Skill[list.size()];
+		JList<Skill> listpane = new JList<Skill>(list.toArray(holder));
 		listpane.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		JScrollPane scroller = new JScrollPane(listpane);
 		this.add(scroller,BorderLayout.CENTER);

@@ -2,14 +2,15 @@ package com.xmleditor.gui;
 
 import java.awt.BorderLayout;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JList;
 import javax.swing.JPanel;
 
-import skillsplanner.classes.DFOClass;
-
+import com.xmleditor.beans.DFOClass;
 import com.xmleditor.gui.listeners.Agni;
+import com.xmleditor.util.ListUtils;
 import com.xmleditor.util.classes.ClassManager;
 
 public class ClassesTab extends JPanel {
@@ -23,7 +24,7 @@ public class ClassesTab extends JPanel {
 		this.setLayout(new BorderLayout());
 		
 		//CENTER
-		ArrayList<DFOClass> list = ClassManager.getInstance().getAllClasses();
+		List<DFOClass> list = ListUtils.getListFromMap(ClassManager.getInstance().getAllClasses());
 		DFOClass[] handler = new DFOClass[list.size()];
 		JList<DFOClass> listpane = new JList<DFOClass>(list.toArray(handler));
 		
