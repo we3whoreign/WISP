@@ -38,7 +38,7 @@ public class SkillDumper {
 		}
 	}
 	public static void main(String args[]) throws URISyntaxException, Exception{
-		FileUtils utils = new FileUtils();
+		//FileUtils utils = new FileUtils();
 		//URL u = utils.makePath(DIR);
 		
 		//List<File> subdirs = getDirs(utils.getFile(DIR));//new File(u.toURI()));

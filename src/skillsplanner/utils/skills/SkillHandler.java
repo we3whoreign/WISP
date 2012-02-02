@@ -1,13 +1,13 @@
-package skillsplanner.skills;
+package skillsplanner.utils.skills;
 
-import skillsplanner.DFOCharacter;
+import skillsplanner.beans.DFOCharacter;
+import skillsplanner.beans.Skill;
 import skillsplanner.resources.StaticResources;
-import skillsplanner.skills.errors.CurrentRequirementException;
-import skillsplanner.skills.errors.MaxLevelException;
-import skillsplanner.skills.errors.MinLevelException;
-import skillsplanner.skills.errors.RequirementsNotMetException;
-import skillsplanner.skills.errors.SPException;
-import skillsplanner.utils.jdom.Handler;
+import skillsplanner.utils.skills.errors.CurrentRequirementException;
+import skillsplanner.utils.skills.errors.MaxLevelException;
+import skillsplanner.utils.skills.errors.MinLevelException;
+import skillsplanner.utils.skills.errors.RequirementsNotMetException;
+import skillsplanner.utils.skills.errors.SPException;
 
 /**
  * Singleton based class that handles skill operations such as level up and down, with error checking
@@ -36,7 +36,7 @@ public class SkillHandler {
 	 * @throws SPException 
 	 * @throws MaxLevelException 
 	 */
-	public static void levelUp(SkillsTemplate st) throws RequirementsNotMetException, SPException, MaxLevelException{
+	public static void levelUp(Skill st) throws RequirementsNotMetException, SPException, MaxLevelException{
 		
 		DFOCharacter character = StaticResources.getCharacter();
 		
@@ -56,8 +56,6 @@ public class SkillHandler {
 			
 		}
 		
-
-		//System.out.println("BEFORE: "+character.getDFOClass().getSkills().get(st.getName()) + " SP TOT: " + character.getRemainingSP());
 		
 		/* Checks to see if the entry cost should apply, please note
 		 * that skills with negative entry cost will never be level 0.
@@ -69,14 +67,13 @@ public class SkillHandler {
 			character.spendSp(st.getSpcost());
 		}
 		
-		//Reflect SP change in GUI
-		StaticResources.getWisp().updateRemainingSP(character.getRemainingSP());
-		
 		//Increase level
 		character.getDFOClass().getSkills().put(st.getName(),character.getDFOClass().getSkills().get(st.getName())+1);
 		
-		//System.out.println("AFTER: "+character.getDFOClass().getSkills().get(st.getName()) + " SP TOT: " + character.getRemainingSP());
+		//Reflect SP change in GUI
+		StaticResources.getWisp().updateRemainingSP(character.getRemainingSP());
 		
+		StaticResources.getWisp().updateSkillOverview();
 		
 	}
 	
@@ -86,7 +83,7 @@ public class SkillHandler {
 	 * @throws MinLevelException
 	 * @throws CurrentRequirementException
 	 */
-	public static void levelDown(SkillsTemplate st) throws MinLevelException, CurrentRequirementException{
+	public static void levelDown(Skill st) throws MinLevelException, CurrentRequirementException{
 		
 		DFOCharacter character = StaticResources.getCharacter();
 				
@@ -99,8 +96,6 @@ public class SkillHandler {
 		if(isCurrentlyRequired(st)){
 			throw new CurrentRequirementException(st.getName());
 		}
-
-		//System.out.println("BEFORE: "+character.getDFOClass().getSkills().get(st.getName()) + " SP TOT: " + character.getRemainingSP());
 		
 		/* Checks if the skill will be going down to level 0 and 
 		 * therefore need to refund the entry cost SP for the skill.  Note
@@ -119,8 +114,6 @@ public class SkillHandler {
 		//Decrease level
 		character.getDFOClass().getSkills().put(st.getName(),character.getDFOClass().getSkills().get(st.getName())-1);
 		
-		//System.out.println("AFTER: "+character.getDFOClass().getSkills().get(st.getName()) + " SP TOT: " + character.getRemainingSP());
-		
 	}
 	
 	/**
@@ -129,24 +122,24 @@ public class SkillHandler {
 	 * @param st
 	 * @return
 	 */
-	private static boolean isCurrentlyRequired(SkillsTemplate st){
+	private static boolean isCurrentlyRequired(Skill st){
 		DFOCharacter character = StaticResources.getCharacter();
 		
 		//Get all the skills for the class  KAAAA
 		for(String s : character.getDFOClass().getSkills().keySet()){		
 			
 			//Check if the skill has been leveled (is higher than min level)  MEEEE
-			if(character.getDFOClass().getSkills().get(s) > Handler.getSkillLoader().getSkill(s).getMinLevel()){				
+			if(character.getDFOClass().getSkills().get(s) > SkillManager.getInstance().getSkill(s).getMinLevel()){				
 				
 				//Check for null skill requirements HAAA
-				if(Handler.getSkillLoader().getSkill(s).getSkillRequirements() != null){
+				if(SkillManager.getInstance().getSkill(s).getSkillRequirements() != null){
 				
 					//Loop through its skill requirements MEEEE
-					for(int i = 0; i < Handler.getSkillLoader().getSkill(s).getSkillRequirements().size(); i++){					
+					for(int i = 0; i < SkillManager.getInstance().getSkill(s).getSkillRequirements().size(); i++){					
 						
 						//Check if they require the current skill, and what level HAAAAAAAAAAAAAAAAAAAAA
-						if(Handler.getSkillLoader().getSkill(s).getSkillRequirements().get(i).getName().equalsIgnoreCase(st.getName())
-								&& Handler.getSkillLoader().getSkill(s).getSkillRequirements().get(i).getLevel() == character.getDFOClass().getSkills().get(st.getName())){						
+						if(SkillManager.getInstance().getSkill(s).getSkillRequirements().get(i).getName().equalsIgnoreCase(st.getName())
+								&& SkillManager.getInstance().getSkill(s).getSkillRequirements().get(i).getLevel() == character.getDFOClass().getSkills().get(st.getName())){						
 							
 							//Yup. Don't touch me there. DAMN YOU KAKAROTTTTT
 							return true;

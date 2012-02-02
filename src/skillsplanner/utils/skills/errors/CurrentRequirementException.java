@@ -1,4 +1,4 @@
-package skillsplanner.skills.errors;
+package skillsplanner.utils.skills.errors;
 
 
 public class CurrentRequirementException extends Exception {

@@ -13,21 +13,17 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.BorderFactory;
-import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 
+import skillsplanner.beans.Skill;
 import skillsplanner.resources.StaticResources;
-import skillsplanner.skills.SkillHandler;
-import skillsplanner.skills.SkillsTemplate;
-import skillsplanner.skills.errors.CurrentRequirementException;
-import skillsplanner.skills.errors.MaxLevelException;
-import skillsplanner.skills.errors.MinLevelException;
-import skillsplanner.skills.errors.RequirementsNotMetException;
-import skillsplanner.skills.errors.SPException;
+import skillsplanner.utils.skills.SkillHandler;
+import skillsplanner.utils.skills.errors.CurrentRequirementException;
+import skillsplanner.utils.skills.errors.MinLevelException;
+import skillsplanner.utils.skills.errors.RequirementsNotMetException;
 
 /**
  * A clickable panel with the option of storing a skill name. Used for Leveling up skills. Registers Right click as level down and left click as level up.
@@ -41,11 +37,10 @@ public class ClickableSkillPanel extends JPanel implements MouseListener{
 	Border lowered;
 	Border empty;
 	Color currentColor;
-	SkillsTemplate skill;
+	Skill skill;
 	JLabel levelInfo;
 	
-	public ClickableSkillPanel(SkillsTemplate st){
-		//System.out.println(st.getName());
+	public ClickableSkillPanel(Skill st){
 		this.setName(st.getName());
 		skill = st;
 		setDimensions();
@@ -116,14 +111,12 @@ public class ClickableSkillPanel extends JPanel implements MouseListener{
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		if(arg0.getButton() == MouseEvent.BUTTON1){
-			//System.out.println("Left Click on "+this.getName());
 			levelUpSkill();
 		}
 		else if(arg0.getButton() == MouseEvent.BUTTON2){
-			//System.out.println("Middle Click on "+this.getName());
+			//do nothing
 		}
 		else if(arg0.getButton() == MouseEvent.BUTTON3){
-			//System.out.println("Right Click" + this.getName());
 			levelDownSkill();
 		}
 		
@@ -152,7 +145,7 @@ public class ClickableSkillPanel extends JPanel implements MouseListener{
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			JOptionPane.showMessageDialog(null, e.getMessage());
+			//JOptionPane.showMessageDialog(null, e.getMessage());
 		} 
 	}
 	
@@ -193,7 +186,6 @@ public class ClickableSkillPanel extends JPanel implements MouseListener{
 	@Override
 	public void paintComponent(Graphics g){
 		updateInformation();
-		//System.out.println("Paint called, color is :"+currentColor.toString()+ " " +currentColor.getAlpha());
 		int x = 2;
 		int y = 2;
 		int w = getWidth() - 4;

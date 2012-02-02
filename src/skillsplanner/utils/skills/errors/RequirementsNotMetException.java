@@ -1,6 +1,6 @@
-package skillsplanner.skills.errors;
+package skillsplanner.utils.skills.errors;
 
-import skillsplanner.skills.SkillsTemplate;
+import skillsplanner.beans.Skill;
 
 /**
  * Simple exception class to represent when skill requirements are not met.
@@ -24,7 +24,7 @@ public class RequirementsNotMetException extends Exception{
 		error = err;
 	}
 	
-	public RequirementsNotMetException(SkillsTemplate st){
+	public RequirementsNotMetException(Skill st){
 		error = "Requirements not met for "+st.getName();
 	}
 	

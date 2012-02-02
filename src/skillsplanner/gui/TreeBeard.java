@@ -11,8 +11,8 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreePath;
 
 import skillsplanner.resources.StaticResources;
-import skillsplanner.utils.FileUtils;
 import skillsplanner.utils.StringUtils;
+import skillsplanner.utils.classes.ClassManager;
 import skillsplanner.utils.jdom.Handler;
 
 /**
@@ -31,17 +31,15 @@ public class TreeBeard implements TreeSelectionListener {
 		if(selection == oldSelection){
 			return;
 		}
-		//System.out.println("Changing tree value");
 		
 		String path = selectionToPath(selection);
 		
-		//System.out.println(path);
-		if(FileUtils.isClassFile(path)){
+		if(ClassManager.getInstance().getAllClasses().containsKey(path)){
 			if(StaticResources.getWisp()==null){
 				System.out.println("FUCKK FUCK FUCK FUCK FUCK FUCK FUCK FUCK FUCK");
 			}
 			else{
-				List<String> subclasses = FileUtils.getSubclasses(path);
+				List<String> subclasses = ClassManager.getInstance().getSubclasses(path);
 				
 				StaticResources.getWisp().Tab1.setText(StringUtils.toCamelCase((subclasses.get(0) == null) ? "" : subclasses.get(0)));
 				StaticResources.getWisp().Tab2.setText(StringUtils.toCamelCase((subclasses.get(1) == null) ? "" : subclasses.get(1)));
@@ -68,22 +66,15 @@ public class TreeBeard implements TreeSelectionListener {
 				
 				//Change the DFOCharacter object to reflect change in class
 				if(StaticResources.getCharacter().resetOK()){
-					try {
-						//System.out.println("Setting character class to "+path);
-						StaticResources.getCharacter().setDFOClass(
-								Handler.getClassLoader().getClass(FileUtils.getDFOClass(path)));
-						//Reset characters SP and update 
-						StaticResources.getCharacter().resetSp();
-						StaticResources.getWisp().updateRemainingSP(StaticResources.getCharacter().getRemainingSP());
-						
-						oldSelection = selection;
-						if(StaticResources.getCharacter().getDFOClass() == null){
-							System.out.println("FUCK OFF");
-						}
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-						JOptionPane.showMessageDialog(null, e.getMessage());
+					StaticResources.getCharacter().setDFOClass(
+							ClassManager.getInstance().getDFOClass(path));
+					//Reset characters SP and update 
+					StaticResources.getCharacter().resetSp();
+					StaticResources.getWisp().updateRemainingSP(StaticResources.getCharacter().getRemainingSP());
+					
+					oldSelection = selection;
+					if(StaticResources.getCharacter().getDFOClass() == null){
+						System.out.println("FUCK OFF");
 					}
 				}
 				else{
@@ -94,6 +85,7 @@ public class TreeBeard implements TreeSelectionListener {
 		}
 		
 		//StaticResources.getWisp().revalidate();
+		StaticResources.getWisp().wipeSkills();
 		StaticResources.getWisp().repaint();
 		
 
@@ -101,18 +93,20 @@ public class TreeBeard implements TreeSelectionListener {
 	
 	private String selectionToPath(TreePath selection){
 		Object[] path = selection.getPath();
-		if(path == null){
+		if(path == null || path.length <= 0){
 			return "";
 		}
 		
-		String ret = "";
+		String ret = path[path.length-1].toString();
 		
 		//skip the first element, since it is Root
-		for(int i = 1; i < path.length; i++){
-			
-			ret += pathify(path[i].toString()) + "/";
-		}
-		return ret.substring(0,ret.length()-1);
+		//for(int i = 1; i < path.length; i++){
+		//	
+		//	ret += pathify(path[i].toString()) + "/";
+		//}
+		//return ret.substring(0,ret.length()-1);
+		
+		return ret;
 	}
 	
 	private String pathify(String input){

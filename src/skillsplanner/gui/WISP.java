@@ -2,6 +2,7 @@ package skillsplanner.gui;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.net.URISyntaxException;
@@ -15,9 +16,12 @@ import javax.swing.border.LineBorder;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
 
+import skillsplanner.beans.Skill;
 import skillsplanner.gui.custom.ClickableSkillPanel;
-import skillsplanner.skills.SkillsTemplate;
+import skillsplanner.resources.StaticResources;
+import skillsplanner.utils.ListUtils;
 import skillsplanner.utils.StringUtils;
+import skillsplanner.utils.classes.ClassManager;
 import skillsplanner.utils.jdom.*;
 
 
@@ -41,8 +45,6 @@ public class WISP extends javax.swing.JFrame{
 	public JButton Tab1;
 	public JButton Tab4;
 	public JTree classTree;
-	//public JButton Calculator;
-	//public JButton Overview;
 	public JButton General;
 
 	private JMenuItem helpMenuItem;
@@ -74,6 +76,7 @@ public class WISP extends javax.swing.JFrame{
 	private JMenuItem newFileMenuItem;
 	private JMenu jMenu3;
 	private JMenuBar jMenuBar1;
+	private JTextArea OverView;
 	
 
 	/**
@@ -93,28 +96,28 @@ public class WISP extends javax.swing.JFrame{
 	
 	public WISP() {
 		super();
-		loadFiles();
+		//loadFiles();
 		initGUI();
 		initListeners();
 		classAreaGeneration();
 		this.setVisible(true);
 	}
 	
-	/**
-	 * Loads the xml skill files into memory
-	 */
-	private void loadFiles() {
-		// TODO Auto-generated method stub
-		try {
-			Handler.getSkillLoader().loadSkills();
-		}
-		catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			JOptionPane.showMessageDialog(null, e.getMessage());
-			System.exit(1);
-		}
-	}
+//	/**
+//	 * Loads the xml skill files into memory
+//	 */
+//	private void loadFiles() {
+//		// TODO Auto-generated method stub
+//		try {
+//			Handler.getSkillLoader().loadSkills();
+//		}
+//		catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//			JOptionPane.showMessageDialog(null, e.getMessage());
+//			System.exit(1);
+//		}
+//	}
 
 	/**
 	 * Establish the listener for each object in the GUI
@@ -144,7 +147,7 @@ public class WISP extends javax.swing.JFrame{
 	 * Also this generates the tree for class selection.
 	 */
 	private void classAreaGeneration(){
-		Hashtable<String,ArrayList<String>> classes = Handler.getClassLoader().listClassTable();
+		Hashtable<String,ArrayList<String>> classes = ClassManager.listClassTable();
 		DefaultMutableTreeNode root = new DefaultMutableTreeNode("Root");
 		//ArrayList<DefaultMutableTreeNode> parents = new ArrayList<DefaultMutableTreeNode>();
 		
@@ -189,6 +192,13 @@ public class WISP extends javax.swing.JFrame{
 				}
 				{
 					RightPane = new JPanel();
+					OverView = new JTextArea();
+					JScrollPane sp2 = new JScrollPane(OverView){
+						public Dimension getPreferredSize(){
+							return RightPane.getSize();
+						}
+					};
+					RightPane.add(sp2);
 					SkillArea.add(RightPane, JSplitPane.RIGHT);
 				}
 			}
@@ -422,11 +432,10 @@ public class WISP extends javax.swing.JFrame{
 	/**
 	 * @param st
 	 */
-	public void addSkill(SkillsTemplate st) {
+	public void addSkill(Skill st) {
 		// TODO Auto-generated method stub
 		ClickableSkillPanel panel = new ClickableSkillPanel(st);
 		LeftPane.add(panel);
-		//System.out.println("Adding Panel: "+panel.getName());
 	}
 
 	/**
@@ -436,5 +445,17 @@ public class WISP extends javax.swing.JFrame{
 	public void updateRemainingSP(int sp){
 		SPRemaining.setText("SP Remaining: " + sp);
 		SPRemaining.validate();
+		updateSkillOverview();
+	}
+	
+	public void updateSkillOverview(){
+		String text = "";
+		for(String key : ListUtils.sortList(StaticResources.getCharacter().getDFOClass().getSkills().keySet())){
+			text += key + ": "+StaticResources.getCharacter().getDFOClass().getSkills().get(key) + "\n";
+		}
+		
+		OverView.setText(text);
+		OverView.updateUI();
+		RightPane.validate();
 	}
 }

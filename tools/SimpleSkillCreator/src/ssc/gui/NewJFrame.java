@@ -18,7 +18,7 @@ import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 import javax.swing.SwingUtilities;
 
-import skillsplanner.skills.SkillsTemplate;
+import skillsplanner.beans.Skill;
 import ssc.util.XMLWriter;
 
 
@@ -187,7 +187,7 @@ public class NewJFrame extends javax.swing.JFrame implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		SkillsTemplate st = new SkillsTemplate();
+		Skill st = new Skill();
 		st.setName(nameField.getText());
 		st.setSpcost(Integer.parseInt(this.spText.getText()));
 		st.setMaxLevel(Integer.parseInt(this.levelsText.getText()));

@@ -4,8 +4,6 @@ import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.List;
 
-import skillsplanner.classes.DFOClass;
-import skillsplanner.skills.SkillsTemplate;
 import skillsplanner.utils.jdom.Handler;
 
 
@@ -27,7 +25,7 @@ public class CLITest {
 		// of the greatest tools mankind has ever known.
 		//DFOClassLoader classloader = new DFOClassLoader();
 		
-		Handler.getSkillLoader().loadSkills();
+		//Handler.getSkillLoader().loadSkills();
 //		
 ////		String[] skilllist = Handler.getSkillLoader().getSkillList();
 //		

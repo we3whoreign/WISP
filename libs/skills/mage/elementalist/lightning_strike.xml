@@ -5,6 +5,7 @@
 		<casttime>0.0</casttime>
 		<spcost>50</spcost>
 		<entrycost>0</entrycost>
+		<reqlevel>35</reqlevel>
 		<description></description>
 		
 		<skillreq name="Sun Burst" level="5" />

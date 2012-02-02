@@ -1,6 +1,6 @@
-package skillsplanner.skills.errors;
+package skillsplanner.utils.skills.errors;
 
-import skillsplanner.skills.SkillsTemplate;
+import skillsplanner.beans.Skill;
 
 public class MaxLevelException extends Exception {
 	private static final long serialVersionUID = 3L;
@@ -11,7 +11,7 @@ public class MaxLevelException extends Exception {
 		error = "UNKNOWN";
 	}
 	
-	public MaxLevelException(SkillsTemplate st){
+	public MaxLevelException(Skill st){
 		super(st.getName() + " cannot exceed "+st.getMaxLevel());
 		error = st.getName() +" cannot exceed "+st.getMaxLevel();
 	}

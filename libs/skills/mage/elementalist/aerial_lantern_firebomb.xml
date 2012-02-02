@@ -5,6 +5,7 @@
         <casttime>0.0</casttime>
         <spcost>50</spcost>
         <entrycost>0</entrycost>
+		<reqlevel>15</reqlevel>
         <description></description>
 		
 		<skillreq name="Lantern Firebomb" level="5" />

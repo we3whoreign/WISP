@@ -1,6 +1,6 @@
 package skillsplanner.resources;
 
-import skillsplanner.DFOCharacter;
+import skillsplanner.beans.DFOCharacter;
 import skillsplanner.gui.WISP;
 
 public class StaticResources {

@@ -1,4 +1,4 @@
-package skillsplanner.skills.errors;
+package skillsplanner.utils.skills.errors;
 
 public class SPException extends Exception{
 	private static final long serialVersionUID = 2L;

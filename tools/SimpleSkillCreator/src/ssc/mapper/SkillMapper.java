@@ -3,11 +3,11 @@ package ssc.mapper;
 import org.jdom.Document;
 import org.jdom.Element;
 
-import skillsplanner.skills.SkillsTemplate;
+import skillsplanner.beans.Skill;
 
 public class SkillMapper {
 
-	public static Document makeDocument(SkillsTemplate st) {
+	public static Document makeDocument(Skill st) {
 		Document d = new Document();
 		Element rootElement = new Element("skillsplanner");
 		Element skillElement = new Element("skill");
