@@ -7,8 +7,9 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+import skillsplanner.io.IOHandler;
+
 import com.xmleditor.gui.XMLE;
-import com.xmleditor.io.IOHandler;
 
 public class Launcher {
 

@@ -10,10 +10,12 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
 
-import com.xmleditor.beans.Skill;
+import skillsplanner.beans.Skill;
+import skillsplanner.utils.ListUtils;
+import skillsplanner.utils.skills.SkillManager;
+
 import com.xmleditor.gui.listeners.Rudra;
-import com.xmleditor.util.ListUtils;
-import com.xmleditor.util.skills.SkillManager;
+
 
 public class SkillsTab extends JPanel{
 

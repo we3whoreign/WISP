@@ -8,11 +8,11 @@ import javax.swing.JButton;
 import javax.swing.JList;
 import javax.swing.JPanel;
 
-import com.xmleditor.beans.DFOClass;
-import com.xmleditor.gui.listeners.Agni;
-import com.xmleditor.util.ListUtils;
-import com.xmleditor.util.classes.ClassManager;
+import skillsplanner.beans.DFOClass;
+import skillsplanner.utils.ListUtils;
+import skillsplanner.utils.classes.ClassManager;
 
+import com.xmleditor.gui.listeners.Agni;
 public class ClassesTab extends JPanel {
 
 	public ClassesTab(){

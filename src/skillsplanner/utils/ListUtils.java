@@ -1,11 +1,9 @@
 package skillsplanner.utils;
 
-import java.text.Collator;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import skillsplanner.beans.Skill;
@@ -28,13 +26,22 @@ public class ListUtils {
 		return list;
 	}
 
-	public static List<Skill> listIntersection(HashMap<String, Integer> hashMap,
+	public static List<Skill> listIntersection(Map<String, Integer> hashMap,
 			List<Skill> reference) {
 		List<Skill> list = new ArrayList<Skill>();
 		for(Skill sk : reference){
 			if(hashMap.containsKey(sk.getName())){
 				list.add(sk);
 			}
+		}
+		
+		return list;
+	}
+
+	public static <E> List<E> getListFromMap(Map<String, E> map) {
+		List<E> list = new ArrayList<E>();
+		for(E obj : map.values()){
+			list.add(obj);
 		}
 		
 		return list;

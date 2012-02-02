@@ -48,10 +48,11 @@
 		classpathref="project.classpath"
 		version="true"
 		use="true"
+		useexternalfile="true"
 		maxmemory="512M"/>
 	</target>
 	<!-- Compile the code -->
-	<target name="compile" depends="library">
+	<target name="compile" depends="javadoc">
 		<javac srcdir="${src.dir}" 
 			destdir="${build.dir}" 
 			debug="true" 
