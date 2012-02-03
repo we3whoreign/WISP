@@ -7,7 +7,7 @@ import org.jdom.Document;
 import org.jdom.Element;
 
 import skillsplanner.beans.DFOClass;
-import skillsplanner.utils.skills.SkillManager;
+import skillsplanner.resources.SkillManager;
 
 
 public class ClassMapper {

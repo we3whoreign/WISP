@@ -1,10 +1,8 @@
 package com.xmleditor;
 
 import java.io.File;
-import java.net.MalformedURLException;
 
 import javax.swing.JFileChooser;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import skillsplanner.io.IOHandler;

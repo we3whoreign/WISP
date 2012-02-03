@@ -18,10 +18,11 @@ import javax.swing.tree.DefaultTreeCellRenderer;
 
 import skillsplanner.beans.Skill;
 import skillsplanner.gui.custom.ClickableSkillPanel;
+import skillsplanner.gui.custom.SkillsPane;
+import skillsplanner.resources.ClassManager;
 import skillsplanner.resources.StaticResources;
 import skillsplanner.utils.ListUtils;
 import skillsplanner.utils.StringUtils;
-import skillsplanner.utils.classes.ClassManager;
 import skillsplanner.utils.jdom.*;
 
 
@@ -55,7 +56,7 @@ public class WISP extends javax.swing.JFrame{
 	private JPanel ClassArea;
 	private JScrollPane jScrollPane1;
 	private JPanel RightPane;
-	private JPanel LeftPane;
+	private SkillsPane LeftPane;
 	private JPanel ExtraCrap;
 	private JPanel SkillContainer;
 	private JPanel TabArea;
@@ -183,7 +184,7 @@ public class WISP extends javax.swing.JFrame{
 				SkillArea.setPreferredSize(new java.awt.Dimension(641, 453));
 				SkillArea.setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED));
 				{
-					LeftPane = new JPanel();
+					LeftPane = new SkillsPane();
 					LeftPane.setOpaque(true);
 					LeftPane.setBackground(Color.WHITE);
 					JScrollPane sp = new JScrollPane(LeftPane);
@@ -421,12 +422,13 @@ public class WISP extends javax.swing.JFrame{
 	 * Clears all the skills from the RightPane by completely reinstantiating it.
 	 */
 	public void wipeSkills() {
-		// TODO Auto-generated method stub
-		for(Component c : LeftPane.getComponents()){
-			LeftPane.remove(c);
-		}
-		//LeftPane.setLayout(new BorderLayout());
-		LeftPane.setLayout(new BoxLayout(LeftPane,BoxLayout.Y_AXIS));
+		LeftPane.wipeSkills();
+//		// TODO Auto-generated method stub
+//		for(Component c : LeftPane.getComponents()){
+//			LeftPane.remove(c);
+//		}
+//		//LeftPane.setLayout(new BorderLayout());
+//		LeftPane.setLayout(new BoxLayout(LeftPane,BoxLayout.Y_AXIS));
 	}
 
 	/**
@@ -434,8 +436,9 @@ public class WISP extends javax.swing.JFrame{
 	 */
 	public void addSkill(Skill st) {
 		// TODO Auto-generated method stub
-		ClickableSkillPanel panel = new ClickableSkillPanel(st);
-		LeftPane.add(panel);
+		//ClickableSkillPanel panel = new ClickableSkillPanel(st);
+		//LeftPane.add(panel);
+		LeftPane.addSkill(st);
 	}
 
 	/**

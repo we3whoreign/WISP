@@ -9,11 +9,11 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 import skillsplanner.beans.Skill;
+import skillsplanner.resources.SkillManager;
 import skillsplanner.resources.StaticResources;
 import skillsplanner.utils.ListUtils;
 import skillsplanner.utils.StringUtils;
 import skillsplanner.utils.jdom.Handler;
-import skillsplanner.utils.skills.SkillManager;
 
 /**
  * Listener that handles all of the skill changes and subtree selections. IE The Tab[1-4] buttons, general button, and all the clickable panels that comprise the skill selection

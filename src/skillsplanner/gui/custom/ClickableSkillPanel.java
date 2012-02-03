@@ -11,14 +11,19 @@ import java.awt.GridLayout;
 import java.awt.RenderingHints;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 
 import skillsplanner.beans.Skill;
+import skillsplanner.resources.ImageManager;
+import skillsplanner.resources.SkillManager;
 import skillsplanner.resources.StaticResources;
 import skillsplanner.utils.skills.SkillHandler;
 import skillsplanner.utils.skills.errors.CurrentRequirementException;
@@ -39,6 +44,7 @@ public class ClickableSkillPanel extends JPanel implements MouseListener{
 	Color currentColor;
 	Skill skill;
 	JLabel levelInfo;
+	private int skillrequired = 0;
 	
 	public ClickableSkillPanel(Skill st){
 		this.setName(st.getName());
@@ -64,7 +70,10 @@ public class ClickableSkillPanel extends JPanel implements MouseListener{
 		this.setMinimumSize(new Dimension(width,height));
 		//this.setPreferredSize(new Dimension(width,height));
 		this.setMaximumSize(new Dimension(Short.MAX_VALUE,height));
-		this.setToolTipText("Click to level up. Right click to level down");
+		String tooltip = "<html>Click to level up. Right click to level down. <br />";
+		tooltip += SkillHandler.getRequirementsAsString(this.skill).replaceAll("\\n", "<br />");
+		tooltip += "</html>";
+		this.setToolTipText(tooltip);
 		
 		raised = BorderFactory.createRaisedBevelBorder();
 		lowered = BorderFactory.createLoweredBevelBorder();
@@ -78,7 +87,7 @@ public class ClickableSkillPanel extends JPanel implements MouseListener{
 		label.setForeground(Color.WHITE);
 		centerPanel.add(label);
 		
-		levelInfo = new JLabel("Current Level: "+StaticResources.getCharacter().getDFOClass().getSkills().get(skill.getName())+"    Max Level: "+ skill.getMaxLevel());
+		levelInfo = new JLabel();
 		levelInfo.setHorizontalAlignment(JLabel.CENTER);
 		levelInfo.setForeground(Color.WHITE);
 		centerPanel.add(levelInfo);
@@ -89,6 +98,15 @@ public class ClickableSkillPanel extends JPanel implements MouseListener{
 		spCostLabel.setForeground(Color.WHITE);
 		spCostLabel.setPreferredSize(new Dimension((int) (this.getPreferredSize().getWidth()/6),(int) this.getPreferredSize().getHeight()));
 		this.add(spCostLabel,BorderLayout.EAST);
+		
+		try {
+			BufferedImage icon = ImageManager.getImage(this.skill.getName());
+			this.add(new JLabel(new ImageIcon(icon)),BorderLayout.WEST);
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		this.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		this.addMouseListener(this);
@@ -125,6 +143,12 @@ public class ClickableSkillPanel extends JPanel implements MouseListener{
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
 		currentColor = new Color(0,0,0,255); //full black
+		if(!SkillHandler.requirementsMet(this.skill)){
+			//Notify the brigade captain, I'm going in
+			SkillsPane pane = (SkillsPane) this.getParent();
+			pane.notifyRequiredSkills(this.skill.getSkillRequirements());
+			
+		}
 		this.setBorder(raised);
 		
 	}
@@ -132,6 +156,12 @@ public class ClickableSkillPanel extends JPanel implements MouseListener{
 	@Override
 	public void mouseExited(MouseEvent arg0) {
 		currentColor = new Color(0,0,0,220); //slightly see through black
+		if(!SkillHandler.requirementsMet(this.skill)){
+			//Notify the brigade captain, I'm going in
+			SkillsPane pane = (SkillsPane) this.getParent();
+			pane.notifyRequiredSkillsofLeave(this.skill.getSkillRequirements());
+			
+		}
 		this.setBorder(empty);
 	}
 
@@ -192,13 +222,30 @@ public class ClickableSkillPanel extends JPanel implements MouseListener{
 		int h = getHeight() - 4;
 		int arc = 8;
 		
+		
 		Graphics2D g2 = (Graphics2D) g.create();
+		
+		Color overlayColor = Color.RED; //red for now
+		Color textColor = Color.black;
 		
 		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
 	            RenderingHints.VALUE_ANTIALIAS_ON);
 
 	    g2.setColor(currentColor);
 	    g2.fillRoundRect(x, y, w, h, arc, arc);
+	    
+	    if(skillrequired != 0){
+	    	g2.setColor(overlayColor);
+			g2.fillRoundRect(x, y, w, h, arc, arc);
+			
+			levelInfo.setText("REQUIRES LEVEL "+skillrequired);
+			
+			//g2.setColor(textColor);
+			//g2.drawString("REQUIRED LEVEL " + skillrequired+ "!", getWidth()/2, getHeight()/2);//draw the warning in the center
+	    }
+	    else{
+	    	levelInfo.setText("Current Level: "+StaticResources.getCharacter().getDFOClass().getSkills().get(skill.getName())+"    Max Level: "+ skill.getMaxLevel());
+	    }
 
 	    g2.dispose();
 
@@ -213,5 +260,12 @@ public class ClickableSkillPanel extends JPanel implements MouseListener{
 		
 		return d;
 	}
+
+	public void skillIsRequired(int level) {
+		// TODO Auto-generated method stub
+		this.skillrequired = level;
+	}
+
+	
 
 }

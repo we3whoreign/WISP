@@ -2,10 +2,13 @@ package com.xmleditor.gui.dialogs;
 
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
+import java.awt.Component;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -14,9 +17,9 @@ import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
-import com.xmleditor.beans.DFOClass;
-import com.xmleditor.beans.Skill;
-import com.xmleditor.util.classes.ClassManager;
+import skillsplanner.beans.DFOClass;
+import skillsplanner.beans.Skill;
+import skillsplanner.resources.ClassManager;
 
 
 public class CreateSkillDialog extends JFrame implements ActionListener{
@@ -31,8 +34,10 @@ public class CreateSkillDialog extends JFrame implements ActionListener{
 	
 	public CreateSkillDialog(){
 		super();
-		initGUI();
 		st = new Skill();
+		initGUI();
+		this.setSize(500,500);
+		this.setVisible(true);
 	}
 	
 	private void initGUI(){
@@ -41,8 +46,27 @@ public class CreateSkillDialog extends JFrame implements ActionListener{
 		cards.add(getFirstDialog());
 		
 		this.add(cards,BorderLayout.CENTER);
+		this.add(bottomBar(),BorderLayout.SOUTH);
 	}
 	
+	private JPanel bottomBar() {
+		JPanel bar = new JPanel();
+		JButton previous = new JButton("Previous");
+		JButton next = new JButton("Next");
+		JButton finish = new JButton("Finish");
+		previous.addActionListener(this);
+		previous.setActionCommand(this.PREVIOUS);
+		next.addActionListener(this);
+		next.setActionCommand(this.NEXT);
+		finish.addActionListener(this);
+		finish.setActionCommand(this.FINISH);
+		bar.add(previous);
+		bar.add(next);
+		
+		return bar;
+		
+	}
+
 	/**
 	 * First dialog gets the name, class, and subclass of the skill
 	 * @return
@@ -50,12 +74,11 @@ public class CreateSkillDialog extends JFrame implements ActionListener{
 	private JPanel getFirstDialog(){
 		JPanel firstpanel = new JPanel();
 	
-		firstpanel.setLayout(new BoxLayout(firstpanel,BoxLayout.Y_AXIS));
+		firstpanel.setLayout(new GridLayout(0,1));
 		
 		JPanel namePanel = new JPanel();
 		namePanel.add(new JLabel("Name"));
 		final JTextField nameText = new JTextField();
-		
 		nameText.getDocument().addDocumentListener(new DocumentListener(){
 			public void changedUpdate(DocumentEvent e) {
 					updateText();
@@ -88,9 +111,9 @@ public class CreateSkillDialog extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent arg0) {
 		switch(arg0.getActionCommand()){
 		case NEXT:
-			break;
+			((CardLayout)cards.getLayout()).next(this.getContentPane());
 		case PREVIOUS:
-			break;
+			((CardLayout)cards.getLayout()).previous(this.getContentPane());
 		case FINISH:
 			break;
 		default:

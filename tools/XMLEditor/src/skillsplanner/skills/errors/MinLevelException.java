@@ -1,6 +1,7 @@
 package skillsplanner.skills.errors;
 
-import com.xmleditor.beans.Skill;
+import skillsplanner.beans.Skill;
+
 
 
 public class MinLevelException extends Exception {

@@ -11,8 +11,8 @@ import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
 
 import skillsplanner.beans.Skill;
+import skillsplanner.resources.SkillManager;
 import skillsplanner.utils.ListUtils;
-import skillsplanner.utils.skills.SkillManager;
 
 import com.xmleditor.gui.listeners.Rudra;
 
@@ -37,7 +37,7 @@ public class SkillsTab extends JPanel{
 		// BOTTOM PANEL
 		JPanel buttonPanel = new JPanel();
 		JButton newButton = new JButton("New Skill");
-		Rudra rudra = new Rudra(listpane);
+		Rudra rudra = new Rudra();
 		newButton.addActionListener(rudra);
 		newButton.setActionCommand(Rudra.NEW_SKILL);
 		JButton editButton = new JButton("Edit Class");

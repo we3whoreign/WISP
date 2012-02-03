@@ -38,7 +38,7 @@ public interface ResourceHandler {
 	public List<String> getResourceIdentifiers();
 	
 	/**
-	 * Does a regex search of all the resources in getResourceIdentifiers() to see if the string passed is contained. 
+	 * Does a search of all the resources in getResourceIdentifiers() to see if the string passed is contained. 
 	 * Returns the first success or null if failed
 	 */
 	public String resourceLookup(String search);

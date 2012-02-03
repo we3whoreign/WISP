@@ -9,8 +9,8 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 
 import skillsplanner.beans.DFOClass;
+import skillsplanner.resources.ClassManager;
 import skillsplanner.utils.ListUtils;
-import skillsplanner.utils.classes.ClassManager;
 
 import com.xmleditor.gui.listeners.Agni;
 public class ClassesTab extends JPanel {

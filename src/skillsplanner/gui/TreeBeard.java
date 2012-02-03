@@ -10,9 +10,9 @@ import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreePath;
 
+import skillsplanner.resources.ClassManager;
 import skillsplanner.resources.StaticResources;
 import skillsplanner.utils.StringUtils;
-import skillsplanner.utils.classes.ClassManager;
 import skillsplanner.utils.jdom.Handler;
 
 /**

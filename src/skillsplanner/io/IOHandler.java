@@ -13,6 +13,7 @@ import java.util.Map;
  */
 public class IOHandler {
 
+	private static String IMAGES_DIR = "libs/images";
 	private static String SKILLS_DIR = "libs/skills";
 	private static String CLASSES_DIR = "libs/classes";
 	
@@ -69,6 +70,10 @@ public class IOHandler {
 	public static void setClassDir(String dir){
 		CLASSES_DIR = dir;
 	}
+	
+	public static void setImagesDir(String dir){
+		IMAGES_DIR = dir;
+	}
 
 	public static List<InputStream> getAllClasses() {
 		return IOHandler.getResourcesIn(CLASSES_DIR);
@@ -76,6 +81,20 @@ public class IOHandler {
 	
 	public static Map<InputStream,String> getClassesWithParents(){
 		return IOHandler.getResourcesWithParents(CLASSES_DIR);
+	}
+	
+	/**
+	 * Gets an input stream for all images
+	 * @return
+	 */
+	public static List<InputStream> getAllImages(){
+		return IOHandler.getResourcesIn(IMAGES_DIR);
+	}
+
+	public static InputStream getImageWithName(String name) {
+		ResourceHandler resourceHandler = (IOHandler.isJar()) ? new JarResource(IMAGES_DIR) : new FileSystemResource(IMAGES_DIR);
+		return resourceHandler.getResource(resourceHandler.resourceLookup(name));
+		
 	}
 	
 	

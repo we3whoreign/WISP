@@ -2,6 +2,8 @@ package skillsplanner.utils.skills;
 
 import skillsplanner.beans.DFOCharacter;
 import skillsplanner.beans.Skill;
+import skillsplanner.beans.SkillRequirement;
+import skillsplanner.resources.SkillManager;
 import skillsplanner.resources.StaticResources;
 import skillsplanner.utils.skills.errors.CurrentRequirementException;
 import skillsplanner.utils.skills.errors.MaxLevelException;
@@ -150,6 +152,28 @@ public class SkillHandler {
 		}
 		return false;
 		
+	}
+	
+	/**
+	 * Handle to check if a skill has it's requirements fulfilled
+	 * @param sk
+	 * @return
+	 */
+	public static boolean requirementsMet(Skill sk){
+		return sk.requirementsFulfilled(StaticResources.getCharacter().getDFOClass());
+	}
+
+	public static String getRequirementsAsString(Skill skill) {
+		String ret = "Requires:";
+		
+		if(skill.getSkillRequirements() == null){
+			return "";
+		}
+		
+		for(SkillRequirement requirement : skill.getSkillRequirements()){
+			ret += "\n"+requirement.getName()+" - "+requirement.getLevel();
+		}
+		return ret;
 	}
 	
 	

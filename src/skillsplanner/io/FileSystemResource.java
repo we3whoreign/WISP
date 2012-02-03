@@ -32,6 +32,9 @@ public class FileSystemResource implements ResourceHandler {
 	public InputStream getResource(String resource) {
 		//Use resourceLookup to get the exact resource
 		//resource = resourceLookup(resource);
+		if(resource == null){
+			return null;
+		}
 		InputStream is = null;
 		try {
 			is = new FileInputStream(resource);
@@ -61,7 +64,7 @@ public class FileSystemResource implements ResourceHandler {
 	@Override
 	public String resourceLookup(String regex) {
 		for(String resource : getResourceIdentifiers()){
-			if(Pattern.matches(regex, resource)){
+			if(resource.toLowerCase().contains(regex.toLowerCase())){
 				return resource;
 			}
 		}

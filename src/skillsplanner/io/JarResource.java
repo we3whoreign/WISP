@@ -2,6 +2,7 @@ package skillsplanner.io;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.jar.JarFile;
 
@@ -9,14 +10,14 @@ public class JarResource implements ResourceHandler {
 	private JarFile jar;
 	private String path = "";
 	
-	public JarResource(){
-		try {
-			jar = new JarFile(getJarFilePath());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+//	public JarResource(){
+////		try {
+////			jar = new JarFile(getJarFilePath());
+////		} catch (IOException e) {
+////			// TODO Auto-generated catch block
+////			e.printStackTrace();
+////		}
+//	}
 
 	/**
 	 * Everytime a resource is looked for, it is restricted to anything starting with path
@@ -47,8 +48,9 @@ public class JarResource implements ResourceHandler {
 
 	@Override
 	public List<String> getResourceIdentifiers() {
-		// TODO Auto-generated method stub
-		return null;
+		List<String> list = new ArrayList<String>();
+		
+		return list;
 	}
 
 	@Override
