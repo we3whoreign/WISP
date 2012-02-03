@@ -7,8 +7,9 @@
 		<passive>true</passive>
 		<spcost>20</spcost>
 		<entrycost>-20</entrycost>
+		<reqlevel>1</reqlevel>
 		<description> Cancels normal attacks to cast the Weapon Uppercut.  </description>
-
+		
 		<dynamic>
 			<level value="1">
 				<level_req name="Level Requirement" value="1" />

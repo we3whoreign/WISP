@@ -4,9 +4,10 @@
 	<skill>
 		<name> Dragon Fang </name>
 		<casttime> 0 </casttime>
-		<spcost> 15 </spcost>
+		<spcost>15</spcost>
 		<entrycost> 0 </entrycost>
 		
+		<reqlevel>5</reqlevel>
 		<description> Forcefully stabs an enemy with your weapon to immobilize it for a long duration.
 		 Once this skill hits, you can cancel the Dragon Fang and use Weapon Uppercut, Palm Blast, or Full Swing.  </description>
 
