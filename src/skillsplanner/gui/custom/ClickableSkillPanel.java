@@ -101,7 +101,7 @@ public class ClickableSkillPanel extends JPanel implements MouseListener{
 		
 		try {
 			BufferedImage icon = ImageManager.getImage(this.skill.getName());
-			this.add(new JLabel(new ImageIcon(icon)),BorderLayout.WEST);
+			this.add(new JLabel(new ImageIcon(icon.getScaledInstance(28, 28, 0))),BorderLayout.WEST);
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

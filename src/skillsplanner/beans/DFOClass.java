@@ -62,4 +62,12 @@ public class DFOClass {
 		return this.name;
 	}
 
+	/**
+	 * Returns parent/name in order to provide uniqueness for mapping.
+	 * @return
+	 */
+	public String getUniqueName() {
+		return (this.baseClass + "/" + this.name).toLowerCase();
+	}
+
 }

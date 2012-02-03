@@ -15,10 +15,13 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
+import javax.swing.tree.TreeCellRenderer;
+import javax.swing.tree.TreeSelectionModel;
 
 import skillsplanner.beans.Skill;
 import skillsplanner.gui.custom.ClickableSkillPanel;
 import skillsplanner.gui.custom.SkillsPane;
+import skillsplanner.gui.custom.TreeImageCellRender;
 import skillsplanner.resources.ClassManager;
 import skillsplanner.resources.StaticResources;
 import skillsplanner.utils.ListUtils;
@@ -154,14 +157,19 @@ public class WISP extends javax.swing.JFrame{
 		
 		//Iterator<DefaultMutableTreeNode> iter = roots.iterator();
 		for(String s1 : classes.keySet()){
-			root.add(new DefaultMutableTreeNode(StringUtils.toCamelCase(s1)));
+			//moved this to its own line
+			DefaultMutableTreeNode node = new DefaultMutableTreeNode(StringUtils.toCamelCase(s1));
+			root.add(node);
 			for(String s2 : classes.get(s1)){
 				s2 = StringUtils.toCamelCase(s2);
 				((DefaultMutableTreeNode) root.getChildAt(root.getChildCount() - 1)).add(new DefaultMutableTreeNode(s2));
 			}
 		}
-		classTree = new JTree(root);
 		
+		//make a class tree an overrided get size to always fill class area
+		classTree = new JTree(root);
+		classTree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
+		classTree.setCellRenderer(new TreeImageCellRender());
 		classTree.addTreeSelectionListener(new TreeBeard());
 		
 		classTree.setRootVisible(false);
@@ -283,6 +291,7 @@ public class WISP extends javax.swing.JFrame{
 			}
 			{
 				ClassArea = new JPanel();
+				ClassArea.setLayout(new FlowLayout(FlowLayout.LEFT));
 				ClassArea.setBackground(Color.WHITE);
 				jScrollPane1 = new JScrollPane(ClassArea);
 				jScrollPane1.setPreferredSize(new java.awt.Dimension(152, 507));

@@ -34,7 +34,7 @@ public class TreeBeard implements TreeSelectionListener {
 		
 		String path = selectionToPath(selection);
 		
-		if(ClassManager.getInstance().getAllClasses().containsKey(path)){
+		if(ClassManager.getClassByName(path) != null){
 			if(StaticResources.getWisp()==null){
 				System.out.println("FUCKK FUCK FUCK FUCK FUCK FUCK FUCK FUCK FUCK");
 			}
