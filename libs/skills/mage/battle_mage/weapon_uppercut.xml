@@ -6,6 +6,7 @@
 		<casttime>0</casttime>
 		<spcost>20</spcost>
 		<entrycost>-20</entrycost>
+		<reqlevel>1</reqlevel>
 		<description> Hits an enemy with your weapon to launch it upward into the air. 
 		Pressing Up or Down Arrow key while casting this skill slides you to the side 
 		and then brings you back, attacking enemies in the way. </description>

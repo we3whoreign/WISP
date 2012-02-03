@@ -6,6 +6,7 @@
 		<casttime>0</casttime>
 		<spcost>20</spcost>
 		<entrycost>0</entrycost>
+		<reqlevel>15</reqlevel>
 		<description> Hits and pushes back the enemy, then launches the enemy high 
 		into the air. To remain in your current spot while attacking, press the 
 		arrow key in the opposite direction of your attack. Holding down the key 

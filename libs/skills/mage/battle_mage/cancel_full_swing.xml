@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skillsplanner>
+    <skill>
+        <name>Cancel Full Swing</name>
+        <casttime>0.0</casttime>
+        <spcost>50</spcost>
+        <entrycost>0</entrycost>
+		<reqlevel>38</reqlevel>
+        <description></description>
+        
+        <skillreq name="Full Swing" level="5" />
+        
+        <dynamic>
+            <level value="1" />
+        </dynamic>
+    </skill>
+</skillsplanner>
