@@ -62,7 +62,12 @@ public class TreeBeard implements TreeSelectionListener {
 					StaticResources.getWisp().Tab4.setText("");
 				}
 				
-				StaticResources.getWisp().General.setText("General");
+				try{
+					StaticResources.getWisp().Tab5.setText(StringUtils.toCamelCase((subclasses.get(4) == null) ? "" : subclasses.get(4)));
+				}
+				catch(Exception e){
+					StaticResources.getWisp().Tab5.setText("");
+				}
 				
 				//Change the DFOCharacter object to reflect change in class
 				if(StaticResources.getCharacter().resetOK()){

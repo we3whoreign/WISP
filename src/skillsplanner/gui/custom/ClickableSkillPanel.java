@@ -27,8 +27,10 @@ import skillsplanner.resources.SkillManager;
 import skillsplanner.resources.StaticResources;
 import skillsplanner.utils.skills.SkillHandler;
 import skillsplanner.utils.skills.errors.CurrentRequirementException;
+import skillsplanner.utils.skills.errors.MaxLevelException;
 import skillsplanner.utils.skills.errors.MinLevelException;
 import skillsplanner.utils.skills.errors.RequirementsNotMetException;
+import skillsplanner.utils.skills.errors.SPException;
 
 /**
  * A clickable panel with the option of storing a skill name. Used for Leveling up skills. Registers Right click as level down and left click as level up.
@@ -171,11 +173,13 @@ public class ClickableSkillPanel extends JPanel implements MouseListener{
 			//updateInformation();
 		} catch (RequirementsNotMetException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (Exception e) {
+			//e.printStackTrace();
+		} catch (SPException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
-			//JOptionPane.showMessageDialog(null, e.getMessage());
+			//e.printStackTrace();
+		} catch (MaxLevelException e) {
+			// TODO Auto-generated catch block
+			//e.printStackTrace();
 		} 
 	}
 	
@@ -185,10 +189,10 @@ public class ClickableSkillPanel extends JPanel implements MouseListener{
 			//updateInformation();
 		} catch (MinLevelException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
 		} catch (CurrentRequirementException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
 		} 
 	}
 	

@@ -46,4 +46,9 @@ public class ListUtils {
 		
 		return list;
 	}
+
+	public static void subClassListSort(List<String> list) {
+		Collections.sort(list, new SubclassComparator());
+		
+	}
 }

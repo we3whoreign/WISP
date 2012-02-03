@@ -3,6 +3,18 @@
 	<name>Summoner</name>
 	
 	<!-- Skills -->
+	<!-- General Skills -->
+	<skill>Leap</skill>
+	<skill>Ancient Memory</skill>
+	<skill>Item Throw Mastery</skill>
+	<skill>Indomitable Spirit</skill>
+	<skill>Cancel - Item Throw</skill>
+	<skill>Physical Critical Hit</skill>
+	<skill>Magic Critical Hit</skill>
+	<skill>Physical Rear Attack</skill>
+	<skill>Magic Rear Attack</skill>
+	<skill>Quick Rebound</skill>
+	<skill>Backstep</skill>
 	
 	
 	<!-- Battle Mage Skills -->

@@ -11,6 +11,7 @@ import java.util.Map;
 import skillsplanner.beans.DFOClass;
 import skillsplanner.beans.Skill;
 import skillsplanner.io.IOHandler;
+import skillsplanner.utils.ListUtils;
 import skillsplanner.utils.jdom.ClassMapper;
 
 
@@ -70,6 +71,11 @@ public class ClassManager {
 		return table;
 	}
 
+	/**
+	 * Use the available skills of a class to show the possible subclasses.
+	 * @param path
+	 * @return
+	 */
 	public List<String> getSubclasses(String path) {
 		List<String> list = new ArrayList<String>();
 		DFOClass cl = getDFOClass(path);
@@ -80,9 +86,15 @@ public class ClassManager {
 			}
 		}
 		
+		ListUtils.subClassListSort(list);
 		return list;
 	}
 
+	/**
+	 * Static reference to get a class by name. The name must directly be mapped to the keyset in the hashtable
+	 * @param path
+	 * @return
+	 */
 	public static DFOClass getClassByName(String path) {
 		ClassManager cm = getInstance();
 		return cm.getDFOClass(path);

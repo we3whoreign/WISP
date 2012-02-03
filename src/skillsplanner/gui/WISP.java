@@ -27,6 +27,7 @@ import skillsplanner.resources.StaticResources;
 import skillsplanner.utils.ListUtils;
 import skillsplanner.utils.StringUtils;
 import skillsplanner.utils.jdom.*;
+import skillsplanner.utils.skills.SkillHandler;
 
 
 /**
@@ -49,7 +50,7 @@ public class WISP extends javax.swing.JFrame{
 	public JButton Tab1;
 	public JButton Tab4;
 	public JTree classTree;
-	public JButton General;
+	public JButton Tab5;
 
 	private JMenuItem helpMenuItem;
 	private JMenu jMenu5;
@@ -133,13 +134,13 @@ public class WISP extends javax.swing.JFrame{
 		Tab2.addActionListener(samwise);
 		Tab3.addActionListener(samwise);
 		Tab4.addActionListener(samwise);
-		General.addActionListener(samwise);
+		Tab5.addActionListener(samwise);
 		
 		Tab1.setActionCommand(Constants.SUBCLASS_SKILL_TREE_SELECTION);
 		Tab2.setActionCommand(Constants.SUBCLASS_SKILL_TREE_SELECTION);
 		Tab3.setActionCommand(Constants.SUBCLASS_SKILL_TREE_SELECTION);
 		Tab4.setActionCommand(Constants.SUBCLASS_SKILL_TREE_SELECTION);
-		General.setActionCommand(Constants.SUBCLASS_SKILL_TREE_SELECTION);
+		Tab5.setActionCommand(Constants.SUBCLASS_SKILL_TREE_SELECTION);
 		
 		 //TO DO: The rest....
 		
@@ -242,9 +243,9 @@ public class WISP extends javax.swing.JFrame{
 						Tabs.add(SkillContainer);
 						SkillContainer.setPreferredSize(new java.awt.Dimension(443, 38));
 						{
-							General = new JButton();
-							SkillContainer.add(General);
-							General.setPreferredSize(new java.awt.Dimension(88, 38));
+							Tab5 = new JButton();
+							SkillContainer.add(Tab5);
+							Tab5.setPreferredSize(new java.awt.Dimension(88, 38));
 						}
 						{
 							Tab4 = new JButton();
@@ -463,7 +464,9 @@ public class WISP extends javax.swing.JFrame{
 	public void updateSkillOverview(){
 		String text = "";
 		for(String key : ListUtils.sortList(StaticResources.getCharacter().getDFOClass().getSkills().keySet())){
-			text += key + ": "+StaticResources.getCharacter().getDFOClass().getSkills().get(key) + "\n";
+			if(StaticResources.getCharacter().getDFOClass().getSkills().get(key) > 0){
+				text += key + ": "+StaticResources.getCharacter().getDFOClass().getSkills().get(key) + "\n";
+			}
 		}
 		
 		OverView.setText(text);
