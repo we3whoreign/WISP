@@ -26,7 +26,7 @@ public class IOHandler {
 	 * @return true if running a jar
 	 */
 	private static boolean isJar(){
-		return true;
+		return false;
 	}
 	
 	/**
