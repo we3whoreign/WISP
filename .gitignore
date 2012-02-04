@@ -1,9 +1,6 @@
 # Compiled Code #
 ##################
 build/**
-*.class
-*.dll
-*.exe
 
 
 

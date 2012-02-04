@@ -3,8 +3,10 @@ package skillsplanner.io;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
 import java.util.jar.JarFile;
+import java.util.regex.Pattern;
 
 public class JarResource implements ResourceHandler {
 	private JarFile jar;
@@ -36,26 +38,40 @@ public class JarResource implements ResourceHandler {
 
 	@Override
 	public List<InputStream> getObjects() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public InputStream getResource(String resource) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<String> getResourceIdentifiers() {
-		List<String> list = new ArrayList<String>();
+		List<InputStream> list = new ArrayList<InputStream>();
+		for(String resource : getResourceIdentifiers()){
+			list.add(this.getClass().getResourceAsStream(resource));
+		}
 		
 		return list;
 	}
 
 	@Override
+	public InputStream getResource(String resource) {
+		return this.getClass().getResourceAsStream(resource);
+	}
+
+	@Override
+	public List<String> getResourceIdentifiers() {
+		List<String> list = new ArrayList<String>();
+		Enumeration enumeration = jar.entries();
+		while(enumeration.hasMoreElements()){
+			String resource = enumeration.nextElement().toString();
+			if(resource.startsWith(path) && !resource.endsWith("/")){
+				list.add(resource);
+			}
+		}
+		return list;
+	}
+
+	@Override
 	public String resourceLookup(String search) {
-		// TODO Auto-generated method stub
+		for(String resource : getResourceIdentifiers()){
+			if(resource.contains(search)){
+				return resource;
+			}
+		}
+		
 		return null;
 	}
 
@@ -73,8 +89,15 @@ public class JarResource implements ResourceHandler {
 
 	@Override
 	public List<String> getAllMatches(String pattern) {
-		// TODO Auto-generated method stub
-		return null;
+		System.out.println(pattern);
+		List<String> list = new ArrayList<String>();
+		for(String resource : getResourceIdentifiers()){
+			if(Pattern.matches(pattern, resource)){
+				list.add(resource);
+				System.out.println(resource);
+			}
+		}
+		return list;
 	}
 	
 	public String getParent(String resource) {

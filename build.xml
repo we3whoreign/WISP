@@ -9,7 +9,7 @@
 	<property name="debug.level" value="lines,vars,source" />
 	<property name="jars.dir"  value="jars" />
 	<property name="buildnum.file" value="build.num" />
-
+	<property name="jdom.dir" value="jdom" />
 	<property name="project.name" value="DFOPlanner" />
 	<property name="main.class" value="skillsplanner.Launcher" />
 	<property name="version.num" value="0.01a" />
@@ -85,9 +85,13 @@
 			destfile="${jars.dir}/${jar.name}"
 			basedir="${build.dir}"
 			manifest="MANIFEST.MF"
+			duplicate="preserve"
 			>
 			<!-- include all class files -->
 			<fileset dir="${build.dir}" includes="**/*.class" />
+			
+			<!--  influde jdom files -->
+			<fileset dir="${jdom.dir}" includes="**/*.class" />
 
 			<!-- Include all library files -->
 			<zipfileset dir="${libs.src.dir}" includes="*" prefix="${libs.src.dir}" />
