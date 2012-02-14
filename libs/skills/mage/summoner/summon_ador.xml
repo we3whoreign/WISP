@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skillsplanner>
     <skill>
-        <name>Lasher</name>
+        <name>Spirit Summon: Ador</name>
         <casttime>0.0</casttime>
-        <spcost>15</spcost>
+        <spcost>20</spcost>
         <entrycost>0</entrycost>
-		<reqlevel>10</reqlevel>
+		<reqlevel>18</reqlevel>
         <description></description>
+		
+		<skillreq name="Hired Summon: Panzer Hodor" level="1" />
+		
         <dynamic>
             <level value="1" />
             <level value="2" />
@@ -35,9 +38,6 @@
             <level value="25" />
             <level value="26" />
             <level value="27" />
-            <level value="28" />
-            <level value="29" />
-            <level value="30" />
         </dynamic>
     </skill>
 </skillsplanner>

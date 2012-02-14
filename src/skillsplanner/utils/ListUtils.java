@@ -1,6 +1,7 @@
 package skillsplanner.utils;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -49,6 +50,20 @@ public class ListUtils {
 
 	public static void subClassListSort(List<String> list) {
 		Collections.sort(list, new SubclassComparator());
+		
+	}
+
+	public static Skill[] splitDuplicateSkills(Skill[] skillList,
+			Set<String> keySet) {
+		List<Skill> list = new ArrayList<Skill>();
+		for(Skill sk : skillList){
+			if(keySet.contains(sk.getName())){
+				list.add(sk);
+			}
+		}
+		
+		Skill[] array = new Skill[list.size()];
+		return list.toArray(array);
 		
 	}
 }

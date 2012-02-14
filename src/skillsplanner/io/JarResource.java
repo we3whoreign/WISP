@@ -2,6 +2,7 @@ package skillsplanner.io;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
@@ -108,6 +109,12 @@ public class JarResource implements ResourceHandler {
 		parent = parent.substring(parent.lastIndexOf("/"), parent.length());
 		
 		return parent;
+	}
+
+	@Override
+	public OutputStream getOutputResource(String uniqueName) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

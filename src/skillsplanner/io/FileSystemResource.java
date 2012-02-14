@@ -3,8 +3,10 @@ package skillsplanner.io;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -119,6 +121,20 @@ public class FileSystemResource implements ResourceHandler {
 		parent = parent.substring(parent.lastIndexOf("/")+1, parent.length());
 		
 		return parent;
+	}
+
+
+	@Override
+	public OutputStream getOutputResource(String uniqueName) {
+		String resource = resourceLookup(uniqueName);
+		try {
+			return new FileOutputStream(resource);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return null;
 	}
 
 }

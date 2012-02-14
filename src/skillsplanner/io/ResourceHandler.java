@@ -1,6 +1,7 @@
 package skillsplanner.io;
 
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.List;
 
@@ -50,5 +51,12 @@ public interface ResourceHandler {
 	 * @return list of all occurences that match this
 	 */
 	public List<String> getAllMatches(String pattern);
+
+	/**
+	 * Get an output reference for a resource. Used in XMLEditor only
+	 * @param uniqueName
+	 * @return
+	 */
+	public OutputStream getOutputResource(String uniqueName);
 
 }

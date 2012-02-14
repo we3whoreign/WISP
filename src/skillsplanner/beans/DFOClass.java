@@ -70,4 +70,15 @@ public class DFOClass {
 		return (this.baseClass + "/" + this.name).toLowerCase();
 	}
 
+	public void removeSkill(Skill sk) {
+		if(skills == null){
+			skills = new HashMap<String,Integer>();
+		}
+		
+		if(skills.containsKey(sk.getName())){
+			skills.remove(sk.getName());
+		}
+		
+	}
+
 }

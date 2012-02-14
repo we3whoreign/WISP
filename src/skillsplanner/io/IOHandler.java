@@ -1,10 +1,13 @@
 package skillsplanner.io;
 
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import skillsplanner.beans.DFOClass;
 
 /**
  * Handler for controlling IO. Specifically the connector from ResourceHandlers to the outside world
@@ -91,10 +94,25 @@ public class IOHandler {
 		return IOHandler.getResourcesIn(IMAGES_DIR);
 	}
 
+	/**
+	 * Gets an image matching string name, which is the name without the extension
+	 * @param name
+	 * @return
+	 */
 	public static InputStream getImageWithName(String name) {
 		ResourceHandler resourceHandler = (IOHandler.isJar()) ? new JarResource(IMAGES_DIR) : new FileSystemResource(IMAGES_DIR);
 		return resourceHandler.getResource(resourceHandler.resourceLookup(name));
 		
+	}
+
+	/**
+	 * Gets an output stream for the xml file related to the dfo class passed in
+	 * @param dfoclass
+	 * @return
+	 */
+	public static OutputStream getClassOutputter(DFOClass dfoclass) {
+		ResourceHandler resourceHandler = (IOHandler.isJar()) ? new JarResource(CLASSES_DIR) : new FileSystemResource(CLASSES_DIR);
+		return resourceHandler.getOutputResource(dfoclass.getUniqueName());
 	}
 	
 	

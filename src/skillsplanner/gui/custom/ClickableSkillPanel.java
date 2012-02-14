@@ -8,6 +8,7 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.RenderingHints;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -102,7 +103,7 @@ public class ClickableSkillPanel extends JPanel implements MouseListener{
 		this.add(spCostLabel,BorderLayout.EAST);
 		
 		try {
-			BufferedImage icon = ImageManager.getImage(this.skill.getName());
+			Image icon = ImageManager.getImage(this.skill.getName());
 			JLabel image = new JLabel(new ImageIcon(icon));
 			//image.setMaximumSize(new Dimension((int)this.getPreferredSize().getWidth()/10,(int)this.getPreferredSize().getHeight()));
 			this.add(image,BorderLayout.WEST);

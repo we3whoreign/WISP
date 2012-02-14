@@ -1,4 +1,4 @@
-package com.xmleditor;
+ package com.xmleditor;
 
 import java.io.File;
 
@@ -28,7 +28,7 @@ public class Launcher {
 	}
 	
 	private void chooseLibsDir(){
-		JFileChooser fc = new JFileChooser();
+		JFileChooser fc = new JFileChooser(".");
 		fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 		JOptionPane.showMessageDialog(null, "Please select location of the libs directory");
 		int ret = fc.showOpenDialog(null);
