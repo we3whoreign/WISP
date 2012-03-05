@@ -118,9 +118,11 @@ public class FileSystemResource implements ResourceHandler {
 			return "";
 		}
 		String parent = resource.substring(0,resource.lastIndexOf("/"));
+		String grandparent = parent.substring(0,parent.lastIndexOf("/"));
+		grandparent = grandparent.substring(grandparent.lastIndexOf("/")+1,grandparent.length());
 		parent = parent.substring(parent.lastIndexOf("/")+1, parent.length());
 		
-		return parent;
+		return grandparent+"/"+parent;
 	}
 
 
@@ -128,7 +130,12 @@ public class FileSystemResource implements ResourceHandler {
 	public OutputStream getOutputResource(String uniqueName) {
 		String resource = resourceLookup(uniqueName);
 		try {
-			return new FileOutputStream(resource);
+			if(resource != null){
+				return new FileOutputStream(resource);
+			}
+			else{
+				return new FileOutputStream(rootDir.getAbsolutePath()+"/"+uniqueName);
+			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

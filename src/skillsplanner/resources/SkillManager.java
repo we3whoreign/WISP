@@ -6,16 +6,21 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Observable;
 
 import skillsplanner.beans.Skill;
 import skillsplanner.io.IOHandler;
 import skillsplanner.utils.jdom.SkillMapper;
 
-public class SkillManager {
+public class SkillManager extends Observable{
 
 	private static SkillManager sm;
 	private HashMap<String,Skill>skillList;
 	
+	/**
+	 * Returns the singleton of this class
+	 * @return
+	 */
 	public static SkillManager getInstance(){
 		if(sm == null){
 			sm = new SkillManager();
@@ -23,6 +28,9 @@ public class SkillManager {
 		return sm;
 	}
 	
+	/**
+	 * Initializes the internal hashmap by reading the appropriate xml files
+	 */
 	public SkillManager(){
 		skillList = new HashMap<String,Skill>();
 		Map<InputStream,String> map = IOHandler.getAllSkills();
@@ -41,14 +49,28 @@ public class SkillManager {
 		}
 	}
 	
+	/**
+	 * Gets a skill by name
+	 * @param name
+	 * @return
+	 */
 	public Skill getSkill(String name){
 		return skillList.get(name);
 	}
 	
+	/**
+	 * Gets the internal hashmap
+	 * @return
+	 */
 	public HashMap<String,Skill> getAllSkills(){
 		return skillList;
 	}
 
+	/**
+	 * Fetch all the subclasses where the skill tree is the same as the name passed in
+	 * @param name
+	 * @return
+	 */
 	public List<Skill> fetchSubclassSkills(String name) {
 		List<Skill> list = new LinkedList<Skill>();
 		for(String skill : skillList.keySet()){
@@ -58,5 +80,19 @@ public class SkillManager {
 			}
 		}
 		return list;
+	}
+
+	/**
+	 * Adds a skill to the internal hashmap, or updates it if already contained
+	 * @param skill
+	 */
+	public void addSkill(Skill skill) {
+		if(skillList.containsKey(skill.getName())){
+			this.skillList.remove(skill.getName());
+		}
+		this.skillList.put(skill.getName(),skill);
+		setChanged();
+		notifyObservers();
+		
 	}
 }

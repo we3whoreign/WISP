@@ -31,6 +31,9 @@ public class TreeImageCellRender extends DefaultTreeCellRenderer {
 	        if(!leaf){
 	        	try{
 	        		String name = ((DefaultMutableTreeNode) value).toString();
+	        		if(name.contains("/")){
+	        			name = name.substring(name.indexOf("/")+1);
+	        		}
 	        		img = ImageManager.getImage(name);
 	        	}
 	        	catch(IOException exc){
@@ -46,7 +49,7 @@ public class TreeImageCellRender extends DefaultTreeCellRenderer {
 	        }
 	        else{
 	        	String text = ((DefaultMutableTreeNode) value).toString();
-	        	text = text.substring(text.indexOf("/")+1);
+	        	text = text.substring(text.lastIndexOf("/")+1);
 	        	text = StringUtils.toCamelCase(text);
 	        	this.setText(text);
 	        }

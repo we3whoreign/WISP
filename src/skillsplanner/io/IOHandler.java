@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 import skillsplanner.beans.DFOClass;
+import skillsplanner.beans.Skill;
 
 /**
  * Handler for controlling IO. Specifically the connector from ResourceHandlers to the outside world
@@ -113,6 +114,17 @@ public class IOHandler {
 	public static OutputStream getClassOutputter(DFOClass dfoclass) {
 		ResourceHandler resourceHandler = (IOHandler.isJar()) ? new JarResource(CLASSES_DIR) : new FileSystemResource(CLASSES_DIR);
 		return resourceHandler.getOutputResource(dfoclass.getUniqueName());
+	}
+
+	public static OutputStream getSkillOutputter(Skill skill, String folder) {
+		ResourceHandler resourceHandler = (IOHandler.isJar()) ? new JarResource(SKILLS_DIR) : new FileSystemResource(SKILLS_DIR);
+		System.out.println("Attempting to create: " + folder + "/" +generateFileName(skill.getName()));
+		return resourceHandler.getOutputResource(folder + "/" +generateFileName(skill.getName()));
+	}
+	
+	private static String generateFileName(String input){
+		input = input.replaceAll("[\\s,',/,\\\\]", "_");
+		return input.toLowerCase()+".xml";
 	}
 	
 	

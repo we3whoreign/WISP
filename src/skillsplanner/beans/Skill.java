@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 import skillsplanner.beans.SkillRequirement;
 
-public class Skill {
+public class Skill implements Comparable<Skill>{
 	//Indication of what tree the skill is in
 		private String tree;
 
@@ -171,8 +171,13 @@ public class Skill {
 			this.tree = tree;
 		}
 		public String getTree() {
+			return tree.substring(tree.lastIndexOf("/")+1);
+		}
+		
+		public String getFileTree(){
 			return tree;
 		}
+		
 		public int getMinLevel() {
 			return minlevel;
 		}
@@ -189,6 +194,20 @@ public class Skill {
 		
 		public void setRequiredLevel(int requiredlevel){
 			this.requiredlevel = requiredlevel;
+		}
+		@Override
+		/**
+		 * Simple comparison of the names of the skills
+		 */
+		public int compareTo(Skill arg0) {
+			return getName().compareToIgnoreCase(arg0.getName());
+		}
+		
+		public String getUniqueName() {
+			return this.getTree() + "/" + this.getName();
+		}
+		public String getTreeGrandfather() {
+			return tree.substring(0,tree.indexOf("/"));
 		}
 
 }

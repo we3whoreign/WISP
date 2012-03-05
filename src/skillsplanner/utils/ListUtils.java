@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import skillsplanner.beans.DFOClass;
 import skillsplanner.beans.Skill;
 
 
@@ -65,5 +66,20 @@ public class ListUtils {
 		Skill[] array = new Skill[list.size()];
 		return list.toArray(array);
 		
+	}
+
+	public static List<Skill> sortSkills(Collection<Skill> values) {
+		List<Skill> list = new ArrayList<Skill>();
+		for(Skill sk : values){
+			list.add(sk);
+		}
+		Collections.sort(list, new SkillComparator());
+		
+		return list;
+	}
+
+	public static List<DFOClass> sortList(List<DFOClass> list) {
+		Collections.sort(list, new DFOClassComparator());
+		return list;
 	}
 }

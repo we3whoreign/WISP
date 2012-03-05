@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="DFO Planner" default="jar" basedir=".">
+<project name="DFO Planner" default="compile" basedir=".">
 
 	<property name="src.dir" value="src"/>
 	<property name="build.dir" value="build" />

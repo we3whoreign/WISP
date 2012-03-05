@@ -15,7 +15,7 @@ public class DFOClass {
 	private String name; 
 	private String baseClass;
 	public String getBaseClass() {
-		return baseClass;
+		return baseClass.substring(baseClass.indexOf("/")+1);
 	}
 
 	public void setBaseClass(String baseClass) {
@@ -54,12 +54,15 @@ public class DFOClass {
 	}
 	
 	public HashMap<String,Integer> getSkills(){
+		if(skills == null){
+			skills = new HashMap<String,Integer>();
+		}
 		return skills;
 	}
 	
 	@Override
 	public String toString(){
-		return this.name;
+		return this.getUniqueName().substring(getUniqueName().indexOf("/")+1);
 	}
 
 	/**

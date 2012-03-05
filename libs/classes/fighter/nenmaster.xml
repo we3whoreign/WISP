@@ -1,3 +1,37 @@
-<skillsplanner>
-	<name>Nenmaster</name>
-</skillsplanner>
+<?xml version="1.0" encoding="UTF-8"?>
+<skillplanner>
+  <description />
+  <name>Nenmaster</name>
+  <skill>Nen Flower</skill>
+  <skill>Floating Nen Flowers</skill>
+  <skill>Spiral Nen</skill>
+  <skill>Khai</skill>
+  <skill>Physical Critical Hit</skill>
+  <skill>Backstep</skill>
+  <skill>Magic Critical Hit</skill>
+  <skill>Tiger Flash</skill>
+  <skill>Raging Light Dragon</skill>
+  <skill>Lion's Roar</skill>
+  <skill>Sand Splash</skill>
+  <skill>Stimulating Breath</skill>
+  <skill>Doppleganger Blast</skill>
+  <skill>Solar Shield</skill>
+  <skill>Crouch</skill>
+  <skill>Nen Guard</skill>
+  <skill>Nen cannon</skill>
+  <skill>Doppelganger</skill>
+  <skill>Physical Rear Attack</skill>
+  <skill>Suplex Thunder</skill>
+  <skill>Nen Shot</skill>
+  <skill>Quick Rebound</skill>
+  <skill>Leap</skill>
+  <skill>Throw Mastery</skill>
+  <skill>Magic Rear Attack</skill>
+  <skill>Indomitable Spirit</skill>
+  <skill>Ancient Memory</skill>
+  <skill>Energy Shield</skill>
+  <skill>Cancel - Nen Shot</skill>
+  <skill>Suplex</skill>
+  <skill>Nen Cannon</skill>
+</skillplanner>
+

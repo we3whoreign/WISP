@@ -1,4 +1,51 @@
-<skillsplanner>
-	<name>Brawler</name>
-	
-</skillsplanner>
+<?xml version="1.0" encoding="UTF-8"?>
+<skillplanner>
+  <description />
+  <name>Brawler</name>
+  <skill>Raging Vulcan</skill>
+  <skill>Apply Poison</skill>
+  <skill>Double Throw</skill>
+  <skill>Brick Buster</skill>
+  <skill>Tiger Chain Strike</skill>
+  <skill>Cancel - Brick Buster</skill>
+  <skill>Deadly Blood</skill>
+  <skill>Physical Critical Hit</skill>
+  <skill>Backstep</skill>
+  <skill>Cancel - Explosive Hook</skill>
+  <skill>Cancel - Item Throw</skill>
+  <skill>Magic Critical Hit</skill>
+  <skill>Cancel - Hammer Kick</skill>
+  <skill>Cancel - Sand Splash</skill>
+  <skill>Sand Splash</skill>
+  <skill>Cancel - Muse's Uppercut</skill>
+  <skill>Venom Mine</skill>
+  <skill>Cancel - Hidden Stinger</skill>
+  <skill>Taunt</skill>
+  <skill>Explosive Hook</skill>
+  <skill>Suplex</skill>
+  <skill>Claw Mastery</skill>
+  <skill>Crouch</skill>
+  <skill>Seismic Punch</skill>
+  <skill>Junk Spin</skill>
+  <skill>Iron Physique</skill>
+  <skill>Poison Mist</skill>
+  <skill>Low Kick</skill>
+  <skill>Doppelganger</skill>
+  <skill>Ground Kick</skill>
+  <skill>Physical Rear Attack</skill>
+  <skill>Suplex Thunder</skill>
+  <skill>Muse's Uppercut</skill>
+  <skill>Nen Shot</skill>
+  <skill>Hidden Stinger</skill>
+  <skill>Air Walk</skill>
+  <skill>Quick Rebound</skill>
+  <skill>Hammer Kick</skill>
+  <skill>Leap</skill>
+  <skill>Heaven's Net</skill>
+  <skill>Throw Mastery</skill>
+  <skill>Magic Rear Attack</skill>
+  <skill>Mount</skill>
+  <skill>Indomitable Spirit</skill>
+  <skill>Ancient Memory</skill>
+</skillplanner>
+

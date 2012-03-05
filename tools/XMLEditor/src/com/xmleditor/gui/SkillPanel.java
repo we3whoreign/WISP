@@ -28,4 +28,9 @@ public class SkillPanel extends JPanel {
 		
 	}
 
+	public Skill getSkill() {
+		// TODO Auto-generated method stub
+		return _skill;
+	}
+
 }

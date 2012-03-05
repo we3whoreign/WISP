@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skillsplanner>
+  <skill>
+    <name>Back Breaker</name>
+    <casttime>0.0</casttime>
+    <spcost>50</spcost>
+    <entrycost>0</entrycost>
+    <reqlevel>25</reqlevel>
+    <description />
+	
+	<skillreq name="Suplex" level="10" />
+	
+    <dynamic>
+      <level value="1" />
+    </dynamic>
+  </skill>
+</skillsplanner>
+

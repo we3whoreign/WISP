@@ -10,13 +10,16 @@ import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 
+import com.xmleditor.gui.SkillPanel;
+import com.xmleditor.gui.SkillsTab;
+
 public class SkillMenuListener implements MouseListener{
-	JPanel _skillPane;
+	SkillsTab _skillPane;
 	Border raised;
 	Border lowered;
 	Border empty;
-	public SkillMenuListener(JPanel skillPane){
-		this._skillPane = skillPane;
+	public SkillMenuListener(SkillsTab skillsTab){
+		this._skillPane = skillsTab;
 		raised = BorderFactory.createRaisedBevelBorder();
 		lowered = BorderFactory.createLoweredBevelBorder();
 		empty = BorderFactory.createEtchedBorder(Color.white, Color.DARK_GRAY);
@@ -26,7 +29,7 @@ public class SkillMenuListener implements MouseListener{
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		
+		_skillPane.selectSkill(((SkillPanel) arg0.getSource()).getSkill());
 	}
 
 	@Override

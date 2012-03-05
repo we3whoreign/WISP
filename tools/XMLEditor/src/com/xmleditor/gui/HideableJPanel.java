@@ -3,8 +3,10 @@ package com.xmleditor.gui;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
@@ -15,6 +17,7 @@ public class HideableJPanel extends JPanel{
 	String _selection;
 	JPanel _contents;
 	ClickableHeader header;
+	public static final String CLICK_CMD = "CLICK";
 	
 	public HideableJPanel(String selection, JPanel contents){
 		_selection = selection;

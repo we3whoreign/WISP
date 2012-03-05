@@ -3,6 +3,7 @@ package com.xmleditor.gui.dialogs;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -58,12 +59,24 @@ public class EditClassDialog extends JFrame implements ActionListener{
 	
 	private void initGUI(){
 		JPanel _this = new JPanel();
-		Skill[] skillList;
-		Collection<Skill> c = SkillManager.getInstance().getAllSkills().values();
-		skillList = new Skill[c.size()];
-		c.toArray(skillList);
+		Collection<Skill> skillManagerList = SkillManager.getInstance().getAllSkills().values();
+		Skill[] c = new Skill[skillManagerList.size()];
+		ListUtils.sortSkills(skillManagerList).toArray(c);
+		ArrayList<Skill> visibleSkills = new ArrayList<Skill>();
+		ArrayList<Skill> classSkillList = new ArrayList<Skill>();
+		//Remove skills that aren't for this class
+		for(Skill s : c){
+			if(s.getTreeGrandfather().compareToIgnoreCase(this._class.getBaseClass()) == 0 ||
+					s.getTree().equalsIgnoreCase("general")){
+				if(this._class.getSkills().containsKey(s.getName())){
+					classSkillList.add(s);
+				}
+				else{
+					visibleSkills.add(s);
+				}
+			}
+		}
 		
-		Skill[] classSkillList = ListUtils.splitDuplicateSkills(skillList, _class.getSkills().keySet());
 		
 		name = new JTextPane();
 		name.setText(_class.getName());
@@ -98,13 +111,12 @@ public class EditClassDialog extends JFrame implements ActionListener{
 		availableSkillsList = new DefaultListModel<Skill>();
 		skillsList = new DefaultListModel<Skill>();
 		
-		for(Skill sk : skillList){
+		for(Skill sk : visibleSkills){
 			availableSkillsList.addElement(sk);
 		}
 		
 		for(Skill sk : classSkillList){
 			skillsList.addElement(sk);
-			availableSkillsList.removeElement(sk);
 		}
 		
 		
@@ -158,7 +170,7 @@ public class EditClassDialog extends JFrame implements ActionListener{
 			for(Skill sk : selected){
 				this.skillsList.addElement(sk);
 				this.availableSkillsList.removeElement(sk);
-				_class.removeSkill(sk);
+				_class.addSkill(sk);
 			}
 		}
 		else if (e.getActionCommand().equals(REMOVE_FROM)){
@@ -166,7 +178,7 @@ public class EditClassDialog extends JFrame implements ActionListener{
 			for(Skill sk : selected){
 				this.skillsList.removeElement(sk);
 				this.availableSkillsList.addElement(sk);
-				_class.addSkill(sk);
+				_class.removeSkill(sk);
 			}
 		}
 		else if (e.getActionCommand().equals(SAVE)){

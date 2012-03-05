@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
+import java.util.Observable;
 
 import skillsplanner.beans.DFOClass;
 import skillsplanner.beans.Skill;
@@ -15,7 +16,7 @@ import skillsplanner.utils.ListUtils;
 import skillsplanner.utils.jdom.ClassMapper;
 
 
-public class ClassManager {
+public class ClassManager extends Observable{
 	private HashMap<String,DFOClass> classes;
 	private static ClassManager cm;
 	
@@ -50,6 +51,15 @@ public class ClassManager {
 	public DFOClass getDFOClass(String name){
 		name = name.toLowerCase();
 		return classes.get(name);
+	}
+	
+	public void addClass(DFOClass c){
+		if(classes.containsKey(c.getUniqueName())){
+			classes.remove(c.getUniqueName());
+		}
+		classes.put(c.getUniqueName(), c);
+		setChanged();
+		notifyObservers();
 	}
 	
 	public HashMap<String,DFOClass> getAllClasses(){
