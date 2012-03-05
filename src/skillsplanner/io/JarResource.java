@@ -117,4 +117,16 @@ public class JarResource implements ResourceHandler {
 		return null;
 	}
 
+	@Override
+	public List<String> listDirs() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<String> listFiles(String dir) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

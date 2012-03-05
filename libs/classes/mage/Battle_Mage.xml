@@ -6,35 +6,35 @@
 	
 	
 	<!-- Battle Mage Skills -->
-	<skill>Cancel Weapon Uppercut</skill>
+	<skill>Cancel - Weapon Uppercut</skill>
 	<skill>Dragon Fang</skill>
 	<skill>Mana Shield</skill>
 	<skill>Weapon Uppercut</skill>
 	<skill>Palm Blast</skill>
 	<skill>Phase Shift</skill>
-	<skill>Cancel Dragon Fang</skill>
-	<skill>Cancel Palm Blast</skill>
-	<skill>Chaser Launcher</skill>
+	<skill>Cancel - Dragon Fang</skill>
+	<skill>Cancel - Palm Blast</skill>
+	<skill>Chaser - Launcher</skill>
 	<skill>Stick Mastery</skill>
 	<skill>Spear Mastery</skill>
 	<skill>Stabbing Wheel</skill>
-	<skill>Cancel Stabbing Wheel</skill>
+	<skill>Cancel - Stabbing Wheel</skill>
 	<skill>Neutral Chaser</skill>
 	<skill>Light Chaser</skill>
 	<skill>Water Chaser</skill>
 	<Skill>Shadow Chaser</Skill>
 	<skill>Fire Chaser</skill>
 	<skill>Full Swing</skill>
-	<skill>Cancel Full Swing</skill>
+	<skill>Cancel - Full Swing</skill>
 	<skill>Chaser Press</skill>
 	<skill>Chaser Generator</skill>
 	<skill>Punto Wave</skill>
 	<skill>Meteor Dash</skill>
 	<skill>Gold Dragon Spear</skill>
 	<skill>Fusion Chaser</skill>
-	<skill>Cancel Fusion Chaser</skill>
+	<skill>Cancel - Fusion Chaser</skill>
 	<skill>Double Swing</skill>
-	<skill>Cancel Double Swing</skill>
+	<skill>Cancel - Double Swing</skill>
 	<skill>Battle Groove</skill>
 	<skill>Teana Transformation</skill>
 	
@@ -44,7 +44,7 @@
 	
 	<!-- Witch Skills -->
 	<skill>Ancient Library</skill>
-	<skill>Cancel Magic Missile</skill>
+	<skill>Cancel - Magic Missile</skill>
 	<skill>Disenchant</skill>
 	<skill>Magic Missile</skill>
 	<skill>Cheeky Doll Shururu</skill>

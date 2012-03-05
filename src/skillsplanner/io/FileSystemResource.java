@@ -144,4 +144,30 @@ public class FileSystemResource implements ResourceHandler {
 		return null;
 	}
 
+
+	@Override
+	public List<String> listDirs() {
+		List<String> list = new ArrayList<String>();
+		for(String s : rootDir.list()){
+			if(new File(rootDir.getPath()+"/"+s).isDirectory()){
+				list.add(s);
+			}
+		}
+		
+		return list;
+	}
+
+
+	@Override
+	public List<String> listFiles(String dir) {
+		List<String> list = new ArrayList<String>();
+		File f = new File(rootDir.getPath() + "/"+ dir);
+		for(String s : f.list()){
+			if(s.toLowerCase().endsWith(".xml")){
+				list.add(s);
+			}
+		}
+		return list;
+	}
+
 }

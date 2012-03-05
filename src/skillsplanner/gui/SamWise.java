@@ -55,6 +55,9 @@ public class SamWise implements ActionListener{
 		
 			case Constants.LEVEL_UP_OPERATION:
 				break;
+			case Constants.CLOSE_OPERATION:
+				StaticResources.getWisp().setVisible(false);
+				StaticResources.getWisp().dispose();
 		}
 		
 

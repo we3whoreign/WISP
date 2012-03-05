@@ -29,23 +29,26 @@ public class TreeImageCellRender extends DefaultTreeCellRenderer {
 	        selected, expanded, leaf, row, hasFocus);
 	       
 	        if(!leaf){
-	        	try{
-	        		String name = ((DefaultMutableTreeNode) value).toString();
-	        		if(name.contains("/")){
-	        			name = name.substring(name.indexOf("/")+1);
-	        		}
-	        		img = ImageManager.getImage(name);
-	        	}
-	        	catch(IOException exc){
-	        		//do nothing
-	        	}
-	        	if(img != null){
-	        		setIcon(new ImageIcon(img.getScaledInstance(100, 40, 1)));
-	        		this.setText("");
-	        	}
-	        	else{
-	        		System.out.println((String) value +" is a null image");
-	        	}
+	        	String text = ((DefaultMutableTreeNode) value).toString();
+	        	//text = text.substring(text.lastIndexOf("/"));
+	        	this.setText(text);
+//	        	try{
+//	        		String name = ((DefaultMutableTreeNode) value).toString();
+//	        		if(name.contains("/")){
+//	        			name = name.substring(name.indexOf("/")+1);
+//	        		}
+//	        		img = ImageManager.getImage(name);
+//	        	}
+//	        	catch(IOException exc){
+//	        		//do nothing
+//	        	}
+//	        	if(img != null){
+//	        		setIcon(new ImageIcon(img.getScaledInstance(150, 40, 1)));
+//	        		this.setText("");
+//	        	}
+//	        	else{
+//	        		System.out.println((String) value +" is a null image");
+//	        	}
 	        }
 	        else{
 	        	String text = ((DefaultMutableTreeNode) value).toString();

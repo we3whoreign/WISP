@@ -3,16 +3,16 @@
   <description />
   <name>Grappler</name>
   <skill>Apply Poison</skill>
-  <skill>Unstoppable Grab</skill>
   <skill>Grab Mastery</skill>
+  <skill>Unstoppable Grab</skill>
   <skill>Tiger Chain Strike</skill>
-  <skill>Sliding Grab</skill>
   <skill>Cancel - Seismic Punch</skill>
+  <skill>Sliding Grab</skill>
   <skill>Physical Critical Hit</skill>
   <skill>Backstep</skill>
   <skill>Cancel - Spiral</skill>
-  <skill>Fling</skill>
   <skill>Magic Critical Hit</skill>
+  <skill>Fling</skill>
   <skill>Back Breaker</skill>
   <skill>Cancel - Hammer Kick</skill>
   <skill>Sand Splash</skill>
@@ -24,23 +24,24 @@
   <skill>Giant Twister</skill>
   <skill>Crouch</skill>
   <skill>Wild Cannon Spike</skill>
+  <skill>Seismic Punch</skill>
   <skill>Iron Physique</skill>
   <skill>Doppelganger</skill>
   <skill>Elbow Shock</skill>
   <skill>Physical Rear Attack</skill>
   <skill>Air Steiner</skill>
   <skill>Spiral</skill>
-  <skill>Suplex Thunder</skill>
   <skill>Muse's Uppercut</skill>
+  <skill>Suplex Thunder</skill>
   <skill>Cancel - Neck Snap</skill>
-  <skill>Air Walk</skill>
   <skill>Quick Rebound</skill>
+  <skill>Air Walk</skill>
   <skill>Hammer Kick</skill>
   <skill>Leap</skill>
   <skill>Magic Rear Attack</skill>
   <skill>Indomitable Spirit</skill>
   <skill>Ancient Memory</skill>
-  <skill>Cancel - Suplex</skill>
   <skill>Neck Snap</skill>
+  <skill>Cancel - Suplex</skill>
 </skillplanner>
 

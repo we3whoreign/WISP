@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skillsplanner>
     <skill>
-        <name>Cancel Full Swing</name>
+        <name>Cancel - Full Swing</name>
         <casttime>0.0</casttime>
         <spcost>50</spcost>
         <entrycost>0</entrycost>

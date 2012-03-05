@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skillsplanner>
     <skill>
-        <name>Cancel Fusion Chaser</name>
+        <name>Cancel - Fusion Chaser</name>
         <casttime>0.0</casttime>
         <spcost>50</spcost>
         <entrycost>0</entrycost>

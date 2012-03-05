@@ -33,13 +33,14 @@ public class ImageManager {
 	 * @throws IOException
 	 */
 	public static Image getImage(String name) throws IOException{
-		name = nameToFileName(name);
+		name = "/" + IOHandler.pathify(name);
 		if(imageCache.containsKey(name)){
 			return imageCache.get(name);
 		}
 		
 		InputStream stream = IOHandler.getImageWithName(name);
 		if(stream == null){
+			System.out.println("Could not find "+name+", using default");
 			stream = IOHandler.getImageWithName("default.png");
 		}
 		Image image = ImageIO.read(stream);
@@ -48,8 +49,8 @@ public class ImageManager {
 	}
 	
 	private static String nameToFileName(String name){
-		name = name.replaceAll("[\\s,-,:]", "_");
-		name = name.replaceAll("'", "");
+		name = name.replaceAll("[\\s]", "_");
+		name = name.replaceAll("[',:]", "");
 		name = name.toLowerCase();
 		name = "/"+name;
 		return name;

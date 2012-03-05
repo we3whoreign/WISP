@@ -23,6 +23,8 @@ import skillsplanner.gui.custom.ClickableSkillPanel;
 import skillsplanner.gui.custom.SkillsPane;
 import skillsplanner.gui.custom.TreeImageCellRender;
 import skillsplanner.resources.ClassManager;
+import skillsplanner.resources.ImageManager;
+import skillsplanner.resources.SkillManager;
 import skillsplanner.resources.StaticResources;
 import skillsplanner.utils.ListUtils;
 import skillsplanner.utils.StringUtils;
@@ -75,7 +77,7 @@ public class WISP extends javax.swing.JFrame{
 	private JMenuItem exitMenuItem;
 	private JSeparator jSeparator2;
 	private JMenuItem closeFileMenuItem;
-	private JMenuItem saveAsMenuItem;
+	//private JMenuItem saveAsMenuItem;
 	private JMenuItem saveMenuItem;
 	private JMenuItem openFileMenuItem;
 	private JMenuItem newFileMenuItem;
@@ -102,6 +104,11 @@ public class WISP extends javax.swing.JFrame{
 	public WISP() {
 		super();
 		//loadFiles();
+		//begin loading resources
+		SkillManager.getInstance();
+		ClassManager.getInstance();
+		
+		//start GUI
 		initGUI();
 		initListeners();
 		classAreaGeneration();
@@ -141,6 +148,7 @@ public class WISP extends javax.swing.JFrame{
 		Tab3.setActionCommand(Constants.SUBCLASS_SKILL_TREE_SELECTION);
 		Tab4.setActionCommand(Constants.SUBCLASS_SKILL_TREE_SELECTION);
 		Tab5.setActionCommand(Constants.SUBCLASS_SKILL_TREE_SELECTION);
+		closeFileMenuItem.setActionCommand(Constants.CLOSE_OPERATION);
 		
 		 //TO DO: The rest....
 		
@@ -221,7 +229,8 @@ public class WISP extends javax.swing.JFrame{
 				{
 					LOGO = new JLabel();
 					TabArea.add(LOGO, BorderLayout.WEST);
-					LOGO.setText("LOGO");
+					//LOGO.setText("LOGO");
+					LOGO.setIcon(new ImageIcon(ImageManager.getImage("logo").getScaledInstance(154, 40, 1)));
 					LOGO.setPreferredSize(new java.awt.Dimension(154, 29));
 				}
 				{
@@ -320,81 +329,81 @@ public class WISP extends javax.swing.JFrame{
 					jMenu3 = new JMenu();
 					jMenuBar1.add(jMenu3);
 					jMenu3.setText("File");
-					{
-						newFileMenuItem = new JMenuItem();
-						jMenu3.add(newFileMenuItem);
-						newFileMenuItem.setText("New");
-						newFileMenuItem.setActionCommand("new");
-					}
-					{
-						openFileMenuItem = new JMenuItem();
-						jMenu3.add(openFileMenuItem);
-						openFileMenuItem.setText("Open");
-					}
-					{
-						saveMenuItem = new JMenuItem();
-						jMenu3.add(saveMenuItem);
-						saveMenuItem.setText("Save");
-					}
-					{
-						saveAsMenuItem = new JMenuItem();
-						jMenu3.add(saveAsMenuItem);
-						saveAsMenuItem.setText("Save As ...");
-					}
+//					{
+//						newFileMenuItem = new JMenuItem();
+//						jMenu3.add(newFileMenuItem);
+//						newFileMenuItem.setText("New");
+//						newFileMenuItem.setActionCommand("new");
+//					}
+//					{
+//						openFileMenuItem = new JMenuItem();
+//						jMenu3.add(openFileMenuItem);
+//						openFileMenuItem.setText("Open");
+//					}
+//					{
+//						saveMenuItem = new JMenuItem();
+//						jMenu3.add(saveMenuItem);
+//						saveMenuItem.setText("Save");
+//					}
+//					{
+//						saveAsMenuItem = new JMenuItem();
+//						jMenu3.add(saveAsMenuItem);
+//						saveAsMenuItem.setText("Save As ...");
+//					}
 					{
 						closeFileMenuItem = new JMenuItem();
 						jMenu3.add(closeFileMenuItem);
 						closeFileMenuItem.setText("Close");
 					}
-					{
-						jSeparator2 = new JSeparator();
-						jMenu3.add(jSeparator2);
-					}
-					{
-						exitMenuItem = new JMenuItem();
-						jMenu3.add(exitMenuItem);
-						exitMenuItem.setText("Exit");
-					}
+//					{
+//						jSeparator2 = new JSeparator();
+//						jMenu3.add(jSeparator2);
+//					}
+//					{
+//						exitMenuItem = new JMenuItem();
+//						jMenu3.add(exitMenuItem);
+//						exitMenuItem.setText("Exit");
+//					}
 				}
-				{
-					jMenu4 = new JMenu();
-					jMenuBar1.add(jMenu4);
-					jMenu4.setText("Edit");
-					{
-						cutMenuItem = new JMenuItem();
-						jMenu4.add(cutMenuItem);
-						cutMenuItem.setText("Cut");
-					}
-					{
-						copyMenuItem = new JMenuItem();
-						jMenu4.add(copyMenuItem);
-						copyMenuItem.setText("Copy");
-					}
-					{
-						pasteMenuItem = new JMenuItem();
-						jMenu4.add(pasteMenuItem);
-						pasteMenuItem.setText("Paste");
-					}
-					{
-						jSeparator1 = new JSeparator();
-						jMenu4.add(jSeparator1);
-					}
-					{
-						deleteMenuItem = new JMenuItem();
-						jMenu4.add(deleteMenuItem);
-						deleteMenuItem.setText("Delete");
-					}
-				}
-				{
-					jMenu5 = new JMenu();
-					jMenuBar1.add(jMenu5);
-					jMenu5.setText("Help");
-					{
-						helpMenuItem = new JMenuItem();
-						jMenu5.add(helpMenuItem);
-						helpMenuItem.setText("Help");
-					}
-				}
+//				{
+//					jMenu4 = new JMenu();
+//					jMenuBar1.add(jMenu4);
+//					jMenu4.setText("Edit");
+//					{
+//						cutMenuItem = new JMenuItem();
+//						jMenu4.add(cutMenuItem);
+//						cutMenuItem.setText("Cut");
+//					}
+//					{
+//						copyMenuItem = new JMenuItem();
+//						jMenu4.add(copyMenuItem);
+//						copyMenuItem.setText("Copy");
+//					}
+//					{
+//						pasteMenuItem = new JMenuItem();
+//						jMenu4.add(pasteMenuItem);
+//						pasteMenuItem.setText("Paste");
+//					}
+//					{
+//						jSeparator1 = new JSeparator();
+//						jMenu4.add(jSeparator1);
+//					}
+//					{
+//						deleteMenuItem = new JMenuItem();
+//						jMenu4.add(deleteMenuItem);
+//						deleteMenuItem.setText("Delete");
+//					}
+//				}
+//				{
+//					jMenu5 = new JMenu();
+//					jMenuBar1.add(jMenu5);
+//					jMenu5.setText("Help");
+//					{
+//						helpMenuItem = new JMenuItem();
+//						jMenu5.add(helpMenuItem);
+//						helpMenuItem.setText("Help");
+//					}
+//				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

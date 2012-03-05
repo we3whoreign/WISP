@@ -19,20 +19,30 @@ import skillsplanner.utils.jdom.ClassMapper;
 public class ClassManager extends Observable{
 	private HashMap<String,DFOClass> classes;
 	private static ClassManager cm;
+	private boolean finishedLoading = false;
 	
 	public ClassManager(){
 		classes = new HashMap<String,DFOClass>();
-		Map<InputStream,String> map = IOHandler.getClassesWithParents();
-		for(InputStream stream : map.keySet()){
-			DFOClass dfoclass = ClassMapper.createClassFromStream(stream,map.get(stream));
-			classes.put(dfoclass.getUniqueName(), dfoclass);
-			try {
-				stream.close();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+		new Thread(){
+			public void run(){
+				Map<InputStream,String> map = IOHandler.getClassesWithParents();
+				for(InputStream stream : map.keySet()){
+					DFOClass dfoclass = ClassMapper.createClassFromStream(stream,map.get(stream));
+					synchronized(this){
+						classes.put(dfoclass.getUniqueName(), dfoclass);
+					}
+					try {
+						stream.close();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+				
+				finishedLoading = true;
 			}
-		}
+		}.start();
+		
 	}
 	
 	public static ClassManager getInstance(){
@@ -50,10 +60,27 @@ public class ClassManager extends Observable{
 	 */
 	public DFOClass getDFOClass(String name){
 		name = name.toLowerCase();
-		return classes.get(name);
+		boolean contains;
+		synchronized(this){
+			contains = classes.containsKey(name);
+		}
+		while(!finishedLoading && !contains){
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			synchronized(this){
+				contains = classes.containsKey(name);
+			}
+		}
+		synchronized(this){
+			return classes.get(name);
+		}
 	}
 	
-	public void addClass(DFOClass c){
+	public synchronized void addClass(DFOClass c){
 		if(classes.containsKey(c.getUniqueName())){
 			classes.remove(c.getUniqueName());
 		}
@@ -63,22 +90,27 @@ public class ClassManager extends Observable{
 	}
 	
 	public HashMap<String,DFOClass> getAllClasses(){
+		
+		//block off til done loading
+		while(!finishedLoading){}
 		return classes;
 	}
 
 	public static Hashtable<String, ArrayList<String>> listClassTable() {
-		Hashtable<String, ArrayList<String>> table = new Hashtable<String, ArrayList<String>>();
+		return IOHandler.createClassTable();
+//		Hashtable<String, ArrayList<String>> table = new Hashtable<String, ArrayList<String>>();
 		
-		for(String name : getInstance().getAllClasses().keySet()){
-			DFOClass dfoclass = getInstance().getDFOClass(name);
-			if(!table.containsKey(dfoclass.getBaseClass())){
-				table.put(dfoclass.getBaseClass(), new ArrayList<String>());
-				
-			}
-			table.get(dfoclass.getBaseClass()).add(dfoclass.getUniqueName());
-		}
 		
-		return table;
+//		for(String name : getInstance().getAllClasses().keySet()){
+//			DFOClass dfoclass = getInstance().getDFOClass(name);
+//			if(!table.containsKey(dfoclass.getBaseClass())){
+//				table.put(dfoclass.getBaseClass(), new ArrayList<String>());
+//				
+//			}
+//			table.get(dfoclass.getBaseClass()).add(dfoclass.getUniqueName());
+//		}
+		
+//		return table;
 	}
 
 	/**

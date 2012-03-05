@@ -4,6 +4,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
 
@@ -125,6 +126,29 @@ public class IOHandler {
 	private static String generateFileName(String input){
 		input = input.replaceAll("[\\s,',/,\\\\]", "_");
 		return input.toLowerCase()+".xml";
+	}
+
+	/**
+	 * Creates a table representing the class hierarchy. It should be stored as base/class
+	 * @return
+	 */
+	public static Hashtable<String, ArrayList<String>> createClassTable() {
+		ResourceHandler resourceHandler = (IOHandler.isJar()) ? new JarResource(CLASSES_DIR) : new FileSystemResource(CLASSES_DIR);
+		Hashtable<String, ArrayList<String>> table = new Hashtable<String, ArrayList<String>>();
+		for(String dir : resourceHandler.listDirs()){
+			table.put(dir, new ArrayList<String>());
+			for(String file : resourceHandler.listFiles(dir)){
+				table.get(dir).add(pathify(dir+"/"+file.replaceAll("\\.xml", "")));
+			}
+		}
+		return table;
+	}
+	
+	public static String pathify(String str){
+		str = str.replaceAll("[\\s]", "_");
+		str = str.replaceAll("[',:]", "");
+		str = str.replaceAll("\\\\", "/");
+		return str.toLowerCase();
 	}
 	
 	

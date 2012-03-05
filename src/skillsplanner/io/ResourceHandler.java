@@ -59,4 +59,17 @@ public interface ResourceHandler {
 	 */
 	public OutputStream getOutputResource(String uniqueName);
 
+	/**
+	 * List all directories from the base directory of this resource handler.
+	 * @return
+	 */
+	public List<String> listDirs();
+
+	/**
+	 * List all files in subdirectory dir
+	 * @param dir
+	 * @return
+	 */
+	public List<String> listFiles(String dir);
+
 }

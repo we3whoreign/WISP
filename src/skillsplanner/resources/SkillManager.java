@@ -12,10 +12,16 @@ import skillsplanner.beans.Skill;
 import skillsplanner.io.IOHandler;
 import skillsplanner.utils.jdom.SkillMapper;
 
+/**
+ * Manages the skills. Starts loading them in a separate thread and, when attempting to retrieve, either waits til the skill needed is loaded or skill loading is done. Should be thread safe for all methods
+ * @author Andrew
+ *
+ */
 public class SkillManager extends Observable{
 
 	private static SkillManager sm;
 	private HashMap<String,Skill>skillList;
+	private boolean loadFinished = false;
 	
 	/**
 	 * Returns the singleton of this class
@@ -33,20 +39,29 @@ public class SkillManager extends Observable{
 	 */
 	public SkillManager(){
 		skillList = new HashMap<String,Skill>();
-		Map<InputStream,String> map = IOHandler.getAllSkills();
-		for(InputStream stream : map.keySet()){
-			Skill sk = SkillMapper.createSkillFromStream(stream,map.get(stream));
-			if(sk == null){
-				System.out.println("Hmmm");
+		new Thread(){
+			
+			public void run(){
+				Map<InputStream,String> map = IOHandler.getAllSkills();
+				for(InputStream stream : map.keySet()){
+					Skill sk = SkillMapper.createSkillFromStream(stream,map.get(stream));
+					if(sk == null){
+						System.out.println("Hmmm");
+					}
+					synchronized(this){
+						skillList.put(sk.getName(), sk);
+					}
+					try {
+						stream.close();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+				
+				loadFinished = true;
 			}
-			skillList.put(sk.getName(), sk);
-			try {
-				stream.close();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
+		}.start();
 	}
 	
 	/**
@@ -55,7 +70,24 @@ public class SkillManager extends Observable{
 	 * @return
 	 */
 	public Skill getSkill(String name){
-		return skillList.get(name);
+		boolean contains;
+		synchronized(this){
+			contains = skillList.containsKey(name);
+		}
+		while(!loadFinished && !contains){
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			synchronized(this){
+				contains = skillList.containsKey(name);
+			}
+		}
+		synchronized(this){
+			return skillList.get(name);
+		}
 	}
 	
 	/**
@@ -63,7 +95,9 @@ public class SkillManager extends Observable{
 	 * @return
 	 */
 	public HashMap<String,Skill> getAllSkills(){
-		return skillList;
+		synchronized(this){
+			return skillList;
+		}
 	}
 
 	/**
@@ -73,10 +107,12 @@ public class SkillManager extends Observable{
 	 */
 	public List<Skill> fetchSubclassSkills(String name) {
 		List<Skill> list = new LinkedList<Skill>();
-		for(String skill : skillList.keySet()){
-			Skill sk = skillList.get(skill);
-			if(sk.getTree().equals(name)){
-				list.add(sk);
+		synchronized(this){
+			for(String skill : skillList.keySet()){
+				Skill sk = skillList.get(skill);
+				if(sk.getTree().equals(name)){
+					list.add(sk);
+				}
 			}
 		}
 		return list;
@@ -86,7 +122,7 @@ public class SkillManager extends Observable{
 	 * Adds a skill to the internal hashmap, or updates it if already contained
 	 * @param skill
 	 */
-	public void addSkill(Skill skill) {
+	public synchronized void addSkill(Skill skill) {
 		if(skillList.containsKey(skill.getName())){
 			this.skillList.remove(skill.getName());
 		}

@@ -70,7 +70,7 @@ public class DFOClass {
 	 * @return
 	 */
 	public String getUniqueName() {
-		return (this.baseClass + "/" + this.name).toLowerCase();
+		return (this.getBaseClass() + "/" + this.name).toLowerCase();
 	}
 
 	public void removeSkill(Skill sk) {
