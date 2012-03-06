@@ -9,24 +9,18 @@ import java.util.List;
 import java.util.jar.JarFile;
 import java.util.regex.Pattern;
 
+import skillsplanner.Launcher;
+
 public class JarResource implements ResourceHandler {
 	private JarFile jar;
 	private String path = "";
-	
-//	public JarResource(){
-////		try {
-////			jar = new JarFile(getJarFilePath());
-////		} catch (IOException e) {
-////			// TODO Auto-generated catch block
-////			e.printStackTrace();
-////		}
-//	}
 
 	/**
 	 * Everytime a resource is looked for, it is restricted to anything starting with path
 	 * @param path path to look in
 	 */
 	public JarResource(String path){
+		System.out.println("Initialized jar resource with "+path);
 		this.path = path;
 		try {
 			jar = new JarFile(getJarFilePath());
@@ -49,7 +43,7 @@ public class JarResource implements ResourceHandler {
 
 	@Override
 	public InputStream getResource(String resource) {
-		return this.getClass().getResourceAsStream(resource);
+		return this.getClass().getResourceAsStream("/"+resource);
 	}
 
 	@Override
@@ -90,12 +84,10 @@ public class JarResource implements ResourceHandler {
 
 	@Override
 	public List<String> getAllMatches(String pattern) {
-		System.out.println(pattern);
 		List<String> list = new ArrayList<String>();
 		for(String resource : getResourceIdentifiers()){
 			if(Pattern.matches(pattern, resource)){
 				list.add(resource);
-				System.out.println(resource);
 			}
 		}
 		return list;
@@ -105,7 +97,7 @@ public class JarResource implements ResourceHandler {
 		if(!getResourceIdentifiers().contains(resource)){
 			return "";
 		}
-		String parent = resource.substring(0,resource.lastIndexOf("/")-1);
+		String parent = resource.substring(0,resource.lastIndexOf("/"));
 		parent = parent.substring(parent.lastIndexOf("/"), parent.length());
 		
 		return parent;
@@ -119,14 +111,45 @@ public class JarResource implements ResourceHandler {
 
 	@Override
 	public List<String> listDirs() {
-		// TODO Auto-generated method stub
-		return null;
+		List<String> list = new ArrayList<String>();
+		Enumeration enumeration = jar.entries();
+		while(enumeration.hasMoreElements()){
+			String resource = enumeration.nextElement().toString();
+			//System.out.println("Check if "+resource+" is in "+path);
+			if(resource.matches("^"+path+"/[a-zA-Z_0-9]*/$")){
+				resource = resource.replaceFirst(path, "");
+				resource = resource.replaceAll("/","");
+				list.add(resource);
+			}
+		}
+		return list;
 	}
 
 	@Override
 	public List<String> listFiles(String dir) {
-		// TODO Auto-generated method stub
-		return null;
+		System.out.println(dir);
+		if(!dir.contains(path)){
+			dir = path + "/"+ dir;
+			//just in case it already had a /
+			dir = dir.replaceAll("//","/");
+			System.out.println("Changed to "+dir);
+		}
+		List<String> list = new ArrayList<String>();
+		Enumeration enumeration = jar.entries();
+		while(enumeration.hasMoreElements()){
+			String resource = enumeration.nextElement().toString();
+			if(resource.matches("^"+dir+"/[a-zA-Z_0-9]*\\.xml$")){
+				resource = resource.replaceFirst(dir, "");
+				resource.replaceAll("/", "");
+				list.add(resource);
+			}
+		}
+		return list;
+	}
+
+	@Override
+	public String getPath() {
+		return path;
 	}
 
 }

@@ -14,10 +14,12 @@ import java.util.regex.Pattern;
 
 public class FileSystemResource implements ResourceHandler {
 	File rootDir;
+	String path;
 
 	public FileSystemResource(String rootDir) {
 		// TODO Auto-generated constructor stub
 		this.rootDir = new File(rootDir);
+		this.path = rootDir;
 	}
 
 
@@ -168,6 +170,12 @@ public class FileSystemResource implements ResourceHandler {
 			}
 		}
 		return list;
+	}
+
+
+	@Override
+	public String getPath() {
+		return path;
 	}
 
 }

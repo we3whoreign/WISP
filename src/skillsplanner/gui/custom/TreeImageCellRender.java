@@ -30,6 +30,11 @@ public class TreeImageCellRender extends DefaultTreeCellRenderer {
 	       
 	        if(!leaf){
 	        	String text = ((DefaultMutableTreeNode) value).toString();
+	        	if(text.matches("/$")){
+	        		text = text.substring(0,text.length()-1);
+	        		text = text.substring(text.lastIndexOf("/")+1);
+	        	}
+	        	text = StringUtils.toCamelCase(text);
 	        	//text = text.substring(text.lastIndexOf("/"));
 	        	this.setText(text);
 //	        	try{
@@ -52,6 +57,9 @@ public class TreeImageCellRender extends DefaultTreeCellRenderer {
 	        }
 	        else{
 	        	String text = ((DefaultMutableTreeNode) value).toString();
+	        	if(text.matches("/$")){
+	        		text = text.substring(0,text.length()-1);
+	        	}
 	        	text = text.substring(text.lastIndexOf("/")+1);
 	        	text = StringUtils.toCamelCase(text);
 	        	this.setText(text);

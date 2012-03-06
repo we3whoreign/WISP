@@ -72,4 +72,10 @@ public interface ResourceHandler {
 	 */
 	public List<String> listFiles(String dir);
 
+	/**
+	 * Return the path being managed by this resource handler
+	 * @return
+	 */
+	public String getPath();
+
 }

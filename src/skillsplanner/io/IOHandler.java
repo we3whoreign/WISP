@@ -5,11 +5,16 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Hashtable;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.ConcurrentMap;
 
 import skillsplanner.beans.DFOClass;
 import skillsplanner.beans.Skill;
+import skillsplanner.utils.StringUtils;
 
 /**
  * Handler for controlling IO. Specifically the connector from ResourceHandlers to the outside world
@@ -21,8 +26,9 @@ public class IOHandler {
 	private static String IMAGES_DIR = "libs/images";
 	private static String SKILLS_DIR = "libs/skills";
 	private static String CLASSES_DIR = "libs/classes";
+	private static ConcurrentLinkedQueue<ResourceHandler> handlers = new ConcurrentLinkedQueue<ResourceHandler>();
 	
-	public static Map<InputStream, String> getAllSkills(){
+	public static ConcurrentMap<InputStream, String> getAllSkills(){
 		return IOHandler.getResourcesWithParents(SKILLS_DIR);
 	}
 	
@@ -31,7 +37,8 @@ public class IOHandler {
 	 * @return true if running a jar
 	 */
 	private static boolean isJar(){
-		return false;
+		String str = IOHandler.class.getResource("IOHandler.class").toString();
+		return str.toLowerCase().startsWith("jar");
 	}
 	
 	/**
@@ -40,7 +47,7 @@ public class IOHandler {
 	 * @return
 	 */
 	public static List<InputStream> getResourcesIn(String dirName){
-		ResourceHandler resourceHandler = (IOHandler.isJar()) ? new JarResource(dirName) : new FileSystemResource(dirName);
+		ResourceHandler resourceHandler = getResourceHandler(dirName);
 		
 		List<InputStream> streamList = new ArrayList<InputStream>();
 		
@@ -56,10 +63,10 @@ public class IOHandler {
 	 * @param dirName directory to look for
 	 * @return
 	 */
-	public static Map<InputStream,String> getResourcesWithParents(String dirName){
-		ResourceHandler resourceHandler = (IOHandler.isJar()) ? new JarResource(dirName) : new FileSystemResource(dirName);
+	public static ConcurrentMap<InputStream, String> getResourcesWithParents(String dirName){
+		ResourceHandler resourceHandler = getResourceHandler(dirName);
 		
-		Map<InputStream,String> streamList = new HashMap<InputStream,String>();
+		ConcurrentMap<InputStream,String> streamList = new ConcurrentHashMap<InputStream,String>();
 		
 		for(String s : resourceHandler.getAllMatches(".*\\.xml")){
 			streamList.put(resourceHandler.getResource(s),resourceHandler.getParent(s));
@@ -102,7 +109,7 @@ public class IOHandler {
 	 * @return
 	 */
 	public static InputStream getImageWithName(String name) {
-		ResourceHandler resourceHandler = (IOHandler.isJar()) ? new JarResource(IMAGES_DIR) : new FileSystemResource(IMAGES_DIR);
+		ResourceHandler resourceHandler = getResourceHandler(IMAGES_DIR);
 		return resourceHandler.getResource(resourceHandler.resourceLookup(name));
 		
 	}
@@ -113,12 +120,12 @@ public class IOHandler {
 	 * @return
 	 */
 	public static OutputStream getClassOutputter(DFOClass dfoclass) {
-		ResourceHandler resourceHandler = (IOHandler.isJar()) ? new JarResource(CLASSES_DIR) : new FileSystemResource(CLASSES_DIR);
+		ResourceHandler resourceHandler = getResourceHandler(CLASSES_DIR);
 		return resourceHandler.getOutputResource(dfoclass.getUniqueName());
 	}
 
 	public static OutputStream getSkillOutputter(Skill skill, String folder) {
-		ResourceHandler resourceHandler = (IOHandler.isJar()) ? new JarResource(SKILLS_DIR) : new FileSystemResource(SKILLS_DIR);
+		ResourceHandler resourceHandler = getResourceHandler(SKILLS_DIR);
 		System.out.println("Attempting to create: " + folder + "/" +generateFileName(skill.getName()));
 		return resourceHandler.getOutputResource(folder + "/" +generateFileName(skill.getName()));
 	}
@@ -133,22 +140,32 @@ public class IOHandler {
 	 * @return
 	 */
 	public static Hashtable<String, ArrayList<String>> createClassTable() {
-		ResourceHandler resourceHandler = (IOHandler.isJar()) ? new JarResource(CLASSES_DIR) : new FileSystemResource(CLASSES_DIR);
+		ResourceHandler resourceHandler = getResourceHandler(CLASSES_DIR);
 		Hashtable<String, ArrayList<String>> table = new Hashtable<String, ArrayList<String>>();
 		for(String dir : resourceHandler.listDirs()){
 			table.put(dir, new ArrayList<String>());
 			for(String file : resourceHandler.listFiles(dir)){
-				table.get(dir).add(pathify(dir+"/"+file.replaceAll("\\.xml", "")));
+				file = file.replaceAll("/", "");
+				if(!dir.endsWith("/")){
+					file = "/" + file;
+				}
+				table.get(dir).add(StringUtils.toFileName((dir+file.replaceAll("\\.xml", ""))));
 			}
 		}
 		return table;
 	}
 	
-	public static String pathify(String str){
-		str = str.replaceAll("[\\s]", "_");
-		str = str.replaceAll("[',:]", "");
-		str = str.replaceAll("\\\\", "/");
-		return str.toLowerCase();
+	private static synchronized ResourceHandler getResourceHandler(String path){
+		for(ResourceHandler handler : handlers){
+			if(path.equals(handler.getPath())){
+				return handler;
+			}
+		}
+		System.out.println("Creating resource handler for "+path);
+		ResourceHandler handler = (IOHandler.isJar()) ? new JarResource(path) : new FileSystemResource(path);
+		handlers.add(handler);
+		
+		return handler;
 	}
 	
 	

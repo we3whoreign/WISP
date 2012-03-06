@@ -2,6 +2,7 @@ package skillsplanner.utils.jdom;
 
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.jdom.Document;
 import org.jdom.Element;
@@ -11,19 +12,25 @@ import skillsplanner.beans.Skill;
 
 public class SkillMapper {
 	
-	public static Skill createSkillFromStream(InputStream is,String tree){
+	public static List<Skill> createSkillFromStream(InputStream is,String tree){
 		Document doc = Handler.openXMLFile(is);
+		List<Skill> list = new ArrayList<Skill>();
 		
 		Element root = doc.getRootElement();
 		
-		Element skillattr = root.getChild("skill");
+		List<Element> children = root.getChildren("skill");
 		
-		Skill st = getSkillFromElement(skillattr);
+		for(Element skillattr : children){
 		
-		st.setTree(tree);
+			Skill st = getSkillFromElement(skillattr);
+			st.setTree(tree);
+			list.add(st);
+		}
+		
+		
 
 		
-		return st;
+		return list;
 		
 	}
 	/**

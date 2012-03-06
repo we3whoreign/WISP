@@ -10,6 +10,7 @@ import java.util.HashMap;
 import javax.imageio.ImageIO;
 
 import skillsplanner.io.IOHandler;
+import skillsplanner.utils.StringUtils;
 
 /**
  * Manager for image files. Loads them on demand from file system resources rather than storing in memory 
@@ -33,7 +34,7 @@ public class ImageManager {
 	 * @throws IOException
 	 */
 	public static Image getImage(String name) throws IOException{
-		name = "/" + IOHandler.pathify(name);
+		name = "/" + StringUtils.toFileName(name);
 		if(imageCache.containsKey(name)){
 			return imageCache.get(name);
 		}

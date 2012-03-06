@@ -8,29 +8,34 @@ import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
 import java.util.Observable;
+import java.util.concurrent.ConcurrentHashMap;
 
 import skillsplanner.beans.DFOClass;
 import skillsplanner.beans.Skill;
 import skillsplanner.io.IOHandler;
 import skillsplanner.utils.ListUtils;
+import skillsplanner.utils.StringUtils;
 import skillsplanner.utils.jdom.ClassMapper;
 
 
+/**
+ * Manager of all the DFOClass files. Uses a concurrent hashmap for thread safety.
+ * @author Andrew
+ *
+ */
 public class ClassManager extends Observable{
-	private HashMap<String,DFOClass> classes;
+	private java.util.concurrent.ConcurrentHashMap<String,DFOClass> classes;
 	private static ClassManager cm;
 	private boolean finishedLoading = false;
 	
 	public ClassManager(){
-		classes = new HashMap<String,DFOClass>();
+		classes = new java.util.concurrent.ConcurrentHashMap<String,DFOClass>();
 		new Thread(){
 			public void run(){
 				Map<InputStream,String> map = IOHandler.getClassesWithParents();
 				for(InputStream stream : map.keySet()){
 					DFOClass dfoclass = ClassMapper.createClassFromStream(stream,map.get(stream));
-					synchronized(this){
-						classes.put(dfoclass.getUniqueName(), dfoclass);
-					}
+					classes.put(StringUtils.toFileName(dfoclass.getUniqueName()), dfoclass);
 					try {
 						stream.close();
 					} catch (IOException e) {
@@ -38,7 +43,7 @@ public class ClassManager extends Observable{
 						e.printStackTrace();
 					}
 				}
-				
+				System.out.println("Classes loaded");
 				finishedLoading = true;
 			}
 		}.start();
@@ -59,11 +64,9 @@ public class ClassManager extends Observable{
 	 * @return
 	 */
 	public DFOClass getDFOClass(String name){
-		name = name.toLowerCase();
+		name = StringUtils.toFileName(name);
 		boolean contains;
-		synchronized(this){
-			contains = classes.containsKey(name);
-		}
+		contains = classes.containsKey(name);
 		while(!finishedLoading && !contains){
 			try {
 				Thread.sleep(100);
@@ -71,25 +74,21 @@ public class ClassManager extends Observable{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			synchronized(this){
-				contains = classes.containsKey(name);
-			}
+			contains = classes.containsKey(name);
 		}
-		synchronized(this){
-			return classes.get(name);
-		}
+		return classes.get(name);
 	}
 	
-	public synchronized void addClass(DFOClass c){
+	public void addClass(DFOClass c){
 		if(classes.containsKey(c.getUniqueName())){
-			classes.remove(c.getUniqueName());
+			classes.remove(StringUtils.toFileName(c.getUniqueName()));
 		}
-		classes.put(c.getUniqueName(), c);
+		classes.put(StringUtils.toFileName(c.getUniqueName()), c);
 		setChanged();
 		notifyObservers();
 	}
 	
-	public HashMap<String,DFOClass> getAllClasses(){
+	public ConcurrentHashMap<String, DFOClass> getAllClasses(){
 		
 		//block off til done loading
 		while(!finishedLoading){}

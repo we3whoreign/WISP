@@ -44,6 +44,7 @@ public class StringUtils {
 	 * @return source with all spaces changed to _ and lowercase
 	 */
 	public static String toFileName(String source) {
+		source = source.replaceAll("[':\\.]", "");
 		return source.replaceAll(" ", "_").toLowerCase().trim();
 	}
 

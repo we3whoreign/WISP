@@ -6,6 +6,8 @@ import java.net.URISyntaxException;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
+import skillsplanner.resources.ClassManager;
+import skillsplanner.resources.SkillManager;
 import skillsplanner.resources.StaticResources;
 
 /**
@@ -16,6 +18,14 @@ import skillsplanner.resources.StaticResources;
 public class Launcher {
 	
 	public Launcher() {
+		//Start loading xmls before the GUI
+		SkillManager.getInstance();
+		ClassManager.getInstance();
+		
+		//block by trying to get something, which waits until load is finished or until it is found
+		ClassManager.getClassByName("something that doesn't exist");
+		
+		//load the GUI
 		createAndShowGUI();
 	}
 

@@ -86,27 +86,9 @@ public class WISP extends javax.swing.JFrame{
 	private JTextArea OverView;
 	
 
-	/**
-	* Auto-generated main method to display this JFrame
-	*/
-	/**public static void main(String[] args) {
-		SwingUtilities.invokeLater(new Runnable() {
-			public void run() {
-				WISP inst = new WISP();
-				inst.setLocationRelativeTo(null);
-				inst.setVisible(true);
-				inst.classAreaGeneration();
-			}
-		});
-	}
-	**/
-	
 	public WISP() {
 		super();
 		//loadFiles();
-		//begin loading resources
-		SkillManager.getInstance();
-		ClassManager.getInstance();
 		
 		//start GUI
 		initGUI();
@@ -115,22 +97,6 @@ public class WISP extends javax.swing.JFrame{
 		this.setVisible(true);
 	}
 	
-//	/**
-//	 * Loads the xml skill files into memory
-//	 */
-//	private void loadFiles() {
-//		// TODO Auto-generated method stub
-//		try {
-//			Handler.getSkillLoader().loadSkills();
-//		}
-//		catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//			JOptionPane.showMessageDialog(null, e.getMessage());
-//			System.exit(1);
-//		}
-//	}
-
 	/**
 	 * Establish the listener for each object in the GUI
 	 */
@@ -149,8 +115,6 @@ public class WISP extends javax.swing.JFrame{
 		Tab4.setActionCommand(Constants.SUBCLASS_SKILL_TREE_SELECTION);
 		Tab5.setActionCommand(Constants.SUBCLASS_SKILL_TREE_SELECTION);
 		closeFileMenuItem.setActionCommand(Constants.CLOSE_OPERATION);
-		
-		 //TO DO: The rest....
 		
 	}
 

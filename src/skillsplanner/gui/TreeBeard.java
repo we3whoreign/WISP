@@ -32,7 +32,9 @@ public class TreeBeard implements TreeSelectionListener {
 			return;
 		}
 		
-		String path = selectionToPath(selection);
+		String path = StringUtils.toFileName(selectionToPath(selection));
+		
+		System.out.println(path + " selected");
 		
 		if(ClassManager.getClassByName(path) != null){
 			if(StaticResources.getWisp()==null){
@@ -114,8 +116,5 @@ public class TreeBeard implements TreeSelectionListener {
 		return ret;
 	}
 	
-	private String pathify(String input){
-		return input.replaceAll(" ", "_").toLowerCase();
-	}
 
 }
