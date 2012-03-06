@@ -10,9 +10,9 @@
 	<property name="jars.dir"  value="jars" />
 	<property name="buildnum.file" value="build.num" />
 	<property name="jdom.dir" value="jdom" />
-	<property name="project.name" value="DFOPlanner" />
+	<property name="project.name" value="WISP" />
 	<property name="main.class" value="skillsplanner.Launcher" />
-	<property name="version.num" value="0.01a" />
+	<property name="version.num" value="0.20a" />
 
 	<!-- include all jar files in the libs directory -->
   

@@ -132,7 +132,6 @@ public class JarResource implements ResourceHandler {
 			dir = path + "/"+ dir;
 			//just in case it already had a /
 			dir = dir.replaceAll("//","/");
-			System.out.println("Changed to "+dir);
 		}
 		List<String> list = new ArrayList<String>();
 		Enumeration enumeration = jar.entries();
