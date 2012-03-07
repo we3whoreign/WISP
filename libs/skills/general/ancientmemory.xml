@@ -2,6 +2,7 @@
 	<skill> 
 		<name>Ancient Memory</name>
 		<casttime>0.5</casttime>
+		<spcost>25</spcost>
 		<dynamic>
 			<level value="1">
                 <cooldown name="cooldown" value="40s" />

@@ -134,13 +134,37 @@ public class ClickableSkillPanel extends JPanel implements MouseListener{
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		if(arg0.getButton() == MouseEvent.BUTTON1){
-			levelUpSkill();
+			if(arg0.isControlDown()){
+				levelUpWIthRequirements();
+			}
+			else if(arg0.isShiftDown()){
+				SkillHandler.maxLevelUp(this.skill);
+			}
+			else{
+				levelUpSkill();
+			}
 		}
 		else if(arg0.getButton() == MouseEvent.BUTTON2){
 			//do nothing
 		}
 		else if(arg0.getButton() == MouseEvent.BUTTON3){
-			levelDownSkill();
+			if(arg0.isControlDown()){
+				SkillHandler.maxLevelDown(this.skill);
+			}
+			else if(arg0.isShiftDown()){
+				
+			}
+			else{
+				try {
+					SkillHandler.levelDown(this.skill);
+				} catch (MinLevelException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (CurrentRequirementException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
 		}
 		
 	}
@@ -186,18 +210,16 @@ public class ClickableSkillPanel extends JPanel implements MouseListener{
 		} 
 	}
 	
-	private void levelDownSkill(){
-		try {
-			SkillHandler.levelDown(this.skill);
-			//updateInformation();
-		} catch (MinLevelException e) {
-			// TODO Auto-generated catch block
-			//e.printStackTrace();
-		} catch (CurrentRequirementException e) {
-			// TODO Auto-generated catch block
-			//e.printStackTrace();
-		} 
+	private void maxLevel() {
+		
+		
 	}
+
+	private void levelUpWIthRequirements() {
+		// TODO Auto-generated method stub
+		
+	}
+	
 	
 	@Override
 	public void mousePressed(MouseEvent arg0) {

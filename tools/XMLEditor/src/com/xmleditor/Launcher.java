@@ -6,6 +6,8 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 import skillsplanner.io.IOHandler;
+import skillsplanner.resources.ClassManager;
+import skillsplanner.resources.SkillManager;
 
 import com.xmleditor.gui.XMLE;
 
@@ -34,6 +36,9 @@ public class Launcher {
 		if(f.exists()){
 			IOHandler.setClassDir(f.getAbsolutePath().replaceAll("\\\\", "/")+"/classes");
 			IOHandler.setSkillsDir(f.getAbsolutePath().replaceAll("\\\\", "/")+"/skills");
+			
+			SkillManager.getInstance().getSkill("Something that doesn't exist");
+			ClassManager.getInstance().getClassByName("Something that doesn't exist");
 			return;
 		}
 		JFileChooser fc = new JFileChooser(".");
@@ -45,6 +50,10 @@ public class Launcher {
 			f = fc.getSelectedFile();
 			IOHandler.setClassDir(f.getAbsolutePath().replaceAll("\\\\", "/")+"/classes");
 			IOHandler.setSkillsDir(f.getAbsolutePath().replaceAll("\\\\", "/")+"/skills");
+			
+			//Make sure the threads finish beforel oading
+			SkillManager.getInstance().getSkill("Something that doesn't exist");
+			ClassManager.getInstance().getClassByName("Something that doesn't exist");
 		}
 		
 	}

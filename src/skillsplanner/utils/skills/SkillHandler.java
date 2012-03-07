@@ -175,6 +175,41 @@ public class SkillHandler {
 		}
 		return ret;
 	}
+
+	public static void maxLevelUp(Skill skill) {
+		if(requirementsMet(skill)){
+			try{
+				while(true){
+					levelUp(skill);
+				}
+			}
+			catch(RequirementsNotMetException e){
+				
+			} catch (SPException e) {
+				// TODO Auto-generated catch block
+//				e.printStackTrace();
+			} catch (MaxLevelException e) {
+				// TODO Auto-generated catch block
+//				e.printStackTrace();
+			}
+		}
+	}
+
+	public static void maxLevelDown(Skill skill) {
+		try{
+			while(true){
+				levelDown(skill);
+			}
+		}
+		catch (MinLevelException e) {
+			// TODO Auto-generated catch block
+			//e.printStackTrace();
+		} catch (CurrentRequirementException e) {
+			// TODO Auto-generated catch block
+			//e.printStackTrace();
+		}
+		
+	}
 	
 	
 

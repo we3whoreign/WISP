@@ -7,6 +7,7 @@ import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -169,7 +170,7 @@ public class CreateSkillDialog extends javax.swing.JFrame implements ActionListe
 					startLevelCheck.setPreferredSize(new java.awt.Dimension(169, 20));
 				}
 				{
-					HashMap<String,DFOClass> map = ClassManager.getInstance().getAllClasses();
+					ConcurrentHashMap<String, DFOClass> map = ClassManager.getInstance().getAllClasses();
 					Collection<DFOClass> collection = ListUtils.sortList(ListUtils.getListFromMap(map));
 					baseClass = new JComboBox(collection.toArray());
 					inputPanel.add(baseClass);
