@@ -8,7 +8,7 @@
     <reqLevel>40</reqLevel>
     <description />
 	
-	<skillreq name="Apply Poison" level="5" />
+	<skillreq name="Poison Throw" level="5" />
 	<skillreq name="Mount" level="5" />
 	
     <dynamic>

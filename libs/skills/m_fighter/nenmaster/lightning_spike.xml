@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skillsplanner>
   <skill>
-    <name>Bone Crusher</name>
+    <name>Lightning Spike</name>
     <casttime>0.0</casttime>
-    <spcost>25</spcost>
+    <spcost>20</spcost>
     <entrycost>0</entrycost>
-    <reqlevel>25</reqlevel>
+    <reqlevel>10</reqlevel>
     <description />
+	<skillreq name="Knee Drop" level="1" />
     <dynamic>
       <level value="1" />
       <level value="2" />
@@ -31,6 +32,9 @@
       <level value="21" />
       <level value="22" />
       <level value="23" />
+      <level value="24" />
+      <level value="25" />
+      <level value="26" />
     </dynamic>
   </skill>
 </skillsplanner>

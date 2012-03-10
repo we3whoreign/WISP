@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skillsplanner>
   <skill>
-    <name>Fatal Aim</name>
+    <name>Net Throw</name>
     <casttime>0.0</casttime>
-    <spcost>25</spcost>
+    <spcost>35</spcost>
     <entrycost>0</entrycost>
-    <reqlevel>30</reqlevel>
+    <reqlevel>35</reqlevel>
     <description />
+	<skillreq name="Sand Splash" level="5" />
     <dynamic>
       <level value="1" />
       <level value="2" />
@@ -22,6 +23,10 @@
       <level value="12" />
       <level value="13" />
       <level value="14" />
+      <level value="15" />
+      <level value="16" />
+      <level value="17" />
+      <level value="18" />
     </dynamic>
   </skill>
 </skillsplanner>

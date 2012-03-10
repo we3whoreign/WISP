@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skillsplanner>
   <skill>
-    <name>Cancel - Hammer Kick</name>
+    <name>Cancel - Dragon Kick</name>
     <casttime>0.0</casttime>
-    <spcost>10</spcost>
+    <spcost>50</spcost>
     <entrycost>0</entrycost>
-    <reqlevel>1</reqlevel>
+    <reqlevel>46</reqlevel>
     <description />
+	<skillreq name="Dragon Kick" level="5" />
     <dynamic>
       <level value="1" />
     </dynamic>

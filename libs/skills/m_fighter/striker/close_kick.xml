@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skillsplanner>
   <skill>
-    <name>Air Walk</name>
+    <name>Close Kick</name>
     <casttime>0.0</casttime>
-    <spcost>15</spcost>
-    <entrycost>-1</entrycost>
-    <reqlevel>1</reqlevel>
+    <spcost>40</spcost>
+    <entrycost>0</entrycost>
+    <reqlevel>35</reqlevel>
     <description />
+	<skillreq name="Torpedo" level="5" />
     <dynamic>
       <level value="1" />
       <level value="2" />
@@ -26,16 +27,6 @@
       <level value="16" />
       <level value="17" />
       <level value="18" />
-      <level value="19" />
-      <level value="20" />
-      <level value="21" />
-      <level value="22" />
-      <level value="23" />
-      <level value="24" />
-      <level value="25" />
-      <level value="26" />
-      <level value="27" />
-      <level value="28" />
     </dynamic>
   </skill>
 </skillsplanner>

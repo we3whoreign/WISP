@@ -3,7 +3,7 @@ For the compile, just use the build.xml ant file. Look online for how to use ant
 
 ------------------------------------------------------------------------------------------------------
 PROJECT SPECIFICATIONS
-Last edited 2011-08-24
+Last edited 2012-03-10
 
 
 
@@ -59,6 +59,8 @@ casttime - a decimal value representing the cast time in seconds*
 frametime - shows the time it takes after the "blue bar" is complete until execution
 passive - sets whether the skill is a passive skill
 spcost - the sp cost of the skill*
+reqlevel - level required to obtain the skill
+<skillreq name="name of skill required" level="level skill, an integer" /> 
 dynamic - this holds all of the level information on ta skill. Within the dynamic tags there can be
     level - level tag saying what level the information applies to for the skill. eg <level value="1"> represents 1 level in the skill
         Within the level tag you can put any number of tags you want. They just must folow this structure:
@@ -73,8 +75,10 @@ dynamic - this holds all of the level information on ta skill. Within the dynami
 CHAPTER 3
 CLASSES
 --------------------------------------------------
-Classes hold information for what skills each subclass has. There is no example yet and this is not implemented yet.
+Classes are structured with the following tags:
 
+name - name of the class
+skill - name of a skill this class can use. Name is contained in the <name> tag of the skill
 
 --------------------------------------------------
 CHAPTER 4
@@ -82,7 +86,7 @@ COMPILING AND RUNNING
 --------------------------------------------------
 If you wish to compile this code it is publicly available available at github. 
 The following is required to compile:
-    1. JDK version 1.6 or higher 
+    1. JDK version 1.7 or higher 
     2. Ant 
     
 To compile just run ant on the build.xml file in the root folder. It will create a build directory with all the class files, a docs directory with javadoc information, and a jars directory with a runnable jar.

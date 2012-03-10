@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skillsplanner>
   <skill>
-    <name>Lightning Dance</name>
+    <name>Explosive Hook</name>
     <casttime>0.0</casttime>
-    <spcost>50</spcost>
+    <spcost>20</spcost>
     <entrycost>0</entrycost>
-    <reqlevel>40</reqlevel>
+    <reqlevel>18</reqlevel>
     <description />
-	<skillreq name="Hammer Kick" level="5" />
-	<skillreq name="Low Kick" level="5" />
     <dynamic>
       <level value="1" />
       <level value="2" />
@@ -26,6 +24,17 @@
       <level value="14" />
       <level value="15" />
       <level value="16" />
+      <level value="17" />
+      <level value="18" />
+      <level value="19" />
+      <level value="20" />
+      <level value="21" />
+      <level value="22" />
+      <level value="23" />
+      <level value="24" />
+      <level value="25" />
+      <level value="26" />
+      <level value="27" />
     </dynamic>
   </skill>
 </skillsplanner>

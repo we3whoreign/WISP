@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skillsplanner>
   <skill>
-    <name>Lightning Dance</name>
+    <name>Rolling Spike</name>
     <casttime>0.0</casttime>
     <spcost>50</spcost>
     <entrycost>0</entrycost>
     <reqlevel>40</reqlevel>
     <description />
-	<skillreq name="Hammer Kick" level="5" />
-	<skillreq name="Low Kick" level="5" />
+	<skillreq name="Back Breaker" level="5" />
     <dynamic>
       <level value="1" />
       <level value="2" />

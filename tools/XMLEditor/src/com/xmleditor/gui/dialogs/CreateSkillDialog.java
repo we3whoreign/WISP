@@ -214,7 +214,7 @@ public class CreateSkillDialog extends javax.swing.JFrame implements ActionListe
 	private String getFolderToPutIn(){
 		DFOClass selected = (DFOClass) baseClass.getSelectedItem();
 		
-		return selected.getUniqueName().substring(selected.getUniqueName().indexOf("/")+1);
+		return selected.getUniqueName();
 	}
 
 }

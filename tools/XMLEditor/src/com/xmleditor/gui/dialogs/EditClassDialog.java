@@ -60,6 +60,7 @@ public class EditClassDialog extends JFrame implements ActionListener{
 	private void initGUI(){
 		JPanel _this = new JPanel();
 		Collection<Skill> skillManagerList = SkillManager.getInstance().getAllSkills().values();
+		ListUtils.sortSkills(skillManagerList);
 		Skill[] c = new Skill[skillManagerList.size()];
 		ListUtils.sortSkills(skillManagerList).toArray(c);
 		ArrayList<Skill> visibleSkills = new ArrayList<Skill>();

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skillsplanner>
   <skill>
-    <name>Power Fist</name>
+    <name>Slam Kick</name>
     <casttime>0.0</casttime>
-    <spcost>25</spcost>
+    <spcost>40</spcost>
     <entrycost>0</entrycost>
-    <reqlevel>20</reqlevel>
+    <reqlevel>35</reqlevel>
     <description />
     <dynamic>
       <level value="1" />
@@ -25,6 +25,7 @@
       <level value="15" />
       <level value="16" />
       <level value="17" />
+      <level value="18" />
     </dynamic>
   </skill>
 </skillsplanner>

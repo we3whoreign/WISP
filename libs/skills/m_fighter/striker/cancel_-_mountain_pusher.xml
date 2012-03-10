@@ -7,6 +7,7 @@
     <entrycost>0</entrycost>
     <reqlevel>35</reqlevel>
     <description />
+	<skillreq name="Mountain Pusher" level="5" />
     <dynamic>
       <level value="1" />
     </dynamic>

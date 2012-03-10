@@ -62,7 +62,7 @@ public class DFOClass {
 	
 	@Override
 	public String toString(){
-		return this.getUniqueName().substring(getUniqueName().indexOf("/")+1);
+		return this.getUniqueName();
 	}
 
 	/**

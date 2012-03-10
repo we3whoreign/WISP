@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skillsplanner>
   <skill>
-    <name>Lightning Dance</name>
+    <name>Spiral Nen Press</name>
     <casttime>0.0</casttime>
-    <spcost>50</spcost>
+    <spcost>30</spcost>
     <entrycost>0</entrycost>
-    <reqlevel>40</reqlevel>
+    <reqlevel>30</reqlevel>
     <description />
-	<skillreq name="Hammer Kick" level="5" />
-	<skillreq name="Low Kick" level="5" />
+	
+	<skillreq name="Spiral Nen" level="1" />
+	
     <dynamic>
       <level value="1" />
       <level value="2" />
@@ -26,6 +27,11 @@
       <level value="14" />
       <level value="15" />
       <level value="16" />
+      <level value="17" />
+      <level value="18" />
+      <level value="19" />
+      <level value="20" />
+      <level value="21" />
     </dynamic>
   </skill>
 </skillsplanner>

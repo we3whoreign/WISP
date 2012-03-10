@@ -25,6 +25,7 @@ public class ClassesTab extends JPanel {
 		
 		//CENTER
 		List<DFOClass> list = ListUtils.getListFromMap(ClassManager.getInstance().getAllClasses());
+		ListUtils.sortList(list);
 		DFOClass[] handler = new DFOClass[list.size()];
 		JList<DFOClass> listpane = new JList<DFOClass>(list.toArray(handler));
 		

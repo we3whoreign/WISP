@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skillsplanner>
   <skill>
-    <name>Cancel - Low Kick</name>
+    <name>Cancel - Rolling Spike</name>
     <casttime>0.0</casttime>
     <spcost>50</spcost>
     <entrycost>0</entrycost>
-    <reqlevel>18</reqlevel>
+    <reqlevel>48</reqlevel>
     <description />
-	<skillreq name="Low Kick" level="5" />
+	<skillreq name="Rolling Spike" level="5" />
     <dynamic>
       <level value="1" />
     </dynamic>

@@ -18,8 +18,15 @@
 		<!-- Extra value added to SP cost to get first level of skill. Put negative if first level is free  -->
 		<entryfee> 0 </entryfee>
 		
-		<!-- Optional passive tag. If set to true cast time and frametime will be ignored. -->
+		<!-- Optional passive tag. If set to true cast time and frametime will be ignored. Not implemented yet-->
 		<passive> false </passive>
+
+		<!-- Any number of skills that are required to level this one. Name is the name contained in the <name /> 
+		tag for the required skill and level is an integer referring to the minimul level required. -->
+		<skillreq name="name" level="1" />
+
+		<!-- Character level required to level up this skill. Used to order skills based on when they are acquired -->
+		<reqlevel>1</reqlevel>
 		
 		<!-- All of the level dependent values go in the dynamic tag -->
 		<dynamic>

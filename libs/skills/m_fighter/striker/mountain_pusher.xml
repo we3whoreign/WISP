@@ -7,6 +7,7 @@
     <entrycost>0</entrycost>
     <reqlevel>25</reqlevel>
     <description />
+	<skillreq name="Super Armor" level="3" />
     <dynamic>
       <level value="1" />
       <level value="2" />

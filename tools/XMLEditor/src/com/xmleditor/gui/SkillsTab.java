@@ -64,10 +64,10 @@ public class SkillsTab extends JPanel implements ActionListener,Observer{
 		
 		//add skills to the skill menu 
 		for(Skill sk : SkillManager.getInstance().getAllSkills().values()){
-			if(!skillMap.containsKey(sk.getTree())){
-				skillMap.put(sk.getTree(), new TreeSet<Skill>());
+			if(!skillMap.containsKey(sk.getFileTree())){
+				skillMap.put(sk.getFileTree(), new TreeSet<Skill>());
 			}
-			skillMap.get(sk.getTree()).add(sk);
+			skillMap.get(sk.getFileTree()).add(sk);
 		}
 		
 		//make the skill menu

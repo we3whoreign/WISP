@@ -7,6 +7,7 @@
     <entrycost>0</entrycost>
     <reqlevel>25</reqlevel>
     <description />
+	<skillreq name="Low Kick" level="10" />
     <dynamic>
       <level value="1" />
       <level value="2" />
