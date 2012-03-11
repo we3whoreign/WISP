@@ -69,5 +69,25 @@ public class SpringLayoutTool {
 			Component c2, int pad) {
 				layout.putConstraint(SpringLayout.WEST, c1, pad, SpringLayout.WEST, c2);
 	}
+	
+	/**
+	 * Aligns the top of c2 and c1 together with pad of 5
+	 * @param layout
+	 * @param c1
+	 * @param c2
+	 */
+	public static void alignTop(SpringLayout layout, Component c1, Component c2){
+		alignTop(layout,c1,c2,5);
+	}
+	
+	/**
+	 * Aligns the top of c2 and c1 together
+	 * @param layout
+	 * @param c1
+	 * @param c2
+	 */
+	public static void alignTop(SpringLayout layout, Component c1, Component c2, int pad){
+		layout.putConstraint(SpringLayout.NORTH, c1, pad, SpringLayout.NORTH, c2);
+	}
 
 }

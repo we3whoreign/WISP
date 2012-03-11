@@ -52,6 +52,7 @@ public class Handler {
             return doc;
 		}
 		catch(Exception ex){
+			System.out.println("Error in file "+f.getAbsolutePath());
 			ex.printStackTrace();
 			return null;
 		}

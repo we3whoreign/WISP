@@ -6,7 +6,7 @@
     <spcost>100</spcost>
     <entrycost>0</entrycost>
     <reqlevel>25</reqlevel>
-    <description 
+    <description />
 	<skillreq name="Needle Throw" level="1" />
 	<skillreq name="Poison Throw" level="1" />
     <dynamic>

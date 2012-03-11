@@ -7,6 +7,7 @@
     <entrycost>0</entrycost>
     <reqlevel>48</reqlevel>
     <description />
+	<skillreq name="Bone Crusher" level="10" />
     <dynamic>
       <level value="1" />
       <level value="2" />

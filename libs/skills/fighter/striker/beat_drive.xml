@@ -7,6 +7,8 @@
     <entrycost>0</entrycost>
     <reqlevel>45</reqlevel>
     <description />
+	<skillreq name="Crushing Fist" level="5" />
+    <skillreq name="Tiger Chain Strike" level="5" />
     <dynamic>
       <level value="1" />
       <level value="2" />

@@ -104,7 +104,7 @@ public class XMLWriter {
 				Element req = new Element("skillreq");
 				req.setAttribute("name",r.getName());
 				req.setAttribute("level",String.valueOf(r.getLevel()));
-				rootElement.addContent(req);
+				skillElement.addContent(req);
 			}
 		}
 		

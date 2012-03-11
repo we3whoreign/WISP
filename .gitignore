@@ -17,7 +17,6 @@ build.num
 
 #project settings #
 ###################
-*.project**
 *.settings**
 #any launch configuration for eclipse#
 ######################################

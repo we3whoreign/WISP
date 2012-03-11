@@ -28,6 +28,11 @@ public class IOHandler {
 	private static String CLASSES_DIR = "libs/classes";
 	private static ConcurrentLinkedQueue<ResourceHandler> handlers = new ConcurrentLinkedQueue<ResourceHandler>();
 	
+	/**
+	 * Override flag to say whether or not this is a jar. Manually set to false to make sure to never use a jar resource.
+	 */
+	public static boolean JAROVERRIDE = true;
+	
 	public static ConcurrentMap<InputStream, String> getAllSkills(){
 		return IOHandler.getResourcesWithParents(SKILLS_DIR);
 	}
@@ -38,7 +43,7 @@ public class IOHandler {
 	 */
 	private static boolean isJar(){
 		String str = IOHandler.class.getResource("IOHandler.class").toString();
-		return str.toLowerCase().startsWith("jar");
+		return str.toLowerCase().startsWith("jar") && JAROVERRIDE;
 	}
 	
 	/**

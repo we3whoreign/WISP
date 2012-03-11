@@ -32,6 +32,7 @@ import com.xmleditor.gui.listeners.SkillMenuListener;
 public class SkillsTab extends JPanel implements ActionListener,Observer{
 	JPanel centerPanel = new JPanel(new BorderLayout());
 	SkillEditPanel skillEditPanel = new SkillEditPanel(null);
+	JPanel leftMenu;
 
 	public SkillsTab(){
 		super();
@@ -40,7 +41,6 @@ public class SkillsTab extends JPanel implements ActionListener,Observer{
 	}
 	
 	private void initGUI(){
-		this.removeAll();
 		this.setLayout(new BorderLayout());
 		//CENTER
 //		List<Skill> list = ListUtils.getListFromMap(SkillManager.getInstance().getAllSkills());
@@ -51,7 +51,7 @@ public class SkillsTab extends JPanel implements ActionListener,Observer{
 //		this.add(scroller,BorderLayout.CENTER);
 		
 		//Whole new design of awesomeness
-		JPanel leftMenu = new JPanel();
+		leftMenu = new JPanel();
 		leftMenu.setLayout(new BoxLayout(leftMenu,BoxLayout.Y_AXIS));
 		JPanel skillList = new JPanel();
 		JScrollPane scrollpanel = new JScrollPane(leftMenu);
@@ -103,6 +103,60 @@ public class SkillsTab extends JPanel implements ActionListener,Observer{
 		centerPanel.add(skillEditPanel,BorderLayout.CENTER);
 		this.add(buttonPanel,BorderLayout.SOUTH);
 	}
+	
+	private void updateGUI(){
+		leftMenu = new JPanel();
+		centerPanel = new JPanel(new BorderLayout());
+		leftMenu.setLayout(new BoxLayout(leftMenu,BoxLayout.Y_AXIS));
+		JPanel skillList = new JPanel();
+		JScrollPane scrollpanel = new JScrollPane(leftMenu);
+		centerPanel.add(scrollpanel,BorderLayout.WEST);
+		centerPanel.add(skillList,BorderLayout.CENTER);
+		
+		SkillMenuListener skillMenuListener = new SkillMenuListener(this);
+		
+		TreeMap<String,TreeSet<Skill>> skillMap = new TreeMap<String,TreeSet<Skill>>();
+		
+		//add skills to the skill menu 
+		for(Skill sk : SkillManager.getInstance().getAllSkills().values()){
+			if(!skillMap.containsKey(sk.getFileTree())){
+				skillMap.put(sk.getFileTree(), new TreeSet<Skill>());
+			}
+			skillMap.get(sk.getFileTree()).add(sk);
+		}
+		
+		//make the skill menu
+		for(String header : skillMap.keySet()){
+			JPanel contents = new JPanel();
+			contents.setLayout(new BoxLayout(contents,BoxLayout.Y_AXIS));
+			for(Skill sk : skillMap.get(header)){
+				contents.add(new SkillPanel(skillMenuListener,sk));
+			}
+			HideableJPanel panel = new HideableJPanel(header,contents);
+			leftMenu.add(panel);
+		}
+		
+		//the glue to hold it all together. Fills vertical space to keep everything from expanding
+		leftMenu.add(Box.createVerticalGlue());
+		leftMenu.add(Box.createVerticalStrut(400));
+		
+		this.add(centerPanel,BorderLayout.CENTER);
+		
+		// BOTTOM PANEL
+		JPanel buttonPanel = new JPanel();
+		JButton newButton = new JButton("New Skill");
+		Rudra rudra = new Rudra();
+		newButton.addActionListener(rudra);
+		newButton.setActionCommand(Rudra.NEW_SKILL);
+		JButton editButton = new JButton("Edit Class");
+		editButton.setActionCommand(Rudra.EDIT_SKILL);
+		editButton.addActionListener(rudra);
+		
+		buttonPanel.add(newButton);
+		buttonPanel.add(editButton);
+		
+		centerPanel.add(skillEditPanel,BorderLayout.CENTER);
+	}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
@@ -128,7 +182,6 @@ public class SkillsTab extends JPanel implements ActionListener,Observer{
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		System.out.println("Reupdate GUI");
-		initGUI();
-		this.revalidate();
+		updateGUI();
 	}
 }

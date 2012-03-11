@@ -4,7 +4,7 @@
 	<!-- put a short description of the class into the description tag -->
 	<description> Description of the suclass goes heere </description>
 	
-	<!-- Put the name of the class here. This is the name that will show in the skill planner ->
+	<!-- Put the name of the class here. This is the name that will show in the skill planner -->
 	<name> The name of the class </name>
 	
 	<!-- use the skill tag to indicate a skill. 

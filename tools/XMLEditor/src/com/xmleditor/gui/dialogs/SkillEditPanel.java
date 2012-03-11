@@ -9,18 +9,23 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 import javax.swing.SpringLayout;
+
+import net.miginfocom.swing.MigLayout;
 
 import com.xmleditor.gui.layouttools.SpringLayoutTool;
 import com.xmleditor.io.XMLWriter;
 
 import skillsplanner.beans.Skill;
-import skillsplanner.resources.SkillManager;
+import skillsplanner.beans.SkillRequirement;
 
 public class SkillEditPanel extends JPanel implements ActionListener{
 	
@@ -32,6 +37,10 @@ public class SkillEditPanel extends JPanel implements ActionListener{
 	final JTextPane spCost = new JTextPane();
 	final JCheckBox levelOne = new JCheckBox("Start at 1");
 	final JTextPane requiredLevel = new JTextPane();
+	final DefaultListModel model = new DefaultListModel();
+	final JList requiredSkills = new JList(model);
+	final JButton addRequiredSkill = new JButton("Add Required Skill");
+	AddRequiredDialog addRequired;
 	
 	public SkillEditPanel(Skill skill){
 		if(skill != null){
@@ -45,6 +54,8 @@ public class SkillEditPanel extends JPanel implements ActionListener{
 	}
 	
 	private void initGUI(){
+		this.removeAll();
+		this.validate();
 		name.setPreferredSize(new Dimension(TEXT_WIDTH, TEXT_HEIGHT));
 		level.setPreferredSize(new Dimension(TEXT_WIDTH, TEXT_HEIGHT));
 		spCost.setPreferredSize(new Dimension(TEXT_WIDTH, TEXT_HEIGHT));
@@ -63,7 +74,7 @@ public class SkillEditPanel extends JPanel implements ActionListener{
 		JPanel requiredLevelPanel = new JPanel();
 		JPanel startAtOnePanel = new JPanel();
 	
-		container.setLayout(new BoxLayout(container,BoxLayout.Y_AXIS));
+		container.setLayout(new MigLayout("wrap 1"));
 		
 		addPanelLayout(namePanel, new JLabel("Name"), name);
 		addPanelLayout(levelPanel, new JLabel("Level"), level);
@@ -76,11 +87,24 @@ public class SkillEditPanel extends JPanel implements ActionListener{
 		container.add(spCostPanel);
 		container.add(requiredLevelPanel);
 		container.add(startAtOnePanel);
+		container.add(requiredSkills);
+		container.add(addRequiredSkill);
+		
+		addRequiredSkill.setActionCommand("ADD_REQUIRED");
+		addRequiredSkill.addActionListener(this);
+		
+		if(this._skill.getSkillRequirements() != null){
+			for(SkillRequirement sr : this._skill.getSkillRequirements()){
+				model.addElement(sr.getName()+ " - "+sr.getLevel());
+			}
+		}
 		
 		this.setLayout(new BorderLayout());
 		
 		this.add(container,BorderLayout.CENTER);
 		this.add(generateButtons(),BorderLayout.SOUTH);
+		
+		this.validate();
 	}
 	
 	private void addPanelLayout(JPanel panel, JLabel label, Component component){
@@ -137,6 +161,16 @@ public class SkillEditPanel extends JPanel implements ActionListener{
 			System.out.println("Cancel");
 			this.setVisible(false);
 			break;
+		case "ADD_REQUIRED":
+			addRequired = new AddRequiredDialog(this);
+			break;
+		case AddRequiredDialog.SAVE:
+			String name = addRequired.getSkillName();
+			int level = addRequired.getLevel();
+			this._skill.addSkillRequirement(name, level);
+			addRequired.setVisible(false);
+			initGUI();
+			
 		}
 	}
 	

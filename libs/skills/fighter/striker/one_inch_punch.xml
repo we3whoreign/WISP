@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skillsplanner>
+  <skillreq name="Crushing Fist" level="5" />
   <skill>
     <name>One Inch Punch</name>
     <casttime>0.0</casttime>

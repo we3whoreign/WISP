@@ -32,6 +32,8 @@ public class Launcher {
 	}
 	
 	private void chooseLibsDir(){
+		//make sure to never consider the library as in a jar
+		IOHandler.JAROVERRIDE = false;
 		File f = new File(LIBS_PATH);
 		if(f.exists()){
 			IOHandler.setClassDir(f.getAbsolutePath().replaceAll("\\\\", "/")+"/classes");
