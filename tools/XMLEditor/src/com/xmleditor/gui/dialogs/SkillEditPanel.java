@@ -40,6 +40,7 @@ public class SkillEditPanel extends JPanel implements ActionListener{
 	final DefaultListModel model = new DefaultListModel();
 	final JList requiredSkills = new JList(model);
 	final JButton addRequiredSkill = new JButton("Add Required Skill");
+	final JButton removeRequiredSkill = new JButton("Remove Required Skill");
 	AddRequiredDialog addRequired;
 	
 	public SkillEditPanel(Skill skill){
@@ -89,9 +90,12 @@ public class SkillEditPanel extends JPanel implements ActionListener{
 		container.add(startAtOnePanel);
 		container.add(requiredSkills);
 		container.add(addRequiredSkill);
+		container.add(removeRequiredSkill);
 		
 		addRequiredSkill.setActionCommand("ADD_REQUIRED");
+		removeRequiredSkill.setActionCommand("REMOVE_REQUIRED");
 		addRequiredSkill.addActionListener(this);
+		removeRequiredSkill.addActionListener(this);
 		
 		if(this._skill.getSkillRequirements() != null){
 			for(SkillRequirement sr : this._skill.getSkillRequirements()){
@@ -170,7 +174,14 @@ public class SkillEditPanel extends JPanel implements ActionListener{
 			this._skill.addSkillRequirement(name, level);
 			addRequired.setVisible(false);
 			initGUI();
-			
+			break;
+		case "REMOVE_REQUIRED":
+			for(Object obj : requiredSkills.getSelectedValuesList()){
+				String selected = (String) obj;
+				model.removeElement(obj);
+				this._skill.removeSkillRequirement(selected.substring(0,selected.indexOf("-")-1).trim());
+			}
+			break;
 		}
 	}
 	

@@ -142,8 +142,13 @@ public class CreateSkillDialog extends javax.swing.JFrame implements ActionListe
 			addRequiredSkill.setActionCommand("ADD_REQUIRED");
 			addRequiredSkill.addActionListener(this);
 			
+			JButton removeRequiredSkill = new JButton("Remove Requirement(s)");
+			removeRequiredSkill.setActionCommand("REMOVE_REQUIRED");
+			removeRequiredSkill.addActionListener(this);
+			
 			inputPanel.add(requiredSkills,"wrap");
 			inputPanel.add(addRequiredSkill);
+			inputPanel.add(removeRequiredSkill);
 			
 			inputPanel.add(jButton1);
 			jButton1.setText("Generate XML");
@@ -160,6 +165,13 @@ public class CreateSkillDialog extends javax.swing.JFrame implements ActionListe
 	public void actionPerformed(ActionEvent arg0) {
 		if(arg0.getActionCommand().equalsIgnoreCase("ADD_REQUIRED")){
 			addRequiredDialog = new AddRequiredDialog(this);
+		}
+		else if(arg0.getActionCommand().equalsIgnoreCase("REMOVE_REQUIRED")){
+			for(Object obj : requiredSkills.getSelectedValuesList()){
+				String selected = (String) obj;
+				model.removeElement(obj);
+				st.removeSkillRequirement(selected.substring(0,selected.indexOf("-")-1).trim());
+			}
 		}
 		else if(arg0.getActionCommand().equals(AddRequiredDialog.SAVE)){
 			String name = addRequiredDialog.getSkillName();

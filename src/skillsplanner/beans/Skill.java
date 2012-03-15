@@ -209,5 +209,14 @@ public class Skill implements Comparable<Skill>{
 		public String getTreeGrandfather() {
 			return tree.substring(0,tree.indexOf("/"));
 		}
+		public void removeSkillRequirement(String name) {
+			for(SkillRequirement req : skillRequirements){
+				if(req.getName().equalsIgnoreCase(name)){
+					skillRequirements.remove(req);
+					return;
+				}
+			}
+			
+		}
 
 }

@@ -1,5 +1,8 @@
 package com.xmleditor.io;
 
+import java.io.File;
+import java.io.FileOutputStream;
+
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.output.Format;
@@ -11,6 +14,7 @@ import skillsplanner.beans.SkillRequirement;
 import skillsplanner.io.IOHandler;
 import skillsplanner.resources.ClassManager;
 import skillsplanner.resources.SkillManager;
+import skillsplanner.utils.StringUtils;
 
 public class XMLWriter {
 	private static XMLWriter writer;
@@ -132,6 +136,24 @@ public class XMLWriter {
 			e.printStackTrace();
 		}
 		return true;
+	}
+
+	public void skillToXML(Skill sk, File xmls) {
+		XMLOutputter outputter = new XMLOutputter();
+		
+		try{
+			Document doc = buildSkillDocument(sk);
+			Format format = Format.getPrettyFormat();
+			outputter.setFormat(format);
+			//outputter.output(doc, System.out);
+			File xmlFile = new File(xmls.getAbsolutePath()+"/"+StringUtils.toFileName(sk.getName())+".xml");
+			outputter.output(doc, new FileOutputStream(xmlFile));
+			//SkillManager.getInstance().addSkill(sk);
+			
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 
 }
