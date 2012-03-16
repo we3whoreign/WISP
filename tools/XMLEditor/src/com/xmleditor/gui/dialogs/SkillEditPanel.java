@@ -179,7 +179,7 @@ public class SkillEditPanel extends JPanel implements ActionListener{
 			for(Object obj : requiredSkills.getSelectedValuesList()){
 				String selected = (String) obj;
 				model.removeElement(obj);
-				this._skill.removeSkillRequirement(selected.substring(0,selected.indexOf("-")-1).trim());
+				this._skill.removeSkillRequirement(selected.substring(0,selected.lastIndexOf("-")-1).trim());
 			}
 			break;
 		}

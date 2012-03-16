@@ -106,12 +106,12 @@ public class SkillsTab extends JPanel implements ActionListener,Observer{
 	
 	private void updateGUI(){
 		leftMenu = new JPanel();
-		centerPanel = new JPanel(new BorderLayout());
+		//centerPanel = new JPanel(new BorderLayout());
 		leftMenu.setLayout(new BoxLayout(leftMenu,BoxLayout.Y_AXIS));
 		JPanel skillList = new JPanel();
 		JScrollPane scrollpanel = new JScrollPane(leftMenu);
-		centerPanel.add(scrollpanel,BorderLayout.WEST);
-		centerPanel.add(skillList,BorderLayout.CENTER);
+		//centerPanel.add(scrollpanel,BorderLayout.WEST);
+		//centerPanel.add(skillList,BorderLayout.CENTER);
 		
 		SkillMenuListener skillMenuListener = new SkillMenuListener(this);
 		
@@ -136,26 +136,6 @@ public class SkillsTab extends JPanel implements ActionListener,Observer{
 			leftMenu.add(panel);
 		}
 		
-		//the glue to hold it all together. Fills vertical space to keep everything from expanding
-		leftMenu.add(Box.createVerticalGlue());
-		leftMenu.add(Box.createVerticalStrut(400));
-		
-		this.add(centerPanel,BorderLayout.CENTER);
-		
-		// BOTTOM PANEL
-		JPanel buttonPanel = new JPanel();
-		JButton newButton = new JButton("New Skill");
-		Rudra rudra = new Rudra();
-		newButton.addActionListener(rudra);
-		newButton.setActionCommand(Rudra.NEW_SKILL);
-		JButton editButton = new JButton("Edit Class");
-		editButton.setActionCommand(Rudra.EDIT_SKILL);
-		editButton.addActionListener(rudra);
-		
-		buttonPanel.add(newButton);
-		buttonPanel.add(editButton);
-		
-		centerPanel.add(skillEditPanel,BorderLayout.CENTER);
 	}
 
 	@Override
@@ -183,5 +163,6 @@ public class SkillsTab extends JPanel implements ActionListener,Observer{
 	public void update(Observable arg0, Object arg1) {
 		System.out.println("Reupdate GUI");
 		updateGUI();
+		this.validate();
 	}
 }

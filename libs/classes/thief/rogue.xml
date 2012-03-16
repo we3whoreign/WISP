@@ -1,3 +1,69 @@
-<skillsplanner>
-	<name>Rogue</name>
-</skillsplanner>
+<?xml version="1.0" encoding="UTF-8"?>
+<skillplanner>
+  <description />
+  <name>Rogue</name>
+  <skill>Cancel - Bandit Cut</skill>
+  <skill>Ankle Cut</skill>
+  <skill>Cancel - Double Piercer</skill>
+  <skill>Nicholas Rapport</skill>
+  <skill>Cancel - Curse Spear</skill>
+  <skill>Magic Critical Hit</skill>
+  <skill>Cancel - Eraser</skill>
+  <skill>Dark Soul</skill>
+  <skill>Hurricane</skill>
+  <skill>Shuriken</skill>
+  <skill>Cancel - Breaking Rush</skill>
+  <skill>Chain Saw</skill>
+  <skill>Flame Cut</skill>
+  <skill>Cancel - Lightning Arrow</skill>
+  <skill>Vertical Spiral</skill>
+  <skill>Bandit Cut</skill>
+  <skill>Dual Blade Mastery</skill>
+  <skill>Bone Shield</skill>
+  <skill>Silver Stream</skill>
+  <skill>Hit End</skill>
+  <skill>Excel Strike</skill>
+  <skill>Quick Rebound</skill>
+  <skill>Shining Cut</skill>
+  <skill>Dark Nail</skill>
+  <skill>Eraser</skill>
+  <skill>Moon Arc</skill>
+  <skill>Sonic Assault</skill>
+  <skill>Shining Spark</skill>
+  <skill>Flying Squirrel</skill>
+  <skill>Cancel - Vertical Spiral</skill>
+  <skill>Slicer</skill>
+  <skill>Cancel - Chain Saw</skill>
+  <skill>Cancel - Excel Strike</skill>
+  <skill>Sidestep</skill>
+  <skill>Cancel - Dark Soul</skill>
+  <skill>Diving Arrow</skill>
+  <skill>Aerial Jump</skill>
+  <skill>Physical Critical Hit</skill>
+  <skill>Cancel - Item Throw</skill>
+  <skill>Backstep</skill>
+  <skill>Curse Spear</skill>
+  <skill>Double Piercer</skill>
+  <skill>Cancel - Dark Nail</skill>
+  <skill>Cancel - Shining Cut</skill>
+  <skill>Rising Cut</skill>
+  <skill>Lightning Arrow</skill>
+  <skill>Cancel - Diving Arrow</skill>
+  <skill>Cancel - Sonic Assault</skill>
+  <skill>Cancel - Sidestep</skill>
+  <skill>Breaking Rush</skill>
+  <skill>Physical Rear Attack</skill>
+  <skill>Cancel - Flame Cut</skill>
+  <skill>Cancel - Hurricane</skill>
+  <skill>Cancel - Shadow Cut</skill>
+  <skill>Leap</skill>
+  <skill>Cancel - Shuriken</skill>
+  <skill>Throw Mastery</skill>
+  <skill>Dagger Mastery</skill>
+  <skill>Magic Rear Attack</skill>
+  <skill>Transformation: Molting</skill>
+  <skill>Indomitable Spirit</skill>
+  <skill>Ancient Memory</skill>
+  <skill>Shadow Cut</skill>
+</skillplanner>
+

@@ -32,6 +32,7 @@ public class HideableJPanel extends JPanel{
 		this.setOpaque(true);
 		
 		initGUI();
+		toggleVisible();
 	}
 	
 	private void initGUI(){
