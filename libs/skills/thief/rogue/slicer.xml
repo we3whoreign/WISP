@@ -5,9 +5,8 @@
     <casttime>0.0</casttime>
     <spcost>15</spcost>
     <entrycost>0</entrycost>
-    <reqlevel>0</reqlevel>
+    <reqlevel>5</reqlevel>
     <description />
-    <skillreq name="Silver Stream" level="5" />
     <dynamic>
       <level value="1" />
       <level value="2" />

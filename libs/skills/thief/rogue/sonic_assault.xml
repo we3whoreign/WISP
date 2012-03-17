@@ -5,7 +5,7 @@
     <casttime>0.0</casttime>
     <spcost>50</spcost>
     <entrycost>0</entrycost>
-    <reqlevel>0</reqlevel>
+    <reqlevel>40</reqlevel>
     <description />
     <skillreq name="Bandit Cut" level="5" />
     <skillreq name="Shining Cut" level="5" />

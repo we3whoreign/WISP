@@ -5,7 +5,7 @@
     <casttime>0.0</casttime>
     <spcost>50</spcost>
     <entrycost>0</entrycost>
-    <reqlevel>0</reqlevel>
+    <reqlevel>43</reqlevel>
     <description />
     <skillreq name="Lightning Arrow" level="5" />
     <dynamic>

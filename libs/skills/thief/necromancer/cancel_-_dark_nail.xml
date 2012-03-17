@@ -7,7 +7,7 @@
     <entrycost>0</entrycost>
     <reqlevel>26</reqlevel>
     <description />
-	<skillreq name="Dark Nail" level="5" />
+    <skillreq name="Dark Nail" level="5" />
     <dynamic>
       <level value="1" />
     </dynamic>

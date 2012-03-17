@@ -5,9 +5,8 @@
     <casttime>0.0</casttime>
     <spcost>25</spcost>
     <entrycost>0</entrycost>
-    <reqlevel>0</reqlevel>
+    <reqlevel>30</reqlevel>
     <description />
-    <skillreq name="Vertical Spiral" level="1" />
     <dynamic>
       <level value="1" />
     </dynamic>

@@ -5,7 +5,7 @@
     <casttime>0.0</casttime>
     <spcost>20</spcost>
     <entrycost>0</entrycost>
-    <reqlevel>0</reqlevel>
+    <reqlevel>1</reqlevel>
     <description />
     <skillreq name="Excel Strike" level="5" />
     <skillreq name="Hurricane" level="5" />

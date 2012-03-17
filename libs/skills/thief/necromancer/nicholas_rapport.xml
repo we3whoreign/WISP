@@ -4,7 +4,7 @@
     <name>Nicholas Rapport</name>
     <casttime>0.0</casttime>
     <spcost>20</spcost>
-    <entrycost>-1</entrycost>
+    <entrycost>0</entrycost>
     <reqlevel>18</reqlevel>
     <description />
     <dynamic>

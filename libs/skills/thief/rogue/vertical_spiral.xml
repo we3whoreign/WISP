@@ -5,7 +5,7 @@
     <casttime>0.0</casttime>
     <spcost>40</spcost>
     <entrycost>0</entrycost>
-    <reqlevel>0</reqlevel>
+    <reqlevel>35</reqlevel>
     <description />
     <skillreq name="Breaking Rush" level="1" />
     <dynamic>

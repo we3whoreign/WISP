@@ -156,4 +156,23 @@ public class XMLWriter {
 		}
 	}
 
+	public boolean classToXML(DFOClass dfoclass, File dir) {
+XMLOutputter outputter = new XMLOutputter();
+		
+		try{
+			Document doc = buildClassDocument(dfoclass);
+			Format format = Format.getPrettyFormat();
+			outputter.setFormat(format);
+			outputter.output(doc, System.out);
+			outputter.output(doc, new FileOutputStream(dir+"/"+StringUtils.toFileName(dfoclass.getName())+".xml"));
+			//ClassManager.getInstance().addClass(dfoclass);
+			
+		}
+		catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+		return true;
+		
+	}
+
 }
