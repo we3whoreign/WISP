@@ -4,7 +4,7 @@
     <name>Rising Cut</name>
     <casttime>0.0</casttime>
     <spcost>15</spcost>
-    <entrycost>0</entrycost>
+    <entrycost>-1</entrycost>
     <reqlevel>1</reqlevel>
     <description />
     <dynamic>

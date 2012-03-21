@@ -8,7 +8,6 @@
     <reqlevel>30</reqlevel>
     <description />
     <skillreq name="Hit End" level="5" />
-    <skillreq name="Cancel - Hurricane" level="5" />
     <dynamic>
       <level value="1" />
       <level value="2" />

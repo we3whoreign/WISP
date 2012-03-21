@@ -4,7 +4,7 @@
     <name>Fear of the Slaughterer</name>
     <casttime>0.0</casttime>
     <spcost>30</spcost>
-    <entrycost>0</entrycost>
+    <entrycost>-1</entrycost>
     <reqlevel>1</reqlevel>
     <description />
     <dynamic>

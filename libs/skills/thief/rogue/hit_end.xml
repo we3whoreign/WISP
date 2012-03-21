@@ -4,11 +4,9 @@
     <name>Hit End</name>
     <casttime>0.0</casttime>
     <spcost>20</spcost>
-    <entrycost>0</entrycost>
+    <entrycost>-1</entrycost>
     <reqlevel>1</reqlevel>
     <description />
-    <skillreq name="Excel Strike" level="5" />
-    <skillreq name="Hurricane" level="5" />
     <dynamic>
       <level value="1" />
       <level value="2" />

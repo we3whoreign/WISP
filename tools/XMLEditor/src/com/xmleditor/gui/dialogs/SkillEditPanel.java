@@ -47,6 +47,9 @@ public class SkillEditPanel extends JPanel implements ActionListener{
 		if(skill != null){
 			this._skill = skill;
 			initGUI();
+			if(this._skill.getEntrycost() == -1){
+				this.levelOne.setSelected(true);
+			}
 			this.setBackground(Color.black);
 		}
 		else{
@@ -158,6 +161,12 @@ public class SkillEditPanel extends JPanel implements ActionListener{
 				this._skill.setSpcost(Integer.parseInt(spCost.getText()));
 				this._skill.setMinLevel((levelOne.isSelected()) ? 1 : 0);
 				this._skill.setRequiredLevel(Integer.parseInt(requiredLevel.getText()));
+				if(this.levelOne.isSelected()){
+					this._skill.setEntrycost(-1);
+				}
+				else{
+					this._skill.setEntrycost(0);
+				}
 				XMLWriter.getInstance().skillToXML(this._skill,this._skill.getFileTree());
 			}
 			break;
