@@ -48,8 +48,14 @@ public class SkillsPane extends JPanel {
 	public void notifyRequiredSkills(
 			LinkedList<SkillRequirement> skillRequirements) {
 		for(SkillRequirement requirement : skillRequirements){
-			this.skillList.get(requirement.getName()).skillIsRequired(requirement.getLevel());
-			this.skillList.get(requirement.getName()).repaint();
+			
+			//Fixed so that if the skill is not in same tree no null pointer is thrown
+			ClickableSkillPanel panel = this.skillList.get(requirement.getName());
+			if(panel == null){
+				continue;
+			}
+			panel.skillIsRequired(requirement.getLevel());
+			panel.repaint();
 		}
 		
 	}
@@ -57,8 +63,13 @@ public class SkillsPane extends JPanel {
 	public void notifyRequiredSkillsofLeave(
 			LinkedList<SkillRequirement> skillRequirements) {
 		for(SkillRequirement requirement : skillRequirements){
-			this.skillList.get(requirement.getName()).skillIsRequired(0);
-			this.skillList.get(requirement.getName()).repaint();
+			//Fixed so that if the skill is not in same tree no null pointer is thrown
+			ClickableSkillPanel panel = this.skillList.get(requirement.getName());
+			if(panel == null){
+				continue;
+			}
+			panel.skillIsRequired(0);
+			panel.repaint();
 		}
 		
 	}

@@ -141,6 +141,7 @@ public class SkillManager extends Observable{
 			skills = SkillMapper.createSkillFromStream(stream, tree);
 			for(Skill sk : skills){
 				skillList.put(sk.getName(), sk);
+//				System.out.println(sk.getName() +  " : " + tree);
 			}
 		}
 	}

@@ -7,7 +7,6 @@
     <entrycost>0</entrycost>
     <reqlevel>40</reqlevel>
     <description />
-	<skillreq name="Venom Mine (M)" level="5" />
     <dynamic>
       <level value="1" />
     </dynamic>

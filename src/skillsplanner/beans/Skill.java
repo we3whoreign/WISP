@@ -117,7 +117,7 @@ public class Skill implements Comparable<Skill>{
 			return spcost;
 		}
 		public LinkedList<SkillRequirement> getSkillRequirements(){
-			return skillRequirements;
+			return (skillRequirements == null) ? new LinkedList<SkillRequirement>() : skillRequirements;
 		}
 		/*
 		 * This takes in a String an an int, converts them to a SkillRequirement, and

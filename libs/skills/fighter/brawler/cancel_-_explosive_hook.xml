@@ -5,10 +5,8 @@
     <casttime>0.0</casttime>
     <spcost>50</spcost>
     <entrycost>0</entrycost>
-    <reqLevel>30</reqLevel>
+    <reqlevel>0</reqlevel>
     <description />
-	
-	<skillreq name="Explosive Hook" level="5" />
     <dynamic>
       <level value="1" />
     </dynamic>
