@@ -1,3 +1,50 @@
-<skillsplanner>
-	<name>Crusader</name>
-</skillsplanner>
+<?xml version="1.0" encoding="UTF-8"?>
+<skillplanner>
+  <description />
+  <name>Crusader</name>
+  <skill>Flash Sphere</skill>
+  <skill>Righteous Judgement</skill>
+  <skill>Deflection Wall</skill>
+  <skill>Spear of Victory</skill>
+  <skill>Spiritual Sacrifice</skill>
+  <skill>Slow Heal</skill>
+  <skill>Physical Critical Hit</skill>
+  <skill>Cancel - Item Throw</skill>
+  <skill>Magic Critical Hit</skill>
+  <skill>Healing Wind</skill>
+  <skill>Hammer of Repentance</skill>
+  <skill>Fountain of Life</skill>
+  <skill>Lucky Straight Punch</skill>
+  <skill>Light of Divinity</skill>
+  <skill>Divine Invocation</skill>
+  <skill>Blades of Purity</skill>
+  <skill>Grace of Protection</skill>
+  <skill>Fast Heal</skill>
+  <skill>Furious Grab</skill>
+  <skill>Sign of Protection</skill>
+  <skill>Second Uppercut</skill>
+  <skill>Strike</skill>
+  <skill>Physical Rear Attack</skill>
+  <skill>Heaven's Melody</skill>
+  <skill>Apocolypse</skill>
+  <skill>Revenge of Light</skill>
+  <skill>Cross Crash</skill>
+  <skill>Cure</skill>
+  <skill>Aura of Conviction</skill>
+  <skill>Heaven's Harmony</skill>
+  <skill>Wisdom Blessing</skill>
+  <skill>Cancel - Smasher</skill>
+  <skill>Quick Rebound</skill>
+  <skill>Painful Rapture</skill>
+  <skill>Leap</skill>
+  <skill>Throw Mastery</skill>
+  <skill>Smasher</skill>
+  <skill>Magic Rear Attack</skill>
+  <skill>Cancel - Blades of Purity</skill>
+  <skill>Grace of Courage</skill>
+  <skill>Indomitable Spirit</skill>
+  <skill>Ancient Memory</skill>
+  <skill>Giant Weapon Launcher</skill>
+  <skill>Phoenix Hammer</skill>
+</skillplanner>
+
