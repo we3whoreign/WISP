@@ -110,11 +110,14 @@ public class SkillHandler {
 			character.refundSp(st.getSpcost());
 		}
 		
+		//bug fix, need to decrease the level before updating sp. This way the skills overview update shows correctly
+		//Decrease level
+		character.getDFOClass().getSkills().put(st.getName(),character.getDFOClass().getSkills().get(st.getName())-1);
+		
 		//Reflect SP change in GUI
 		StaticResources.getWisp().updateRemainingSP(character.getRemainingSP());
 		
-		//Decrease level
-		character.getDFOClass().getSkills().put(st.getName(),character.getDFOClass().getSkills().get(st.getName())-1);
+		
 		
 	}
 	

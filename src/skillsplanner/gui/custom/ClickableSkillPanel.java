@@ -149,10 +149,10 @@ public class ClickableSkillPanel extends JPanel implements MouseListener{
 		}
 		else if(arg0.getButton() == MouseEvent.BUTTON3){
 			if(arg0.isControlDown()){
-				SkillHandler.maxLevelDown(this.skill);
+				//do nothing at this junction
 			}
 			else if(arg0.isShiftDown()){
-				
+				SkillHandler.maxLevelDown(this.skill);
 			}
 			else{
 				try {
