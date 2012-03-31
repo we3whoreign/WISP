@@ -1,3 +1,60 @@
-<skillsplanner>
-	<name>Weapon Master</name>
-</skillsplanner>
+<?xml version="1.0" encoding="UTF-8"?>
+<skillplanner>
+  <description />
+  <name>Weapon Master</name>
+  <skill>Wave Wheel Slasher</skill>
+  <skill>Illusion Sword Dance</skill>
+  <skill>Magic Critical Hit</skill>
+  <skill>Gore Cross</skill>
+  <skill>Aerial Chain Slash</skill>
+  <skill>Zanbato Mastery</skill>
+  <skill>Overdrive</skill>
+  <skill>Cancel - Flowing Stance</skill>
+  <skill>Bludgeon Mastery</skill>
+  <skill>Charge Crash</skill>
+  <skill>Cancel - Charge Crash</skill>
+  <skill>Katana Mastery</skill>
+  <skill>Raging Dragon Slash</skill>
+  <skill>Ashe Fork</skill>
+  <skill>Guard</skill>
+  <skill>Ultimate Slayer Skill: Iron Strike</skill>
+  <skill>Flowing Stance - Rise</skill>
+  <skill>Flowing Stance - Swift</skill>
+  <skill>Flowing Stance - Clash</skill>
+  <skill>Quick Rebound</skill>
+  <skill>Kazan</skill>
+  <skill>Flowing Stance - Force</skill>
+  <skill>Tempered Attack</skill>
+  <skill>Flowing Stance</skill>
+  <skill>Triple Slash</skill>
+  <skill>Moonlight Slash</skill>
+  <skill>Spirit Crescent</skill>
+  <skill>Secret Slayer Technique</skill>
+  <skill>Physical Critical Hit</skill>
+  <skill>Flip Side Counter</skill>
+  <skill>Cancel - Item Throw</skill>
+  <skill>Hazy-Eyed Bremen</skill>
+  <skill>Thrust</skill>
+  <skill>Backstep Cutter</skill>
+  <skill>Auto Guard</skill>
+  <skill>Upward Slash</skill>
+  <skill>Cancel - Wave Wheel Slasher</skill>
+  <skill>Lightsabre Mastery</skill>
+  <skill>Cancel - Triple Slash</skill>
+  <skill>Mountainous Wheel</skill>
+  <skill>Bloodlust</skill>
+  <skill>Physical Rear Attack</skill>
+  <skill>Cancel - Ghost Slash</skill>
+  <skill>Draw Sword</skill>
+  <skill>Short Sword Mastery</skill>
+  <skill>Neutral Wave Sword</skill>
+  <skill>Leap</skill>
+  <skill>Ultimate Slayer Skill: Sword Storm</skill>
+  <skill>Cancel - Guard</skill>
+  <skill>Throw Mastery</skill>
+  <skill>Magic Rear Attack</skill>
+  <skill>Indomitable Spirit</skill>
+  <skill>Ancient Memory</skill>
+  <skill>Ghost Slash</skill>
+</skillplanner>
+

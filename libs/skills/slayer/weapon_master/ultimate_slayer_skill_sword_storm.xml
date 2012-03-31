@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skillsplanner>
+  <skill>
+    <name>Ultimate Slayer Skill: Sword Storm</name>
+    <casttime>0.0</casttime>
+    <spcost>80</spcost>
+    <entrycost>0</entrycost>
+    <reqlevel>48</reqlevel>
+    <description />
+    <skillreq name="Aerial Chain Slash" level="1" />
+    <skillreq name="Raging Dragon Slash" level="5" />
+    <skillreq name="Secret Slayer Technique" level="1" />
+    <dynamic>
+      <level value="1" />
+      <level value="2" />
+      <level value="3" />
+      <level value="4" />
+      <level value="5" />
+      <level value="6" />
+      <level value="7" />
+      <level value="8" />
+      <level value="9" />
+      <level value="10" />
+      <level value="11" />
+      <level value="12" />
+    </dynamic>
+  </skill>
+</skillsplanner>
+

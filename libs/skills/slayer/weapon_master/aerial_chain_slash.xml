@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skillsplanner>
+  <skill>
+    <name>Aerial Chain Slash</name>
+    <casttime>0.0</casttime>
+    <spcost>50</spcost>
+    <entrycost>0</entrycost>
+    <reqlevel>15</reqlevel>
+    <description />
+    <skillreq name="Ashe Fork" level="1" />
+
+    <dynamic>
+      <level value="1" />
+    </dynamic>
+  </skill>
+</skillsplanner>
+

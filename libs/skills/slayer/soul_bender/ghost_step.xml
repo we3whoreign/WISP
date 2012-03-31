@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skillsplanner>
+  <skill>
+    <name>Ghost Step</name>
+    <casttime>0.0</casttime>
+    <spcost>30</spcost>
+    <entrycost>0</entrycost>
+    <reqlevel>30</reqlevel>
+    <description />
+    <skillreq name="Kazan" level="5" />
+    <skillreq name="Moonlight Slash" level="5" />
+
+    <dynamic>
+      <level value="1" />
+      <level value="2" />
+      <level value="3" />
+      <level value="4" />
+      <level value="5" />
+      <level value="6" />
+      <level value="7" />
+      <level value="8" />
+      <level value="9" />
+      <level value="10" />
+    </dynamic>
+  </skill>
+</skillsplanner>
+
