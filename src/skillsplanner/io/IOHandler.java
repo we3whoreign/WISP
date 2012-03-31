@@ -172,6 +172,14 @@ public class IOHandler {
 		
 		return handler;
 	}
+
+	/**
+	 * Returns the SKILLS_DIR
+	 * @return
+	 */
+	public static String getSkillsDir() {
+		return IOHandler.SKILLS_DIR;
+	}
 	
 	
 }

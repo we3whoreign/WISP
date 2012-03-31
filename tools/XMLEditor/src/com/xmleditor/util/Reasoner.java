@@ -13,6 +13,7 @@ import skillsplanner.beans.SkillRequirement;
 import skillsplanner.io.IOHandler;
 import skillsplanner.resources.ClassManager;
 import skillsplanner.resources.SkillManager;
+import skillsplanner.utils.jdom.Handler;
 
 
 public class Reasoner {
@@ -51,6 +52,38 @@ public class Reasoner {
 		
 	}
 	
+	/**
+	 * This just attempts to load all the xml files without multithreading in order to detect problematic files easier.
+	 */
+	public static void verifyXMLFiles(){
+		File f = new File(IOHandler.getSkillsDir());
+		if(!f.exists()){
+			return;
+		}
+		
+		System.out.println("Rummaging through "+f.getAbsolutePath());
+		loopThroughDirForXMLFiles(f);
+		
+	}
+	
+	/**
+	 * Read the method name prick
+	 */
+	private static void loopThroughDirForXMLFiles(File dir){
+		if(dir.isDirectory()){
+			for(File f : dir.listFiles()){
+				loopThroughDirForXMLFiles(f);
+			}
+		}
+		else{
+			if(dir.getName().endsWith(".xml")){
+				//attempt to load the xml using SAXBuilder
+				System.out.println("Opening file "+dir.getName());
+				Handler.openXMLFile(dir);
+			}
+		}
+	}
+	
 	private static void chooseLibsDir(){
 		//make sure to never consider the library as in a jar
 		IOHandler.JAROVERRIDE = false;
@@ -82,7 +115,8 @@ public class Reasoner {
 	
 	public static void main(String args[]){
 		Reasoner.chooseLibsDir();
-		Reasoner.ReasonThroughSkillReqs();
+//		Reasoner.ReasonThroughSkillReqs();
+		Reasoner.verifyXMLFiles();
 	}
 
 }
