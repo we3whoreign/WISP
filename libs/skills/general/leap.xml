@@ -2,15 +2,15 @@
 	<skill>
 		<name>Leap</name>
 		<casttime> 0.4 </casttime>
-
-        <description>Increases your Jumping Strength for a set duration. </description>
+		<spCost>20</spCost>
+        	<description>Increases your Jumping Strength for a set duration. </description>
 		
 		<dynamic>
 			<level value="1">
-                <mp name="mp" value="13" />
-                <downtime name="downtime" value="25.0s" />
-                <duration name="duration" value="10s" />
-                <jump name="Jump Increase" value="20%"/>
+                		<mp name="mp" value="13" />
+                		<downtime name="downtime" value="25.0s" />
+                		<duration name="duration" value="10s" />
+                		<jump name="Jump Increase" value="20%"/>
 			</level>
 			
 			<level value="2">
