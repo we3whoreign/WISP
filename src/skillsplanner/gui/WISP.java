@@ -5,6 +5,7 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
+import java.awt.event.KeyEvent;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Hashtable;
@@ -293,21 +294,30 @@ public class WISP extends javax.swing.JFrame{
 					jMenu3 = new JMenu();
 					jMenuBar1.add(jMenu3);
 					jMenu3.setText("File");
+					GladOS glados = new GladOS();
+					{
+						newFileMenuItem = new JMenuItem();
+						jMenu3.add(newFileMenuItem);
+						newFileMenuItem.setText("New Build");
+						newFileMenuItem.setMnemonic(KeyEvent.VK_N);
+						newFileMenuItem.setActionCommand(GladOS.NEW_BUILD);
+						newFileMenuItem.addActionListener(glados);
+					}
 //					{
-//						newFileMenuItem = new JMenuItem();
-//						jMenu3.add(newFileMenuItem);
-//						newFileMenuItem.setText("New");
-//						newFileMenuItem.setActionCommand("new");
+						openFileMenuItem = new JMenuItem();
+						jMenu3.add(openFileMenuItem);
+						openFileMenuItem.setText("Open Build");
+						openFileMenuItem.setMnemonic(KeyEvent.VK_O);
+						openFileMenuItem.setActionCommand(GladOS.OPEN_BUILD);
+						openFileMenuItem.addActionListener(glados);
 //					}
 //					{
-//						openFileMenuItem = new JMenuItem();
-//						jMenu3.add(openFileMenuItem);
-//						openFileMenuItem.setText("Open");
-//					}
-//					{
-//						saveMenuItem = new JMenuItem();
-//						jMenu3.add(saveMenuItem);
-//						saveMenuItem.setText("Save");
+						saveMenuItem = new JMenuItem();
+						jMenu3.add(saveMenuItem);
+						saveMenuItem.setText("Save Build");
+						saveMenuItem.setMnemonic(KeyEvent.VK_S);
+						saveMenuItem.setActionCommand(GladOS.SAVE_BUILD);
+						saveMenuItem.addActionListener(glados);
 //					}
 //					{
 //						saveAsMenuItem = new JMenuItem();

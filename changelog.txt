@@ -1,0 +1,12 @@
+V 1.01b
+==================================================================
+
+Fixed Bugs:
+
+1. F. Brawler has no tornado kick
+2. F. Grappler has no tornado kick
+3. F. Brawler: Missing reqlevels. Skill order should be closer to correct now.
+
+
+New Features:
+1. Save build feature implemented
