@@ -78,7 +78,7 @@ public class Reasoner {
 		else{
 			if(dir.getName().endsWith(".xml")){
 				//attempt to load the xml using SAXBuilder
-				System.out.println("Opening file "+dir.getName());
+//				System.out.println("Opening file "+dir.getName());
 				Handler.openXMLFile(dir);
 			}
 		}

@@ -2,17 +2,17 @@
 <skillplanner>
   <description />
   <name>Brawler</name>
-  <skill>Raging Vulcan</skill>
   <skill>Apply Poison</skill>
+  <skill>Raging Vulcan</skill>
   <skill>Double Throw</skill>
   <skill>Brick Buster</skill>
-  <skill>Tiger Chain Strike</skill>
   <skill>Cancel - Brick Buster</skill>
-  <skill>Deadly Blood</skill>
+  <skill>Tiger Chain Strike</skill>
   <skill>Physical Critical Hit</skill>
-  <skill>Backstep</skill>
-  <skill>Cancel - Explosive Hook</skill>
+  <skill>Deadly Blood</skill>
   <skill>Cancel - Item Throw</skill>
+  <skill>Cancel - Explosive Hook</skill>
+  <skill>Backstep</skill>
   <skill>Magic Critical Hit</skill>
   <skill>Cancel - Hammer Kick</skill>
   <skill>Cancel - Sand Splash</skill>
@@ -29,22 +29,23 @@
   <skill>Junk Spin</skill>
   <skill>Iron Physique</skill>
   <skill>Poison Mist</skill>
-  <skill>Low Kick</skill>
   <skill>Doppelganger</skill>
+  <skill>Low Kick</skill>
   <skill>Ground Kick</skill>
   <skill>Physical Rear Attack</skill>
-  <skill>Suplex Thunder</skill>
-  <skill>Muse's Uppercut</skill>
   <skill>Nen Shot</skill>
+  <skill>Muse's Uppercut</skill>
+  <skill>Suplex Thunder</skill>
   <skill>Hidden Stinger</skill>
-  <skill>Air Walk</skill>
   <skill>Quick Rebound</skill>
+  <skill>Air Walk</skill>
   <skill>Hammer Kick</skill>
   <skill>Leap</skill>
-  <skill>Heaven's Net</skill>
   <skill>Throw Mastery</skill>
+  <skill>Heaven's Net</skill>
   <skill>Magic Rear Attack</skill>
   <skill>Mount</skill>
+  <skill>Tornado Kick</skill>
   <skill>Indomitable Spirit</skill>
   <skill>Ancient Memory</skill>
 </skillplanner>

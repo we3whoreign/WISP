@@ -1,0 +1,7 @@
+V 1.01b
+==================================================================
+
+Fixed Bugs:
+
+1. F. Brawler has no tornado kick
+2. F. Grappler has no tornado kick
