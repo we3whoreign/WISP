@@ -5,12 +5,10 @@
     <casttime>0.0</casttime>
     <spcost>50</spcost>
     <entrycost>0</entrycost>
-    <reqLevel>40</reqLevel>
+    <reqlevel>45</reqlevel>
     <description />
-	
-	<skillreq name="Apply Poison" level="5" />
-	<skillreq name="Mount" level="5" />
-	
+    <skillreq name="Apply Poison" level="5" />
+    <skillreq name="Mount" level="5" />
     <dynamic>
       <level value="1" />
       <level value="2" />

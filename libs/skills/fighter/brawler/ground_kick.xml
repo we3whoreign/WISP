@@ -5,7 +5,7 @@
     <casttime>0.0</casttime>
     <spcost>40</spcost>
     <entrycost>0</entrycost>
-    <reqLevel>35</reqLevel>
+    <reqlevel>40</reqlevel>
     <description />
     <dynamic>
       <level value="1" />

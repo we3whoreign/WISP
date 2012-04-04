@@ -14,6 +14,12 @@ import org.jdom.input.SAXBuilder;
  */
 public class Handler {
 	
+	/**
+	 * Move to a new root element that is more descriptive of the proejct.
+	 * This may not be everywhere yet
+	 */
+	public static String ROOT_ELEMENT = "WISP";
+	
 	
 	/**
 	 * Opens an xml document and creates a JDOM Document object using

@@ -5,11 +5,9 @@
     <casttime>0.0</casttime>
     <spcost>50</spcost>
     <entrycost>0</entrycost>
-    <reqLevel>38</reqLevel>
+    <reqlevel>30</reqlevel>
     <description />
-	
-	<skillreq name="Brick Buster" level="5" />
-	
+    <skillreq name="Brick Buster" level="5" />
     <dynamic>
       <level value="1" />
     </dynamic>
