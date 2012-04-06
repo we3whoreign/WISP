@@ -34,47 +34,20 @@ public class TreeBeard implements TreeSelectionListener {
 		
 		String path = StringUtils.toFileName(selectionToPath(selection));
 		
-		System.out.println(path + " selected");
-		
 		if(ClassManager.getClassByName(path) != null){
 			if(StaticResources.getWisp()==null){
 				System.out.println("FUCKK FUCK FUCK FUCK FUCK FUCK FUCK FUCK FUCK");
 			}
 			else{
-				List<String> subclasses = ClassManager.getInstance().getSubclasses(path);
-				
-				StaticResources.getWisp().Tab1.setText(StringUtils.toCamelCase((subclasses.get(0) == null) ? "" : subclasses.get(0)));
-				StaticResources.getWisp().Tab2.setText(StringUtils.toCamelCase((subclasses.get(1) == null) ? "" : subclasses.get(1)));
-				
-				
-				/**
-				 * 3 and 4 may not exist for some classes
-				 */
-				try{
-					StaticResources.getWisp().Tab3.setText(StringUtils.toCamelCase((subclasses.get(2) == null) ? "" : subclasses.get(2)));
-				}
-				catch(Exception e){
-					StaticResources.getWisp().Tab3.setText("");
-				}
-				
-				try{
-					StaticResources.getWisp().Tab4.setText(StringUtils.toCamelCase((subclasses.get(3) == null) ? "" : subclasses.get(3)));
-				}
-				catch(Exception e){
-					StaticResources.getWisp().Tab4.setText("");
-				}
-				
-				try{
-					StaticResources.getWisp().Tab5.setText(StringUtils.toCamelCase((subclasses.get(4) == null) ? "" : subclasses.get(4)));
-				}
-				catch(Exception e){
-					StaticResources.getWisp().Tab5.setText("");
-				}
 				
 				//Change the DFOCharacter object to reflect change in class
 				if(StaticResources.getCharacter().resetOK()){
 					StaticResources.getCharacter().setDFOClass(
 							ClassManager.getInstance().getDFOClass(path));
+					
+					//reflect changes in GUI
+					StaticResources.getWisp().updateSkills();
+					
 					//Reset characters SP and update 
 					StaticResources.getCharacter().resetSp();
 					StaticResources.getWisp().updateRemainingSP(StaticResources.getCharacter().getRemainingSP());

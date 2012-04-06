@@ -214,6 +214,33 @@ public class SkillHandler {
 		
 	}
 	
+	/**
+	 * This methodology ignores requirements currently in place and just sets the level of a skill.
+	 * It's like levelUp(), but without checking of boundaries or requirements
+	 * @param skill
+	 * @param level
+	 */
+	public static void setLevel(Skill skill, int level){
+		while(StaticResources.getCharacter().getDFOClass().getSkills().get(skill.getName()) < level){
+			//Increase level
+			StaticResources.getCharacter().getDFOClass().getSkills().put(skill.getName(),
+					StaticResources.getCharacter().getDFOClass().getSkills().get(skill.getName())+1);
+			
+			if(StaticResources.getCharacter().getDFOClass().getSkills().get(skill.getName()) == 0){
+				StaticResources.getCharacter().spendSp(skill.getSpcost() + skill.getEntrycost());
+			}
+			else{
+				StaticResources.getCharacter().spendSp(skill.getSpcost());
+			}
+			
+		}
+		
+		//Reflect SP change in GUI
+		StaticResources.getWisp().updateRemainingSP(StaticResources.getCharacter().getRemainingSP());
+		
+		StaticResources.getWisp().updateSkillOverview();
+	}
+	
 	
 
 }

@@ -26,7 +26,8 @@ public class GladOS implements ActionListener{
 			JOptionPane.showMessageDialog(StaticResources.getWisp(), "New Build not implemented yet, please just click another class to start over");
 			break;
 		case OPEN_BUILD:
-			JOptionPane.showMessageDialog(StaticResources.getWisp(), "Open Build not implemented yet");
+//			JOptionPane.showMessageDialog(StaticResources.getWisp(), "Open Build not implemented yet");
+			BuildManager.openBuild();
 			break;
 		case SAVE_BUILD:
 			if(BuildManager.saveToXML(StaticResources.getCharacter().getDFOClass())){

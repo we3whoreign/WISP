@@ -10,6 +10,7 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Iterator;
+import java.util.List;
 
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
@@ -19,6 +20,7 @@ import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.tree.TreeCellRenderer;
 import javax.swing.tree.TreeSelectionModel;
 
+import skillsplanner.beans.DFOClass;
 import skillsplanner.beans.Skill;
 import skillsplanner.gui.custom.ClickableSkillPanel;
 import skillsplanner.gui.custom.SkillsPane;
@@ -446,9 +448,12 @@ public class WISP extends javax.swing.JFrame{
 	
 	public void updateSkillOverview(){
 		String text = "";
-		for(String key : ListUtils.sortList(StaticResources.getCharacter().getDFOClass().getSkills().keySet())){
-			if(StaticResources.getCharacter().getDFOClass().getSkills().get(key) > 0){
-				text += key + ": "+StaticResources.getCharacter().getDFOClass().getSkills().get(key) + "\n";
+		DFOClass dfoclass = StaticResources.getCharacter().getDFOClass();
+		text = StringUtils.toCamelCase(dfoclass.getBaseClass() + " - " + dfoclass.getName()) + "\n";
+		text += "======================================\n";
+		for(String key : ListUtils.sortList(dfoclass.getSkills().keySet())){
+			if(dfoclass.getSkills().get(key) > 0){
+				text += key + ": "+dfoclass.getSkills().get(key) + "\n";
 			}
 		}
 		
@@ -456,4 +461,44 @@ public class WISP extends javax.swing.JFrame{
 		OverView.updateUI();
 		RightPane.validate();
 	}
+
+	public void updateSkills() {
+		List<String> subclasses = ClassManager.getInstance().getSubclasses(StaticResources.getCharacter().getDFOClass().getUniqueName());
+		
+		StaticResources.getWisp().Tab1.setText(StringUtils.toCamelCase((subclasses.get(0) == null) ? "" : subclasses.get(0)));
+		StaticResources.getWisp().Tab2.setText(StringUtils.toCamelCase((subclasses.get(1) == null) ? "" : subclasses.get(1)));
+		
+		
+		/**
+		 * 3 and 4 may not exist for some classes
+		 */
+		try{
+			StaticResources.getWisp().Tab3.setText(StringUtils.toCamelCase((subclasses.get(2) == null) ? "" : subclasses.get(2)));
+			StaticResources.getWisp().Tab3.setVisible(true);
+		}
+		catch(Exception e){
+			StaticResources.getWisp().Tab3.setText("");
+			StaticResources.getWisp().Tab3.setVisible(false);
+		}
+		
+		try{
+			StaticResources.getWisp().Tab4.setText(StringUtils.toCamelCase((subclasses.get(3) == null) ? "" : subclasses.get(3)));
+			StaticResources.getWisp().Tab4.setVisible(true);
+		}
+		catch(Exception e){
+			StaticResources.getWisp().Tab4.setText("");
+			StaticResources.getWisp().Tab4.setVisible(false);
+		}
+		
+		try{
+			StaticResources.getWisp().Tab5.setText(StringUtils.toCamelCase((subclasses.get(4) == null) ? "" : subclasses.get(4)));
+			StaticResources.getWisp().Tab5.setVisible(true);
+		}
+		catch(Exception e){
+			StaticResources.getWisp().Tab5.setText("");
+			StaticResources.getWisp().Tab5.setVisible(false);
+		}
+		
+	}
+	
 }

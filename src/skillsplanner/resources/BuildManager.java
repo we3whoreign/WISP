@@ -3,6 +3,7 @@ package skillsplanner.resources;
 import java.io.File;
 
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileFilter;
 
 import skillsplanner.beans.DFOClass;
@@ -35,6 +36,30 @@ public class BuildManager {
 		else{
 			return false;
 		}
+	}
+	
+	/**
+	 * Opens a build file and loads it.
+	 */
+	public static void openBuild() {
+		//start with a file chooser that is in the users home directory
+		JFileChooser fc = new JFileChooser(System.getProperty("user.home"));
+		fc.setFileFilter(BuildManager.filter);
+		int ret = fc.showOpenDialog(null);
+		
+		//see if accept was chosen
+		if(ret == JFileChooser.APPROVE_OPTION){
+			//save the build to the chosen file
+			if(!BuildMapper.openFile(fc.getSelectedFile())){
+				JOptionPane.showMessageDialog(StaticResources.getWisp(), "Could not load file");
+			}
+		}
+		
+		//correct for the lack of on-selection events changing the subclasses for skills
+		StaticResources.getWisp().wipeSkills();
+		
+		StaticResources.getWisp().updateSkills();
+		
 	}
 	
 	/**
