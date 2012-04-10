@@ -197,7 +197,7 @@ public class WISP extends javax.swing.JFrame{
 					LOGO = new JLabel();
 					TabArea.add(LOGO, BorderLayout.WEST);
 					//LOGO.setText("LOGO");
-					LOGO.setIcon(new ImageIcon(ImageManager.getImage("logo").getScaledInstance(154, 40, 1)));
+					LOGO.setIcon(new ImageIcon(ImageManager.getImage("wisp").getScaledInstance(154, 40, 1)));
 					LOGO.setPreferredSize(new java.awt.Dimension(154, 29));
 				}
 				{
