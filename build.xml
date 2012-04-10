@@ -12,7 +12,7 @@
 	<property name="jdom.dir" value="jdom" />
 	<property name="project.name" value="WISP" />
 	<property name="main.class" value="skillsplanner.Launcher" />
-	<property name="version.num" value="0.10b" />
+	<property name="version.num" value="1.10b" />
 
 	<!-- include all jar files in the libs directory -->
   

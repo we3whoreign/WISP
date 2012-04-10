@@ -11,3 +11,4 @@ Fixed Bugs:
 
 New Features:
 1. Save build feature implemented
+2. New logo? Yea, we'll count it
