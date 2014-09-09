@@ -1,5 +1,5 @@
 # Compiled Code #
-#################
+##################
 build/**
 
 
@@ -21,7 +21,4 @@ build.num
 #any launch configuration for eclipse#
 ######################################
 **.launch
-
-# Maven build target directories #
-##################################
 /target/
