@@ -1,0 +1,231 @@
+<org.we3whoreign.wisp>
+	<skill>
+		<name>Befriend Pluto</name>
+		<spcost>20</spcost>
+		<reqlevel>18</reqlevel>
+		<description>Increases the effectiveness of pluto based witch skills</description>
+		<passive>true</passive>
+		
+		<dynamic>
+			<level value="1">
+				<lvl name="Required Level" value="18" />
+				<swatterchance name="Swatter Success Rate" value="+1%" />
+				<swatterchancecrit name="Swatter Sleeper Success Rate" value="+1%" />
+				<swattercooldown name="Swatter Cooldown" value="-2%" />
+				<swattercurse name="Swatter Curse Rate" value="+5%" />
+				swattercurselvl name="Swatter Curse Level" value="+1" />
+				
+				<deathdust name="Death Dust Duration" value="+1s" />
+				
+				<broomstickcontrol name="Broomstick Control Attack Strength" value="+2%" />
+				
+				<manteauhit name="Manteau Hit Rate" value="+1%" />
+				<manteaushadow name="Manteau Shadow Casting Rate" value="+5%" />
+				<manteaushadowlvl name="Manteau Shadow Level" value="+1" />
+				
+				<gravitaschance name="Gravitas Success Rate" value="+1%" />
+				<gravitaschancecrit name="Gravitas Sleeper Success Rate" value="+1%" />
+				<gravitassize name="Gravitase Size Expansion" value="103%" />
+				
+			</level>
+			
+			<level value="2">
+				<lvl name="Required Level" value="21" />
+				<swatterchance name="Swatter Success Rate" value="+2%" />
+				<swatterchancecrit name="Swatter Sleeper Success Rate" value="+2%" />
+				<swattercooldown name="Swatter Cooldown" value="-4%" />
+				<swattercurse name="Swatter Curse Rate" value="+10%" />
+				swattercurselvl name="Swatter Curse Level" value="+1" />
+				
+				<deathdust name="Death Dust Duration" value="+2s" />
+				
+				<broomstickcontrol name="Broomstick Control Attack Strength" value="+4%" />
+				
+				<manteauhit name="Manteau Hit Rate" value="+2%" />
+				<manteaushadow name="Manteau Shadow Casting Rate" value="+10%" />
+				<manteaushadowlvl name="Manteau Shadow Level" value="+1" />
+				
+				<gravitaschance name="Gravitas Success Rate" value="+2%" />
+				<gravitaschancecrit name="Gravitas Sleeper Success Rate" value="+2%" />
+				<gravitassize name="Gravitase Size Expansion" value="106%" />
+				
+			</level>
+			
+			<level value="3">
+				<lvl name="Required Level" value="24" />
+				<swatterchance name="Swatter Success Rate" value="+3%" />
+				<swatterchancecrit name="Swatter Sleeper Success Rate" value="+3%" />
+				<swattercooldown name="Swatter Cooldown" value="-3%" />
+				<swattercurse name="Swatter Curse Rate" value="+15%" />
+				swattercurselvl name="Swatter Curse Level" value="+1" />
+				
+				<deathdust name="Death Dust Duration" value="+3s" />
+				
+				<broomstickcontrol name="Broomstick Control Attack Strength" value="+6%" />
+				
+				<manteauhit name="Manteau Hit Rate" value="+3%" />
+				<manteaushadow name="Manteau Shadow Casting Rate" value="+15%" />
+				<manteaushadowlvl name="Manteau Shadow Level" value="+1" />
+				
+				<gravitaschance name="Gravitas Success Rate" value="+3%" />
+				<gravitaschancecrit name="Gravitas Sleeper Success Rate" value="+3%" />
+				<gravitassize name="Gravitase Size Expansion" value="109%" />
+				
+			</level>
+			
+			<level value="4">
+				<lvl name="Required Level" value="27" />
+				<swatterchance name="Swatter Success Rate" value="+4%" />
+				<swatterchancecrit name="Swatter Sleeper Success Rate" value="+4%" />
+				<swattercooldown name="Swatter Cooldown" value="-8%" />
+				<swattercurse name="Swatter Curse Rate" value="+20%" />
+				swattercurselvl name="Swatter Curse Level" value="+2" />
+				
+				<deathdust name="Death Dust Duration" value="+4s" />
+				
+				<broomstickcontrol name="Broomstick Control Attack Strength" value="+8%" />
+				
+				<manteauhit name="Manteau Hit Rate" value="+4%" />
+				<manteaushadow name="Manteau Shadow Casting Rate" value="+20%" />
+				<manteaushadowlvl name="Manteau Shadow Level" value="+2" />
+				
+				<gravitaschance name="Gravitas Success Rate" value="+4%" />
+				<gravitaschancecrit name="Gravitas Sleeper Success Rate" value="+4%" />
+				<gravitassize name="Gravitase Size Expansion" value="112%" />
+				
+			</level>
+			
+			<level value="5">
+				<lvl name="Required Level" value="30" />
+				<swatterchance name="Swatter Success Rate" value="+5%" />
+				<swatterchancecrit name="Swatter Sleeper Success Rate" value="+5%" />
+				<swattercooldown name="Swatter Cooldown" value="-10%" />
+				<swattercurse name="Swatter Curse Rate" value="+25%" />
+				swattercurselvl name="Swatter Curse Level" value="+2" />
+				
+				<deathdust name="Death Dust Duration" value="+5s" />
+				
+				<broomstickcontrol name="Broomstick Control Attack Strength" value="+10%" />
+				
+				<manteauhit name="Manteau Hit Rate" value="+5%" />
+				<manteaushadow name="Manteau Shadow Casting Rate" value="+25%" />
+				<manteaushadowlvl name="Manteau Shadow Level" value="+2" />
+				
+				<gravitaschance name="Gravitas Success Rate" value="+5%" />
+				<gravitaschancecrit name="Gravitas Sleeper Success Rate" value="+5%" />
+				<gravitassize name="Gravitase Size Expansion" value="115%" />
+				
+			</level>
+			
+			<level value="6">
+				<lvl name="Required Level" value="33" />
+				<swatterchance name="Swatter Success Rate" value="+6%" />
+				<swatterchancecrit name="Swatter Sleeper Success Rate" value="+%6" />
+				<swattercooldown name="Swatter Cooldown" value="-12%" />
+				<swattercurse name="Swatter Curse Rate" value="+30%" />
+				swattercurselvl name="Swatter Curse Level" value="+2" />
+				
+				<deathdust name="Death Dust Duration" value="+6s" />
+				
+				<broomstickcontrol name="Broomstick Control Attack Strength" value="+12%" />
+				
+				<manteauhit name="Manteau Hit Rate" value="+6%" />
+				<manteaushadow name="Manteau Shadow Casting Rate" value="+60%" />
+				<manteaushadowlvl name="Manteau Shadow Level" value="+2" />
+				
+				<gravitaschance name="Gravitas Success Rate" value="+6%" />
+				<gravitaschancecrit name="Gravitas Sleeper Success Rate" value="+6%" />
+				<gravitassize name="Gravitase Size Expansion" value="118%" />
+				
+			</level>
+			
+			<level value="7">
+				<lvl name="Required Level" value="36" />
+				<swatterchance name="Swatter Success Rate" value="+7%" />
+				<swatterchancecrit name="Swatter Sleeper Success Rate" value="+7%" />
+				<swattercooldown name="Swatter Cooldown" value="-14%" />
+				<swattercurse name="Swatter Curse Rate" value="+35%" />
+				swattercurselvl name="Swatter Curse Level" value="+2" />
+				
+				<deathdust name="Death Dust Duration" value="+7s" />
+				
+				<broomstickcontrol name="Broomstick Control Attack Strength" value="+14%" />
+				
+				<manteauhit name="Manteau Hit Rate" value="+7%" />
+				<manteaushadow name="Manteau Shadow Casting Rate" value="+35%" />
+				<manteaushadowlvl name="Manteau Shadow Level" value="+2" />
+				
+				<gravitaschance name="Gravitas Success Rate" value="+7%" />
+				<gravitaschancecrit name="Gravitas Sleeper Success Rate" value="+7%" />
+				<gravitassize name="Gravitase Size Expansion" value="121%" />
+				
+			</level>
+			
+			<level value="8">
+				<lvl name="Required Level" value="39" />
+				<swatterchance name="Swatter Success Rate" value="+8%" />
+				<swatterchancecrit name="Swatter Sleeper Success Rate" value="+8%" />
+				<swattercooldown name="Swatter Cooldown" value="-16%" />
+				<swattercurse name="Swatter Curse Rate" value="+40%" />
+				swattercurselvl name="Swatter Curse Level" value="+2" />
+				
+				<deathdust name="Death Dust Duration" value="+8s" />
+				
+				<broomstickcontrol name="Broomstick Control Attack Strength" value="+16%" />
+				
+				<manteauhit name="Manteau Hit Rate" value="+8%" />
+				<manteaushadow name="Manteau Shadow Casting Rate" value="+40%" />
+				<manteaushadowlvl name="Manteau Shadow Level" value="+2" />
+				
+				<gravitaschance name="Gravitas Success Rate" value="+8%" />
+				<gravitaschancecrit name="Gravitas Sleeper Success Rate" value="+8%" />
+				<gravitassize name="Gravitase Size Expansion" value="124%" />
+				
+			</level>
+			
+			<level value="9">
+				<lvl name="Required Level" value="42" />
+				<swatterchance name="Swatter Success Rate" value="+9%" />
+				<swatterchancecrit name="Swatter Sleeper Success Rate" value="+9%" />
+				<swattercooldown name="Swatter Cooldown" value="-18%" />
+				<swattercurse name="Swatter Curse Rate" value="+45%" />
+				swattercurselvl name="Swatter Curse Level" value="+3" />
+				
+				<deathdust name="Death Dust Duration" value="+9s" />
+				
+				<broomstickcontrol name="Broomstick Control Attack Strength" value="+18%" />
+				
+				<manteauhit name="Manteau Hit Rate" value="+9%" />
+				<manteaushadow name="Manteau Shadow Casting Rate" value="+45%" />
+				<manteaushadowlvl name="Manteau Shadow Level" value="+3" />
+				
+				<gravitaschance name="Gravitas Success Rate" value="+9%" />
+				<gravitaschancecrit name="Gravitas Sleeper Success Rate" value="+9%" />
+				<gravitassize name="Gravitase Size Expansion" value="127%" />
+				
+			</level>
+			
+			<level value="10">
+				<lvl name="Required Level" value="45" />
+				<swatterchance name="Swatter Success Rate" value="+10%" />
+				<swatterchancecrit name="Swatter Sleeper Success Rate" value="+10%" />
+				<swattercooldown name="Swatter Cooldown" value="-20%" />
+				<swattercurse name="Swatter Curse Rate" value="+50%" />
+				swattercurselvl name="Swatter Curse Level" value="+3" />
+				
+				<deathdust name="Death Dust Duration" value="+10s" />
+				
+				<broomstickcontrol name="Broomstick Control Attack Strength" value="+20%" />
+				
+				<manteauhit name="Manteau Hit Rate" value="+10%" />
+				<manteaushadow name="Manteau Shadow Casting Rate" value="+50%" />
+				<manteaushadowlvl name="Manteau Shadow Level" value="+3" />
+				
+				<gravitaschance name="Gravitas Success Rate" value="+10%" />
+				<gravitaschancecrit name="Gravitas Sleeper Success Rate" value="+10%" />
+				<gravitassize name="Gravitase Size Expansion" value="130%" />
+				
+			</level>
+		</dynamic>
+	</skill>
+</org.we3whoreign.wisp>

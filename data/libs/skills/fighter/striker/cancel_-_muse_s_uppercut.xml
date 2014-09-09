@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.we3whoreign.wisp>
+  <skill>
+    <name>Cancel - Muse's Uppercut</name>
+    <casttime>0.0</casttime>
+    <spcost>0</spcost>
+    <entrycost>-1</entrycost>
+    <reqlevel>1</reqlevel>
+    <description />
+    <dynamic>
+      <level value="1" />
+    </dynamic>
+  </skill>
+</org.we3whoreign.wisp>
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.we3whoreign.wisp>
+  <skill>
+    <name>Cartridge Expansion</name>
+    <casttime>0.0</casttime>
+    <spcost>25</spcost>
+    <entrycost>0</entrycost>
+    <reqlevel>25</reqlevel>
+    <description />
+    <dynamic>
+      <level value="1" />
+      <level value="2" />
+      <level value="3" />
+      <level value="4" />
+      <level value="5" />
+    </dynamic>
+  </skill>
+</org.we3whoreign.wisp>
+

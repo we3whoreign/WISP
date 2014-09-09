@@ -1,0 +1,19 @@
+<org.we3whoreign.wisp>
+	<skill> 
+		<name>Example</name>
+		<casttime>0</casttime>
+		<passive>false</passive>
+		<spcost>20</spcost>
+		<entrycost>0</entrycost>
+		<description>Description goes here</description>
+		<skillreq name="DNE" level="1" />
+		<dynamic>
+			<level value="1">
+				<blind name="Blind" level="5" />
+			</level>
+			<level value="2">
+				<blind name="Blind" level="6" />
+			</level>
+		</dynamic>
+	</skill>
+</org.we3whoreign.wisp>

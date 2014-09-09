@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.we3whoreign.wisp>
+  <skill>
+    <name>Guard</name>
+    <casttime>0.0</casttime>
+    <spcost>20</spcost>
+    <entrycost>0</entrycost>
+    <reqlevel>5</reqlevel>
+    <description />
+
+    <dynamic>
+      <level value="1" />
+      <level value="2" />
+      <level value="3" />
+      <level value="4" />
+      <level value="5" />
+    </dynamic>
+  </skill>
+</org.we3whoreign.wisp>
+

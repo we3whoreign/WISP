@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 
 import com.xmleditor.gui.listeners.SkillMenuListener;
 
-import skillsplanner.beans.Skill;
+import org.we3whoreign.wisp.beans.Skill;
 
 public class SkillPanel extends JPanel {
 	Skill _skill;

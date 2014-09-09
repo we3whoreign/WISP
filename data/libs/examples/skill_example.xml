@@ -1,0 +1,51 @@
+<!-- Use skillplanner for the root tag. This is required -->
+<skillplanner>
+
+	<!-- indicates this is a skill. This is required -->
+	<skill>
+		<!-- Name of the skill. Required -->
+		<name> Example </name>
+
+		<!-- Listed cast time. Use 0 for instant -->
+		<casttime> 0 </casttime>
+
+		<!-- Frame rate of skill, if known -->
+		<frametime> 0 </frametime>
+		
+		<!-- SP Cost of the skill -->
+		<spcost> 0 </spcost>
+
+		<!-- Extra value added to SP cost to get first level of skill. Put negative if first level is free  -->
+		<entryfee> 0 </entryfee>
+		
+		<!-- Optional passive tag. If set to true cast time and frametime will be ignored. Not implemented yet-->
+		<passive> false </passive>
+
+		<!-- Optional: Any number of skills that are required to level this one. Name is the name contained in the <name /> 
+		tag for the required skill and level is an integer referring to the minimul level required. -->
+		<skillreq name="name" level="1" />
+
+		<!-- Character level required to level up this skill. Used to order skills based on when they are acquired -->
+		<reqlevel>1</reqlevel>
+		
+		<!-- Entry cost of a skill in case the first level costs different than the rest -->
+		<entrycost>0</entrycost>
+		
+		<!-- All of the level dependent values go in the dynamic tag -->
+		<dynamic>
+			<!-- separate the values within the level tag -->
+			<level value="1">
+				<!-- You can put any tag you want in here, all of them will be read.
+				     The important thing is to include a name and value like this example.
+				     When displayed this will show damage: 15 in the GUI. Use the name/value
+				     attributes. They are required -->
+				<damage name="damage" value="15" />
+			
+			</level>
+		
+			<level value="2">
+				<damage name="damage" value="30" />
+			</level>
+		</dynamic>
+	</skill>	
+</skillplanner>

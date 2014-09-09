@@ -5,7 +5,7 @@ import java.io.File;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
-import skillsplanner.utils.jdom.Handler;
+import org.we3whoreign.wisp.utils.jdom.Handler;
 
 public class XMLValidator {
 	private static String LIBS_PATH = "../../libs";

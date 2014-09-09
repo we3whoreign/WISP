@@ -375,7 +375,7 @@
     <ROW IniFile="ClassPath" FileName="WISP.ini" DirProperty="APPDIR" Section="Class Path" Key="Class Path" Value="[#DFOPlanner.0.01asimple.jar];" Action="0" Component_="WISP.exe"/>
     <ROW IniFile="FailureCheck" FileName="WISP.ini" DirProperty="APPDIR" Section="Application" Key="Failure Check" Value="yes" Action="0" Component_="WISP.exe"/>
     <ROW IniFile="LibraryPath" FileName="WISP.ini" DirProperty="APPDIR" Section="Java Runtime Environment" Key="Library Path" Value="[jre_Dir];" Action="0" Component_="WISP.exe"/>
-    <ROW IniFile="MainClass" FileName="WISP.ini" DirProperty="APPDIR" Section="Java Runtime Environment" Key="Main Class" Value="skillsplanner.Launcher" Action="0" Component_="WISP.exe"/>
+    <ROW IniFile="MainClass" FileName="WISP.ini" DirProperty="APPDIR" Section="Java Runtime Environment" Key="Main Class" Value="org.we3whoreign.wisp.Launcher" Action="0" Component_="WISP.exe"/>
     <ROW IniFile="MaximumVersion" FileName="WISP.ini" DirProperty="APPDIR" Section="Java Runtime Environment" Key="Maximum Version" Value="any" Action="0" Component_="WISP.exe"/>
     <ROW IniFile="MinimumVersion" FileName="WISP.ini" DirProperty="APPDIR" Section="Java Runtime Environment" Key="Minimum Version" Value="1.7" Action="0" Component_="WISP.exe"/>
   </COMPONENT>

@@ -1,0 +1,81 @@
+<org.we3whoreign.wisp>
+	<skill>
+		<name>Leap</name>
+		<casttime> 0.4 </casttime>
+		<spCost>20</spCost>
+        	<description>Increases your Jumping Strength for a set duration. </description>
+		
+		<dynamic>
+			<level value="1">
+                		<mp name="mp" value="13" />
+                		<downtime name="downtime" value="25.0s" />
+                		<duration name="duration" value="10s" />
+                		<jump name="Jump Increase" value="20%"/>
+			</level>
+			
+			<level value="2">
+		        <mp name="mp" value="14" />
+                <downtime name="downtime" value="29.2s" />
+                <duration name="duration" value="15s" />
+                <jump name="Jump Increase" value="20%"/>
+			</level>
+
+			<level value="3">
+                <mp name="mp" value="15" />
+                <downtime name="downtime" value="33.4s" />
+                <duration name="duration" value="20s" />
+                <jump name="Jump Increase" value="20%"/>
+			</level>
+
+			<level value="4">
+                <mp name="mp" value="16" />
+                <downtime name="downtime" value="37.6s" />
+                <duration name="duration" value="25s" />
+                <jump name="Jump Increase" value="20%"/>
+			</level>
+
+			<level value="5">
+                <mp name="mp" value="17" />
+                <downtime name="downtime" value="41.8s" />
+                <duration name="duration" value="30s" />
+                <jump name="Jump Increase" value="20%"/>
+			</level>
+
+			<level value="6">
+                <mp name="mp" value="18" />
+                <downtime name="downtime" value="46s" />
+                <duration name="duration" value="35s" />
+                <jump name="Jump Increase" value="20%"/>
+			</level>
+
+			<level value="7">
+                <mp name="mp" value="19" />
+                <downtime name="downtime" value="50.3s" />
+                <duration name="duration" value="40s" />
+                <jump name="Jump Increase" value="20%"/>
+			</level>
+
+			<level value="8">
+                <mp name="mp" value="20" />
+                <downtime name="downtime" value="54.5s" />
+                <duration name="duration" value="45s" />
+                <jump name="Jump Increase" value="20%"/>
+			</level>
+
+			<level value="9">
+                <mp name="mp" value="21" />
+                <downtime name="downtime" value="58.7s" />
+                <duration name="duration" value="50s" />
+                <jump name="Jump Increase" value="20%"/>
+			</level>
+
+			<level value="10">
+                <mp name="mp" value="22" />
+                <downtime name="downtime" value="62.9s" />
+                <duration name="duration" value="55s" />
+                <jump name="Jump Increase" value="20%"/>
+			</level>
+
+		</dynamic>
+	</skill>
+</org.we3whoreign.wisp>

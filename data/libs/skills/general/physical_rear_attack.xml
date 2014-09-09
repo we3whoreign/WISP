@@ -1,0 +1,41 @@
+<org.we3whoreign.wisp>
+	<skill> 
+		<name>Physical Rear Attack</name>
+		<casttime>0</casttime>
+		<spcost>20</spcost>
+        <description>Increases your Physical Critical Hit Rate while attacking from behind. </description>
+        <passive>true</passive>
+		<dynamic>
+			<level value="1">
+				<crit name="Physical Crit Chance" value="+1.5%" />
+			</level>
+			<level value="2">
+				<crit name="Physical Crit Chance" value="+3%" />
+			</level>
+			<level value="3">
+				<crit name="Physical Crit Chance" value="+4.5%" />
+			</level>
+			<level value="4">
+				<crit name="Physical Crit Chance" value="+6%" />
+			</level>
+			<level value="5">
+				<crit name="Physical Crit Chance" value="+7.5%" />
+			</level>
+			<level value="6">
+				<crit name="Physical Crit Chance" value="+9%" />
+			</level>
+			<level value="7">
+				<crit name="Physical Crit Chance" value="+10.5%" />
+			</level>
+			<level value="8">
+				<crit name="Physical Crit Chance" value="+12%" />
+			</level>
+			<level value="9">
+				<crit name="Physical Crit Chance" value="+13.5%" />
+			</level>
+			<level value="10">
+				<crit name="Physical Crit Chance" value="+15%" />
+			</level>
+		</dynamic>
+	</skill>
+</org.we3whoreign.wisp>

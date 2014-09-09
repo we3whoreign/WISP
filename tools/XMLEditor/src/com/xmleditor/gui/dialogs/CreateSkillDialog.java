@@ -30,11 +30,11 @@ import net.miginfocom.swing.MigLayout;
 
 import com.xmleditor.io.XMLWriter;
 
-import skillsplanner.beans.DFOClass;
-import skillsplanner.beans.Skill;
-import skillsplanner.resources.ClassManager;
-import skillsplanner.resources.SkillManager;
-import skillsplanner.utils.ListUtils;
+import org.we3whoreign.wisp.beans.DFOClass;
+import org.we3whoreign.wisp.beans.Skill;
+import org.we3whoreign.wisp.resources.ClassManager;
+import org.we3whoreign.wisp.resources.SkillManager;
+import org.we3whoreign.wisp.utils.ListUtils;
 
 /**
  * Dialog to create a new skill

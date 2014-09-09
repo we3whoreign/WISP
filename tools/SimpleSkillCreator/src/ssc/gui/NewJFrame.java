@@ -18,7 +18,7 @@ import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 import javax.swing.SwingUtilities;
 
-import skillsplanner.beans.Skill;
+import org.we3whoreign.wisp.beans.Skill;
 import ssc.util.XMLWriter;
 
 

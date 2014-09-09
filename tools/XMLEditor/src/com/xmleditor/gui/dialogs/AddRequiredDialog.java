@@ -11,8 +11,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-import skillsplanner.beans.Skill;
-import skillsplanner.resources.SkillManager;
+import org.we3whoreign.wisp.beans.Skill;
+import org.we3whoreign.wisp.resources.SkillManager;
 
 import com.xmleditor.gui.custom.JSuggestField;
 

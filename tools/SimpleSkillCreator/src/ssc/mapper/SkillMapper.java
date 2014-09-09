@@ -1,15 +1,15 @@
 package ssc.mapper;
 
-import org.jdom.Document;
-import org.jdom.Element;
+import org.jdom2.Document;
+import org.jdom2.Element;
 
-import skillsplanner.beans.Skill;
+import org.we3whoreign.wisp.beans.Skill;
 
 public class SkillMapper {
 
 	public static Document makeDocument(Skill st) {
 		Document d = new Document();
-		Element rootElement = new Element("skillsplanner");
+		Element rootElement = new Element("org.we3whoreign.wisp");
 		Element skillElement = new Element("skill");
 		Element name = new Element("name");
 		Element casttime = new Element("casttime");

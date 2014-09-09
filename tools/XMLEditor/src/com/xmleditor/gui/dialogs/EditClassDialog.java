@@ -22,12 +22,12 @@ import javax.swing.ListModel;
 
 import com.xmleditor.io.XMLWriter;
 
-import skillsplanner.beans.DFOClass;
-import skillsplanner.beans.Skill;
-import skillsplanner.io.IOHandler;
-import skillsplanner.resources.SkillManager;
-import skillsplanner.utils.ListUtils;
-import skillsplanner.utils.skills.SkillHandler;
+import org.we3whoreign.wisp.beans.DFOClass;
+import org.we3whoreign.wisp.beans.Skill;
+import org.we3whoreign.wisp.io.IOHandler;
+import org.we3whoreign.wisp.resources.SkillManager;
+import org.we3whoreign.wisp.utils.ListUtils;
+import org.we3whoreign.wisp.utils.skills.SkillHandler;
 
 public class EditClassDialog extends JFrame implements ActionListener{
 	private static final String ADD_TO = "ADD";

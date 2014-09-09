@@ -1,0 +1,41 @@
+<org.we3whoreign.wisp>
+	<skill> 
+		<name>Physical Critical Hit</name>
+		<casttime>0</casttime>
+		<spcost>20</spcost>
+        <description>Increases your Physical Critical Hit Rate. </description>
+        <passive>true</passive>
+		<dynamic>
+			<level value="1">
+				<crit name="Phsyical Crit Chance" value="+1%" />
+			</level>
+			<level value="2">
+				<crit name="Phsyical Crit Chance" value="+2%" />
+			</level>
+			<level value="3">
+				<crit name="Phsyical Crit Chance" value="+3%" />
+			</level>
+			<level value="4">
+				<crit name="Phsyical Crit Chance" value="+4%" />
+			</level>
+			<level value="5">
+				<crit name="Phsyical Crit Chance" value="+5%" />
+			</level>
+			<level value="6">
+				<crit name="Phsyical Crit Chance" value="+6%" />
+			</level>
+			<level value="7">
+				<crit name="Phsyical Crit Chance" value="+7%" />
+			</level>
+			<level value="8">
+				<crit name="Phsyical Crit Chance" value="+8%" />
+			</level>
+			<level value="9">
+				<crit name="Phsyical Crit Chance" value="+9%" />
+			</level>
+			<level value="10">
+				<crit name="Phsyical Crit Chance" value="+10%" />
+			</level>
+		</dynamic>
+	</skill>
+</org.we3whoreign.wisp>

@@ -21,3 +21,4 @@ build.num
 #any launch configuration for eclipse#
 ######################################
 **.launch
+/target/

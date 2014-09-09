@@ -8,9 +8,9 @@ import javax.swing.JButton;
 import javax.swing.JList;
 import javax.swing.JPanel;
 
-import skillsplanner.beans.DFOClass;
-import skillsplanner.resources.ClassManager;
-import skillsplanner.utils.ListUtils;
+import org.we3whoreign.wisp.beans.DFOClass;
+import org.we3whoreign.wisp.resources.ClassManager;
+import org.we3whoreign.wisp.utils.ListUtils;
 
 import com.xmleditor.gui.listeners.Agni;
 public class ClassesTab extends JPanel {

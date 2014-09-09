@@ -7,7 +7,7 @@ import javax.swing.JList;
 
 import com.xmleditor.gui.dialogs.EditClassDialog;
 
-import skillsplanner.beans.DFOClass;
+import org.we3whoreign.wisp.beans.DFOClass;
 
 /**
  * Action listener for the ClassesTab

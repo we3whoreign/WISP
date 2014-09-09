@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.we3whoreign.wisp>
+  <skill>
+    <name>Heaven's Harmony</name>
+    <casttime>0.0</casttime>
+    <spcost>100</spcost>
+    <entrycost>0</entrycost>
+    <reqlevel>35</reqlevel>
+    <description />
+    <skillreq name="Heaven's Melody" level="5" />
+    <dynamic>
+      <level value="1" />
+      <level value="2" />
+      <level value="3" />
+      <level value="4" />
+      <level value="5" />
+      <level value="6" />
+      <level value="7" />
+      <level value="8" />
+      <level value="9" />
+      <level value="10" />
+    </dynamic>
+  </skill>
+</org.we3whoreign.wisp>
+

@@ -1,9 +1,9 @@
 package ssc.util;
 
-import org.jdom.output.Format;
-import org.jdom.output.XMLOutputter;
+import org.jdom2.output.Format;
+import org.jdom2.output.XMLOutputter;
 
-import skillsplanner.beans.Skill;
+import org.we3whoreign.wisp.beans.Skill;
 import ssc.mapper.SkillMapper;
 
 public class XMLWriter {

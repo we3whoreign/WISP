@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.we3whoreign.wisp>
+  <skill>
+    <name>Cancel - Spiral</name>
+    <casttime>0.0</casttime>
+    <spcost>50</spcost>
+    <entrycost>0</entrycost>
+    <reqlevel>45</reqlevel>
+    <description />
+	
+	<skillreq name="Spiral" level="5" />
+	
+    <dynamic>
+      <level value="1" />
+    </dynamic>
+  </skill>
+</org.we3whoreign.wisp>
+

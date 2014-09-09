@@ -24,8 +24,8 @@ import net.miginfocom.swing.MigLayout;
 import com.xmleditor.gui.layouttools.SpringLayoutTool;
 import com.xmleditor.io.XMLWriter;
 
-import skillsplanner.beans.Skill;
-import skillsplanner.beans.SkillRequirement;
+import org.we3whoreign.wisp.beans.Skill;
+import org.we3whoreign.wisp.beans.SkillRequirement;
 
 public class SkillEditPanel extends JPanel implements ActionListener{
 	

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.we3whoreign.wisp>
+  <skill>
+    <name>Cancel - Ghost Slash</name>
+    <casttime>0.0</casttime>
+    <spcost>10</spcost>
+    <entrycost>0</entrycost>
+    <reqlevel>2</reqlevel>
+    <description />
+    <skillreq name="Ghost Slash" level="1" />
+    <dynamic>
+      <level value="1" />
+    </dynamic>
+  </skill>
+</org.we3whoreign.wisp>
+

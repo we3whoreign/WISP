@@ -3,18 +3,18 @@ package com.xmleditor.io;
 import java.io.File;
 import java.io.FileOutputStream;
 
-import org.jdom.Document;
-import org.jdom.Element;
-import org.jdom.output.Format;
-import org.jdom.output.XMLOutputter;
+import org.jdom2.Document;
+import org.jdom2.Element;
+import org.jdom2.output.Format;
+import org.jdom2.output.XMLOutputter;
 
-import skillsplanner.beans.DFOClass;
-import skillsplanner.beans.Skill;
-import skillsplanner.beans.SkillRequirement;
-import skillsplanner.io.IOHandler;
-import skillsplanner.resources.ClassManager;
-import skillsplanner.resources.SkillManager;
-import skillsplanner.utils.StringUtils;
+import org.we3whoreign.wisp.beans.DFOClass;
+import org.we3whoreign.wisp.beans.Skill;
+import org.we3whoreign.wisp.beans.SkillRequirement;
+import org.we3whoreign.wisp.io.IOHandler;
+import org.we3whoreign.wisp.resources.ClassManager;
+import org.we3whoreign.wisp.resources.SkillManager;
+import org.we3whoreign.wisp.utils.StringUtils;
 
 public class XMLWriter {
 	private static XMLWriter writer;
@@ -72,7 +72,7 @@ public class XMLWriter {
 	
 	private Document buildSkillDocument(Skill st) {
 		Document d = new Document();
-		Element rootElement = new Element("skillsplanner");
+		Element rootElement = new Element("org.we3whoreign.wisp");
 		Element skillElement = new Element("skill");
 		Element name = new Element("name");
 		Element casttime = new Element("casttime");

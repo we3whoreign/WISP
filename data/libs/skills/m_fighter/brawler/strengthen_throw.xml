@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.we3whoreign.wisp>
+  <skill>
+    <name>Strengthen Throw</name>
+    <casttime>0.0</casttime>
+    <spcost>100</spcost>
+    <entrycost>0</entrycost>
+    <reqlevel>20</reqlevel>
+    <description />
+    <dynamic>
+      <level value="1" />
+    </dynamic>
+  </skill>
+</org.we3whoreign.wisp>
+

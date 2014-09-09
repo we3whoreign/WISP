@@ -1,4 +1,4 @@
-package skillsplanner.skills.errors;
+package org.we3whoreign.wisp.skills.errors;
 
 
 public class CurrentRequirementException extends Exception {

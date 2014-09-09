@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skillplanner>
+  <description>Pwn little lolly</description>
+  <name>Summoner</name>
+  <skill>Disenchant</skill>
+  <skill>Physical Critical Hit</skill>
+  <skill>Palm Blast</skill>
+  <skill>Cancel - Item Throw</skill>
+  <skill>Backstep</skill>
+  <skill>Weapon Uppercut</skill>
+  <skill>Magic Critical Hit</skill>
+  <skill>Cancel - Magic Missile</skill>
+  <skill>Lasher</skill>
+  <skill>Elemental Burn</skill>
+  <skill>Phase Shift</skill>
+  <skill>Ancient Library</skill>
+  <skill>Hired Summon: Panzer Hodor</skill>
+  <skill>Florae Circle</skill>
+  <skill>Physical Rear Attack</skill>
+  <skill>Magic Festival</skill>
+  <skill>Magic Missile</skill>
+  <skill>Cheeky Doll Shururu</skill>
+  <skill>Lantern Firebomb</skill>
+  <skill>Frosty's Head</skill>
+  <skill>Aerial Lantern Firebomb</skill>
+  <skill>Quick Rebound</skill>
+  <skill>Leap</skill>
+  <skill>Cancel - Weapon Uppercut</skill>
+  <skill>Magic Rear Attack</skill>
+  <skill>Dragon Fang</skill>
+  <skill>Mana Shield</skill>
+  <skill>Indomitable Spirit</skill>
+  <skill>Ancient Memory</skill>
+  <skill>Pluto</skill>
+</skillplanner>
+

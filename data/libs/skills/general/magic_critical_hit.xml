@@ -1,0 +1,43 @@
+<org.we3whoreign.wisp>
+	<skill> 
+		<name>Magic Critical Hit</name>
+		<casttime>0</casttime>
+		<spcost>20</spcost>
+        <passive> true </passive>
+        <description>Increase your Magical Critical Hit Rate. </description>
+		<dynamic>
+			<level value="1">
+				<crit name="Magic Crit Chance" value="+1%" />
+			</level>
+			<level value="2">
+				<crit name="Magic Crit Chance" value="+2%" />
+			</level>
+			<level value="3">
+				<crit name="Magic Crit Chance" value="+3%" />
+			</level>
+			<level value="4">
+				<crit name="Magic Crit Chance" value="+4%" />
+			</level>
+			<level value="5">
+				<crit name="Magic Crit Chance" value="+5%" />
+			</level>
+			<level value="6">
+				<crit name="Magic Crit Chance" value="+6%" />
+			</level>
+			<level value="7">
+				<crit name="Magic Crit Chance" value="+7%" />
+			</level>
+			<level value="8">
+				<crit name="Magic Crit Chance" value="+8%" />
+			</level>
+			<level value="9">
+				<crit name="Magic Crit Chance" value="+9%" />
+			</level>
+			<level value="10">
+				<crit name="Magic Crit Chance" value="+10%" />
+			</level>
+		</dynamic>
+	</skill>
+</org.we3whoreign.wisp>
+
+

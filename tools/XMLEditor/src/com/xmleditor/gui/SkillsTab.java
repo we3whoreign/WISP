@@ -20,9 +20,9 @@ import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.SpringLayout;
 
-import skillsplanner.beans.Skill;
-import skillsplanner.resources.SkillManager;
-import skillsplanner.utils.ListUtils;
+import org.we3whoreign.wisp.beans.Skill;
+import org.we3whoreign.wisp.resources.SkillManager;
+import org.we3whoreign.wisp.utils.ListUtils;
 
 import com.xmleditor.gui.dialogs.SkillEditPanel;
 import com.xmleditor.gui.listeners.Rudra;

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.we3whoreign.wisp>
+    <skill>
+        <name>Asura Spirit Crescent</name>
+        <casttime>0.0</casttime>
+        <spcost>50</spcost>
+        <entrycost>0</entrycost>
+	<reqlevel>30</reqlevel>
+
+	<skillreq name="Spirit Crescent" level="3" />	
+	
+        <description></description>
+        <dynamic>
+            <level value="1" />
+        </dynamic>
+    </skill>
+</org.we3whoreign.wisp>

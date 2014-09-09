@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.we3whoreign.wisp>
+  <skill>
+    <name>Mech Drop</name>
+    <casttime>0.0</casttime>
+    <spcost>50</spcost>
+    <entrycost>0</entrycost>
+    <reqlevel>40</reqlevel>
+    <description />
+    <skillreq name="RX-78 Land Runner" level="10" />
+    <dynamic>
+      <level value="1" />
+      <level value="2" />
+      <level value="3" />
+      <level value="4" />
+      <level value="5" />
+      <level value="6" />
+      <level value="7" />
+      <level value="8" />
+      <level value="9" />
+      <level value="10" />
+      <level value="11" />
+      <level value="12" />
+      <level value="13" />
+      <level value="14" />
+      <level value="15" />
+      <level value="16" />
+    </dynamic>
+  </skill>
+</org.we3whoreign.wisp>
+

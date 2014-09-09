@@ -36,7 +36,7 @@ The layout of the project is this:
 3. The build and docs directory are constantly deleted and reconstructed when building. Don't worry about these, the ant build file takes care of them.
 4. Please javadoc your code or I will send a thousand angry beavers into your house to gnaw at your legs while gnomes piss on your keyboard with rainbows and ale.
 5. All skills and definitions of character classes go into the libs folder as well. libs/skills for skills and libs/classes for classes. There are a set of example xml files to help get you started in libs/examples
-6. The main class is the Launcher. This will handle initiating the GUI. Any testing should be put into the skillsplanner.testing package and be able to run by itself.
+6. The main class is the Launcher. This will handle initiating the GUI. Any testing should be put into the org.we3whoreign.wisp.testing package and be able to run by itself.
 7. The jars folder holds runnable jars with version number and build number. This may be changed later.
 
 -----------------------------------------
@@ -49,7 +49,7 @@ All skills are in xml file format. The examples folder has an example skill but 
 
 All skills must have the surrounding tags
 
-<skillsplanner><skill></skill></skillsplanner>
+<org.we3whoreign.wisp><skill></skill></org.we3whoreign.wisp>
 
 All information goes inside the skill tag. 
 Supported tags:

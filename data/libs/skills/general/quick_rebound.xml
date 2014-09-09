@@ -1,0 +1,14 @@
+<org.we3whoreign.wisp>
+	<skill> 
+		<name>Quick Rebound</name>
+		<casttime>0</casttime>
+		<spcost>10</spcost>
+        <description>Enables your character to quickly rebound up to a sitting position after getting knocked down, ignoring the enemy's attacks, to seek an opportunity to counterattack. </description>
+		<dynamic>
+			<level value="1">
+				<levelreq name="level requirement" value="5" />
+                <mpcost name="mp cost" value="1" />
+			</level>
+		</dynamic>
+	</skill>
+</org.we3whoreign.wisp>

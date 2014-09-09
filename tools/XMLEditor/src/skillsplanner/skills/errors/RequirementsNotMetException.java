@@ -1,6 +1,6 @@
-package skillsplanner.skills.errors;
+package org.we3whoreign.wisp.skills.errors;
 
-import skillsplanner.beans.Skill;
+import org.we3whoreign.wisp.beans.Skill;
 
 
 

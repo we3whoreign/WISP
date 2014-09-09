@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.we3whoreign.wisp>
+  <skill>
+    <name>Cancel - Hammer Kick</name>
+    <casttime>0.0</casttime>
+    <spcost>10</spcost>
+    <entrycost>0</entrycost>
+    <reqlevel>1</reqlevel>
+    <description />
+	<skillreq name="Hammer Kick" level="5" />
+    <dynamic>
+      <level value="1" />
+    </dynamic>
+  </skill>
+</org.we3whoreign.wisp>
+

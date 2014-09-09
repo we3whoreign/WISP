@@ -1,0 +1,70 @@
+<org.we3whoreign.wisp>
+	<skill> 
+		<name>Indomitable Spirit</name>
+		<casttime>0.2s</casttime>
+		<spcost>25</spcost>
+        <description>Casts a skill with the chance to cancel the enemy's attack; cannot be dispelled for a set duration. </description>
+		<dynamic>
+			<level value="1">
+				<mp name="mp" value="8" />
+                <cooldown name="cooldown" value="30.0s" />
+                <duration name="duration" value="10s" />
+                <probability name="probability" value="10%" />
+			</level>
+			<level value="2">
+				<mp name="mp" value="11" />
+                <cooldown name="cooldown" value="34.9s" />
+                <duration name="duration" value="15s" />
+                <probability name="probability" value="20%" />
+			</level>
+			<level value="3">
+				<mp name="mp" value="15" />
+                <cooldown name="cooldown" value="37.9s" />
+                <duration name="duration" value="20s" />
+                <probability name="probability" value="30%" />
+			</level>
+			<level value="4">
+				<mp name="mp" value="19" />
+                <cooldown name="cooldown" value="41.8s" />
+                <duration name="duration" value="25s" />
+                <probability name="probability" value="40%" />
+			</level>
+			<level value="5">
+				<mp name="mp" value="23" />
+                <cooldown name="cooldown" value="45.8s" />
+                <duration name="duration" value="30s" />
+                <probability name="probability" value="50%" />
+			</level>
+			<level value="6">
+				<mp name="mp" value="26" />
+                <cooldown name="cooldown" value="49.7s" />
+                <duration name="duration" value="35s" />
+                <probability name="probability" value="60%" />
+			</level>
+			<level value="7">
+				<mp name="mp" value="30" />
+                <cooldown name="cooldown" value="53.7s" />
+                <duration name="duration" value="40s" />
+                <probability name="probability" value="70%" />
+			</level>
+			<level value="8">
+				<mp name="mp" value="34" />
+                <cooldown name="cooldown" value="57.6s" />
+                <duration name="duration" value="45s" />
+                <probability name="probability" value="80%" />
+			</level>
+			<level value="9">
+				<mp name="mp" value="38" />
+                <cooldown name="cooldown" value="61.6s" />
+                <duration name="duration" value="50s" />
+                <probability name="probability" value="90%" />
+			</level>
+			<level value="10">
+				<mp name="mp" value="42" />
+                <cooldown name="cooldown" value="65.5s" />
+                <duration name="duration" value="1055s" />
+                <probability name="probability" value="100%" />
+			</level>
+		</dynamic>
+	</skill>
+</org.we3whoreign.wisp>

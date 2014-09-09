@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.we3whoreign.wisp>
+  <skill>
+    <name>Backup Land Runner</name>
+    <casttime>0.0</casttime>
+    <spcost>50</spcost>
+    <entrycost>0</entrycost>
+    <reqlevel>24</reqlevel>
+    <description />
+    <skillreq name="RX-78 Land Runner" level="5" />
+    <dynamic>
+      <level value="1" />
+      <level value="2" />
+      <level value="3" />
+      <level value="4" />
+      <level value="5" />
+    </dynamic>
+  </skill>
+</org.we3whoreign.wisp>
+

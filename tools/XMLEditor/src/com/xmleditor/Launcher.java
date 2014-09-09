@@ -5,9 +5,9 @@ import java.io.File;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
-import skillsplanner.io.IOHandler;
-import skillsplanner.resources.ClassManager;
-import skillsplanner.resources.SkillManager;
+import org.we3whoreign.wisp.io.IOHandler;
+import org.we3whoreign.wisp.resources.ClassManager;
+import org.we3whoreign.wisp.resources.SkillManager;
 
 import com.xmleditor.gui.XMLE;
 

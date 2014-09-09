@@ -1,0 +1,71 @@
+<skillplanner>
+	<description>Pwn little lolly</description>
+	<name>Witch</name>
+	
+	<!-- Skills -->
+	
+	<!-- General Skills -->
+	<skill>Leap</skill>
+	<skill>Ancient Memory</skill>
+	<skill>Item Throw Mastery</skill>
+	<skill>Indomitable Spirit</skill>
+	<skill>Cancel - Item Throw</skill>
+	<skill>Physical Critical Hit</skill>
+	<skill>Magic Critical Hit</skill>
+	<skill>Physical Rear Attack</skill>
+	<skill>Magic Rear Attack</skill>
+	<skill>Quick Rebound</skill>
+	<skill>Backstep</skill>
+	
+	<!-- Battle Mage Skills -->
+	<skill>Cancel - Weapon Uppercut</skill>
+	<skill>Dragon Fang</skill>
+	<skill>Mana Shield</skill>
+	<skill>Weapon Uppercut</skill>
+	<skill>Palm Blast</skill>
+	<skill>Phase Shift</skill>
+	
+	<!-- Summoner Skills -->
+	<skill>Lasher</skill>
+	<skill>Hired Summon: Panzer Hodor</skill>
+	
+	<!-- Witch Skills -->
+	<skill>Ancient Library</skill>
+	<skill>Cancel Magic Missile</skill>
+	<skill>Disenchant</skill>
+	<skill>Magic Missile</skill>
+	<skill>Cheeky Doll Shururu</skill>
+	
+	<!-- Elementalist Skills -->
+	<skill>Lantern Firebomb</skill>
+	<skill>Frosty's Head</skill>
+	<skill>Pluto</skill>
+	<skill>Florae Circle</skill>
+	<skill>Magic Festival</skill>
+	<skill>Aerial Lantern Firebomb</skill>
+	<skill>Elemental Burn</skill>
+	
+	<!-- Witch Only Skills -->
+	<skill>Befriend Pluto</skill>
+	<skill>Befriend Florae</skill>
+	<skill>Befriend Jack Frost</skill>
+	<skill>Befriend Jack-O-Lantern</skill>
+	<skill>Black Manteau</skill>
+	<skill>Cancel - Black Manteau</skill>
+	<skill>Snow Dust</skill>
+	<skill>Death Dust</skill>
+	<skill>Enhanced Magic Missile</skill>
+	<skill>Jackyl</skill>
+	<skill>Devolution Flyswatter</skill>
+	<skill>Cancel - Devolution Flyswatter</skill>
+	<skill>Lollipop</skill>
+	<skill>Acid Rain</skill>
+	<skill>Lava Potion No. 9</skill>
+	<skill>Broomstick Spin</skill>
+	<skill>Raging Flame Furnace</skill>
+	<skill>Gravitas</skill>
+	<skill>Florae Collider</skill>
+	<skill>Mega Drill</skill>
+	<skill>Lucky Feeling</skill>
+	<skill>Fusion Craft</skill>
+</skillplanner>
