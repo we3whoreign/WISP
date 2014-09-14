@@ -15,6 +15,7 @@ import org.we3whoreign.wisp.beans.SkillRequirement;
  * @author ryzngard
  *
  */
+@SuppressWarnings("serial")
 public class SkillsPane extends JPanel {
 	HashMap<String,ClickableSkillPanel> skillList;
 	

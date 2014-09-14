@@ -4,22 +4,62 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.regex.Pattern;
 
+
+/**
+ * FileSystemResource handler. Useful for testing and 
+ * loading files off of a flat system, instead of out of
+ * a jar.
+ * 
+ * @author ryzngard
+ *
+ */
 public class FileSystemResource implements ResourceHandler {
 	File rootDir;
 	String path;
+	
+	static String[] possibleLocations = 
+	{
+		"data" + File.separatorChar + "libs",
+		"libs" 
+	};
 
 	public FileSystemResource(String rootDir) {
-		// TODO Auto-generated constructor stub
 		this.rootDir = new File(rootDir);
 		this.path = rootDir;
+		
+		if (!this.rootDir.exists())
+		{
+			// The directory isn't a subdir of the loading area.
+			// Often times this is due to debugging unpacking in weird ways.
+			// Look for a few known locations up the parent tree
+			
+			// TODO: Possibly look for more than just libs directory
+			File currentDir = new File("");
+			while(currentDir != null)
+			{
+				String fullPath = currentDir.getAbsolutePath();
+				File newFile;
+				for(String searchPath : possibleLocations)
+				{
+					String path = fullPath + File.separatorChar + searchPath + File.separatorChar + rootDir;
+					newFile = new File(path);
+					
+					if (newFile.exists())
+					{
+						this.rootDir = newFile;
+						return;
+					}
+				}
+				
+				currentDir = new File(getParentPath(fullPath));
+			}
+		}
 	}
 
 
@@ -176,6 +216,10 @@ public class FileSystemResource implements ResourceHandler {
 	@Override
 	public String getPath() {
 		return path;
+	}
+	
+	private String getParentPath(String path) {
+		return path.substring(0,path.lastIndexOf(File.separatorChar));
 	}
 
 }

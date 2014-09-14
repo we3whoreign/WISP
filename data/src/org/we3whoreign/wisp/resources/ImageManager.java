@@ -1,10 +1,8 @@
 package org.we3whoreign.wisp.resources;
 
 import java.awt.Image;
-import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 import javax.imageio.ImageIO;
@@ -22,6 +20,7 @@ public class ImageManager {
 	
 	private static HashMap<String,Image> imageCache = new HashMap<String,Image>();
 	
+	@SuppressWarnings("unused")
 	private static final String[] FILETYPES = new String[]{
 			".jpg",".png",".jpeg",".gif"
 	};
@@ -49,6 +48,7 @@ public class ImageManager {
 		return image;
 	}
 	
+	@SuppressWarnings("unused")
 	private static String nameToFileName(String name){
 		name = name.replaceAll("[\\s]", "_");
 		name = name.replaceAll("[',:]", "");

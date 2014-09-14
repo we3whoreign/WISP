@@ -1,8 +1,6 @@
 package org.we3whoreign.wisp.utils.jdom;
 
 import java.io.InputStream;
-import java.net.URISyntaxException;
-
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.we3whoreign.wisp.beans.DFOClass;

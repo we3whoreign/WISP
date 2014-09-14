@@ -4,35 +4,26 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.GridLayout;
 import java.awt.event.KeyEvent;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Hashtable;
-import java.util.Iterator;
 import java.util.List;
 
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
-import javax.swing.border.LineBorder;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
-import javax.swing.tree.TreeCellRenderer;
 import javax.swing.tree.TreeSelectionModel;
 
 import org.we3whoreign.wisp.beans.DFOClass;
 import org.we3whoreign.wisp.beans.Skill;
-import org.we3whoreign.wisp.gui.custom.ClickableSkillPanel;
 import org.we3whoreign.wisp.gui.custom.SkillsPane;
 import org.we3whoreign.wisp.gui.custom.TreeImageCellRender;
 import org.we3whoreign.wisp.resources.ClassManager;
 import org.we3whoreign.wisp.resources.ImageManager;
-import org.we3whoreign.wisp.resources.SkillManager;
 import org.we3whoreign.wisp.resources.StaticResources;
 import org.we3whoreign.wisp.utils.ListUtils;
 import org.we3whoreign.wisp.utils.StringUtils;
-import org.we3whoreign.wisp.utils.jdom.*;
-import org.we3whoreign.wisp.utils.skills.SkillHandler;
 
 
 /**
@@ -40,6 +31,7 @@ import org.we3whoreign.wisp.utils.skills.SkillHandler;
  * @author ryzngard
  *
  */
+@SuppressWarnings("serial")
 public class WISP extends javax.swing.JFrame{
 
 	{
@@ -57,8 +49,6 @@ public class WISP extends javax.swing.JFrame{
 	public JTree classTree;
 	public JButton Tab5;
 
-	private JMenuItem helpMenuItem;
-	private JMenu jMenu5;
 	private JPanel Tabs;
 	private JLabel LOGO;
 	private JLabel SPRemaining;
@@ -71,14 +61,6 @@ public class WISP extends javax.swing.JFrame{
 	private JPanel TabArea;
 	private JPanel SPArea;
 	private JSplitPane SkillArea;
-	private JMenuItem deleteMenuItem;
-	private JSeparator jSeparator1;
-	private JMenuItem pasteMenuItem;
-	private JMenuItem copyMenuItem;
-	private JMenuItem cutMenuItem;
-	private JMenu jMenu4;
-	private JMenuItem exitMenuItem;
-	private JSeparator jSeparator2;
 	private JMenuItem closeFileMenuItem;
 	//private JMenuItem saveAsMenuItem;
 	private JMenuItem saveMenuItem;
@@ -391,6 +373,7 @@ public class WISP extends javax.swing.JFrame{
 	 * @author ryzngard
 	 *
 	 */
+	@SuppressWarnings({ "unused" })
 	private class MyRenderer extends DefaultTreeCellRenderer {  
 		  
         public Component getTreeCellRendererComponent(  

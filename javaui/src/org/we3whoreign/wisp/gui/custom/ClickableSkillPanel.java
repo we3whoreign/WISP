@@ -1,6 +1,5 @@
 package org.we3whoreign.wisp.gui.custom;
 
-import java.awt.BasicStroke;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Cursor;
@@ -12,19 +11,16 @@ import java.awt.Image;
 import java.awt.RenderingHints;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 
 import org.we3whoreign.wisp.beans.Skill;
 import org.we3whoreign.wisp.resources.ImageManager;
-import org.we3whoreign.wisp.resources.SkillManager;
 import org.we3whoreign.wisp.resources.StaticResources;
 import org.we3whoreign.wisp.utils.skills.SkillHandler;
 import org.we3whoreign.wisp.utils.skills.errors.CurrentRequirementException;
@@ -210,6 +206,7 @@ public class ClickableSkillPanel extends JPanel implements MouseListener{
 		} 
 	}
 	
+	@SuppressWarnings("unused")
 	private void maxLevel() {
 		
 		
@@ -255,8 +252,6 @@ public class ClickableSkillPanel extends JPanel implements MouseListener{
 		Graphics2D g2 = (Graphics2D) g.create();
 		
 		Color overlayColor = Color.RED; //red for now
-		Color textColor = Color.black;
-		
 		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
 	            RenderingHints.VALUE_ANTIALIAS_ON);
 

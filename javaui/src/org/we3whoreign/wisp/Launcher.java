@@ -1,8 +1,5 @@
 package org.we3whoreign.wisp;
 
-import java.io.File;
-import java.net.URISyntaxException;
-
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 

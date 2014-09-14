@@ -2,9 +2,6 @@ package org.we3whoreign.wisp.utils;
 
 import java.util.StringTokenizer;
 
-import javax.swing.AbstractButton;
-import javax.swing.JButton;
-
 public class StringUtils {
 	
 	/**

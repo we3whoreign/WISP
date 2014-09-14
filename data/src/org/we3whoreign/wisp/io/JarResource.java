@@ -3,12 +3,20 @@ package org.we3whoreign.wisp.io;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.URL;
+import java.security.CodeSource;
+import java.security.ProtectionDomain;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 import java.util.jar.JarFile;
 import java.util.regex.Pattern;
 
+/**
+ * 
+ * @author ryzngard
+ *
+ */
 public class JarResource implements ResourceHandler {
 	private JarFile jar;
 	private String path = "";
@@ -47,7 +55,7 @@ public class JarResource implements ResourceHandler {
 	@Override
 	public List<String> getResourceIdentifiers() {
 		List<String> list = new ArrayList<String>();
-		Enumeration enumeration = jar.entries();
+		Enumeration<?> enumeration = jar.entries();
 		while(enumeration.hasMoreElements()){
 			String resource = enumeration.nextElement().toString();
 			if(resource.startsWith(path) && !resource.endsWith("/")){
@@ -72,9 +80,13 @@ public class JarResource implements ResourceHandler {
 	 * Gets the path of the running jar that contains JarResource
 	 * @return
 	 */
+	@SuppressWarnings("unused")
 	private String getJarFilePath() {
 		String name = JarResource.class.getName().replace('.', '/');
-	    String s = JarResource.class.getClass().getResource("/" + name + ".class").toString();
+		// Using the current thread class loader instead of the JarResource.class.getClassLoader() 
+		// works better. Especially when testing inside of a WAR or a context that isn't the data jar
+		URL resourceURL = Thread.currentThread().getContextClassLoader().getResource("/" + name + ".class");
+	    String s = resourceURL.toString();
 	    s = s.substring(0, s.lastIndexOf(".jar")+4);
 	    s = s.substring(s.lastIndexOf(':')+1);
 	    return s;
@@ -110,7 +122,7 @@ public class JarResource implements ResourceHandler {
 	@Override
 	public List<String> listDirs() {
 		List<String> list = new ArrayList<String>();
-		Enumeration enumeration = jar.entries();
+		Enumeration<?> enumeration = jar.entries();
 		while(enumeration.hasMoreElements()){
 			String resource = enumeration.nextElement().toString();
 			//System.out.println("Check if "+resource+" is in "+path);
@@ -132,7 +144,7 @@ public class JarResource implements ResourceHandler {
 			dir = dir.replaceAll("//","/");
 		}
 		List<String> list = new ArrayList<String>();
-		Enumeration enumeration = jar.entries();
+		Enumeration<?> enumeration = jar.entries();
 		while(enumeration.hasMoreElements()){
 			String resource = enumeration.nextElement().toString();
 			if(resource.matches("^"+dir+"/[a-zA-Z_0-9]*\\.xml$")){

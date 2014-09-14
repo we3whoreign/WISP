@@ -13,6 +13,7 @@ import javax.swing.JPanel;
  * @author ryzngard
  *
  */
+@SuppressWarnings("serial")
 public class Tester extends JPanel{
 	
 	public Tester(){

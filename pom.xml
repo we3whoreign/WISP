@@ -8,7 +8,7 @@
   
   <properties>
   	<jar.mainClass>org.we3whoreign.wisp.Launcher</jar.mainClass>
-  	<java.version>1.7</java.version>
+  	<java.version>1.8</java.version>
   </properties>
   <dependencies>
   </dependencies>
@@ -16,5 +16,6 @@
   <modules>  
 	<module>data</module>
 	<module>javaui</module>
+    <module>webui</module>
   </modules>
 </project>

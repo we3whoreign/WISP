@@ -3,7 +3,6 @@ package org.we3whoreign.wisp.resources;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
@@ -39,7 +38,6 @@ public class ClassManager extends Observable{
 					try {
 						stream.close();
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}
@@ -97,19 +95,6 @@ public class ClassManager extends Observable{
 
 	public static Hashtable<String, ArrayList<String>> listClassTable() {
 		return IOHandler.createClassTable();
-//		Hashtable<String, ArrayList<String>> table = new Hashtable<String, ArrayList<String>>();
-		
-		
-//		for(String name : getInstance().getAllClasses().keySet()){
-//			DFOClass dfoclass = getInstance().getDFOClass(name);
-//			if(!table.containsKey(dfoclass.getBaseClass())){
-//				table.put(dfoclass.getBaseClass(), new ArrayList<String>());
-//				
-//			}
-//			table.get(dfoclass.getBaseClass()).add(dfoclass.getUniqueName());
-//		}
-		
-//		return table;
 	}
 
 	/**

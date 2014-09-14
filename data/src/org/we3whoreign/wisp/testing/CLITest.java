@@ -1,10 +1,6 @@
 package org.we3whoreign.wisp.testing;
 
 import java.net.URISyntaxException;
-import java.util.HashMap;
-import java.util.List;
-
-import org.we3whoreign.wisp.utils.jdom.Handler;
 
 
 public class CLITest {

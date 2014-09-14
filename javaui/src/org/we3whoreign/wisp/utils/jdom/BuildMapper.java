@@ -13,9 +13,6 @@ import org.we3whoreign.wisp.resources.ClassManager;
 import org.we3whoreign.wisp.resources.SkillManager;
 import org.we3whoreign.wisp.resources.StaticResources;
 import org.we3whoreign.wisp.utils.skills.SkillHandler;
-import org.we3whoreign.wisp.utils.skills.errors.MaxLevelException;
-import org.we3whoreign.wisp.utils.skills.errors.RequirementsNotMetException;
-import org.we3whoreign.wisp.utils.skills.errors.SPException;
 
 public class BuildMapper {
 	

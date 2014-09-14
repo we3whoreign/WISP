@@ -2,15 +2,10 @@ package org.we3whoreign.wisp.gui.custom;
 
 import java.awt.Component;
 import java.awt.Image;
-import java.io.IOException;
-
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 import javax.swing.JTree;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
 
-import org.we3whoreign.wisp.resources.ImageManager;
 import org.we3whoreign.wisp.utils.StringUtils;
 
 @SuppressWarnings("serial")

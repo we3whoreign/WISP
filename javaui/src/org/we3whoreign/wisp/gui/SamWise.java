@@ -2,18 +2,14 @@ package org.we3whoreign.wisp.gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 import java.util.List;
 
 import javax.swing.JButton;
-import javax.swing.JOptionPane;
-
 import org.we3whoreign.wisp.beans.Skill;
 import org.we3whoreign.wisp.resources.SkillManager;
 import org.we3whoreign.wisp.resources.StaticResources;
 import org.we3whoreign.wisp.utils.ListUtils;
 import org.we3whoreign.wisp.utils.StringUtils;
-import org.we3whoreign.wisp.utils.jdom.Handler;
 
 /**
  * Listener that handles all of the skill changes and subtree selections. IE The Tab[1-4] buttons, general button, and all the clickable panels that comprise the skill selection

@@ -7,8 +7,8 @@
     <artifactId>WISP</artifactId>
     <version>1.10.1b</version>
   </parent>
-  <artifactId>data</artifactId>
-  <name>data</name>
+  <artifactId>wisp-data</artifactId>
+  <name>wisp-data</name>
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

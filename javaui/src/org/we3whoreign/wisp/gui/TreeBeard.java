@@ -1,19 +1,13 @@
 package org.we3whoreign.wisp.gui;
 
-import java.io.IOException;
-import java.util.List;
-
-import javax.swing.JOptionPane;
 import javax.swing.JTree;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
-import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreePath;
 
 import org.we3whoreign.wisp.resources.ClassManager;
 import org.we3whoreign.wisp.resources.StaticResources;
 import org.we3whoreign.wisp.utils.StringUtils;
-import org.we3whoreign.wisp.utils.jdom.Handler;
 
 /**
  * Listener for any event sent from the JTRee that holds the class hierarchy.

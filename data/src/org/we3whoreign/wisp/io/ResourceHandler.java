@@ -2,10 +2,7 @@ package org.we3whoreign.wisp.io;
 
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.HashMap;
 import java.util.List;
-
-import org.we3whoreign.wisp.io.exceptions.FileIsNotDirectory;
 
 
 /**
