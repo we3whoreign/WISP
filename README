@@ -32,12 +32,11 @@ DEVELOPERS:
 The layout of the project is this:
 
 1. All source files go into the src/ folder, preferrably within the appropriate package. Use of the default package is discouraged.
-2. Any extra file/resource go into the libs directory
-3. The build and docs directory are constantly deleted and reconstructed when building. Don't worry about these, the ant build file takes care of them.
-4. Please javadoc your code or I will send a thousand angry beavers into your house to gnaw at your legs while gnomes piss on your keyboard with rainbows and ale.
+2. Any extra file/resource go into the libs directory. Most extra files should go in the wisp-data, if they are going towards data providers for the ui
+3. The target and docs directory are constantly deleted and reconstructed when building. Don't worry about these, the ant build file takes care of them.
+4. Please javadoc your code or I will send a thousand angry beavers into your house to gnaw at your legs while gnomes piss on your keyboard with rainbows and ale. (Note: I'm very bad at this, so I constantly have a rough keyboard...)
 5. All skills and definitions of character classes go into the libs folder as well. libs/skills for skills and libs/classes for classes. There are a set of example xml files to help get you started in libs/examples
-6. The main class is the Launcher. This will handle initiating the GUI. Any testing should be put into the org.we3whoreign.wisp.testing package and be able to run by itself.
-7. The jars folder holds runnable jars with version number and build number. This may be changed later.
+
 
 -----------------------------------------
 CHAPTER 2
@@ -49,7 +48,7 @@ All skills are in xml file format. The examples folder has an example skill but 
 
 All skills must have the surrounding tags
 
-<org.we3whoreign.wisp><skill></skill></org.we3whoreign.wisp>
+<wisp><skill></skill></wisp>
 
 All information goes inside the skill tag. 
 Supported tags:
@@ -87,17 +86,16 @@ COMPILING AND RUNNING
 If you wish to compile this code it is publicly available available at github. 
 The following is required to compile:
     1. JDK version 1.7 or higher 
-    2. Ant 
+    2. Maven 2.0+
     
-To compile just run ant on the build.xml file in the root folder. It will create a build directory with all the class files, a docs directory with javadoc information, and a jars directory with a runnable jar.
-
+To compile, mvn install in the root directory. This will build all of the submodules. If you only care about certain submodules, each of them has their own pom.xml for builds.
 
 --------------------------------------------------
 CHAPTER 5
 ECLIPSE HELP
 --------------------------------------------------
 To import the project into eclipse do the following:
-    1. File > Import... > Project From File System
+    1. File > Import... > Maven Project
     2. Locate the root directory and select that to be imported. It should contain the .project and .classpath
     3. Click finish. 
     4. The project is imported as a javadoc project. To run it you'll have to do some magic that I'm not going to get into yet, but you can use the build.xml to build and run the jar from the jars folder
@@ -106,4 +104,4 @@ To import the project into eclipse do the following:
 CHAPTER 6
 CONTACT INFORMATION
 --------------------------------------------------
-Any questions can be directed to we3whoreign@gmail.com . This email is checked pseudo-regularly.
+Any questions can be directed to we3whoreign@gmail.com . This email is checked pseudo-regularly. You can also contact ryzngard@gmail.com
